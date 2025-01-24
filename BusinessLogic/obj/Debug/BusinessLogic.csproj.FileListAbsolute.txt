@@ -1,0 +1,2 @@
+E:\a43082\DevCenterManager\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+E:\a43082\DevCenterManager\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache

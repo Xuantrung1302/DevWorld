@@ -91,8 +91,9 @@ namespace DevEduManager.Screens
 
                         userData = result;
                         frmMain frm = new frmMain(userData);
-                        this.Close(); // Đóng form đăng nhập
-                        frm.Show();
+                        //this.Close(); // Đóng form đăng nhập
+                        frm.ShowDialog();
+                        
                         
                     }
                     else
@@ -105,7 +106,7 @@ namespace DevEduManager.Screens
                 {
                     lblNotification.Text = "Đã xảy ra lỗi khi đăng nhập. Vui lòng thử lại.";
                     System.Media.SystemSounds.Exclamation.Play();
-                    // Log the exception (ex) for further analysis
+                    Console.WriteLine(ex.ToString()); // Ghi log lỗi chi tiết
                 }
             }
         }

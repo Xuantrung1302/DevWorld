@@ -30,7 +30,7 @@ namespace DevEduManager
             //this._user = user;
             this.receivedData = _receivedData;
         }
-
+        
         #region Ribbon bar
 
         #region Ribbon Tab
@@ -52,7 +52,7 @@ namespace DevEduManager
             //tabRibbon.SelectedTab = tabRibbon.TabPages["tabNhanVien"];
 
             ResetColorTabTitle();
-            ((Button)sender).BackColor = Color.FromArgb(233, 233, 233);
+            ((ToolStripMenuItem)sender).BackColor = Color.FromArgb(233, 233, 233);
         }
 
         private void btnGiangVienTitle_Click_1(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace DevEduManager
             //tabRibbon.SelectedTab = tabRibbon.TabPages["tabGiangVien"];
 
             ResetColorTabTitle();
-            ((Button)sender).BackColor = Color.FromArgb(233, 233, 233);
+            ((ToolStripMenuItem)sender).BackColor = Color.FromArgb(233, 233, 233);
         }
 
         private void btnHocVienTitle_Click_1(object sender, EventArgs e)
@@ -68,7 +68,7 @@ namespace DevEduManager
             //tabRibbon.SelectedTab = tabRibbon.TabPages["tabHocVien"];
 
             ResetColorTabTitle();
-            ((Button)sender).BackColor = Color.FromArgb(233, 233, 233);
+            ((ToolStripMenuItem)sender).BackColor = Color.FromArgb(233, 233, 233);
         }
 
         private void btnQuanLyLopHoc_Click(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace DevEduManager
             //tabRibbon.SelectedTab = tabRibbon.TabPages["tabQuanTri"];
 
             ResetColorTabTitle();
-            ((Button)sender).BackColor = Color.FromArgb(233, 233, 233);
+            ((ToolStripMenuItem)sender).BackColor = Color.FromArgb(233, 233, 233);
         }
 
         private void btnTroGiupTitle_Click_1(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace DevEduManager
             //tabRibbon.SelectedTab = tabRibbon.TabPages["tabTroGiup"];
 
             ResetColorTabTitle();
-            ((Button)sender).BackColor = Color.FromArgb(233, 233, 233);
+            ((ToolStripMenuItem)sender).BackColor = Color.FromArgb(233, 233, 233);
         }
 
         #endregion

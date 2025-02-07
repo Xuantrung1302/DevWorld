@@ -484,11 +484,16 @@ namespace DevEduManager
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            LoadGiaoDien(receivedData);
-
-            this.Show(); // Hiển thị lại frmMain
-
-            timer.Start();
+            try
+            {
+                LoadGiaoDien(receivedData);
+                timer.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi khi tải giao diện: " + ex.Message);
+                Console.WriteLine(ex.ToString()); // Ghi log lỗi chi tiết
+            }
         }
 
         private void btnQuanLyHocPhi_Click(object sender, EventArgs e)

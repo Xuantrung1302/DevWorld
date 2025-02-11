@@ -29,7 +29,7 @@ namespace DevEduManager.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -162,12 +162,14 @@ namespace DevEduManager.Screens
             this.gridBaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridBaoCao.Size = new System.Drawing.Size(844, 368);
             this.gridBaoCao.TabIndex = 44;
+            this.gridBaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridBaoCao_RowsAdded);
+            this.gridBaoCao.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridBaoCao_RowsRemoved);
             // 
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle5;
             this.clmMaHV.FillWeight = 70F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";
@@ -249,6 +251,7 @@ namespace DevEduManager.Screens
             this.btnTaoBaoCao.Text = "Tạo báo cáo";
             this.btnTaoBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTaoBaoCao.UseVisualStyleBackColor = false;
+            this.btnTaoBaoCao.Click += new System.EventHandler(this.btnTaoBaoCao_Click);
             // 
             // btnXem
             // 
@@ -267,6 +270,7 @@ namespace DevEduManager.Screens
             this.btnXem.Text = "Xem";
             this.btnXem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXem.UseVisualStyleBackColor = false;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // label4
             // 
@@ -301,6 +305,7 @@ namespace DevEduManager.Screens
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaoCaoHocVienTheoThang";
             this.Text = "frmBaoCaoHocVienTheoThang";
+            this.Load += new System.EventHandler(this.frmBaoCaoHocVienTheoThang_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

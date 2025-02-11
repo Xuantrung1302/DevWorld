@@ -30,9 +30,9 @@
         {
             this.TableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnExitApp = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblMeassage = new System.Windows.Forms.Label();
             this.tblPictureBox = new System.Windows.Forms.TableLayoutPanel();
@@ -74,9 +74,9 @@
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tlpMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.tlpMenu.Controls.Add(this.button1, 1, 0);
-            this.tlpMenu.Controls.Add(this.button2, 3, 0);
-            this.tlpMenu.Controls.Add(this.button3, 5, 0);
+            this.tlpMenu.Controls.Add(this.btnExitApp, 1, 0);
+            this.tlpMenu.Controls.Add(this.btnLogOut, 3, 0);
+            this.tlpMenu.Controls.Add(this.btnThoat, 5, 0);
             this.tlpMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpMenu.Location = new System.Drawing.Point(20, 176);
             this.tlpMenu.Margin = new System.Windows.Forms.Padding(0);
@@ -86,44 +86,44 @@
             this.tlpMenu.Size = new System.Drawing.Size(504, 35);
             this.tlpMenu.TabIndex = 0;
             // 
-            // button1
+            // btnExitApp
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(232)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(14, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 35);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Tắt ";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnExitApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(232)))));
+            this.btnExitApp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExitApp.ForeColor = System.Drawing.Color.White;
+            this.btnExitApp.Location = new System.Drawing.Point(14, 0);
+            this.btnExitApp.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExitApp.Name = "btnExitApp";
+            this.btnExitApp.Size = new System.Drawing.Size(150, 35);
+            this.btnExitApp.TabIndex = 0;
+            this.btnExitApp.Text = "Tắt DevWorld";
+            this.btnExitApp.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnLogOut
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(232)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(184, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(232)))));
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Location = new System.Drawing.Point(184, 0);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(150, 35);
+            this.btnLogOut.TabIndex = 1;
+            this.btnLogOut.Text = "Đăng xuất DevWorld";
+            this.btnLogOut.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnThoat
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(232)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(354, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 35);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Thoát";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(232)))));
+            this.btnThoat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(354, 0);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(0);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(150, 35);
+            this.btnThoat.TabIndex = 2;
+            this.btnThoat.Text = "Hủy";
+            this.btnThoat.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -151,7 +151,7 @@
             this.lblMeassage.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.lblMeassage.Size = new System.Drawing.Size(436, 151);
             this.lblMeassage.TabIndex = 0;
-            this.lblMeassage.Text = "Label1";
+            this.lblMeassage.Text = "Bạn có chắc chắn muốn thoát khỏi ứng dụng không?";
             this.lblMeassage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tblPictureBox
@@ -210,8 +210,8 @@
         internal System.Windows.Forms.Label lblMeassage;
         private System.Windows.Forms.TableLayoutPanel tblPictureBox;
         private System.Windows.Forms.PictureBox picBox;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnExitApp;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

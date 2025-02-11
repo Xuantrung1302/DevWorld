@@ -22,6 +22,7 @@ namespace DevEduManager.Screens
         }
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Teacher/";
+        private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
 
         /// <summary>
         /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
@@ -191,5 +192,19 @@ namespace DevEduManager.Screens
 
         }
         #endregion
+
+        private async void gridGV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string maGV = gridGV.Rows[e.RowIndex].Cells["clmMaGV"].Value.ToString();
+            string url2 = $"{_url2}layLopTheoRole?ma={maGV}";
+            DataTable result = await callAPI.GetAPI(url2);
+
+            gridLop.Dock = DockStyle.Fill;
+
+            if (result.Rows.Count > 0)
+            {
+                gridLop.DataSource = result;
+            }
+        }
     }
 }

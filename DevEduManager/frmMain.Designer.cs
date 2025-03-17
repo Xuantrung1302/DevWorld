@@ -345,6 +345,7 @@
             this.btnQuanLyDiem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnQuanLyDiem.Size = new System.Drawing.Size(249, 32);
             this.btnQuanLyDiem.Text = "Quản lý điểm";
+            this.btnQuanLyDiem.Click += new System.EventHandler(this.btnQuanLyDiem_Click);
             // 
             // btnThongKeDiemTheoLop
             // 
@@ -353,6 +354,7 @@
             this.btnThongKeDiemTheoLop.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnThongKeDiemTheoLop.Size = new System.Drawing.Size(249, 32);
             this.btnThongKeDiemTheoLop.Text = "Thống kê điểm";
+            this.btnThongKeDiemTheoLop.Click += new System.EventHandler(this.btnThongKeDiemTheoLop_Click);
             // 
             // btnXepLop
             // 

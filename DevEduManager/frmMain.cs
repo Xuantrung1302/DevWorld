@@ -566,5 +566,32 @@ namespace DevEduManager
             frmMessageDialog frmMess = new frmMessageDialog();
             frmMess.Show();
         }
+
+        private void btnQuanLyDiem_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+            frmQuanLyDiem frm = new frmQuanLyDiem()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnThongKeDiemTheoLop_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmThongKeDiemTheoLop frm = new frmThongKeDiemTheoLop()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

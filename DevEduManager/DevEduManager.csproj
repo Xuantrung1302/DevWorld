@@ -396,6 +396,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmQuanLyDiem.resx">
       <DependentUpon>frmQuanLyDiem.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmQuanLyGiangVien.resx">
       <DependentUpon>frmQuanLyGiangVien.cs</DependentUpon>

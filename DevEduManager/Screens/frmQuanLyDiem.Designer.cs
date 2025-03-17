@@ -715,6 +715,7 @@ namespace DevEduManager.Screens
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLyDiem";
             this.Text = "frmQuanLyDiem";
+            this.Load += new System.EventHandler(this.frmQuanLyDiem_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

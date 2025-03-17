@@ -29,9 +29,9 @@ namespace DevEduManager.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -165,12 +165,14 @@ namespace DevEduManager.Screens
             this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridLop.Size = new System.Drawing.Size(279, 223);
             this.gridLop.TabIndex = 64;
+            this.gridLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridLop_CellClick);
+            this.gridLop.Click += new System.EventHandler(this.gridLop_Click);
             // 
             // clmMaLop
             // 
             this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle10;
             this.clmMaLop.FillWeight = 70F;
             this.clmMaLop.HeaderText = "Mã lớp";
             this.clmMaLop.Name = "clmMaLop";
@@ -336,12 +338,13 @@ namespace DevEduManager.Screens
             this.gridThongKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridThongKe.Size = new System.Drawing.Size(712, 369);
             this.gridThongKe.TabIndex = 66;
+            this.gridThongKe.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridThongKe_RowsAdded);
             // 
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle11;
             this.clmMaHV.FillWeight = 70F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";
@@ -389,11 +392,11 @@ namespace DevEduManager.Screens
             // clmDiemTrungBinh
             // 
             this.clmDiemTrungBinh.DataPropertyName = "DiemTrungBinh";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle3.Format = "N2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.clmDiemTrungBinh.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.clmDiemTrungBinh.DefaultCellStyle = dataGridViewCellStyle12;
             this.clmDiemTrungBinh.FillWeight = 75F;
             this.clmDiemTrungBinh.HeaderText = "Điểm trung bình";
             this.clmDiemTrungBinh.Name = "clmDiemTrungBinh";
@@ -412,6 +415,7 @@ namespace DevEduManager.Screens
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThongKeDiemTheoLop";
             this.Text = "frmThongKeDiemTheoLop";
+            this.Load += new System.EventHandler(this.frmThongKeDiemTheoLop_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

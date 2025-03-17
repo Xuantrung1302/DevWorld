@@ -338,6 +338,7 @@
             this.gridGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridGV.Size = new System.Drawing.Size(693, 150);
             this.gridGV.TabIndex = 2;
+            this.gridGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridGV_CellClick);
             this.gridGV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridGV_RowsAdded);
             this.gridGV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridGV_RowsRemoved);
             this.gridGV.Click += new System.EventHandler(this.gridGV_Click);

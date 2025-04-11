@@ -245,6 +245,7 @@ namespace DevEduManager.Screens
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtMaLop
             // 
@@ -673,6 +674,7 @@ namespace DevEduManager.Screens
             this.gridDSHV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridDSHV.Size = new System.Drawing.Size(324, 374);
             this.gridDSHV.TabIndex = 66;
+            this.gridDSHV.Click += new System.EventHandler(this.gridDSHV_Click);
             // 
             // clmMaHV
             // 

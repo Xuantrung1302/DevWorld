@@ -98,6 +98,7 @@
             this.btnExitApp.TabIndex = 0;
             this.btnExitApp.Text = "Tắt DevWorld";
             this.btnExitApp.UseVisualStyleBackColor = false;
+            this.btnExitApp.Click += new System.EventHandler(this.btnExitApp_Click);
             // 
             // btnLogOut
             // 
@@ -111,6 +112,7 @@
             this.btnLogOut.TabIndex = 1;
             this.btnLogOut.Text = "Đăng xuất DevWorld";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnThoat
             // 
@@ -124,6 +126,7 @@
             this.btnThoat.TabIndex = 2;
             this.btnThoat.Text = "Hủy";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // tableLayoutPanel2
             // 

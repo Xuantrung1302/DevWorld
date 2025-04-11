@@ -91,10 +91,9 @@ namespace DevEduManager.Screens
 
                         userData = result;
                         frmMain frm = new frmMain(userData);
-                        //this.Close(); // Đóng form đăng nhập
+                        this.Hide(); // Ẩn frmDangNhap trước khi mở frmMain
                         frm.ShowDialog();
-                        
-                        
+                        this.Close(); // Đóng frmDangNhap sau khi frmMain được đóng
                     }
                     else
                     {

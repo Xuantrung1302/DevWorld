@@ -82,11 +82,11 @@ namespace DevEduManager.Screens
 
         }
 
-        private void gridLop_Click(object sender, EventArgs e)
+        private async void gridLop_Click(object sender, EventArgs e)
         {
 
 
-            string url = $"{_url}layDiemLop?maLop={maLop}";
+            string url = $"{_url}layDiemLop?";
             DataTable result = await callAPI.GetAPI(url);
 
             //gridLop.Dock = DockStyle.Fill;

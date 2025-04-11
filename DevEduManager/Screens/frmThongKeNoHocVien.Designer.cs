@@ -29,8 +29,8 @@ namespace DevEduManager.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -101,6 +101,7 @@ namespace DevEduManager.Screens
             this.btnTaoBaoCao.Text = "Tạo báo cáo";
             this.btnTaoBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTaoBaoCao.UseVisualStyleBackColor = false;
+            this.btnTaoBaoCao.Click += new System.EventHandler(this.btnTaoBaoCao_Click);
             // 
             // lblTongCong
             // 
@@ -164,12 +165,14 @@ namespace DevEduManager.Screens
             this.gridBaoCao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridBaoCao.Size = new System.Drawing.Size(842, 330);
             this.gridBaoCao.TabIndex = 44;
+            this.gridBaoCao.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridBaoCao_RowsAdded);
+            this.gridBaoCao.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridBaoCao_RowsRemoved);
             // 
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle7;
             this.clmMaHV.FillWeight = 70F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";
@@ -201,11 +204,11 @@ namespace DevEduManager.Screens
             // clmConNo
             // 
             this.clmConNo.DataPropertyName = "ConNo";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle8.Format = "C0";
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.clmConNo.DefaultCellStyle = dataGridViewCellStyle8;
             this.clmConNo.HeaderText = "Còn nợ";
             this.clmConNo.Name = "clmConNo";
             this.clmConNo.ReadOnly = true;
@@ -231,6 +234,7 @@ namespace DevEduManager.Screens
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThongKeNoHocVien";
+            this.Load += new System.EventHandler(this.frmThongKeNoHocVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

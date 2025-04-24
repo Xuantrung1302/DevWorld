@@ -29,8 +29,8 @@ namespace DevEduManager.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -50,16 +50,16 @@ namespace DevEduManager.Screens
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.numDiemViet = new System.Windows.Forms.NumericUpDown();
+            this.numDiemCuoiKy = new System.Windows.Forms.NumericUpDown();
             this.label23 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.numDiemDoc = new System.Windows.Forms.NumericUpDown();
+            this.numDiemDuAn = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.numDiemNoi = new System.Windows.Forms.NumericUpDown();
+            this.numDiemThucHanh = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.numDiemNghe = new System.Windows.Forms.NumericUpDown();
+            this.numDiemLyThuyet = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.lblTenHV = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -84,10 +84,10 @@ namespace DevEduManager.Screens
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemViet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemDoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemNoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemNghe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemCuoiKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemDuAn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemThucHanh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemLyThuyet)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHV)).BeginInit();
             this.SuspendLayout();
@@ -158,6 +158,7 @@ namespace DevEduManager.Screens
             this.btnHienTatCa.Text = "Hiện tất cả";
             this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHienTatCa.UseVisualStyleBackColor = false;
+            this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click_1);
             // 
             // label4
             // 
@@ -191,12 +192,13 @@ namespace DevEduManager.Screens
             this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridLop.Size = new System.Drawing.Size(279, 219);
             this.gridLop.TabIndex = 64;
+            this.gridLop.Click += new System.EventHandler(this.gridLop_Click_1);
             // 
             // clmMaLop
             // 
             this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle3;
             this.clmMaLop.FillWeight = 70F;
             this.clmMaLop.HeaderText = "Mã lớp";
             this.clmMaLop.Name = "clmMaLop";
@@ -227,6 +229,7 @@ namespace DevEduManager.Screens
             this.btnDatLai.Text = "Đặt lại";
             this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
+            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
             // btnTimKiem
             // 
@@ -291,16 +294,16 @@ namespace DevEduManager.Screens
             this.panel4.Controls.Add(this.btnHuyBo);
             this.panel4.Controls.Add(this.btnLuuThongTin);
             this.panel4.Controls.Add(this.label22);
-            this.panel4.Controls.Add(this.numDiemViet);
+            this.panel4.Controls.Add(this.numDiemCuoiKy);
             this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.numDiemDoc);
+            this.panel4.Controls.Add(this.numDiemDuAn);
             this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label17);
-            this.panel4.Controls.Add(this.numDiemNoi);
+            this.panel4.Controls.Add(this.numDiemThucHanh);
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.numDiemNghe);
+            this.panel4.Controls.Add(this.numDiemLyThuyet);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.lblTenHV);
             this.panel4.Controls.Add(this.label13);
@@ -366,17 +369,17 @@ namespace DevEduManager.Screens
             this.label22.TabIndex = 75;
             this.label22.Text = "điểm";
             // 
-            // numDiemViet
+            // numDiemCuoiKy
             // 
-            this.numDiemViet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numDiemCuoiKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemViet.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemViet.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemViet.Location = new System.Drawing.Point(118, 360);
-            this.numDiemViet.Name = "numDiemViet";
-            this.numDiemViet.Size = new System.Drawing.Size(189, 25);
-            this.numDiemViet.TabIndex = 74;
-            this.numDiemViet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDiemCuoiKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.numDiemCuoiKy.ForeColor = System.Drawing.Color.Blue;
+            this.numDiemCuoiKy.Location = new System.Drawing.Point(118, 360);
+            this.numDiemCuoiKy.Name = "numDiemCuoiKy";
+            this.numDiemCuoiKy.Size = new System.Drawing.Size(189, 25);
+            this.numDiemCuoiKy.TabIndex = 74;
+            this.numDiemCuoiKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label23
             // 
@@ -384,9 +387,9 @@ namespace DevEduManager.Screens
             this.label23.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.label23.Location = new System.Drawing.Point(19, 360);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(87, 19);
+            this.label23.Size = new System.Drawing.Size(91, 19);
             this.label23.TabIndex = 73;
-            this.label23.Text = "Điểm cuối kì:";
+            this.label23.Text = "Điểm cuối kỳ:";
             // 
             // label20
             // 
@@ -400,17 +403,17 @@ namespace DevEduManager.Screens
             this.label20.TabIndex = 72;
             this.label20.Text = "điểm";
             // 
-            // numDiemDoc
+            // numDiemDuAn
             // 
-            this.numDiemDoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numDiemDuAn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemDoc.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemDoc.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemDoc.Location = new System.Drawing.Point(118, 318);
-            this.numDiemDoc.Name = "numDiemDoc";
-            this.numDiemDoc.Size = new System.Drawing.Size(189, 25);
-            this.numDiemDoc.TabIndex = 71;
-            this.numDiemDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDiemDuAn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.numDiemDuAn.ForeColor = System.Drawing.Color.Blue;
+            this.numDiemDuAn.Location = new System.Drawing.Point(118, 318);
+            this.numDiemDuAn.Name = "numDiemDuAn";
+            this.numDiemDuAn.Size = new System.Drawing.Size(189, 25);
+            this.numDiemDuAn.TabIndex = 71;
+            this.numDiemDuAn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label21
             // 
@@ -434,17 +437,17 @@ namespace DevEduManager.Screens
             this.label17.TabIndex = 69;
             this.label17.Text = "điểm";
             // 
-            // numDiemNoi
+            // numDiemThucHanh
             // 
-            this.numDiemNoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numDiemThucHanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemNoi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemNoi.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemNoi.Location = new System.Drawing.Point(118, 277);
-            this.numDiemNoi.Name = "numDiemNoi";
-            this.numDiemNoi.Size = new System.Drawing.Size(189, 25);
-            this.numDiemNoi.TabIndex = 68;
-            this.numDiemNoi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDiemThucHanh.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.numDiemThucHanh.ForeColor = System.Drawing.Color.Blue;
+            this.numDiemThucHanh.Location = new System.Drawing.Point(118, 277);
+            this.numDiemThucHanh.Name = "numDiemThucHanh";
+            this.numDiemThucHanh.Size = new System.Drawing.Size(189, 25);
+            this.numDiemThucHanh.TabIndex = 68;
+            this.numDiemThucHanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label18
             // 
@@ -468,17 +471,17 @@ namespace DevEduManager.Screens
             this.label15.TabIndex = 66;
             this.label15.Text = "điểm";
             // 
-            // numDiemNghe
+            // numDiemLyThuyet
             // 
-            this.numDiemNghe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numDiemLyThuyet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemNghe.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemNghe.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemNghe.Location = new System.Drawing.Point(118, 235);
-            this.numDiemNghe.Name = "numDiemNghe";
-            this.numDiemNghe.Size = new System.Drawing.Size(189, 25);
-            this.numDiemNghe.TabIndex = 65;
-            this.numDiemNghe.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDiemLyThuyet.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.numDiemLyThuyet.ForeColor = System.Drawing.Color.Blue;
+            this.numDiemLyThuyet.Location = new System.Drawing.Point(118, 235);
+            this.numDiemLyThuyet.Name = "numDiemLyThuyet";
+            this.numDiemLyThuyet.Size = new System.Drawing.Size(189, 25);
+            this.numDiemLyThuyet.TabIndex = 65;
+            this.numDiemLyThuyet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label16
             // 
@@ -679,8 +682,8 @@ namespace DevEduManager.Screens
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle4;
             this.clmMaHV.FillWeight = 70F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";
@@ -717,7 +720,8 @@ namespace DevEduManager.Screens
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLyDiem";
             this.Text = "frmQuanLyDiem";
-            this.Load += new System.EventHandler(this.frmQuanLyDiem_Load_1);
+            this.Load += new System.EventHandler(this.frmQuanLyDiem_Load);
+            this.Click += new System.EventHandler(this.frmQuanLyDiem_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -725,10 +729,10 @@ namespace DevEduManager.Screens
             ((System.ComponentModel.ISupportInitialize)(this.gridLop)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemViet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemDoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemNoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemNghe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemCuoiKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemDuAn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemThucHanh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemLyThuyet)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHV)).EndInit();
@@ -757,16 +761,16 @@ namespace DevEduManager.Screens
         private System.Windows.Forms.Button btnHuyBo;
         private System.Windows.Forms.Button btnLuuThongTin;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.NumericUpDown numDiemViet;
+        private System.Windows.Forms.NumericUpDown numDiemCuoiKy;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.NumericUpDown numDiemDoc;
+        private System.Windows.Forms.NumericUpDown numDiemDuAn;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown numDiemNoi;
+        private System.Windows.Forms.NumericUpDown numDiemThucHanh;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numDiemNghe;
+        private System.Windows.Forms.NumericUpDown numDiemLyThuyet;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblTenHV;
         private System.Windows.Forms.Label label13;

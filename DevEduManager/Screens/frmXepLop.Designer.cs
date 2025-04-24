@@ -434,6 +434,7 @@ namespace DevEduManager.Screens
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmXepLop";
             this.Text = "frmXepLop";
+            this.Load += new System.EventHandler(this.frmXepLop_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);

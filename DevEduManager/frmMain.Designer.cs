@@ -63,6 +63,7 @@
             this.btnThayDoiQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
             this.btnKetNoiCSDL = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongTinTrungTam = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSuaThongBao = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGiangVienTitle = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAS_D_US_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -363,6 +364,7 @@
             this.btnXepLop.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnXepLop.Size = new System.Drawing.Size(249, 32);
             this.btnXepLop.Text = "Xếp lớp";
+            this.btnXepLop.Click += new System.EventHandler(this.btnXepLop_Click);
             // 
             // mniAS_D_SM_13
             // 
@@ -400,7 +402,8 @@
             this.btnQuanLyTaiKhoan,
             this.btnThayDoiQuyDinh,
             this.btnKetNoiCSDL,
-            this.btnThongTinTrungTam});
+            this.btnThongTinTrungTam,
+            this.btnSuaThongBao});
             this.btnQuanTriTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanTriTitle.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnQuanTriTitle.Name = "btnQuanTriTitle";
@@ -500,6 +503,15 @@
             this.btnThongTinTrungTam.Size = new System.Drawing.Size(242, 32);
             this.btnThongTinTrungTam.Text = "Thông tin trung tâm";
             this.btnThongTinTrungTam.Click += new System.EventHandler(this.btnThongTinTrungTam_Click);
+            // 
+            // btnSuaThongBao
+            // 
+            this.btnSuaThongBao.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnSuaThongBao.Name = "btnSuaThongBao";
+            this.btnSuaThongBao.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnSuaThongBao.Size = new System.Drawing.Size(242, 32);
+            this.btnSuaThongBao.Text = "Sửa thông báo";
+            this.btnSuaThongBao.Click += new System.EventHandler(this.btnSuaThongBao_Click);
             // 
             // btnGiangVienTitle
             // 
@@ -853,5 +865,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem btnSuaThongBao;
     }
 }

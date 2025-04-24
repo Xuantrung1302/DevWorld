@@ -33,6 +33,23 @@ namespace BusinessLogic
 
             return result;
         }
+        // CallAPI.cs
+        public async Task<List<Post>> GetListAPI(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var response = await client.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string json = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<List<Post>>(json);
+                }
+
+                return new List<Post>();
+            }
+        }
+
         public async Task<bool> PostAPI(string url, string json = null)
         {
             bool result = false;

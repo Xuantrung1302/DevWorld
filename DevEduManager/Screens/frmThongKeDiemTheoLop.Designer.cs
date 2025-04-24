@@ -29,9 +29,9 @@ namespace DevEduManager.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -54,10 +54,10 @@ namespace DevEduManager.Screens
             this.gridThongKe = new System.Windows.Forms.DataGridView();
             this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiemNghe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiemNoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiemDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiemViet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiemLyThuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiemThucHanh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiemDuAn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiemCuoiKi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDiemTrungBinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -132,6 +132,7 @@ namespace DevEduManager.Screens
             this.btnHienTatCa.Text = "Hiện tất cả";
             this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHienTatCa.UseVisualStyleBackColor = false;
+            this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click);
             // 
             // label4
             // 
@@ -171,8 +172,8 @@ namespace DevEduManager.Screens
             // clmMaLop
             // 
             this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmMaLop.FillWeight = 70F;
             this.clmMaLop.HeaderText = "Mã lớp";
             this.clmMaLop.Name = "clmMaLop";
@@ -203,6 +204,7 @@ namespace DevEduManager.Screens
             this.btnDatLai.Text = "Đặt lại";
             this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
+            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
             // btnTimKiem
             // 
@@ -221,6 +223,7 @@ namespace DevEduManager.Screens
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtMaLop
             // 
@@ -324,10 +327,10 @@ namespace DevEduManager.Screens
             this.gridThongKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaHV,
             this.clmTenHV,
-            this.clmDiemNghe,
-            this.clmDiemNoi,
-            this.clmDiemDoc,
-            this.clmDiemViet,
+            this.clmDiemLyThuyet,
+            this.clmDiemThucHanh,
+            this.clmDiemDuAn,
+            this.clmDiemCuoiKi,
             this.clmDiemTrungBinh});
             this.gridThongKe.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridThongKe.Location = new System.Drawing.Point(19, 45);
@@ -343,8 +346,8 @@ namespace DevEduManager.Screens
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmMaHV.FillWeight = 70F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.Name = "clmMaHV";
@@ -357,46 +360,46 @@ namespace DevEduManager.Screens
             this.clmTenHV.Name = "clmTenHV";
             this.clmTenHV.ReadOnly = true;
             // 
-            // clmDiemNghe
+            // clmDiemLyThuyet
             // 
-            this.clmDiemNghe.DataPropertyName = "DiemNghe";
-            this.clmDiemNghe.FillWeight = 50F;
-            this.clmDiemNghe.HeaderText = "Điểm nghe";
-            this.clmDiemNghe.Name = "clmDiemNghe";
-            this.clmDiemNghe.ReadOnly = true;
+            this.clmDiemLyThuyet.DataPropertyName = "DiemLyThuyet";
+            this.clmDiemLyThuyet.FillWeight = 50F;
+            this.clmDiemLyThuyet.HeaderText = "Điểm lý thuyết";
+            this.clmDiemLyThuyet.Name = "clmDiemLyThuyet";
+            this.clmDiemLyThuyet.ReadOnly = true;
             // 
-            // clmDiemNoi
+            // clmDiemThucHanh
             // 
-            this.clmDiemNoi.DataPropertyName = "DiemNoi";
-            this.clmDiemNoi.FillWeight = 50F;
-            this.clmDiemNoi.HeaderText = "Điểm nói";
-            this.clmDiemNoi.Name = "clmDiemNoi";
-            this.clmDiemNoi.ReadOnly = true;
+            this.clmDiemThucHanh.DataPropertyName = "DiemThucHanh";
+            this.clmDiemThucHanh.FillWeight = 50F;
+            this.clmDiemThucHanh.HeaderText = "Điểm thực hành";
+            this.clmDiemThucHanh.Name = "clmDiemThucHanh";
+            this.clmDiemThucHanh.ReadOnly = true;
             // 
-            // clmDiemDoc
+            // clmDiemDuAn
             // 
-            this.clmDiemDoc.DataPropertyName = "DiemDoc";
-            this.clmDiemDoc.FillWeight = 50F;
-            this.clmDiemDoc.HeaderText = "Điểm đọc";
-            this.clmDiemDoc.Name = "clmDiemDoc";
-            this.clmDiemDoc.ReadOnly = true;
+            this.clmDiemDuAn.DataPropertyName = "DiemDuAn";
+            this.clmDiemDuAn.FillWeight = 50F;
+            this.clmDiemDuAn.HeaderText = "Điểm dự án";
+            this.clmDiemDuAn.Name = "clmDiemDuAn";
+            this.clmDiemDuAn.ReadOnly = true;
             // 
-            // clmDiemViet
+            // clmDiemCuoiKi
             // 
-            this.clmDiemViet.DataPropertyName = "DiemViet";
-            this.clmDiemViet.FillWeight = 50F;
-            this.clmDiemViet.HeaderText = "Điểm viết";
-            this.clmDiemViet.Name = "clmDiemViet";
-            this.clmDiemViet.ReadOnly = true;
+            this.clmDiemCuoiKi.DataPropertyName = "DiemCuoiKi";
+            this.clmDiemCuoiKi.FillWeight = 50F;
+            this.clmDiemCuoiKi.HeaderText = "Điểm cuối kì";
+            this.clmDiemCuoiKi.Name = "clmDiemCuoiKi";
+            this.clmDiemCuoiKi.ReadOnly = true;
             // 
             // clmDiemTrungBinh
             // 
             this.clmDiemTrungBinh.DataPropertyName = "DiemTrungBinh";
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle12.Format = "N2";
-            dataGridViewCellStyle12.NullValue = null;
-            this.clmDiemTrungBinh.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.Format = "N2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.clmDiemTrungBinh.DefaultCellStyle = dataGridViewCellStyle3;
             this.clmDiemTrungBinh.FillWeight = 75F;
             this.clmDiemTrungBinh.HeaderText = "Điểm trung bình";
             this.clmDiemTrungBinh.Name = "clmDiemTrungBinh";
@@ -452,10 +455,10 @@ namespace DevEduManager.Screens
         private System.Windows.Forms.DataGridView gridThongKe;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemNghe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemNoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemViet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemLyThuyet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemThucHanh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemDuAn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemCuoiKi;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmDiemTrungBinh;
     }
 }

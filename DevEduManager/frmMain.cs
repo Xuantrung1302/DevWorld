@@ -131,7 +131,7 @@ namespace DevEduManager
                 pnlWorkspace.Controls.Clear();
 
                 // Kiểm tra cột nào không null và lấy giá trị của cột đó
-                string tenNguoiDung = string.Empty;
+                //string tenNguoiDung = string.Empty;
 
                 //if (receivedData.Rows[0]["TenNV"] != DBNull.Value)
                 //{
@@ -147,7 +147,7 @@ namespace DevEduManager
                 //}
 
                 // Truyền giá trị đã xác định sang form frmTrangMoDau
-                frmTrangMoDau frm = new frmTrangMoDau(tenNguoiDung)
+                frmBangTin frm = new frmBangTin()
                 {
                     Dock = DockStyle.Fill,
                     TopLevel = false
@@ -585,6 +585,34 @@ namespace DevEduManager
             pnlWorkspace.Controls.Clear();
 
             frmThongKeDiemTheoLop frm = new frmThongKeDiemTheoLop()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnXepLop_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmXepLop frm = new frmXepLop()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnSuaThongBao_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmBangTinEdit frm = new frmBangTinEdit()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false

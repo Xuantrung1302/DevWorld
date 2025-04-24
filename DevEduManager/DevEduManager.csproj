@@ -218,6 +218,18 @@
     <Compile Include="Screens\frmBangDiem.Designer.cs">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmBangTin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmBangTin.Designer.cs">
+      <DependentUpon>frmBangTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmBangTinEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmBangTinEdit.Designer.cs">
+      <DependentUpon>frmBangTinEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmBaoCaoHocVienTheoThang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -406,6 +418,12 @@
     <EmbeddedResource Include="Screens\frmBangDiem.resx">
       <DependentUpon>frmBangDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmBangTin.resx">
+      <DependentUpon>frmBangTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmBangTinEdit.resx">
+      <DependentUpon>frmBangTinEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmBaoCaoHocVienTheoThang.resx">
       <DependentUpon>frmBaoCaoHocVienTheoThang.cs</DependentUpon>
     </EmbeddedResource>
@@ -554,6 +572,10 @@
     <Content Include="Resources\zoom_16x16.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{53b233fd-d222-4187-8721-096b689c0253}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{f513a3d8-d598-4ce7-9556-2d4245746b9c}</Project>
       <Name>Entity</Name>

@@ -42,14 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalSettings.cs" />
-    <Compile Include="HocVien.cs" />
+    <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DevEduManager\DevEduManager.csproj">
-      <Project>{1690343c-d6ec-4526-b87c-a2441b95abbf}</Project>
-      <Name>DevEduManager</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

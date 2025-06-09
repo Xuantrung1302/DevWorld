@@ -1,294 +1,309 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\a43082\\DevCenterManager\\",
+  "WorkspaceRootPath": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\devcentermanager\\devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\screens\\frmthoikhoabieu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmthoikhoabieu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\modals\\ucthoikhoabieuthang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\ucthoikhoabieuthang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmmessagedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmmessagedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmmessagedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmmessagedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmtrangmodau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmtrangmodau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmmessagedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmmessagedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmmessagedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmmessagedialog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmtrangmodau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmtrangmodau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\frmmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmketnoicsdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmketnoicsdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmketnoicsdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmketnoicsdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmketnoicsdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmketnoicsdl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\callapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\callapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\callapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53B233FD-D222-4187-8721-096B689C0253}|BusinessLogic\\BusinessLogic.csproj|E:\\a43082\\DevCenterManager\\businesslogic\\hocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{53B233FD-D222-4187-8721-096B689C0253}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\hocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\resources\\logo2_1.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\resources\\logo2_1.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\resources\\logo2_1.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmtiepnhanhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmtiepnhanhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmtiepnhanhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlykhoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlykhoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlykhoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlydontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlydontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlydontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmquydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmquydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmquydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmquydinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmquydinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmquydinh.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmdontuedit.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmdontuedit.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmdontuedit.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmdontuedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmdontuedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmdontuedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmbangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmbangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmbangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmbangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmbangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmbangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlyhocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlyhocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlyhocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmdontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmdontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmdontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmdontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmdontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmdontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlydontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlydontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlydontu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmcaclopdahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmcaclopdahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmcaclopdahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlyhocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlyhocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlyhocphi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmcaclopdahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmcaclopdahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmcaclopdahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmxeplop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmxeplop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmxeplop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmtrangmodau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmtrangmodau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmtrangmodau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\giangday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\giangday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\giangday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\giangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\giangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\giangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmthongtintrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmthongtintrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmthongtintrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmthongtintrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmthongtintrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmthongtintrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmthongtinphanmem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmthongtinphanmem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmthongtinphanmem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmthaydoithongtinnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmthaydoithongtinnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmthaydoithongtinnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmthaydoithongtinnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmthaydoithongtinnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmthaydoithongtinnv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmquydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmquydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmquydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlytaikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlytaikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlytaikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\bangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\bangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\bangdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\khoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\khoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\khoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\hocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\hocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\hocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\quydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\quydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\quydinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\phieughidanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\phieughidanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\phieughidanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\lophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\lophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\lophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\loainv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\loainv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\loainv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\loaihv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\loaihv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\loaihv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\DevCenterManager\\entity\\modals\\chitiettrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\entity\\modals\\chitiettrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F513A3D8-D598-4CE7-9556-2D4245746B9C}|Entity\\Entity.csproj|solutionrelative:entity\\modals\\chitiettrungtam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlykhoahoc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlykhoahoc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlykhoahoc.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\globalpages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\globalpages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\globalpages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlygiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlygiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlygiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmtiepnhanhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmtiepnhanhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmtiepnhanhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmhocvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmhocvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmhocvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{53B233FD-D222-4187-8721-096B689C0253}|BusinessLogic\\BusinessLogic.csproj|E:\\a43082\\DevCenterManager\\businesslogic\\globalsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{53B233FD-D222-4187-8721-096B689C0253}|BusinessLogic\\BusinessLogic.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\businesslogic\\globalsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{53B233FD-D222-4187-8721-096B689C0253}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\globalsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlykhoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlykhoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlykhoahoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmgiangvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmgiangvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmgiangvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\modals\\frmhocvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\modals\\frmhocvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\frmhocvienedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlynhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlylophoc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\DevCenterManager\\devedumanager\\screens\\frmquanlygiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlygiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlygiangvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\a43082\\DevCenterManager\\BusinessLogic\\HocVien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -298,67 +313,120 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "frmMain.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\frmMain.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.cs",
               "RelativeDocumentMoniker": "DevEduManager\\frmMain.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\frmMain.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.cs",
               "RelativeToolTip": "DevEduManager\\frmMain.cs",
               "ViewState": "AgIAABcCAAAAAAAAAAAewDUCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:03:52.823Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmDangNhap.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmDangNhap.cs",
-              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDangNhap.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmDangNhap.cs",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmDangNhap.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAApwGUAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T02:45:19.129Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmDangNhap.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmDangNhap.cs",
-              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDangNhap.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmDangNhap.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmDangNhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T04:12:06.624Z"
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "frmMain.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\frmMain.cs",
-              "RelativeDocumentMoniker": "DevEduManager\\frmMain.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\frmMain.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\frmMain.cs [Design]",
+              "Title": "frmDangNhap.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDangNhap.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDangNhap.cs",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmDangNhap.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T09:16:17.343Z"
+              "WhenOpened": "2025-01-02T02:45:19.129Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
+              "Title": "ucThoiKhoaBieuThang.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\ucThoiKhoaBieuThang.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\Modals\\ucThoiKhoaBieuThang.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\ucThoiKhoaBieuThang.cs",
+              "RelativeToolTip": "DevEduManager\\Modals\\ucThoiKhoaBieuThang.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T03:29:18.196Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmThoiKhoaBieu.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAjwCgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T03:28:16.777Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmThoiKhoaBieu.Designer.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAADwvy4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T03:54:01.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmThoiKhoaBieu.cs [Design]",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs [Design]",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T03:24:32.446Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "frmDangNhap.cs [Design]",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDangNhap.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDangNhap.cs [Design]",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmDangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T04:12:06.624Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmMain.cs [Design]",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\frmMain.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.cs [Design]",
+              "RelativeToolTip": "DevEduManager\\frmMain.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T09:16:17.343Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "frmTrangMoDau.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmTrangMoDau.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTrangMoDau.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTrangMoDau.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmTrangMoDau.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTrangMoDau.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmTrangMoDau.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAcwCAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -366,35 +434,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Program.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Program.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Program.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Program.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Program.cs",
               "RelativeToolTip": "DevEduManager\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T04:13:32.335Z"
+              "WhenOpened": "2025-01-02T04:13:32.335Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "frmMain.Designer.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\frmMain.Designer.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\frmMain.Designer.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\frmMain.Designer.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.Designer.cs",
               "RelativeToolTip": "DevEduManager\\frmMain.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T06:19:10.236Z"
+              "WhenOpened": "2025-01-02T06:19:10.236Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "frmQuanLyHocVien.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyHocVien.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocVien.cs [Design]",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocVien.cs [Design]",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyHocVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:03:52.811Z",
@@ -402,35 +472,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "frmQuanLyHocVien.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyHocVien.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocVien.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocVien.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyHocVien.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwCwAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:03:52.809Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "frmMessageDialog.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmMessageDialog.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmMessageDialog.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmMessageDialog.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmMessageDialog.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Modals\\frmMessageDialog.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Modals\\frmMessageDialog.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-20T07:49:29.076Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "frmMessageDialog.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmMessageDialog.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmMessageDialog.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmMessageDialog.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmMessageDialog.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmMessageDialog.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmMessageDialog.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -438,23 +508,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "App.config",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\App.config",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\App.config",
               "RelativeDocumentMoniker": "DevEduManager\\App.config",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\App.config",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\App.config",
               "RelativeToolTip": "DevEduManager\\App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-12-30T09:11:07.269Z"
+              "WhenOpened": "2024-12-30T09:11:07.269Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "frmKetNoiCSDL.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmKetNoiCSDL.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmKetNoiCSDL.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmKetNoiCSDL.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmKetNoiCSDL.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmKetNoiCSDL.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmKetNoiCSDL.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAMwF4AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -462,22 +533,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "frmKetNoiCSDL.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmKetNoiCSDL.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmKetNoiCSDL.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmKetNoiCSDL.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmKetNoiCSDL.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Modals\\frmKetNoiCSDL.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Modals\\frmKetNoiCSDL.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-20T04:41:23.143Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "CallAPI.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\CallAPI.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\CallAPI.cs",
               "RelativeDocumentMoniker": "DevEduManager\\CallAPI.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\CallAPI.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\CallAPI.cs",
               "RelativeToolTip": "DevEduManager\\CallAPI.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -485,45 +556,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 75,
               "Title": "HocVien.cs",
               "DocumentMoniker": "E:\\a43082\\DevCenterManager\\BusinessLogic\\HocVien.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\HocVien.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\DevCenterManager\\BusinessLogic\\HocVien.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\BusinessLogic\\HocVien.cs",
-              "RelativeToolTip": "BusinessLogic\\HocVien.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\BusinessLogic\\HocVien.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:11:34.389Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "frmTiepNhanHocVien.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmTiepNhanHocVien.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:03:52.806Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "Logo2_1.png -  [English (United States)] - PNG [1093x506, 32 bit, PNG]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Resources\\Logo2_1.png",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Resources\\Logo2_1.png",
               "RelativeDocumentMoniker": "DevEduManager\\Resources\\Logo2_1.png",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Resources\\Logo2_1.png -  [English (United States)] - PNG [1093x506, 32 bit, PNG]",
-              "RelativeToolTip": "DevEduManager\\Resources\\Logo2_1.png -  [English (United States)] - PNG [1093x506, 32 bit, PNG]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Resources\\Logo2_1.png -  [English (United States)] - PNG [1093x506, 32 bit, PNG]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
               "WhenOpened": "2025-01-20T04:03:07.758Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Resources.Designer.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Properties\\Resources.Designer.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Properties\\Resources.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Properties\\Resources.Designer.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Properties\\Resources.Designer.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Properties\\Resources.Designer.cs",
               "RelativeToolTip": "DevEduManager\\Properties\\Resources.Designer.cs",
               "ViewState": "AgIAACgCAAAAAAAAAAAIwD0CAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -531,33 +601,34 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "frmQuanLyKhoaHoc.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs [Design]",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs [Design]",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:03:52.816Z"
+              "WhenOpened": "2024-12-30T09:03:52.816Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "frmQuanLyDonTu.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyDonTu.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyDonTu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyDonTu.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyDonTu.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyDonTu.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyDonTu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-06T09:16:10.637Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Common.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Common.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Common.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Common.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Common.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Common.cs",
               "RelativeToolTip": "DevEduManager\\Common.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -565,22 +636,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Form1.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Form1.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Form1.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Form1.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Form1.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-02T08:36:23.336Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "frmQuyDinh.Designer.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmQuyDinh.Designer.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmQuyDinh.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmQuyDinh.Designer.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmQuyDinh.Designer.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmQuyDinh.Designer.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmQuyDinh.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -588,22 +659,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 36,
               "Title": "frmCacLopDaHoc.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmCacLopDaHoc.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmCacLopDaHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmCacLopDaHoc.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmCacLopDaHoc.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmCacLopDaHoc.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmCacLopDaHoc.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-06T09:00:56.096Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "frmQuanLyHocPhi.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -611,22 +682,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "frmBangDiem.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmBangDiem.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmBangDiem.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmBangDiem.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmBangDiem.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmBangDiem.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmBangDiem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-16T08:46:19.028Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "frmBangDiem.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmBangDiem.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmBangDiem.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmBangDiem.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmBangDiem.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmBangDiem.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmBangDiem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -634,11 +705,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "frmDonTuEdit.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmDonTuEdit.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmDonTuEdit.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmDonTuEdit.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmDonTuEdit.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmDonTuEdit.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmDonTuEdit.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -646,11 +717,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "frmDonTuEdit.Designer.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmDonTuEdit.Designer.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmDonTuEdit.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmDonTuEdit.Designer.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmDonTuEdit.Designer.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmDonTuEdit.Designer.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmDonTuEdit.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -658,11 +729,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "frmQuyDinh.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmQuyDinh.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmQuyDinh.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmQuyDinh.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmQuyDinh.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmQuyDinh.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmQuyDinh.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -670,11 +741,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 35,
               "Title": "frmQuanLyDonTu.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyDonTu.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyDonTu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyDonTu.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyDonTu.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyDonTu.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyDonTu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -682,11 +753,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 33,
               "Title": "frmDonTu.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmDonTu.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDonTu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDonTu.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmDonTu.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDonTu.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmDonTu.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -694,33 +765,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 34,
               "Title": "frmDonTu.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmDonTu.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDonTu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDonTu.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmDonTu.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmDonTu.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmDonTu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-06T09:23:32.544Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 37,
               "Title": "frmQuanLyHocPhi.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyHocPhi.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T06:12:31.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 38,
               "Title": "frmCacLopDaHoc.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmCacLopDaHoc.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmCacLopDaHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmCacLopDaHoc.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmCacLopDaHoc.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmCacLopDaHoc.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmCacLopDaHoc.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -728,22 +799,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 39,
               "Title": "frmXepLop.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmXepLop.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmXepLop.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmXepLop.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmXepLop.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmXepLop.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmXepLop.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-06T09:00:47.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 44,
               "Title": "frmThongTinTrungTam.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThongTinTrungTam.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThongTinTrungTam.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThongTinTrungTam.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThongTinTrungTam.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThongTinTrungTam.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmThongTinTrungTam.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -751,22 +822,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 43,
               "Title": "frmThongTinTrungTam.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThongTinTrungTam.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThongTinTrungTam.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThongTinTrungTam.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThongTinTrungTam.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Modals\\frmThongTinTrungTam.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Modals\\frmThongTinTrungTam.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T06:23:22.909Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 42,
               "Title": "GiangVien.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\GiangVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\GiangVien.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\GiangVien.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\GiangVien.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\GiangVien.cs",
               "RelativeToolTip": "Entity\\Modals\\GiangVien.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -774,11 +845,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 41,
               "Title": "GiangDay.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\GiangDay.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\GiangDay.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\GiangDay.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\GiangDay.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\GiangDay.cs",
               "RelativeToolTip": "Entity\\Modals\\GiangDay.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -786,33 +857,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 45,
               "Title": "frmThongTinPhanMem.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThongTinPhanMem.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThongTinPhanMem.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThongTinPhanMem.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThongTinPhanMem.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Modals\\frmThongTinPhanMem.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Modals\\frmThongTinPhanMem.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T08:16:42.076Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 40,
               "Title": "frmTrangMoDau.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmTrangMoDau.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTrangMoDau.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTrangMoDau.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmTrangMoDau.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmTrangMoDau.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmTrangMoDau.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:10:28.317Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 46,
               "Title": "frmThayDoiThongTinNV.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -820,33 +891,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 47,
               "Title": "frmThayDoiThongTinNV.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Modals\\frmThayDoiThongTinNV.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T08:16:42.953Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 48,
               "Title": "frmQuyDinh.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmQuyDinh.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmQuyDinh.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmQuyDinh.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmQuyDinh.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Modals\\frmQuyDinh.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Modals\\frmQuyDinh.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T06:25:42.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 60,
               "Title": "ChiTietTrungTam.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\ChiTietTrungTam.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\ChiTietTrungTam.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\ChiTietTrungTam.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\ChiTietTrungTam.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\ChiTietTrungTam.cs",
               "RelativeToolTip": "Entity\\Modals\\ChiTietTrungTam.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -854,11 +925,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 52,
               "Title": "KhoaHoc.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\KhoaHoc.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\KhoaHoc.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\KhoaHoc.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\KhoaHoc.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\KhoaHoc.cs",
               "RelativeToolTip": "Entity\\Modals\\KhoaHoc.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -866,11 +937,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 51,
               "Title": "BangDiem.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\BangDiem.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\BangDiem.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\BangDiem.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\BangDiem.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\BangDiem.cs",
               "RelativeToolTip": "Entity\\Modals\\BangDiem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -878,11 +949,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 50,
               "Title": "NhanVien.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\NhanVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\NhanVien.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\NhanVien.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\NhanVien.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\NhanVien.cs",
               "RelativeToolTip": "Entity\\Modals\\NhanVien.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -890,22 +961,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 49,
               "Title": "frmQuanLyTaiKhoan.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyTaiKhoan.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyTaiKhoan.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyTaiKhoan.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyTaiKhoan.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyTaiKhoan.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyTaiKhoan.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-03T06:19:23.598Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 53,
               "Title": "HocVien.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\HocVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\HocVien.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\HocVien.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\HocVien.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\HocVien.cs",
               "RelativeToolTip": "Entity\\Modals\\HocVien.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -913,11 +984,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 59,
               "Title": "LoaiHV.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\LoaiHV.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LoaiHV.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\LoaiHV.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\LoaiHV.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LoaiHV.cs",
               "RelativeToolTip": "Entity\\Modals\\LoaiHV.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -925,11 +996,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 58,
               "Title": "LoaiNV.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\LoaiNV.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LoaiNV.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\LoaiNV.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\LoaiNV.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LoaiNV.cs",
               "RelativeToolTip": "Entity\\Modals\\LoaiNV.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -937,11 +1008,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 57,
               "Title": "LopHoc.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\LopHoc.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LopHoc.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\LopHoc.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\LopHoc.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LopHoc.cs",
               "RelativeToolTip": "Entity\\Modals\\LopHoc.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -949,11 +1020,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 56,
               "Title": "PhieuGhiDanh.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\PhieuGhiDanh.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\PhieuGhiDanh.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\PhieuGhiDanh.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\PhieuGhiDanh.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\PhieuGhiDanh.cs",
               "RelativeToolTip": "Entity\\Modals\\PhieuGhiDanh.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -961,11 +1032,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 55,
               "Title": "QuyDinh.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\QuyDinh.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\QuyDinh.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\QuyDinh.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\QuyDinh.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\QuyDinh.cs",
               "RelativeToolTip": "Entity\\Modals\\QuyDinh.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -973,11 +1044,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 54,
               "Title": "TaiKhoan.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\TaiKhoan.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\TaiKhoan.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\TaiKhoan.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\Entity\\Modals\\TaiKhoan.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\TaiKhoan.cs",
               "RelativeToolTip": "Entity\\Modals\\TaiKhoan.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -985,23 +1056,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 61,
               "Title": "frmQuanLyKhoaHoc.Designer.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.Designer.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.Designer.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.Designer.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.Designer.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.Designer.cs",
               "ViewState": "AgIAABwBAAAAAAAAAAASwCUBAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-03T02:42:46.008Z"
+              "WhenOpened": "2025-01-03T02:42:46.008Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 65,
               "Title": "frmHocVienEdit.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmHocVienEdit.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmHocVienEdit.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmHocVienEdit.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmHocVienEdit.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmHocVienEdit.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmHocVienEdit.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAwwEMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1009,11 +1081,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 62,
               "Title": "GlobalPages.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\GlobalPages.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\GlobalPages.cs",
               "RelativeDocumentMoniker": "DevEduManager\\GlobalPages.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\GlobalPages.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\GlobalPages.cs",
               "RelativeToolTip": "DevEduManager\\GlobalPages.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAIwDcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1021,11 +1093,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 64,
               "Title": "frmTiepNhanHocVien.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1033,11 +1105,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 63,
               "Title": "frmQuanLyGiangVien.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAWwC0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1045,45 +1117,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 69,
               "Title": "frmQuanLyKhoaHoc.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAYwD8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:03:52.479Z"
+              "WhenOpened": "2024-12-30T09:03:52.479Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 67,
               "Title": "frmQuanLyLopHoc.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyLopHoc.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:03:52.82Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 66,
               "Title": "frmQuanLyNhanVien.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyNhanVien.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:03:52.802Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 70,
               "Title": "frmGiangVienEdit.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmGiangVienEdit.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmGiangVienEdit.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmGiangVienEdit.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmGiangVienEdit.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmGiangVienEdit.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\frmGiangVienEdit.cs",
               "ViewState": "AgIAAMAAAAAAAAAAAAAAANUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1091,11 +1164,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 68,
               "Title": "GlobalSettings.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\BusinessLogic\\GlobalSettings.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\BusinessLogic\\GlobalSettings.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\GlobalSettings.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\BusinessLogic\\GlobalSettings.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\BusinessLogic\\GlobalSettings.cs",
               "RelativeToolTip": "BusinessLogic\\GlobalSettings.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1103,22 +1176,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 71,
               "Title": "frmHocVienEdit.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmHocVienEdit.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmHocVienEdit.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmHocVienEdit.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Modals\\frmHocVienEdit.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Modals\\frmHocVienEdit.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Modals\\frmHocVienEdit.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:03:52.798Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 72,
               "Title": "frmQuanLyNhanVien.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -1126,22 +1199,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 74,
               "Title": "frmQuanLyGiangVien.cs [Design]",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
               "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyGiangVien.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T09:03:52.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 73,
               "Title": "frmQuanLyLopHoc.cs",
-              "DocumentMoniker": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
-              "ToolTip": "E:\\a43082\\DevCenterManager\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAQwC0AAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

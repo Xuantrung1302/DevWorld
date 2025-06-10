@@ -3,35 +3,51 @@
   "WorkspaceRootPath": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\screens\\frmthoikhoabieu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmthoikhoabieu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmthoikhoabieu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\modals\\ucthoikhoabieuthang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\modals\\ucthoikhoabieuthang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D0CFECB-6BE1-46D3-BAD4-B8ABB2C7D7EA}|WaitWnd\\WaitWnd.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\waitwnd\\waitwndfun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D0CFECB-6BE1-46D3-BAD4-B8ABB2C7D7EA}|WaitWnd\\WaitWnd.csproj|solutionrelative:waitwnd\\waitwndfun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D0CFECB-6BE1-46D3-BAD4-B8ABB2C7D7EA}|WaitWnd\\WaitWnd.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\waitwnd\\waitform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0D0CFECB-6BE1-46D3-BAD4-B8ABB2C7D7EA}|WaitWnd\\WaitWnd.csproj|solutionrelative:waitwnd\\waitform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D0CFECB-6BE1-46D3-BAD4-B8ABB2C7D7EA}|WaitWnd\\WaitWnd.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\waitwnd\\waitform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D0CFECB-6BE1-46D3-BAD4-B8ABB2C7D7EA}|WaitWnd\\WaitWnd.csproj|solutionrelative:waitwnd\\waitform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D0CFECB-6BE1-46D3-BAD4-B8ABB2C7D7EA}|WaitWnd\\WaitWnd.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\waitwnd\\waitform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D0CFECB-6BE1-46D3-BAD4-B8ABB2C7D7EA}|WaitWnd\\WaitWnd.csproj|solutionrelative:waitwnd\\waitform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmthoikhoabieu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmthoikhoabieu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|e:\\a43082\\\u0111\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\devworld\\devworld\\devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1690343C-D6EC-4526-B87C-A2441B95ABBF}|DevEduManager\\DevEduManager.csproj|solutionrelative:devedumanager\\screens\\frmquanlyhocvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -313,11 +329,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "frmMain.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.cs",
               "RelativeDocumentMoniker": "DevEduManager\\frmMain.cs",
@@ -331,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "frmDangNhap.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDangNhap.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDangNhap.cs",
@@ -340,18 +356,17 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-02T02:45:19.129Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ucThoiKhoaBieuThang.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\ucThoiKhoaBieuThang.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\ucThoiKhoaBieuThang.cs",
               "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\ucThoiKhoaBieuThang.cs",
               "RelativeToolTip": "DevEduManager\\Modals\\ucThoiKhoaBieuThang.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowAsAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T03:29:18.196Z",
               "IsPinned": true,
@@ -363,9 +378,9 @@
               "Title": "frmThoiKhoaBieu.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
-              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAjwCgAAAAJAAAAAAAAAA==",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs*",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs*",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvwgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T03:28:16.777Z",
               "IsPinned": true,
@@ -373,44 +388,81 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmThoiKhoaBieu.Designer.cs",
-              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
-              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
-              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAADwvy4AAAAqAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "WaitWndFun.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\WaitWnd\\WaitWndFun.cs",
+              "RelativeDocumentMoniker": "WaitWnd\\WaitWndFun.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\WaitWnd\\WaitWndFun.cs",
+              "RelativeToolTip": "WaitWnd\\WaitWndFun.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T03:54:01.106Z",
+              "WhenOpened": "2025-06-10T04:44:26.616Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "frmThoiKhoaBieu.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs",
-              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs [Design]",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs [Design]",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.cs [Design]*",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T03:24:32.446Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 4,
+              "Title": "WaitForm.cs [Design]",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\WaitWnd\\WaitForm.cs",
+              "RelativeDocumentMoniker": "WaitWnd\\WaitForm.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\WaitWnd\\WaitForm.cs [Design]",
+              "RelativeToolTip": "WaitWnd\\WaitForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T04:47:08.678Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WaitForm.Designer.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\WaitWnd\\WaitForm.Designer.cs",
+              "RelativeDocumentMoniker": "WaitWnd\\WaitForm.Designer.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\WaitWnd\\WaitForm.Designer.cs",
+              "RelativeToolTip": "WaitWnd\\WaitForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T06:08:00.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WaitForm.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\WaitWnd\\WaitForm.cs",
+              "RelativeDocumentMoniker": "WaitWnd\\WaitForm.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\WaitWnd\\WaitForm.cs",
+              "RelativeToolTip": "WaitWnd\\WaitForm.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T04:47:33.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "frmDangNhap.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDangNhap.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDangNhap.cs",
               "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDangNhap.cs [Design]",
               "RelativeToolTip": "DevEduManager\\Screens\\frmDangNhap.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-20T04:12:06.624Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-01-20T04:12:06.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.cs",
               "RelativeDocumentMoniker": "DevEduManager\\frmMain.cs",
@@ -422,19 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "frmTrangMoDau.cs",
-              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTrangMoDau.cs",
-              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTrangMoDau.cs",
-              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTrangMoDau.cs",
-              "RelativeToolTip": "DevEduManager\\Screens\\frmTrangMoDau.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T04:12:42.532Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Program.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Program.cs",
@@ -447,7 +487,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 8,
+              "Title": "frmThoiKhoaBieu.Designer.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs*",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmThoiKhoaBieu.Designer.cs*",
+              "ViewState": "AgIAABMAAAAAAAAAAAAswDkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T03:54:01.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "frmTrangMoDau.cs",
+              "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTrangMoDau.cs",
+              "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTrangMoDau.cs",
+              "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTrangMoDau.cs",
+              "RelativeToolTip": "DevEduManager\\Screens\\frmTrangMoDau.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAcwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-02T04:12:42.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "frmMain.Designer.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\frmMain.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\frmMain.Designer.cs",
@@ -460,19 +525,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "frmQuanLyHocVien.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyHocVien.cs",
               "ToolTip": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocVien.cs [Design]",
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyHocVien.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:03:52.811Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-12-30T09:03:52.811Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "frmQuanLyHocVien.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyHocVien.cs",
@@ -480,12 +544,11 @@
               "RelativeToolTip": "DevEduManager\\Screens\\frmQuanLyHocVien.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwCMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T09:03:52.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-30T09:03:52.809Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "frmMessageDialog.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmMessageDialog.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmMessageDialog.cs",
@@ -496,7 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "frmMessageDialog.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmMessageDialog.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmMessageDialog.cs",
@@ -508,7 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "App.config",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\App.config",
               "RelativeDocumentMoniker": "DevEduManager\\App.config",
@@ -521,7 +584,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "frmKetNoiCSDL.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmKetNoiCSDL.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmKetNoiCSDL.cs",
@@ -533,7 +596,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "frmKetNoiCSDL.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmKetNoiCSDL.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmKetNoiCSDL.cs",
@@ -544,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "CallAPI.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\CallAPI.cs",
               "RelativeDocumentMoniker": "DevEduManager\\CallAPI.cs",
@@ -556,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 79,
               "Title": "HocVien.cs",
               "DocumentMoniker": "E:\\a43082\\DevCenterManager\\BusinessLogic\\HocVien.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\DevCenterManager\\BusinessLogic\\HocVien.cs",
@@ -567,7 +630,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "frmTiepNhanHocVien.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
@@ -578,7 +641,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "Logo2_1.png -  [English (United States)] - PNG [1093x506, 32 bit, PNG]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Resources\\Logo2_1.png",
               "RelativeDocumentMoniker": "DevEduManager\\Resources\\Logo2_1.png",
@@ -589,7 +652,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "Resources.Designer.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Properties\\Resources.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Properties\\Resources.Designer.cs",
@@ -601,7 +664,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "frmQuanLyKhoaHoc.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
@@ -613,7 +676,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "frmQuanLyDonTu.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyDonTu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyDonTu.cs",
@@ -624,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "Common.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Common.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Common.cs",
@@ -636,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Form1.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Form1.cs",
@@ -647,7 +710,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "frmQuyDinh.Designer.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmQuyDinh.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmQuyDinh.Designer.cs",
@@ -659,7 +722,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "frmCacLopDaHoc.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmCacLopDaHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmCacLopDaHoc.cs",
@@ -670,7 +733,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "frmQuanLyHocPhi.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
@@ -682,7 +745,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "frmBangDiem.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmBangDiem.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmBangDiem.cs",
@@ -693,7 +756,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "frmBangDiem.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmBangDiem.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmBangDiem.cs",
@@ -705,7 +768,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "frmDonTuEdit.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmDonTuEdit.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmDonTuEdit.cs",
@@ -717,7 +780,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "frmDonTuEdit.Designer.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmDonTuEdit.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmDonTuEdit.Designer.cs",
@@ -729,7 +792,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "frmQuyDinh.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmQuyDinh.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmQuyDinh.cs",
@@ -741,7 +804,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "frmQuanLyDonTu.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyDonTu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyDonTu.cs",
@@ -753,7 +816,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "frmDonTu.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDonTu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDonTu.cs",
@@ -765,7 +828,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 38,
               "Title": "frmDonTu.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmDonTu.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmDonTu.cs",
@@ -776,7 +839,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "frmQuanLyHocPhi.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyHocPhi.cs",
@@ -787,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 42,
               "Title": "frmCacLopDaHoc.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmCacLopDaHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmCacLopDaHoc.cs",
@@ -799,7 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 43,
               "Title": "frmXepLop.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmXepLop.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmXepLop.cs",
@@ -810,7 +873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 48,
               "Title": "frmThongTinTrungTam.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThongTinTrungTam.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThongTinTrungTam.cs",
@@ -822,7 +885,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 47,
               "Title": "frmThongTinTrungTam.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThongTinTrungTam.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThongTinTrungTam.cs",
@@ -833,7 +896,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "GiangVien.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\GiangVien.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\GiangVien.cs",
@@ -845,7 +908,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "GiangDay.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\GiangDay.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\GiangDay.cs",
@@ -857,7 +920,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 49,
               "Title": "frmThongTinPhanMem.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThongTinPhanMem.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThongTinPhanMem.cs",
@@ -868,7 +931,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 44,
               "Title": "frmTrangMoDau.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTrangMoDau.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTrangMoDau.cs",
@@ -879,7 +942,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 50,
               "Title": "frmThayDoiThongTinNV.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
@@ -891,7 +954,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 51,
               "Title": "frmThayDoiThongTinNV.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmThayDoiThongTinNV.cs",
@@ -902,7 +965,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 52,
               "Title": "frmQuyDinh.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmQuyDinh.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmQuyDinh.cs",
@@ -913,7 +976,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 64,
               "Title": "ChiTietTrungTam.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\ChiTietTrungTam.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\ChiTietTrungTam.cs",
@@ -925,7 +988,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 56,
               "Title": "KhoaHoc.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\KhoaHoc.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\KhoaHoc.cs",
@@ -937,7 +1000,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 55,
               "Title": "BangDiem.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\BangDiem.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\BangDiem.cs",
@@ -949,7 +1012,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 54,
               "Title": "NhanVien.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\NhanVien.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\NhanVien.cs",
@@ -961,7 +1024,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 53,
               "Title": "frmQuanLyTaiKhoan.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyTaiKhoan.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyTaiKhoan.cs",
@@ -972,7 +1035,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 57,
               "Title": "HocVien.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\HocVien.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\HocVien.cs",
@@ -984,7 +1047,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 63,
               "Title": "LoaiHV.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LoaiHV.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\LoaiHV.cs",
@@ -996,7 +1059,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 62,
               "Title": "LoaiNV.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LoaiNV.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\LoaiNV.cs",
@@ -1008,7 +1071,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 61,
               "Title": "LopHoc.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\LopHoc.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\LopHoc.cs",
@@ -1020,7 +1083,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 60,
               "Title": "PhieuGhiDanh.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\PhieuGhiDanh.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\PhieuGhiDanh.cs",
@@ -1032,7 +1095,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 59,
               "Title": "QuyDinh.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\QuyDinh.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\QuyDinh.cs",
@@ -1044,7 +1107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 58,
               "Title": "TaiKhoan.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\Entity\\Modals\\TaiKhoan.cs",
               "RelativeDocumentMoniker": "Entity\\Modals\\TaiKhoan.cs",
@@ -1056,7 +1119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 65,
               "Title": "frmQuanLyKhoaHoc.Designer.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.Designer.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.Designer.cs",
@@ -1069,7 +1132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 69,
               "Title": "frmHocVienEdit.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmHocVienEdit.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmHocVienEdit.cs",
@@ -1081,7 +1144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 66,
               "Title": "GlobalPages.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\GlobalPages.cs",
               "RelativeDocumentMoniker": "DevEduManager\\GlobalPages.cs",
@@ -1093,7 +1156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 68,
               "Title": "frmTiepNhanHocVien.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmTiepNhanHocVien.cs",
@@ -1105,7 +1168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 67,
               "Title": "frmQuanLyGiangVien.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
@@ -1117,7 +1180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 73,
               "Title": "frmQuanLyKhoaHoc.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyKhoaHoc.cs",
@@ -1130,7 +1193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 71,
               "Title": "frmQuanLyLopHoc.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
@@ -1141,7 +1204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 70,
               "Title": "frmQuanLyNhanVien.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
@@ -1152,7 +1215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 74,
               "Title": "frmGiangVienEdit.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmGiangVienEdit.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmGiangVienEdit.cs",
@@ -1164,7 +1227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 72,
               "Title": "GlobalSettings.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\BusinessLogic\\GlobalSettings.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\GlobalSettings.cs",
@@ -1176,7 +1239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 75,
               "Title": "frmHocVienEdit.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Modals\\frmHocVienEdit.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Modals\\frmHocVienEdit.cs",
@@ -1187,7 +1250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 76,
               "Title": "frmQuanLyNhanVien.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyNhanVien.cs",
@@ -1199,7 +1262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 78,
               "Title": "frmQuanLyGiangVien.cs [Design]",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyGiangVien.cs",
@@ -1210,7 +1273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 77,
               "Title": "frmQuanLyLopHoc.cs",
               "DocumentMoniker": "E:\\a43082\\\u0110\u1ED3 \u00E1n t\u1ED1t nghi\u1EC7p\\DevWorld\\DevWorld\\DevEduManager\\Screens\\frmQuanLyLopHoc.cs",
               "RelativeDocumentMoniker": "DevEduManager\\Screens\\frmQuanLyLopHoc.cs",

@@ -595,6 +595,10 @@
       <Project>{f513a3d8-d598-4ce7-9556-2d4245746b9c}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WaitWnd\WaitWnd.csproj">
+      <Project>{0d0cfecb-6be1-46d3-bad4-b8abb2c7d7ea}</Project>
+      <Name>WaitWnd</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

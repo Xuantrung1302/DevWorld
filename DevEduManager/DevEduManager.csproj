@@ -320,6 +320,12 @@
     <Compile Include="Screens\frmQuanLyTaiKhoan.Designer.cs">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmTaoThoiKhoaBieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmTaoThoiKhoaBieu.Designer.cs">
+      <DependentUpon>frmTaoThoiKhoaBieu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmThoiKhoaBieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -476,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmTaoThoiKhoaBieu.resx">
+      <DependentUpon>frmTaoThoiKhoaBieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmThoiKhoaBieu.resx">
       <DependentUpon>frmThoiKhoaBieu.cs</DependentUpon>

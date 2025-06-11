@@ -29,7 +29,7 @@ namespace DevEduManager.Screens
             { new DateTime(2025, 7, 6), 3 }
         };
 
-            var uc = new ucThoiKhoaBieuThang(tkbData);
+            var uc = new ucThoiKhoaBieuThang(tkbData, txtCalendar, btnPrev, btnNext);
             uc.Dock = DockStyle.Fill;
             panel1.Controls.Clear();
             panel1.Controls.Add(uc);

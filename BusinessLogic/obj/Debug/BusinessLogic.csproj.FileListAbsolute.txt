@@ -1,2 +1,8 @@
 E:\a43082\DevCenterManager\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
 E:\a43082\DevCenterManager\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\bin\Debug\BusinessLogic.dll
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\bin\Debug\BusinessLogic.pdb
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.dll
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.pdb

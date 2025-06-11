@@ -84,11 +84,11 @@ namespace DevEduManager
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
         }
-        private void btnQuanLyKhoaHoc_Click(object sender, EventArgs e)
+        private void btnQuanLyKyHoc_Click(object sender, EventArgs e)
         {
             pnlWorkspace.Controls.Clear();
 
-            frmQuanLyKhoaHoc frm = new frmQuanLyKhoaHoc()
+            frmQuanLyKiHoc frm = new frmQuanLyKiHoc()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -421,7 +421,7 @@ namespace DevEduManager
                         btnQuanLyNhanVien.Enabled = false;
                         btnQuanLyGiangVien.Enabled = false;
                         btnQuanLyLopHoc.Enabled = false;
-                        btnQuanLyKhoaHoc.Enabled = false;
+                        btnQuanLyKyHoc.Enabled = false;
                         btnQuanLyTaiKhoan.Enabled = false;
                         btnThayDoiQuyDinh.Enabled = false;
                         btnKetNoiCSDL.Enabled = false;

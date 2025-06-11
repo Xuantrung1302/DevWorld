@@ -57,7 +57,7 @@
             this.btnQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanLyGiangVien = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanLyLopHoc = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnQuanLyKhoaHoc = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnQuanLyKyHoc = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanLyHocPhi = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThayDoiQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
@@ -397,7 +397,7 @@
             this.btnQuanLyNhanVien,
             this.btnQuanLyGiangVien,
             this.btnQuanLyLopHoc,
-            this.btnQuanLyKhoaHoc,
+            this.btnQuanLyKyHoc,
             this.btnQuanLyHocPhi,
             this.btnQuanLyTaiKhoan,
             this.btnThayDoiQuyDinh,
@@ -450,14 +450,14 @@
             this.btnQuanLyLopHoc.Text = "Quản lý lớp học";
             this.btnQuanLyLopHoc.Click += new System.EventHandler(this.btnQuanLyLopHoc_Click);
             // 
-            // btnQuanLyKhoaHoc
+            // btnQuanLyKyHoc
             // 
-            this.btnQuanLyKhoaHoc.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnQuanLyKhoaHoc.Name = "btnQuanLyKhoaHoc";
-            this.btnQuanLyKhoaHoc.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnQuanLyKhoaHoc.Size = new System.Drawing.Size(242, 32);
-            this.btnQuanLyKhoaHoc.Text = "Quản lý khóa học";
-            this.btnQuanLyKhoaHoc.Click += new System.EventHandler(this.btnQuanLyKhoaHoc_Click);
+            this.btnQuanLyKyHoc.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnQuanLyKyHoc.Name = "btnQuanLyKyHoc";
+            this.btnQuanLyKyHoc.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnQuanLyKyHoc.Size = new System.Drawing.Size(242, 32);
+            this.btnQuanLyKyHoc.Text = "Quản lý kỳ học";
+            this.btnQuanLyKyHoc.Click += new System.EventHandler(this.btnQuanLyKyHoc_Click);
             // 
             // btnQuanLyHocPhi
             // 
@@ -854,7 +854,7 @@
         private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem japanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DemoScreen;
-        private System.Windows.Forms.ToolStripMenuItem btnQuanLyKhoaHoc;
+        private System.Windows.Forms.ToolStripMenuItem btnQuanLyKyHoc;
         private System.Windows.Forms.ToolStripMenuItem btnQuanLyHocPhi;
         private System.Windows.Forms.ToolStripMenuItem btnQuanLyTaiKhoan;
         private System.Windows.Forms.ToolStripMenuItem btnThayDoiQuyDinh;

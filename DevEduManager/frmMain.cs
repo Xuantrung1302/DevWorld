@@ -377,13 +377,13 @@ namespace DevEduManager
         /// </summary>
         /// <param name="userType">Mã loại nhân viên</param>
         /// <param name="userType2">Mã loại học viên</param>
-        public void PhanQuyen(string maLoaiNV, string maLoaiHV)
+        public void PhanQuyen(string role)
         {
-            if (!string.IsNullOrEmpty(maLoaiNV))
+            if (!string.IsNullOrEmpty(role))
             {
-                switch (maLoaiNV)
+                switch (role)
                 {
-                    case "LNV01": // Nhân viên ghi danh
+                    case "Enrollment Staff": // Nhân viên ghi danh
                         btnGiangVienTitle.Visible = false;
                         btnHocVienTitle.Visible = false;
                         btnQuanTriTitle.Visible = false;
@@ -393,7 +393,8 @@ namespace DevEduManager
                         btnXepLop.Enabled = false;
                         btnNhanVienTitle_Click(btnNhanVienTitle, null);
                         break;
-                    case "LNV02": // Nhân viên học vụ
+
+                    case "Academic Staff": // Nhân viên học vụ
                         btnGiangVienTitle.Visible = false;
                         btnHocVienTitle.Visible = false;
                         btnTiepNhanHocVien.Enabled = false;
@@ -408,7 +409,8 @@ namespace DevEduManager
                         btnThongTinTrungTam.Enabled = false;
                         btnNhanVienTitle_Click(btnNhanVienTitle, null);
                         break;
-                    case "LNV03": // Nhân viên kế toán
+
+                    case "Accounting Staff": // Nhân viên kế toán
                         btnGiangVienTitle.Visible = false;
                         btnHocVienTitle.Visible = false;
                         btnTiepNhanHocVien.Enabled = false;
@@ -428,16 +430,23 @@ namespace DevEduManager
                         btnThongTinTrungTam.Enabled = false;
                         btnNhanVienTitle_Click(btnNhanVienTitle, null);
                         break;
-                    default:
+
+                    case "Administrator": // Quản trị viên
                         btnHocVienTitle.Visible = false;
                         btnGiangVienTitle.Visible = false;
                         btnQuanTriTitle_Click_1(btnQuanTriTitle, null);
                         break;
+
+                    case "Teacher": // Giảng viên
+                        btnNhanVienTitle.Visible = false;
+                        btnQuanTriTitle.Visible = false;
+                        btnHocVienTitle.Visible = false;
+                        btnGiangVienTitle_Click_1(btnGiangVienTitle, null);
+                        break;
                 }
             }
-            else if (!string.IsNullOrEmpty(maLoaiHV))
+            else if (role == "Student") // Nếu là học viên
             {
-                // Nếu là học viên
                 btnNhanVienTitle.Visible = false;
                 btnQuanTriTitle.Visible = false;
                 btnGiangVienTitle.Visible = false;
@@ -445,7 +454,7 @@ namespace DevEduManager
             }
             else
             {
-                // Nếu là giảng viên hoặc khác
+                // Trường hợp khác (nếu có), mặc định ẩn các nút không liên quan
                 btnNhanVienTitle.Visible = false;
                 btnQuanTriTitle.Visible = false;
                 btnHocVienTitle.Visible = false;
@@ -459,21 +468,11 @@ namespace DevEduManager
         /// </summary>
         public void LoadGiaoDien(DataTable userName)
         {
-            lblUserName.Text = "Xin chào, " + userName.Rows[0]["TenDangNhap"].ToString();
+            lblUserName.Text = "Xin chào, " + userName.Rows[0]["Username"].ToString();
             ResetRibbonControlStatus();
-            string maLoaiNV = userName.Rows[0]["MaLoaiNV"].ToString();
-            string maLoaiHV = userName.Rows[0]["MaLoaiHV"].ToString();
-            //lblUserName.Text = GlobalSettings.UserName;
+            string role = userName.Rows[0]["Role"].ToString();
 
-            PhanQuyen(maLoaiNV, maLoaiHV);
-            //pnlWorkspace.Controls.Clear();
-
-            //if (GlobalSettings.UserType == UserType.NhanVien)
-            //    GlobalPages.LoadEssentialPages();
-
-            //GlobalSettings.LoadCenterInformation();
-            //GlobalSettings.LoadQuyDinh();
-
+            PhanQuyen(role);
             btnTrangMoDau_Click(null, null);
         }
 

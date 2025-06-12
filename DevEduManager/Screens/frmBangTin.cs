@@ -37,11 +37,11 @@ namespace DevEduManager.Screens
                 else
                 {
                     // Hiển thị danh sách bài đăng, sắp xếp theo ngày giảm dần (mới nhất lên đầu)
-                    var sortedPosts = ds.OrderByDescending(p => p.CreateDate).ToList();
+                    var sortedPosts = ds.OrderByDescending(p => p.PostDate).ToList();
                     foreach (var post in sortedPosts)
                     {
                         string formattedContent = post.Content.Replace("\n", "<br>");
-                        string formattedDate = post.CreateDate.ToString("yyyy-MM-dd"); // Định dạng ngày
+                        string formattedDate = post.PostDate.ToString("yyyy-MM-dd"); // Định dạng ngày
 
                         htmlContent += "<tr valign='top'>";
                         htmlContent += $"<td style='width: 350px; font-weight: bold;'>{formattedDate}</td>"; // Chỉnh độ rộng cột

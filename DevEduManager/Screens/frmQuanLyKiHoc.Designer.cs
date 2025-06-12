@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dateDenNgay = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,7 +39,7 @@
             this.chkKhoangTG = new System.Windows.Forms.CheckBox();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txtTenLop = new System.Windows.Forms.TextBox();
+            this.txtTenKy = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.chkTenLop = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,7 +68,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -85,18 +83,6 @@
             this.label1.Size = new System.Drawing.Size(103, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ KỲ HỌC";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.LightGray;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1050, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(28, 19);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // splitContainer1
             // 
@@ -116,7 +102,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.chkKhoangTG);
             this.splitContainer1.Panel1.Controls.Add(this.btnDatLai);
             this.splitContainer1.Panel1.Controls.Add(this.btnTimKiem);
-            this.splitContainer1.Panel1.Controls.Add(this.txtTenLop);
+            this.splitContainer1.Panel1.Controls.Add(this.txtTenKy);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.chkTenLop);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
@@ -216,16 +202,16 @@
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // txtTenLop
+            // txtTenKy
             // 
-            this.txtTenLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTenKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenLop.Enabled = false;
-            this.txtTenLop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTenLop.Location = new System.Drawing.Point(139, 87);
-            this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(187, 25);
-            this.txtTenLop.TabIndex = 51;
+            this.txtTenKy.Enabled = false;
+            this.txtTenKy.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtTenKy.Location = new System.Drawing.Point(139, 87);
+            this.txtTenKy.Name = "txtTenKy";
+            this.txtTenKy.Size = new System.Drawing.Size(187, 25);
+            this.txtTenKy.TabIndex = 51;
             // 
             // label4
             // 
@@ -434,7 +420,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DateTimePicker dateDenNgay;
         private System.Windows.Forms.Label label5;
@@ -443,7 +428,7 @@
         private System.Windows.Forms.CheckBox chkKhoangTG;
         private System.Windows.Forms.Button btnDatLai;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox txtTenLop;
+        private System.Windows.Forms.TextBox txtTenKy;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox chkTenLop;
         private System.Windows.Forms.Label label2;

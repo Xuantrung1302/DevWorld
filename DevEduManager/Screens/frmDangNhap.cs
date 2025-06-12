@@ -79,7 +79,7 @@ namespace DevEduManager.Screens
                 try
                 {
                     // Gọi API
-                    string url = $"{_url}dangNhap?tenDangNhap={userName}&matKhau={passWord}"; // Thay bằng URL API thực tế
+                    string url = $"{_url}dangNhap?Username={userName}&Password={passWord}"; // Thay bằng URL API thực tế
                     DataTable result = await callAPI.GetAPI(url);
 
                     // Kiểm tra kết quả

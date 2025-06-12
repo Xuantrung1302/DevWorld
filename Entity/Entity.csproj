@@ -53,6 +53,7 @@
     <Compile Include="Modals\LopHoc.cs" />
     <Compile Include="Modals\NhanVien.cs" />
     <Compile Include="Modals\PhieuGhiDanh.cs" />
+    <Compile Include="Modals\Post.cs" />
     <Compile Include="Modals\QuyDinh.cs" />
     <Compile Include="Modals\TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

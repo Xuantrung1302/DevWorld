@@ -34,9 +34,9 @@ namespace DevEduManager.Screens
 
         private void frmQuanLyHocVien_Load(object sender, EventArgs e)
         {
-            Common.LoadComboBoxLoaiHV(cboLoaiHV);
+            //Common.LoadComboBoxLoaiHV(cboLoaiHV);
             LoadDataToGridView();
-            cboLoaiHV.SelectedIndexChanged += new EventHandler(cboLoaiHV_SelectedIndexChanged);
+            //cboLoaiHV.SelectedIndexChanged += new EventHandler(cboLoaiHV_SelectedIndexChanged);
         }
 
         private async void LoadDataToGridView(string maHV = null, string tenHV = null, string gioiTinhHV = null, DateTime? dateStart = null, DateTime? dateEnd = null, string maLoaiHV = null)
@@ -48,12 +48,12 @@ namespace DevEduManager.Screens
 
                 // Lọc dữ liệu dựa trên tham số tìm kiếm
                 var filteredRows = from row in result.AsEnumerable()
-                                   where (string.IsNullOrEmpty(maLoaiHV) || row.Field<string>("MaLoaiHV").Contains(maLoaiHV)) &&
-                                         (string.IsNullOrEmpty(maHV) || row.Field<string>("MaHV").Contains(maHV)) &&
-                                         (string.IsNullOrEmpty(tenHV) || row.Field<string>("TenHV").ToLower().Contains(tenHV.ToLower())) &&
-                                         (string.IsNullOrEmpty(gioiTinhHV) || row.Field<string>("GioiTinhHV").Equals(gioiTinhHV)) &&
-                                         (dateStart is null || row.Field<DateTime>("NgayTiepNhan") >= dateStart &&
-                                         (dateEnd is null || row.Field<DateTime>("NgayTiepNhan") <= dateEnd))
+                                   //where (string.IsNullOrEmpty(maLoaiHV) || row.Field<string>("StudentID").Contains(maLoaiHV)) &&
+                                   where (string.IsNullOrEmpty(maHV) || row.Field<string>("StudentID").Contains(maHV)) &&
+                                         (string.IsNullOrEmpty(tenHV) || row.Field<string>("FullName").ToLower().Contains(tenHV.ToLower())) &&
+                                         (string.IsNullOrEmpty(gioiTinhHV) || row.Field<string>("Gender").Equals(gioiTinhHV)) &&
+                                         (dateStart is null || row.Field<DateTime>("EnrollmentDate") >= dateStart &&
+                                         (dateEnd is null || row.Field<DateTime>("EnrollmentDate") <= dateEnd))
                                    select row;
 
                 // Nếu có kết quả lọc, hiển thị trên grid
@@ -146,30 +146,51 @@ namespace DevEduManager.Screens
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (gridDSHV.SelectedRows.Count > 0)
+            try
             {
-                // Lấy dữ liệu từ hàng đang được chọn
-                DataGridViewRow selectedRow = gridDSHV.SelectedRows[0];
-                DataTable dt = ((DataTable)gridDSHV.DataSource).Clone();  // Tạo bản sao cấu trúc của DataTable
-                DataRow row = dt.NewRow();
-
-                foreach (DataGridViewCell cell in selectedRow.Cells)
+                if (gridDSHV.SelectedRows.Count > 0)
                 {
-                    row[cell.ColumnIndex] = cell.Value;
+                    DataGridViewRow selectedRow = gridDSHV.SelectedRows[0];
+                    DataTable dt = ((DataTable)gridDSHV.DataSource).Clone(); // Sao chép cấu trúc
+                    DataRow row = dt.NewRow();
+
+                    // Gán giá trị dựa trên tên cột trong DataGridView
+                    row["StudentID"] = selectedRow.Cells["clmMaHV"].Value;
+                    row["FullName"] = selectedRow.Cells["clmTenHV"].Value; // Giả sử cột Họ Tên là clmHoTen
+                    row["Gender"] = selectedRow.Cells["clmGioiTinh"].Value; // Giả sử cột Giới Tính là clmGioiTinh
+                    row["Address"] = selectedRow.Cells["clmDiaChi"].Value; // Giả sử cột Địa Chỉ là clmDiaChi
+                    row["PhoneNumber"] = selectedRow.Cells["clmSdtHV"].Value; // Giả sử cột SĐT là clmSoDienThoai
+                    row["Email"] = selectedRow.Cells["clmEmail"].Value; // Giả sử cột Email là clmEmail
+                    row["EnrollmentDate"] = selectedRow.Cells["clmNgayTiepNhan"].Value; // Giả sử cột Ngày ĐK là clmNgayDangKy
+                    row["BirthDate"] = selectedRow.Cells["clmNgaySinh"].Value; // Giả sử cột Ngày Sinh là clmNgaySinh
+                    row["Username"] = selectedRow.Cells["Username"].Value;
+                    row["Password"] = selectedRow.Cells["Password"].Value;
+                    // Xử lý BirthDate nếu cần
+                    if (row["BirthDate"] != DBNull.Value && row["BirthDate"] != null)
+                    {
+                        if (!DateTime.TryParse(row["BirthDate"].ToString(), out DateTime birthDate))
+                        {
+                            row["BirthDate"] = DBNull.Value; // Gán null nếu không hợp lệ
+                            Console.WriteLine($"Invalid BirthDate: {selectedRow.Cells["clmNgaySinh"].Value}, set to NULL");
+                        }
+                    }
+
+                    dt.Rows.Add(row);
+
+                    frmHocVienEdit frm = new frmHocVienEdit(dt);
+                    frm.Text = "Cập nhật thông tin học viên";
+                    frm.ShowDialog();
+
+                    btnXemTatCa_Click(sender, e);
                 }
-                dt.Rows.Add(row);
-
-                // Mở form sửa thông tin học viên
-                frmHocVienEdit frm = new frmHocVienEdit(dt);
-                frm.Text = "Cập nhật thông tin học viên";
-                frm.ShowDialog();
-
-                // Tải lại danh sách sau khi chỉnh sửa
-                btnXemTatCa_Click(sender, e);
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -239,7 +260,7 @@ namespace DevEduManager.Screens
                 {
                     HocVien hocVien = new HocVien()
                     {
-                        MaHV = txtMaHV.Text,
+                        StudentID = txtMaHV.Text,
                     };
 
                     string jsonData = JsonConvert.SerializeObject(hocVien);

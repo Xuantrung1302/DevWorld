@@ -90,13 +90,17 @@ namespace DevEduManager.Modals
 
                 HocVien hocVien = new HocVien()
                 {
-                    MaHV = txtMaHV.Text,
-                    TenHV = txtTenHV.Text,
-                    GioiTinhHV = cboGioiTinh.SelectedItem.ToString(), // Gán cho GioiTinhHV thay vì NgaySinh
-                    NgaySinh = DateTime.Parse(dateNgaySinh.Value.ToString()), // Chuyển đổi giá trị từ DateTimePicker
-                    DiaChi = txtDiaChi.Text,
-                    SdtHV = txtSDT.Text,
-                    EmailHV = txtEmail.Text
+                    StudentID = txtMaHV.Text,
+                    FullName = txtTenHV.Text,
+                    Gender = cboGioiTinh.SelectedItem.ToString(),
+                    BirthDate = DateTime.Parse(dateNgaySinh.Value.ToString()).Date, // Chuyển đổi giá trị từ DateTimePicker
+                    Address = txtDiaChi.Text,
+                    PhoneNumber = txtSDT.Text,
+                    Email = txtEmail.Text,
+                    EnrollmentDate = DateTime.Now.Date,
+
+                    //Username = txtTenDangNhap.Text,
+                    //Password = txtMatKhau.Text
                 };
 
 

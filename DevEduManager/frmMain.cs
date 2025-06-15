@@ -88,7 +88,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmQuanLyKiHoc frm = new frmQuanLyKiHoc()
+            frmQuanLyKyHoc frm = new frmQuanLyKyHoc()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false

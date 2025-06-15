@@ -60,72 +60,109 @@ namespace DevEduManager.Modals
 
         private async void frmHocVienEdit_Load(object sender, EventArgs e)
         {
-            string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&ma=HV";
-            string result = await callAPI.CallApiAsync(url);
-            if (_hv == null)
+            try
             {
-                Common.LoadComboBoxLoaiHV(cboLoaiHV);
-                txtMaHV.Text = result.Trim('"');
+                string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&prefix=HV";
+                string result = await callAPI.CallApiAsync(url);
+                Console.WriteLine($"API Response: {result}"); // Log để debug
+                if (string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show("Không thể tạo ID tự động. Vui lòng kiểm tra API.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (_hv == null) // them moi
+                {
+                    //Common.LoadComboBoxLoaiHV(cboLoaiHV);
+                    txtMaHV.Text = result.Trim('"');
+                    txtTenDangNhap.Text = result.Trim('"');
+                    //txtTenDangNhap.Enabled = true;
+                    //txtMatKhau.ReadOnly = false;
+
+                }
+                if (_hv != null && _hv.Rows.Count > 0) //edit
+                {
+                    //Common.LoadComboBoxLoaiHV(cboLoaiHV);
+                    //txtTenDangNhap.ReadOnly = true;
+                    //txtMatKhau.ReadOnly = false;
+                    FillData(_hv.Rows[0]);
+                }
+
             }
-            if (_hv != null && _hv.Rows.Count > 0)
+            catch(Exception ex)
             {
-                Common.LoadComboBoxLoaiHV(cboLoaiHV);
-                FillData(_hv.Rows[0]);
+
+            }
+            finally
+            {
+
             }
         }
 
         private void FillData(DataRow hv)
         {
-            txtMaHV.Text = hv["MaHV"].ToString();
-            txtHoTen.Text = hv["TenHV"].ToString();
-
-            if (hv["NgaySinh"] != DBNull.Value)
-                dateNgaySinh.Value = Convert.ToDateTime(hv["NgaySinh"]);
-
-            cboGioiTinh.Text = hv["GioiTinhHV"].ToString();
-            txtDiaChi.Text = hv["DiaChi"].ToString();
-            txtSDT.Text = hv["SdtHV"].ToString();
-            txtEmail.Text = hv["EmailHV"].ToString();
-            cboLoaiHV.SelectedValue = hv["MaLoaiHV"].ToString();
-
-
-            if (hv["MaLoaiHV"].ToString() == "LHV01")
+            try
             {
-                cboLoaiHV.Enabled = false;
-                txtMatKhau.Enabled = false;
+                txtMaHV.Text = hv["StudentID"].ToString();
+                txtHoTen.Text = hv["FullName"].ToString();
+
+                if (hv["BirthDate"] != DBNull.Value)
+                    dateNgaySinh.Value = Convert.ToDateTime(hv["BirthDate"]);
+
+                cboGioiTinh.Text = hv["Gender"].ToString();
+                txtDiaChi.Text = hv["Address"].ToString();
+                txtSDT.Text = hv["PhoneNumber"].ToString();
+                txtEmail.Text = hv["Email"].ToString();
+                //cboLoaiHV.SelectedValue = hv["MaLoaiHV"].ToString();
+
+
+                //if (hv["MaLoaiHV"].ToString() == "LHV01")
+                //{
+                //    cboLoaiHV.Enabled = false;
+                //    txtMatKhau.Enabled = false;
+                //}
+                //else
+                //{
+                //    cboLoaiHV.Enabled = true;
+                //    txtMatKhau.Enabled = false;
+                //}
+
+                if (hv["Username"] != DBNull.Value)
+                {
+                    txtTenDangNhap.Text = hv["Username"].ToString();
+                    txtMatKhau.Text = hv["Password"].ToString();
+                }
+                else
+                {
+                    txtTenDangNhap.Text = string.Empty;
+                    txtMatKhau.Text = string.Empty;
+                    //txtTenDangNhap.ReadOnly = false;
+                }
+
             }
-            else
+            catch (Exception ex)
             {
-                cboLoaiHV.Enabled = true;
-                txtMatKhau.Enabled = false;
-            }
 
-            if (hv["TenDangNhap"] != DBNull.Value)
-            {
-                txtTenDangNhap.Text = hv["TenDangNhap"].ToString();
-                txtMatKhau.Text = hv["MatKhau"].ToString();
             }
-            else
+            finally
             {
-                txtTenDangNhap.Text = string.Empty;
-                txtMatKhau.Text = string.Empty;
+
             }
         }
 
         private void cboLoaiHV_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (cboLoaiHV.SelectedValue.ToString() != "LHV00")
-            {
-                txtMatKhau.Enabled = true;
-                txtTenDangNhap.Text = txtMaHV.Text;
-                txtMatKhau.Text = txtMaHV.Text;
-            }
-            else
-            {
-                txtMatKhau.Enabled = false;
-                txtTenDangNhap.Text = string.Empty;
-                txtMatKhau.Text = string.Empty;
-            }
+            //if (cboLoaiHV.SelectedValue.ToString() != "LHV00")
+            //{
+            //    txtMatKhau.Enabled = true;
+            //    txtTenDangNhap.Text = txtMaHV.Text;
+            //    txtMatKhau.Text = txtMaHV.Text;
+            //}
+            //else
+            //{
+            //    txtMatKhau.Enabled = false;
+            //    txtTenDangNhap.Text = string.Empty;
+            //    txtMatKhau.Text = string.Empty;
+            //}
         }
 
         private void btnHuyBo_Click(object sender, EventArgs e)
@@ -145,22 +182,29 @@ namespace DevEduManager.Modals
 
                         HocVien hocVien = new HocVien()
                         {
-                            MaHV = txtMaHV.Text,
-                            TenHV = txtHoTen.Text,
-                            GioiTinhHV = cboGioiTinh.SelectedItem.ToString(),
-                            NgaySinh = DateTime.Parse(dateNgaySinh.Value.ToString()).Date, // Chuyển đổi giá trị từ DateTimePicker
-                            DiaChi = txtDiaChi.Text,
-                            SdtHV = txtSDT.Text,
-                            EmailHV = txtEmail.Text,
-                            NgayTiepNhan = DateTime.Now.Date,
-                            MaLoaiHV = cboLoaiHV.SelectedValue.ToString(),
-                            TenDangNhap = txtTenDangNhap.Text,
-                            MatKhau = txtMatKhau.Text
+                            StudentID = txtMaHV.Text,
+                            FullName = txtHoTen.Text,
+                            Gender = cboGioiTinh.SelectedItem.ToString(),
+                            //BirthDate = DateTime.Parse(dateNgaySinh.Value.ToString()).Date,
+                            BirthDate = dateNgaySinh.Value.Date,
+                            Address = txtDiaChi.Text,
+                            PhoneNumber = txtSDT.Text,
+                            Email = txtEmail.Text,
+                            EnrollmentDate = DateTime.Now.Date,
+
+                            Username = txtTenDangNhap.Text,
+                            Password = txtMatKhau.Text
                         };
 
                         // Chuyển đổi đối tượng thành JSON
-                        string jsonData = JsonConvert.SerializeObject(hocVien);
+                        //string jsonData = JsonConvert.SerializeObject(hocVien);
 
+                        // Serialize với cấu hình rõ ràng
+                        string jsonData = JsonConvert.SerializeObject(hocVien, new JsonSerializerSettings
+                        {
+                            DateFormatHandling = DateFormatHandling.IsoDateFormat, // Định dạng ISO
+                            DateTimeZoneHandling = DateTimeZoneHandling.Utc // Xử lý múi giờ
+                        });
                         string url = $"{_url2}themThongTinHocVien";
                         bool result = await callAPI.PostAPI(url, jsonData);
                         if (result)
@@ -179,19 +223,19 @@ namespace DevEduManager.Modals
                         try
                         {
                             //Dieu kien khi them
-
                             HocVien hocVien = new HocVien()
                             {
-                                MaHV = txtMaHV.Text,
-                                TenHV = txtHoTen.Text,
-                                GioiTinhHV = cboGioiTinh.SelectedItem.ToString(),
-                                NgaySinh = DateTime.Parse(dateNgaySinh.Value.ToString()).Date, // Chuyển đổi giá trị từ DateTimePicker
-                                DiaChi = txtDiaChi.Text,
-                                SdtHV = txtSDT.Text,
-                                EmailHV = txtEmail.Text,
-                                MaLoaiHV = cboLoaiHV.SelectedValue.ToString(),
-                                TenDangNhap = txtTenDangNhap.Text,
-                                MatKhau = txtMatKhau.Text
+                                StudentID = txtMaHV.Text,
+                                FullName = txtHoTen.Text,
+                                Gender = cboGioiTinh.SelectedItem.ToString(),
+                                BirthDate = DateTime.Parse(dateNgaySinh.Value.ToString()).Date, // Chuyển đổi giá trị từ DateTimePicker
+                                Address = txtDiaChi.Text,
+                                PhoneNumber = txtSDT.Text,
+                                Email = txtEmail.Text,
+                                EnrollmentDate = DateTime.Now.Date,
+
+                                Username = txtTenDangNhap.Text,
+                                Password = txtMatKhau.Text
                             };
 
                             // Chuyển đổi đối tượng thành JSON

@@ -38,7 +38,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.cboLoaiHV = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +57,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dateNgayTiepNhan = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -113,8 +113,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.dateNgayTiepNhan);
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Controls.Add(this.cboLoaiHV);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.label8);
@@ -158,7 +158,6 @@
             // 
             this.txtMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMatKhau.Enabled = false;
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtMatKhau.Location = new System.Drawing.Point(110, 68);
             this.txtMatKhau.Name = "txtMatKhau";
@@ -178,7 +177,6 @@
             // 
             this.txtTenDangNhap.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenDangNhap.Enabled = false;
             this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtTenDangNhap.Location = new System.Drawing.Point(110, 28);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
@@ -195,30 +193,14 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Tên đăng nhập:";
             // 
-            // cboLoaiHV
-            // 
-            this.cboLoaiHV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboLoaiHV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboLoaiHV.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboLoaiHV.FormattingEnabled = true;
-            this.cboLoaiHV.Items.AddRange(new object[] {
-            "Học viên tiềm năng",
-            "Học viên chính thức"});
-            this.cboLoaiHV.Location = new System.Drawing.Point(138, 368);
-            this.cboLoaiHV.Name = "cboLoaiHV";
-            this.cboLoaiHV.Size = new System.Drawing.Size(228, 25);
-            this.cboLoaiHV.TabIndex = 50;
-            this.cboLoaiHV.SelectedValueChanged += new System.EventHandler(this.cboLoaiHV_SelectedValueChanged);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(41, 373);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 13);
+            this.label9.Size = new System.Drawing.Size(82, 13);
             this.label9.TabIndex = 49;
-            this.label9.Text = "Loại học viên:";
+            this.label9.Text = "Ngày tiếp nhận:";
             // 
             // txtEmail
             // 
@@ -394,6 +376,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // dateNgayTiepNhan
+            // 
+            this.dateNgayTiepNhan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateNgayTiepNhan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dateNgayTiepNhan.Location = new System.Drawing.Point(138, 368);
+            this.dateNgayTiepNhan.Name = "dateNgayTiepNhan";
+            this.dateNgayTiepNhan.Size = new System.Drawing.Size(228, 25);
+            this.dateNgayTiepNhan.TabIndex = 52;
+            // 
             // frmHocVienEdit
             // 
             this.AcceptButton = this.btnLuuThongTin;
@@ -432,7 +424,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cboLoaiHV;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label8;
@@ -452,5 +443,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DateTimePicker dateNgayTiepNhan;
     }
 }

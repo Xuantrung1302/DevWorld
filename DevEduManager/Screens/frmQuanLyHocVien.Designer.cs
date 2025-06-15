@@ -52,14 +52,6 @@
             this.chkMaHV = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gridDSHV = new System.Windows.Forms.DataGridView();
-            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSdtHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNgayTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnXemTatCa = new System.Windows.Forms.Button();
             this.lblTongCong = new System.Windows.Forms.Label();
@@ -69,6 +61,14 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSdtHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNgayTiepNhan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -387,69 +387,6 @@
             this.gridDSHV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridDSHV_RowsRemoved);
             this.gridDSHV.DoubleClick += new System.EventHandler(this.gridDSHV_DoubleClick);
             // 
-            // clmMaHV
-            // 
-            this.clmMaHV.DataPropertyName = "MaHV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmMaHV.FillWeight = 75F;
-            this.clmMaHV.HeaderText = "Mã học viên";
-            this.clmMaHV.Name = "clmMaHV";
-            this.clmMaHV.ReadOnly = true;
-            // 
-            // clmTenHV
-            // 
-            this.clmTenHV.DataPropertyName = "TenHV";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clmTenHV.FillWeight = 110F;
-            this.clmTenHV.HeaderText = "Họ và tên";
-            this.clmTenHV.Name = "clmTenHV";
-            this.clmTenHV.ReadOnly = true;
-            // 
-            // clmNgaySinh
-            // 
-            this.clmNgaySinh.DataPropertyName = "NgaySinh";
-            this.clmNgaySinh.HeaderText = "Ngày sinh";
-            this.clmNgaySinh.Name = "clmNgaySinh";
-            this.clmNgaySinh.ReadOnly = true;
-            // 
-            // clmGioiTinh
-            // 
-            this.clmGioiTinh.DataPropertyName = "GioiTinhHV";
-            this.clmGioiTinh.FillWeight = 70F;
-            this.clmGioiTinh.HeaderText = "Giới tính";
-            this.clmGioiTinh.Name = "clmGioiTinh";
-            this.clmGioiTinh.ReadOnly = true;
-            // 
-            // clmSdtHV
-            // 
-            this.clmSdtHV.DataPropertyName = "SdtHV";
-            this.clmSdtHV.HeaderText = "SĐT";
-            this.clmSdtHV.Name = "clmSdtHV";
-            this.clmSdtHV.ReadOnly = true;
-            // 
-            // clmDiaChi
-            // 
-            this.clmDiaChi.DataPropertyName = "DiaChi";
-            this.clmDiaChi.HeaderText = "Địa chỉ";
-            this.clmDiaChi.Name = "clmDiaChi";
-            this.clmDiaChi.ReadOnly = true;
-            // 
-            // clmNgayTiepNhan
-            // 
-            this.clmNgayTiepNhan.DataPropertyName = "NgayTiepNhan";
-            this.clmNgayTiepNhan.HeaderText = "Ngày tiếp nhận";
-            this.clmNgayTiepNhan.Name = "clmNgayTiepNhan";
-            this.clmNgayTiepNhan.ReadOnly = true;
-            // 
-            // clmEmail
-            // 
-            this.clmEmail.DataPropertyName = "EmailHV";
-            this.clmEmail.HeaderText = "Email";
-            this.clmEmail.Name = "clmEmail";
-            this.clmEmail.ReadOnly = true;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnXemTatCa);
@@ -572,6 +509,69 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // clmMaHV
+            // 
+            this.clmMaHV.DataPropertyName = "StudentID";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clmMaHV.FillWeight = 75F;
+            this.clmMaHV.HeaderText = "Mã học viên";
+            this.clmMaHV.Name = "clmMaHV";
+            this.clmMaHV.ReadOnly = true;
+            // 
+            // clmTenHV
+            // 
+            this.clmTenHV.DataPropertyName = "FullName";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.clmTenHV.FillWeight = 110F;
+            this.clmTenHV.HeaderText = "Họ và tên";
+            this.clmTenHV.Name = "clmTenHV";
+            this.clmTenHV.ReadOnly = true;
+            // 
+            // clmNgaySinh
+            // 
+            this.clmNgaySinh.DataPropertyName = "BirthDate";
+            this.clmNgaySinh.HeaderText = "Ngày sinh";
+            this.clmNgaySinh.Name = "clmNgaySinh";
+            this.clmNgaySinh.ReadOnly = true;
+            // 
+            // clmGioiTinh
+            // 
+            this.clmGioiTinh.DataPropertyName = "Gender";
+            this.clmGioiTinh.FillWeight = 70F;
+            this.clmGioiTinh.HeaderText = "Giới tính";
+            this.clmGioiTinh.Name = "clmGioiTinh";
+            this.clmGioiTinh.ReadOnly = true;
+            // 
+            // clmSdtHV
+            // 
+            this.clmSdtHV.DataPropertyName = "PhoneNumber";
+            this.clmSdtHV.HeaderText = "SĐT";
+            this.clmSdtHV.Name = "clmSdtHV";
+            this.clmSdtHV.ReadOnly = true;
+            // 
+            // clmDiaChi
+            // 
+            this.clmDiaChi.DataPropertyName = "Address";
+            this.clmDiaChi.HeaderText = "Địa chỉ";
+            this.clmDiaChi.Name = "clmDiaChi";
+            this.clmDiaChi.ReadOnly = true;
+            // 
+            // clmNgayTiepNhan
+            // 
+            this.clmNgayTiepNhan.DataPropertyName = "EnrollmentDate";
+            this.clmNgayTiepNhan.HeaderText = "Ngày tiếp nhận";
+            this.clmNgayTiepNhan.Name = "clmNgayTiepNhan";
+            this.clmNgayTiepNhan.ReadOnly = true;
+            // 
+            // clmEmail
+            // 
+            this.clmEmail.DataPropertyName = "Email";
+            this.clmEmail.HeaderText = "Email";
+            this.clmEmail.Name = "clmEmail";
+            this.clmEmail.ReadOnly = true;
+            // 
             // frmQuanLyHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -624,14 +624,6 @@
         private System.Windows.Forms.CheckBox chkMaHV;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView gridDSHV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaHV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmGioiTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSdtHV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiaChi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNgayTiepNhan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmEmail;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnXemTatCa;
         private System.Windows.Forms.Label lblTongCong;
@@ -641,5 +633,13 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaHV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmGioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSdtHV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmDiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNgayTiepNhan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmEmail;
     }
 }

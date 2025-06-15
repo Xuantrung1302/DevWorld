@@ -1,6 +1,6 @@
 ﻿namespace DevEduManager.Screens
 {
-    partial class frmQuanLyKiHoc
+    partial class frmQuanLyKyHoc
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -39,28 +39,29 @@
             this.chkKhoangTG = new System.Windows.Forms.CheckBox();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txtTenKy = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.chkTenLop = new System.Windows.Forms.CheckBox();
+            this.chkTenKH = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.gridLop = new System.Windows.Forms.DataGridView();
+            this.gridKyHoc = new System.Windows.Forms.DataGridView();
+            this.SemesterID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHienTatCa = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNgayBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridKyHoc)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,9 +103,9 @@
             this.splitContainer1.Panel1.Controls.Add(this.chkKhoangTG);
             this.splitContainer1.Panel1.Controls.Add(this.btnDatLai);
             this.splitContainer1.Panel1.Controls.Add(this.btnTimKiem);
-            this.splitContainer1.Panel1.Controls.Add(this.txtTenKy);
+            this.splitContainer1.Panel1.Controls.Add(this.txtTenKH);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
-            this.splitContainer1.Panel1.Controls.Add(this.chkTenLop);
+            this.splitContainer1.Panel1.Controls.Add(this.chkTenKH);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             // 
             // splitContainer1.Panel2
@@ -165,6 +166,7 @@
             this.chkKhoangTG.TabIndex = 65;
             this.chkKhoangTG.Text = "Theo khoảng thời gian";
             this.chkKhoangTG.UseVisualStyleBackColor = true;
+            this.chkKhoangTG.CheckedChanged += new System.EventHandler(this.chkKhoangTG_CheckedChanged);
             // 
             // btnDatLai
             // 
@@ -183,6 +185,7 @@
             this.btnDatLai.Text = "Đặt lại";
             this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
+            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
             // btnTimKiem
             // 
@@ -201,17 +204,18 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click_1);
             // 
-            // txtTenKy
+            // txtTenKH
             // 
-            this.txtTenKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTenKH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTenKy.Enabled = false;
-            this.txtTenKy.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTenKy.Location = new System.Drawing.Point(139, 87);
-            this.txtTenKy.Name = "txtTenKy";
-            this.txtTenKy.Size = new System.Drawing.Size(187, 25);
-            this.txtTenKy.TabIndex = 51;
+            this.txtTenKH.Enabled = false;
+            this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtTenKH.Location = new System.Drawing.Point(139, 87);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(187, 25);
+            this.txtTenKH.TabIndex = 51;
             // 
             // label4
             // 
@@ -222,15 +226,17 @@
             this.label4.TabIndex = 50;
             this.label4.Text = "Tên kỳ:";
             // 
-            // chkTenLop
+            // chkTenKH
             // 
-            this.chkTenLop.AutoSize = true;
-            this.chkTenLop.Location = new System.Drawing.Point(21, 62);
-            this.chkTenLop.Name = "chkTenLop";
-            this.chkTenLop.Size = new System.Drawing.Size(83, 17);
-            this.chkTenLop.TabIndex = 49;
-            this.chkTenLop.Text = "Theo tên kỳ";
-            this.chkTenLop.UseVisualStyleBackColor = true;
+            this.chkTenKH.AutoSize = true;
+            this.chkTenKH.Location = new System.Drawing.Point(21, 62);
+            this.chkTenKH.Name = "chkTenKH";
+            this.chkTenKH.Size = new System.Drawing.Size(83, 17);
+            this.chkTenKH.TabIndex = 49;
+            this.chkTenKH.Text = "Theo tên kỳ";
+            this.chkTenKH.UseVisualStyleBackColor = true;
+            this.chkTenKH.CheckedChanged += new System.EventHandler(this.chkTenKH_CheckedChanged);
+            this.chkTenKH.CheckStateChanged += new System.EventHandler(this.chkTenKH_CheckStateChanged);
             // 
             // label2
             // 
@@ -245,7 +251,7 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.gridLop);
+            this.panel5.Controls.Add(this.gridKyHoc);
             this.panel5.Controls.Add(this.lblTongCong);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 37);
@@ -253,30 +259,72 @@
             this.panel5.Size = new System.Drawing.Size(741, 421);
             this.panel5.TabIndex = 4;
             // 
-            // gridLop
+            // gridKyHoc
             // 
-            this.gridLop.AllowUserToAddRows = false;
-            this.gridLop.AllowUserToResizeRows = false;
-            this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridKyHoc.AllowUserToAddRows = false;
+            this.gridKyHoc.AllowUserToResizeRows = false;
+            this.gridKyHoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridLop.BackgroundColor = System.Drawing.Color.White;
-            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmTenLop,
-            this.clmNgayBD,
-            this.clmNgayKT});
-            this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridLop.Location = new System.Drawing.Point(12, 5);
-            this.gridLop.MultiSelect = false;
-            this.gridLop.Name = "gridLop";
-            this.gridLop.ReadOnly = true;
-            this.gridLop.RowHeadersVisible = false;
-            this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLop.Size = new System.Drawing.Size(717, 388);
-            this.gridLop.TabIndex = 12;
+            this.gridKyHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridKyHoc.BackgroundColor = System.Drawing.Color.White;
+            this.gridKyHoc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridKyHoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.gridKyHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridKyHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SemesterID,
+            this.SemesterName,
+            this.StartDate,
+            this.EndDate});
+            this.gridKyHoc.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridKyHoc.Location = new System.Drawing.Point(13, 5);
+            this.gridKyHoc.MultiSelect = false;
+            this.gridKyHoc.Name = "gridKyHoc";
+            this.gridKyHoc.ReadOnly = true;
+            this.gridKyHoc.RowHeadersVisible = false;
+            this.gridKyHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridKyHoc.Size = new System.Drawing.Size(717, 388);
+            this.gridKyHoc.TabIndex = 12;
+            this.gridKyHoc.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridKyHoc_RowsAdded);
+            this.gridKyHoc.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridKyHoc_RowsRemoved);
+            this.gridKyHoc.SelectionChanged += new System.EventHandler(this.gridKyHoc_SelectionChanged_1);
+            // 
+            // SemesterID
+            // 
+            this.SemesterID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SemesterID.DataPropertyName = "SemesterID";
+            this.SemesterID.Frozen = true;
+            this.SemesterID.HeaderText = "Mã kỳ học";
+            this.SemesterID.Name = "SemesterID";
+            this.SemesterID.ReadOnly = true;
+            // 
+            // SemesterName
+            // 
+            this.SemesterName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.SemesterName.DataPropertyName = "SemesterName";
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Green;
+            this.SemesterName.DefaultCellStyle = dataGridViewCellStyle8;
+            this.SemesterName.FillWeight = 93.27411F;
+            this.SemesterName.Frozen = true;
+            this.SemesterName.HeaderText = "Tên kỳ học";
+            this.SemesterName.Name = "SemesterName";
+            this.SemesterName.ReadOnly = true;
+            this.SemesterName.Width = 232;
+            // 
+            // StartDate
+            // 
+            this.StartDate.DataPropertyName = "StartDate";
+            this.StartDate.HeaderText = "Ngày bắt đầu";
+            this.StartDate.Name = "StartDate";
+            this.StartDate.ReadOnly = true;
+            // 
+            // EndDate
+            // 
+            this.EndDate.DataPropertyName = "EndDate";
+            this.EndDate.FillWeight = 93.27411F;
+            this.EndDate.HeaderText = "Ngày kết thúc";
+            this.EndDate.Name = "EndDate";
+            this.EndDate.ReadOnly = true;
             // 
             // lblTongCong
             // 
@@ -317,6 +365,7 @@
             this.btnHienTatCa.Text = "Hiện tất cả";
             this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHienTatCa.UseVisualStyleBackColor = false;
+            this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click);
             // 
             // btnXoa
             // 
@@ -333,6 +382,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnSua
             // 
@@ -349,6 +399,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -365,33 +416,9 @@
             this.btnThem.Text = "Thêm kỳ học";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // clmTenLop
-            // 
-            this.clmTenLop.DataPropertyName = "TenLop";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            this.clmTenLop.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmTenLop.FillWeight = 93.27411F;
-            this.clmTenLop.HeaderText = "Tên kỳ học";
-            this.clmTenLop.Name = "clmTenLop";
-            this.clmTenLop.ReadOnly = true;
-            // 
-            // clmNgayBD
-            // 
-            this.clmNgayBD.DataPropertyName = "NgayBD";
-            this.clmNgayBD.HeaderText = "Ngày bắt đầu";
-            this.clmNgayBD.Name = "clmNgayBD";
-            this.clmNgayBD.ReadOnly = true;
-            // 
-            // clmNgayKT
-            // 
-            this.clmNgayKT.DataPropertyName = "NgayKT";
-            this.clmNgayKT.FillWeight = 93.27411F;
-            this.clmNgayKT.HeaderText = "Ngày kết thúc";
-            this.clmNgayKT.Name = "clmNgayKT";
-            this.clmNgayKT.ReadOnly = true;
-            // 
-            // frmQuanLyKiHoc
+            // frmQuanLyKyHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -399,8 +426,9 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmQuanLyKiHoc";
+            this.Name = "frmQuanLyKyHoc";
             this.Text = "frmQuanLyKiHoc";
+            this.Load += new System.EventHandler(this.frmQuanLyKiHoc_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -410,7 +438,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridKyHoc)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -428,20 +456,21 @@
         private System.Windows.Forms.CheckBox chkKhoangTG;
         private System.Windows.Forms.Button btnDatLai;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox txtTenKy;
+        private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox chkTenLop;
+        private System.Windows.Forms.CheckBox chkTenKH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView gridLop;
+        private System.Windows.Forms.DataGridView gridKyHoc;
         private System.Windows.Forms.Label lblTongCong;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnHienTatCa;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNgayBD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNgayKT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SemesterID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SemesterName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StartDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EndDate;
     }
 }

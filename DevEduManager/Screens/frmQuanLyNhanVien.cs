@@ -82,9 +82,9 @@ namespace DevEduManager.Screens
 
                 // Lọc dữ liệu dựa trên tham số tìm kiếm
                 var filteredRows = from row in result.AsEnumerable()
-                                   where (string.IsNullOrEmpty(tenLoaiNV) || row.Field<string>("TenLoaiNV").Contains(tenLoaiNV)) &&
-                                         (string.IsNullOrEmpty(maNV) || row.Field<string>("MaNV").Contains(maNV)) &&
-                                         (string.IsNullOrEmpty(tenNV) || row.Field<string>("TenNV").ToLower().Contains(tenNV.ToLower()))
+                                   where (string.IsNullOrEmpty(tenLoaiNV) || row.Field<string>("Position").Contains(tenLoaiNV)) &&
+                                         (string.IsNullOrEmpty(maNV) || row.Field<string>("EmployeeID").Contains(maNV)) &&
+                                         (string.IsNullOrEmpty(tenNV) || row.Field<string>("FullName").ToLower().Contains(tenNV.ToLower()))
                                    select row;
 
                 // Nếu có kết quả lọc, hiển thị trên grid

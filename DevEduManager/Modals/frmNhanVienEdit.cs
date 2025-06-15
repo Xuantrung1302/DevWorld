@@ -81,39 +81,48 @@ namespace DevEduManager.Modals
         }
         private void FillData(DataRow hv)
         {
-            txtMaNV.Text = hv["MaNV"].ToString();
-            txtTenNV.Text = hv["TenNV"].ToString();
-
-            //if (hv["NgaySinh"] != DBNull.Value)
-            //    dateNgaySinh.Value = Convert.ToDateTime(hv["NgaySinh"]);
-
-            //cboGioiTinh.Text = hv["GioiTinhHV"].ToString();
-            //txtDiaChi.Text = hv["DiaChi"].ToString();
-            txtSDT.Text = hv["SdtNV"].ToString();
-            txtEmail.Text = hv["EmailNV"].ToString();
-            cboLoaiNV.SelectedValue = hv["MaLoaiNV"].ToString();
-
-
-            //if (hv["MaLoaiHV"].ToString() == "LHV01")
-            //{
-            //    cboLoaiHV.Enabled = false;
-            //    txtMatKhau.Enabled = false;
-            //}
-            //else
-            //{
-            //    cboLoaiHV.Enabled = true;
-            //    txtMatKhau.Enabled = false;
-            //}
-
-            if (hv["TenDangNhap"] != DBNull.Value)
+            try
             {
-                txtTenDangNhap.Text = hv["TenDangNhap"].ToString();
-                txtMatKhau.Text = hv["MatKhau"].ToString();
+                txtMaNV.Text = hv["EmployeeID"].ToString();
+                txtTenNV.Text = hv["FullName"].ToString();
+
+                //if (hv["NgaySinh"] != DBNull.Value)
+                //    dateNgaySinh.Value = Convert.ToDateTime(hv["NgaySinh"]);
+
+                //cboGioiTinh.Text = hv["GioiTinhHV"].ToString();
+                //txtDiaChi.Text = hv["DiaChi"].ToString();
+                txtSDT.Text = hv["PhoneNumber"].ToString();
+                txtEmail.Text = hv["Email"].ToString();
+                cboLoaiNV.SelectedValue = hv["Position"].ToString();
+
+
+                //if (hv["MaLoaiHV"].ToString() == "LHV01")
+                //{
+                //    cboLoaiHV.Enabled = false;
+                //    txtMatKhau.Enabled = false;
+                //}
+                //else
+                //{
+                //    cboLoaiHV.Enabled = true;
+                //    txtMatKhau.Enabled = false;
+                //}
+
+                if (hv["Username"] != DBNull.Value)
+                {
+                    txtTenDangNhap.Text = hv["Username"].ToString();
+                    txtMatKhau.Text = hv["Password"].ToString();
+                }
+                else
+                {
+                    txtTenDangNhap.Text = string.Empty;
+                    txtMatKhau.Text = string.Empty;
+                }
+
             }
-            else
+            catch (Exception)
             {
-                txtTenDangNhap.Text = string.Empty;
-                txtMatKhau.Text = string.Empty;
+
+                throw;
             }
         }
 

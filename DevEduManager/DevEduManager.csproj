@@ -156,6 +156,12 @@
     <Compile Include="Modals\frmKetNoiCSDL.Designer.cs">
       <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\frmKyHocEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmKyHocEdit.Designer.cs">
+      <DependentUpon>frmKyHocEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmMessageDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,11 +308,11 @@
     <Compile Include="Screens\frmQuanLyKhoaHoc.Designer.cs">
       <DependentUpon>frmQuanLyKhoaHoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\frmQuanLyKiHoc.cs">
+    <Compile Include="Screens\frmQuanLyKyHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\frmQuanLyKiHoc.Designer.cs">
-      <DependentUpon>frmQuanLyKiHoc.cs</DependentUpon>
+    <Compile Include="Screens\frmQuanLyKyHoc.Designer.cs">
+      <DependentUpon>frmQuanLyKyHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\frmQuanLyLopHoc.cs">
       <SubType>Form</SubType>
@@ -402,6 +408,9 @@
     <EmbeddedResource Include="Modals\frmKetNoiCSDL.resx">
       <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmKyHocEdit.resx">
+      <DependentUpon>frmKyHocEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmMessageDialog.resx">
       <DependentUpon>frmMessageDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -480,8 +489,8 @@
     <EmbeddedResource Include="Screens\frmQuanLyKhoaHoc.resx">
       <DependentUpon>frmQuanLyKhoaHoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\frmQuanLyKiHoc.resx">
-      <DependentUpon>frmQuanLyKiHoc.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\frmQuanLyKyHoc.resx">
+      <DependentUpon>frmQuanLyKyHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmQuanLyLopHoc.resx">
       <DependentUpon>frmQuanLyLopHoc.cs</DependentUpon>

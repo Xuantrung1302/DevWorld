@@ -210,11 +210,11 @@
     <Compile Include="Modals\frmThongTinTrungTam.Designer.cs">
       <DependentUpon>frmThongTinTrungTam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\ucThoiKhoaBieuThang.cs">
+    <Compile Include="Modals\ucThoiKhoaBieuTuan.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Modals\ucThoiKhoaBieuThang.Designer.cs">
-      <DependentUpon>ucThoiKhoaBieuThang.cs</DependentUpon>
+    <Compile Include="Modals\ucThoiKhoaBieuTuan.Designer.cs">
+      <DependentUpon>ucThoiKhoaBieuTuan.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -337,12 +337,6 @@
     </Compile>
     <Compile Include="Screens\frmTaoThoiKhoaBieu.Designer.cs">
       <DependentUpon>frmTaoThoiKhoaBieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\frmThoiKhoaBieu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\frmThoiKhoaBieu.Designer.cs">
-      <DependentUpon>frmThoiKhoaBieu.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\frmThongKeDiemTheoLop.cs">
       <SubType>Form</SubType>
@@ -503,9 +497,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmTaoThoiKhoaBieu.resx">
       <DependentUpon>frmTaoThoiKhoaBieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\frmThoiKhoaBieu.resx">
-      <DependentUpon>frmThoiKhoaBieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmThongKeDiemTheoLop.resx">
       <DependentUpon>frmThongKeDiemTheoLop.cs</DependentUpon>

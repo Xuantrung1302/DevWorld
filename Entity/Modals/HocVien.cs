@@ -7,9 +7,6 @@ namespace Enity.Models
 {
     public class HocVien
     {
-
-        
-
         public string StudentID { get; set; }
         public string FullName { get; set; }
         public string Gender { get; set; }

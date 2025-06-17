@@ -94,7 +94,7 @@ namespace DevEduManager.Screens
                 //    return;
                 //}
 
-                frmHocVienEdit frm = new frmHocVienEdit(null); // Gửi null cho form khi thêm mới
+                frmKyHocEdit frm = new frmKyHocEdit(null); // Gửi null cho form khi thêm mới
                 frm.Text = "Thêm kỳ học mới";
                 frm.ShowDialog();
 
@@ -134,33 +134,30 @@ namespace DevEduManager.Screens
         {
             try
             {
-                if (gridKyHoc.SelectedRows.Count == 0)
+                if (gridKyHoc.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show("Vui lòng chọn một kỳ học để sửa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                    // Lấy dữ liệu từ hàng đang được chọn
+                    DataGridViewRow selectedRow = gridKyHoc.SelectedRows[0];
+                    DataTable dt = ((DataTable)gridKyHoc.DataSource).Clone();  // Tạo bản sao cấu trúc của DataTable
+                    DataRow row = dt.NewRow();
 
-                DataGridViewRow selectedRow = gridKyHoc.SelectedRows[0];
-                var semester = new
-                {
-                    SemesterID = selectedRow.Cells["SemesterID"].Value.ToString(),
-                    SemesterName = txtTenKH.Text,
-                    StartDate = dateTuNgay.Value,
-                    EndDate = dateDenNgay.Value
-                };
+                    foreach (DataGridViewCell cell in selectedRow.Cells)
+                    {
+                        row[cell.ColumnIndex] = cell.Value;
+                    }
+                    dt.Rows.Add(row);
 
-                string jsonData = Newtonsoft.Json.JsonConvert.SerializeObject(semester);
-                string url = $"{_url}suaKyHoc";
-                bool result = await callAPI.PostAPI(url, jsonData);
+                    // Mở form sửa thông tin giáo viên
+                    frmKyHocEdit frm = new frmKyHocEdit(dt);
+                    frm.Text = "Cập nhật thông tin kỳ học";
+                    frm.ShowDialog();
 
-                if (result)
-                {
-                    MessageBox.Show("Cập nhật kỳ học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDataToGridView();
+                    // Tải lại danh sách sau khi chỉnh sửa
+                    btnHienTatCa_Click(sender, e);
                 }
                 else
                 {
-                    MessageBox.Show("Cập nhật kỳ học không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng chọn một kỳ học để sửa.");
                 }
             }
             catch (Exception ex)

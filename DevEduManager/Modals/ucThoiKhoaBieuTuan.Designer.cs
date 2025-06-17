@@ -1,6 +1,6 @@
 ﻿namespace DevEduManager.Modals
 {
-    partial class ucThoiKhoaBieuThang
+    partial class ucThoiKhoaBieuTuan
     {
         /// <summary> 
         /// Required designer variable.

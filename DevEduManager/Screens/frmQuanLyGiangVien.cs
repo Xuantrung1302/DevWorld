@@ -106,31 +106,39 @@ namespace DevEduManager.Screens
             //frmGiangVienEdit frm = new frmGiangVienEdit();
             //frm.Text = "Cập nhật thông tin giảng viên";
             //frm.ShowDialog();
-
-            if (gridGV.SelectedRows.Count > 0)
+            try
             {
-                // Lấy dữ liệu từ hàng đang được chọn
-                DataGridViewRow selectedRow = gridGV.SelectedRows[0];
-                DataTable dt = ((DataTable)gridGV.DataSource).Clone();  // Tạo bản sao cấu trúc của DataTable
-                DataRow row = dt.NewRow();
-
-                foreach (DataGridViewCell cell in selectedRow.Cells)
+                if (gridGV.SelectedRows.Count > 0)
                 {
-                    row[cell.ColumnIndex] = cell.Value;
+                    // Lấy dữ liệu từ hàng đang được chọn
+                    DataGridViewRow selectedRow = gridGV.SelectedRows[0];
+                    DataTable dt = ((DataTable)gridGV.DataSource).Clone();  // Tạo bản sao cấu trúc của DataTable
+                    DataRow row = dt.NewRow();
+
+                    foreach (DataGridViewCell cell in selectedRow.Cells)
+                    {
+                        row[cell.ColumnIndex] = cell.Value;
+                    }
+                    dt.Rows.Add(row);
+
+                    // Mở form sửa thông tin giáo viên
+                    frmGiangVienEdit frm = new frmGiangVienEdit(dt);
+                    frm.Text = "Cập nhật thông tin học viên";
+                    frm.ShowDialog();
+
+                    // Tải lại danh sách sau khi chỉnh sửa
+                    btnHienTatCa_Click(sender, e);
                 }
-                dt.Rows.Add(row);
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+                }
 
-                // Mở form sửa thông tin giáo viên
-                frmGiangVienEdit frm = new frmGiangVienEdit(dt);
-                frm.Text = "Cập nhật thông tin học viên";
-                frm.ShowDialog();
-
-                // Tải lại danh sách sau khi chỉnh sửa
-                btnHienTatCa_Click(sender, e);
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+
+                throw;
             }
         }
 

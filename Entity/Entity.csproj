@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Modals\BangDiem.cs" />
     <Compile Include="Modals\ChiTietTrungTam.cs" />
+    <Compile Include="Modals\Class_Plan_Weekly_Models.cs" />
     <Compile Include="Modals\DangKy.cs" />
     <Compile Include="Modals\GiangDay.cs" />
     <Compile Include="Modals\GiangVien.cs" />
@@ -56,6 +58,7 @@
     <Compile Include="Modals\Post.cs" />
     <Compile Include="Modals\QuyDinh.cs" />
     <Compile Include="Modals\TaiKhoan.cs" />
+    <Compile Include="Models\ModelsConst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

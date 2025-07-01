@@ -87,20 +87,28 @@ namespace DevEduManager.Modals
 
             this.Controls.Add(headerPanel);
 
-            // Main content panel with scroll
+            // Main content panel
             var mainPanel = new Panel
             {
-                Dock = DockStyle.Fill,
-                AutoScroll = true // Enable vertical scrolling
+                Dock = DockStyle.Fill
             };
 
-            // Schedule panel inside mainPanel
-            var schedulePanel = new Panel
+            // headermain panel (fixed, contains day headers)
+            var headermainPanel = new Panel
             {
                 Dock = DockStyle.Top,
-                AutoSize = true
+                Height = 60, // Height for day headers
+                BackColor = Color.Yellow
             };
-            mainPanel.Controls.Add(schedulePanel);
+            mainPanel.Controls.Add(headermainPanel);
+
+            // bodymain panel (scrollable, contains timeline and events)
+            var bodymainPanel = new Panel
+            {
+                Dock = DockStyle.Fill,
+                AutoScroll = true // Enable vertical scrolling only for bodymain
+            };
+            mainPanel.Controls.Add(bodymainPanel);
 
             this.Controls.Add(mainPanel);
         }
@@ -110,36 +118,42 @@ namespace DevEduManager.Modals
             // Clear existing controls
             var mainPanel = this.Controls[1] as Panel;
             if (mainPanel == null) return;
-            var schedulePanel = mainPanel.Controls[0] as Panel;
-            if (schedulePanel == null) return;
-            schedulePanel.Controls.Clear();
+            var headermainPanel = mainPanel.Controls[0] as Panel;
+            var bodymainPanel = mainPanel.Controls[1] as Panel;
+            if (headermainPanel == null || bodymainPanel == null) return;
+            headermainPanel.Controls.Clear();
+            bodymainPanel.Controls.Clear();
+
+            // Update week label
+            var headerPanel = this.Controls[0] as Panel;
+            if (headerPanel != null)
+            {
+                var lblWeek = headerPanel.Controls[2] as Label;
+                if (lblWeek != null)
+                    lblWeek.Text = $"{currentWeekStart:MMM dd} - {currentWeekStart.AddDays(6):MMM dd, yyyy}";
+            }
 
             // Initialize sample data for the week
             InitializeSampleData();
 
-            // Create TableLayoutPanel for schedule
-            var tbl = new TableLayoutPanel
+            // Render headermain (day headers)
+            var tblHeadermain = new TableLayoutPanel
             {
-                Dock = DockStyle.Top,
+                Dock = DockStyle.Fill,
                 ColumnCount = 8, // 7 days + time column
-                RowCount = 24,   // 12am to 3pm + all-day
-                CellBorderStyle = TableLayoutPanelCellBorderStyle.Single,
-                AutoSize = true
+                RowCount = 1,    // Only 1 row for day headers
+                CellBorderStyle = TableLayoutPanelCellBorderStyle.Single
             };
 
             // Column styles
-            tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100)); // Time column
+            tblHeadermain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100)); // Time column (empty)
             for (int i = 0; i < 7; i++)
-                tbl.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F / 7)); // 7 days
+                tblHeadermain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F / 7)); // 7 days
 
-            // Row styles
-            for (int i = 0; i < tbl.RowCount; i++)
-                tbl.RowStyles.Add(new RowStyle(SizeType.Absolute, 60)); // Increased height to 60 pixels for larger rows
-
-            // Header row (days)
+            // Day headers
             string[] days = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
             DateTime currentDay = currentWeekStart;
-            tbl.Controls.Add(new Label
+            tblHeadermain.Controls.Add(new Label
             {
                 Text = "",
                 TextAlign = ContentAlignment.MiddleCenter,
@@ -148,7 +162,7 @@ namespace DevEduManager.Modals
             }, 0, 0);
             for (int col = 1; col <= 7; col++)
             {
-                tbl.Controls.Add(new Label
+                tblHeadermain.Controls.Add(new Label
                 {
                     Text = $"{days[col - 1]} {currentDay:MM/dd}",
                     TextAlign = ContentAlignment.MiddleCenter,
@@ -158,19 +172,38 @@ namespace DevEduManager.Modals
                 }, col, 0);
                 currentDay = currentDay.AddDays(1);
             }
+            headermainPanel.Controls.Add(tblHeadermain);
 
-            // Time slots (all-day to 3pm)
+            // Render bodymain (timeline and events)
+            var tblBodymain = new TableLayoutPanel
+            {
+                Dock = DockStyle.Top,
+                ColumnCount = 8, // 7 days + time column
+                RowCount = 24,   // 24 hours (12am to 11pm) + 1 row for alignment
+                CellBorderStyle = TableLayoutPanelCellBorderStyle.Single,
+                AutoSize = true
+            };
+
+            // Column styles
+            tblBodymain.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 100)); // Time column
+            for (int i = 0; i < 7; i++)
+                tblBodymain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F / 7)); // 7 days
+
+            // Row styles
+            for (int i = 0; i < tblBodymain.RowCount; i++)
+                tblBodymain.RowStyles.Add(new RowStyle(SizeType.Absolute, 60)); // Increased height to 60 pixels
+
+            // Time slots (12am to 11pm)
             string[] timeSlots = { "12am", "1am", "2am", "3am", "4am", "5am", "6am", "7am", "8am", "9am", "10am", "11am",
-                                 "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm",};
+                         "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm", "9pm", "10pm", "11pm" };
             for (int row = 0; row < timeSlots.Length; row++)
             {
-                tbl.Controls.Add(new Label
+                tblBodymain.Controls.Add(new Label
                 {
                     Text = timeSlots[row],
                     TextAlign = ContentAlignment.MiddleLeft,
                     Dock = DockStyle.Fill,
                     Font = new Font("Segoe UI", 10),
-                    BackColor = (row == 0) ? Color.LightGray : Color.Transparent,
                     Padding = new Padding(5, 0, 0, 0)
                 }, 0, row);
             }
@@ -186,9 +219,9 @@ namespace DevEduManager.Modals
                         int startRow = GetTimeRow(timeRange.Split('-')[0]);
                         int endRow = timeRange.Contains('-') ? GetTimeRow(timeRange.Split('-')[1]) : startRow;
 
-                        for (int row = startRow; row <= endRow && row < tbl.RowCount; row++)
+                        for (int row = startRow; row <= endRow && row < tblBodymain.RowCount; row++)
                         {
-                            var panel = tbl.GetControlFromPosition(col, row) as Panel ?? new Panel { Dock = DockStyle.Fill };
+                            var panel = tblBodymain.GetControlFromPosition(col, row) as Panel ?? new Panel { Dock = DockStyle.Fill };
                             panel.BackColor = backColor;
                             panel.ForeColor = foreColor;
                             panel.Controls.Clear();
@@ -221,15 +254,15 @@ namespace DevEduManager.Modals
                                     panel.Controls.Add(timeLbl);
                                 }
                             }
-                            if (tbl.GetControlFromPosition(col, row) == null)
-                                tbl.Controls.Add(panel, col, row);
+                            if (tblBodymain.GetControlFromPosition(col, row) == null)
+                                tblBodymain.Controls.Add(panel, col, row);
                         }
                     }
                 }
                 currentDay = currentDay.AddDays(1);
             }
 
-            schedulePanel.Controls.Add(tbl);
+            bodymainPanel.Controls.Add(tblBodymain);
         }
 
         private void BtnPrev_Click(object sender, EventArgs e)

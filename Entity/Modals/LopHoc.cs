@@ -8,16 +8,19 @@ namespace Enity.Models
 {
     public class LopHoc
     {
-        public string MaLop { get; set; }
-        public string TenLop { get; set; }
-        public DateTime NgayBD { get; set; }
-        public DateTime NgayKT { get; set; }
-        public int SiSo { get; set; }
-        public bool DangMo { get; set; }
-
-        // Foreign key
-        public string MaKH { get; set; }
-        public KhoaHoc KhoaHoc { get; set; }
+        public string ClassName { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
+        public string Room { get; set; }
+        public string Teacher { get; set; }
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    public class SelectItems
+    {
+        public string SelectText { get; set; }
+        public byte SelectValue { get; set; }
     }
 
 }

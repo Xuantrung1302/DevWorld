@@ -232,7 +232,7 @@ namespace DevEduManager.Modals
                                 Address = txtDiaChi.Text,
                                 PhoneNumber = txtSDT.Text,
                                 Email = txtEmail.Text,
-                                EnrollmentDate = DateTime.Now.Date,
+                                EnrollmentDate = DateTime.Parse(dateNgayTiepNhan.Value.ToString()).Date,
 
                                 Username = txtTenDangNhap.Text,
                                 Password = txtMatKhau.Text

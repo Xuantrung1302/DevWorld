@@ -597,7 +597,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmXepLop frm = new frmXepLop()
+            frmThoiKhoaBieuAll frm = new frmThoiKhoaBieuAll()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false

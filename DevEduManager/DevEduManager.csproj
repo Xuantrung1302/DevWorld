@@ -126,7 +126,6 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalPages.cs" />
-    <Compile Include="Modals\DrawOD_USER_ORDER.cs" />
     <Compile Include="Modals\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,13 +210,6 @@
     <Compile Include="Modals\frmThongTinTrungTam.Designer.cs">
       <DependentUpon>frmThongTinTrungTam.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modals\ODUserOrderItemDraw.cs" />
-    <Compile Include="Modals\ScheduleUctrl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Modals\ScheduleUctrl.Designer.cs">
-      <DependentUpon>ScheduleUctrl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modals\ucThoiKhoaBieuTuan.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -261,12 +253,6 @@
     </Compile>
     <Compile Include="Screens\frmCacLopDaHoc.Designer.cs">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\frmCalendarStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\frmCalendarStudent.Designer.cs">
-      <DependentUpon>frmCalendarStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -476,9 +462,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmCacLopDaHoc.resx">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\frmCalendarStudent.resx">
-      <DependentUpon>frmCalendarStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>

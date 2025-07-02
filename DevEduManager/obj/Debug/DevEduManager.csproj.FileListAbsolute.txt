@@ -526,7 +526,6 @@ E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Sc
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyLopHoc.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyNhanVien.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyTaiKhoan.resources
-E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThoiKhoaBieu.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThongKeDiemTheoLop.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThongKeNoHocVien.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmTiepNhanHocVien.resources
@@ -538,3 +537,6 @@ E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.cs
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.csproj.CoreCompileInputs.cache
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.csproj.CopyComplete
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmTaoThoiKhoaBieu.resources
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Modals.frmKyHocEdit.resources
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyKyHoc.resources
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThoiKhoaBieuAll.resources

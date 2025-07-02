@@ -10,21 +10,13 @@ using System.Windows.Forms;
 
 namespace DevEduManager.Screens
 {
-    public partial class frmBangDiem : Form
+    public partial class frmDiemDanhGiaoVien : Form
     {
-        public frmBangDiem()
+        public frmDiemDanhGiaoVien()
         {
             InitializeComponent();
         }
 
-        private void btnInBangDiem_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void frmBangDiem_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

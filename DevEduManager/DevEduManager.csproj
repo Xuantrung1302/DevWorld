@@ -162,6 +162,12 @@
     <Compile Include="Modals\frmKyHocEdit.Designer.cs">
       <DependentUpon>frmKyHocEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\frmLopHocEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmLopHocEdit.Designer.cs">
+      <DependentUpon>frmLopHocEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmMessageDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,12 @@
     <Compile Include="Screens\frmBangTinEdit.Designer.cs">
       <DependentUpon>frmBangTinEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmBaoCaoDiemDanhGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmBaoCaoDiemDanhGiaoVien.Designer.cs">
+      <DependentUpon>frmBaoCaoDiemDanhGiaoVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmBaoCaoHocVienTheoThang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +271,12 @@
     </Compile>
     <Compile Include="Screens\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmDiemDanhGiaoVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmDiemDanhGiaoVien.Designer.cs">
+      <DependentUpon>frmDiemDanhGiaoVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\frmDonTu.cs">
       <SubType>Form</SubType>
@@ -411,6 +429,9 @@
     <EmbeddedResource Include="Modals\frmKyHocEdit.resx">
       <DependentUpon>frmKyHocEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmLopHocEdit.resx">
+      <DependentUpon>frmLopHocEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmMessageDialog.resx">
       <DependentUpon>frmMessageDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,6 +478,9 @@
     <EmbeddedResource Include="Screens\frmBangTinEdit.resx">
       <DependentUpon>frmBangTinEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmBaoCaoDiemDanhGiaoVien.resx">
+      <DependentUpon>frmBaoCaoDiemDanhGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmBaoCaoHocVienTheoThang.resx">
       <DependentUpon>frmBaoCaoHocVienTheoThang.cs</DependentUpon>
     </EmbeddedResource>
@@ -466,6 +490,9 @@
     <EmbeddedResource Include="Screens\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmDiemDanhGiaoVien.resx">
+      <DependentUpon>frmDiemDanhGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmDonTu.resx">
       <DependentUpon>frmDonTu.cs</DependentUpon>

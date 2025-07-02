@@ -38,7 +38,6 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.lblServiceName = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mnuTopMain = new System.Windows.Forms.MenuStrip();
             this.pmniDW_Page_Begin = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNhanVienTitle = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,10 +89,13 @@
             this.japanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DemoScreen = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlWorkspace = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.mnuTopMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -104,7 +106,7 @@
             this.panel2.Controls.Add(this.lblServerName);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 867);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1480, 30);
             this.panel2.TabIndex = 4;
@@ -130,7 +132,7 @@
             this.lblDateTime.ForeColor = System.Drawing.Color.White;
             this.lblDateTime.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblDateTime.Location = new System.Drawing.Point(1233, 0);
-            this.lblDateTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblDateTime.Margin = new System.Windows.Forms.Padding(4);
             this.lblDateTime.Name = "lblDateTime";
             this.lblDateTime.Size = new System.Drawing.Size(239, 30);
             this.lblDateTime.TabIndex = 2;
@@ -148,7 +150,7 @@
             this.lblServerName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblServerName.ForeColor = System.Drawing.Color.White;
             this.lblServerName.Location = new System.Drawing.Point(945, 0);
-            this.lblServerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lblServerName.Margin = new System.Windows.Forms.Padding(4);
             this.lblServerName.Name = "lblServerName";
             this.lblServerName.Size = new System.Drawing.Size(280, 30);
             this.lblServerName.TabIndex = 1;
@@ -177,7 +179,7 @@
             this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -198,7 +200,7 @@
             this.btnLogOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogOut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnLogOut.Location = new System.Drawing.Point(1284, 4);
-            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogOut.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogOut.Name = "btnLogOut";
             this.tableLayoutPanel1.SetRowSpan(this.btnLogOut, 2);
             this.btnLogOut.Size = new System.Drawing.Size(192, 61);
@@ -239,20 +241,6 @@
             this.lblUserName.Text = "Tên User";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Image = global::DevEduManager.Properties.Resources.Logo2_1;
-            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(220, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // mnuTopMain
             // 
             this.mnuTopMain.Dock = System.Windows.Forms.DockStyle.Left;
@@ -285,7 +273,7 @@
             this.pmniDW_Page_Begin.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniDW_Page_Begin.Name = "pmniDW_Page_Begin";
             this.pmniDW_Page_Begin.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.pmniDW_Page_Begin.Size = new System.Drawing.Size(169, 44);
+            this.pmniDW_Page_Begin.Size = new System.Drawing.Size(171, 44);
             this.pmniDW_Page_Begin.Text = "Trang mở đầu";
             this.pmniDW_Page_Begin.Click += new System.EventHandler(this.btnTrangMoDau_Click);
             // 
@@ -308,7 +296,7 @@
             this.btnNhanVienTitle.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnNhanVienTitle.ShortcutKeyDisplayString = "Alt+M";
             this.btnNhanVienTitle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
-            this.btnNhanVienTitle.Size = new System.Drawing.Size(169, 39);
+            this.btnNhanVienTitle.Size = new System.Drawing.Size(171, 39);
             this.btnNhanVienTitle.Text = "Nhân viên";
             this.btnNhanVienTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -328,6 +316,7 @@
             this.btnLapPhieuGhiDanh.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnLapPhieuGhiDanh.Size = new System.Drawing.Size(311, 38);
             this.btnLapPhieuGhiDanh.Text = "Lập phiếu ghi danh";
+            this.btnLapPhieuGhiDanh.Click += new System.EventHandler(this.btnLapPhieuGhiDanh_Click);
             // 
             // btnBaoCaoHocVienTheoThang
             // 
@@ -416,7 +405,7 @@
             this.btnQuanTriTitle.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnQuanTriTitle.ShortcutKeyDisplayString = "Alt+T";
             this.btnQuanTriTitle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
-            this.btnQuanTriTitle.Size = new System.Drawing.Size(169, 39);
+            this.btnQuanTriTitle.Size = new System.Drawing.Size(171, 39);
             this.btnQuanTriTitle.Text = "Quản trị viên";
             this.btnQuanTriTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -524,7 +513,9 @@
             this.btnGiangVienTitle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniAS_D_US_02,
             this.toolStripMenuItem1,
-            this.mniAS_D_US_06});
+            this.mniAS_D_US_06,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem6});
             this.btnGiangVienTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGiangVienTitle.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnGiangVienTitle.Name = "btnGiangVienTitle";
@@ -542,6 +533,7 @@
             this.mniAS_D_US_02.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.mniAS_D_US_02.Size = new System.Drawing.Size(283, 38);
             this.mniAS_D_US_02.Text = "Xem các lớp dạy";
+            this.mniAS_D_US_02.Click += new System.EventHandler(this.mniAS_D_US_02_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -573,7 +565,7 @@
             this.btnHocVienTitle.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnHocVienTitle.ShortcutKeyDisplayString = "Alt+O";
             this.btnHocVienTitle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
-            this.btnHocVienTitle.Size = new System.Drawing.Size(169, 39);
+            this.btnHocVienTitle.Size = new System.Drawing.Size(171, 39);
             this.btnHocVienTitle.Text = "Học viên";
             this.btnHocVienTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -628,7 +620,7 @@
             this.pmniAS_D_WS.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniAS_D_WS.ShortcutKeyDisplayString = "Alt+W";
             this.pmniAS_D_WS.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.W)));
-            this.pmniAS_D_WS.Size = new System.Drawing.Size(169, 39);
+            this.pmniAS_D_WS.Size = new System.Drawing.Size(171, 39);
             this.pmniAS_D_WS.Text = "Trợ giúp";
             this.pmniAS_D_WS.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -656,7 +648,7 @@
             this.pmniAS_D_VP.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniAS_D_VP.ShortcutKeyDisplayString = "Alt+V";
             this.pmniAS_D_VP.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.V)));
-            this.pmniAS_D_VP.Size = new System.Drawing.Size(169, 39);
+            this.pmniAS_D_VP.Size = new System.Drawing.Size(171, 39);
             this.pmniAS_D_VP.Text = "Tin nhắn";
             this.pmniAS_D_VP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pmniAS_D_VP.Click += new System.EventHandler(this.pmniAS_D_VP_Click);
@@ -669,7 +661,7 @@
             this.pmniDW_DonTu.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniDW_DonTu.ShortcutKeyDisplayString = "Alt+R";
             this.pmniDW_DonTu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
-            this.pmniDW_DonTu.Size = new System.Drawing.Size(169, 39);
+            this.pmniDW_DonTu.Size = new System.Drawing.Size(171, 39);
             this.pmniDW_DonTu.Text = "Đơn từ";
             this.pmniDW_DonTu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pmniDW_DonTu.Click += new System.EventHandler(this.pmniDW_DonTu_Click);
@@ -685,7 +677,7 @@
             this.pmniAS_D_DC.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniAS_D_DC.Name = "pmniAS_D_DC";
             this.pmniAS_D_DC.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.pmniAS_D_DC.Size = new System.Drawing.Size(169, 39);
+            this.pmniAS_D_DC.Size = new System.Drawing.Size(171, 39);
             this.pmniAS_D_DC.Text = "文書";
             this.pmniAS_D_DC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pmniAS_D_DC.Visible = false;
@@ -731,7 +723,7 @@
             this.pmniAS_D_Web_Support.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniAS_D_Web_Support.ShortcutKeyDisplayString = "&F1";
             this.pmniAS_D_Web_Support.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.pmniAS_D_Web_Support.Size = new System.Drawing.Size(169, 14);
+            this.pmniAS_D_Web_Support.Size = new System.Drawing.Size(171, 14);
             this.pmniAS_D_Web_Support.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // languaguesToolStripMenuItem
@@ -742,7 +734,7 @@
             this.languaguesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.languaguesToolStripMenuItem.Name = "languaguesToolStripMenuItem";
             this.languaguesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.languaguesToolStripMenuItem.Size = new System.Drawing.Size(169, 39);
+            this.languaguesToolStripMenuItem.Size = new System.Drawing.Size(171, 39);
             this.languaguesToolStripMenuItem.Text = "Languages";
             this.languaguesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.languaguesToolStripMenuItem.Visible = false;
@@ -766,7 +758,7 @@
             // DemoScreen
             // 
             this.DemoScreen.Name = "DemoScreen";
-            this.DemoScreen.Size = new System.Drawing.Size(175, 29);
+            this.DemoScreen.Size = new System.Drawing.Size(177, 29);
             this.DemoScreen.Text = "Demo screen";
             this.DemoScreen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DemoScreen.Visible = false;
@@ -775,10 +767,41 @@
             // 
             this.pnlWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlWorkspace.Location = new System.Drawing.Point(192, 69);
-            this.pnlWorkspace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlWorkspace.Margin = new System.Windows.Forms.Padding(4);
             this.pnlWorkspace.Name = "pnlWorkspace";
             this.pnlWorkspace.Size = new System.Drawing.Size(1288, 798);
             this.pnlWorkspace.TabIndex = 11;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Image = global::DevEduManager.Properties.Resources.Logo2_1;
+            this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox1.Location = new System.Drawing.Point(27, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 2);
+            this.pictureBox1.Size = new System.Drawing.Size(220, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(283, 38);
+            this.toolStripMenuItem5.Text = "Điểm danh";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(283, 38);
+            this.toolStripMenuItem6.Text = "Số giờ dạy học";
             // 
             // frmMain
             // 
@@ -791,7 +814,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1359, 934);
             this.Name = "frmMain";
             this.ShowIcon = false;
@@ -803,9 +826,9 @@
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.mnuTopMain.ResumeLayout(false);
             this.mnuTopMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -873,5 +896,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem btnSuaThongBao;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
     }
 }

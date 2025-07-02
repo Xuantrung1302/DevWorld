@@ -620,5 +620,38 @@ namespace DevEduManager
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
         }
+
+        private void btnLapPhieuGhiDanh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mniAS_D_US_02_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmXemCacLopDay frm = new frmXemCacLopDay()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmDiemDanhGiaoVien frm = new frmDiemDanhGiaoVien()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

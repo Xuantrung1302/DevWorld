@@ -540,3 +540,6 @@ E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Sc
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Modals.frmKyHocEdit.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyKyHoc.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThoiKhoaBieuAll.resources
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Modals.frmLopHocEdit.resources
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmBaoCaoDiemDanhGiaoVien.resources
+E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmDiemDanhGiaoVien.resources

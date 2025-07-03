@@ -180,7 +180,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmTiepNhanHocVien frm = new frmTiepNhanHocVien()
+            frmQuanLyHocVien frm = new frmQuanLyHocVien()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -383,57 +383,20 @@ namespace DevEduManager
             {
                 switch (role)
                 {
-                    case "Enrollment Staff": // Nhân viên ghi danh
-                        btnGiangVienTitle.Visible = false;
-                        btnHocVienTitle.Visible = false;
+                    case "Employee": // Nhân viên
+                        btnNhanVienTitle.Visible = true;
                         btnQuanTriTitle.Visible = false;
-                        btnThongKeNoHocVien.Enabled = false;
-                        btnThongKeDiemTheoLop.Enabled = false;
-                        btnQuanLyDiem.Enabled = false;
-                        btnXepLop.Enabled = false;
+                        btnHocVienTitle.Visible = false;
+                        btnGiangVienTitle.Visible = false;
                         btnNhanVienTitle_Click(btnNhanVienTitle, null);
                         break;
 
-                    case "Academic Staff": // Nhân viên học vụ
-                        btnGiangVienTitle.Visible = false;
-                        btnHocVienTitle.Visible = false;
-                        btnTiepNhanHocVien.Enabled = false;
-                        btnLapPhieuGhiDanh.Enabled = false;
-                        btnBaoCaoHocVienTheoThang.Enabled = false;
-                        btnThongKeNoHocVien.Enabled = false;
-                        btnQuanLyNhanVien.Enabled = false;
-                        btnQuanLyHocPhi.Enabled = false;
-                        btnQuanLyTaiKhoan.Enabled = false;
-                        btnThayDoiQuyDinh.Enabled = false;
-                        btnKetNoiCSDL.Enabled = false;
-                        btnThongTinTrungTam.Enabled = false;
-                        btnNhanVienTitle_Click(btnNhanVienTitle, null);
-                        break;
 
-                    case "Accounting Staff": // Nhân viên kế toán
-                        btnGiangVienTitle.Visible = false;
-                        btnHocVienTitle.Visible = false;
-                        btnTiepNhanHocVien.Enabled = false;
-                        btnLapPhieuGhiDanh.Enabled = false;
-                        btnBaoCaoHocVienTheoThang.Enabled = false;
-                        btnThongKeDiemTheoLop.Enabled = false;
-                        btnQuanLyDiem.Enabled = false;
-                        btnXepLop.Enabled = false;
-                        btnQuanLyHocVien.Enabled = false;
-                        btnQuanLyNhanVien.Enabled = false;
-                        btnQuanLyGiangVien.Enabled = false;
-                        btnQuanLyLopHoc.Enabled = false;
-                        btnQuanLyKyHoc.Enabled = false;
-                        btnQuanLyTaiKhoan.Enabled = false;
-                        btnThayDoiQuyDinh.Enabled = false;
-                        btnKetNoiCSDL.Enabled = false;
-                        btnThongTinTrungTam.Enabled = false;
-                        btnNhanVienTitle_Click(btnNhanVienTitle, null);
-                        break;
-
-                    case "Administrator": // Quản trị viên
+                    case "Admin": // Quản trị viên
                         btnHocVienTitle.Visible = false;
                         btnGiangVienTitle.Visible = false;
+                        btnNhanVienTitle.Visible = true;
+                        btnQuanTriTitle.Visible = true;
                         btnQuanTriTitle_Click_1(btnQuanTriTitle, null);
                         break;
 
@@ -441,25 +404,21 @@ namespace DevEduManager
                         btnNhanVienTitle.Visible = false;
                         btnQuanTriTitle.Visible = false;
                         btnHocVienTitle.Visible = false;
+                        btnGiangVienTitle.Visible = true;
                         btnGiangVienTitle_Click_1(btnGiangVienTitle, null);
+                        break;
+
+                    case "Student": // học viên       
+                        btnNhanVienTitle.Visible = false;
+                        btnQuanTriTitle.Visible = false;
+                        btnGiangVienTitle.Visible = false;
+                        btnHocVienTitle.Visible = true;
+                        btnHocVienTitle_Click(this.btnHocVienTitle, null);
                         break;
                 }
             }
-            else if (role == "Student") // Nếu là học viên
-            {
-                btnNhanVienTitle.Visible = false;
-                btnQuanTriTitle.Visible = false;
-                btnGiangVienTitle.Visible = false;
-                btnQuanTriTitle_Click_1(this.btnHocVienTitle, null);
-            }
-            else
-            {
-                // Trường hợp khác (nếu có), mặc định ẩn các nút không liên quan
-                btnNhanVienTitle.Visible = false;
-                btnQuanTriTitle.Visible = false;
-                btnHocVienTitle.Visible = false;
-                btnGiangVienTitle_Click_1(this.btnGiangVienTitle, null);
-            }
+
+
         }
 
 
@@ -623,7 +582,16 @@ namespace DevEduManager
 
         private void btnLapPhieuGhiDanh_Click(object sender, EventArgs e)
         {
+            pnlWorkspace.Controls.Clear();
 
+            frmQuanLyGiangVien frm = new frmQuanLyGiangVien()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
         }
 
         private void mniAS_D_US_02_Click(object sender, EventArgs e)
@@ -652,6 +620,54 @@ namespace DevEduManager
 
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
+        }
+
+        private void mniAS_D_OD_06_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBaoCaoHocVienTheoThang_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyKyHoc frm = new frmQuanLyKyHoc()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnThongKeNoHocVien_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyLopHoc frm = new frmQuanLyLopHoc()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnQuanTriTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNhanVienTitle_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHocVienTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

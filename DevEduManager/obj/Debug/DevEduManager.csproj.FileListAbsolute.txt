@@ -387,7 +387,6 @@ E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\Dev
 E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyLopHoc.resources
 E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyNhanVien.resources
 E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyTaiKhoan.resources
-E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThoiKhoaBieu.resources
 E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThongKeDiemTheoLop.resources
 E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThongKeNoHocVien.resources
 E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmTiepNhanHocVien.resources
@@ -543,3 +542,10 @@ E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Sc
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Modals.frmLopHocEdit.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmBaoCaoDiemDanhGiaoVien.resources
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmDiemDanhGiaoVien.resources
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Modals.frmKyHocEdit.resources
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Modals.frmLopHocEdit.resources
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmBaoCaoDiemDanhGiaoVien.resources
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmDiemDanhGiaoVien.resources
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmQuanLyKyHoc.resources
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmTaoThoiKhoaBieu.resources
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\DevEduManager\obj\Debug\DevEduManager.Screens.frmThoiKhoaBieuAll.resources

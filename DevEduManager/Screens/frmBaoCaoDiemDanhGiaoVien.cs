@@ -23,68 +23,99 @@ namespace DevEduManager.Screens
             // Xóa cột mặc định
             gridReportAttendance.Columns.Clear();
 
-            // Thêm cột "Mã HV" và "Tên HV" (chiếm 2 dòng)
+            // Thêm các cột với độ rộng gấp đôi
             gridReportAttendance.Columns.Add("MaHV", "Mã HV");
             gridReportAttendance.Columns.Add("TenHV", "Tên HV");
-
-            // Thêm nhóm cột "Ngày học" với 4 session
             gridReportAttendance.Columns.Add("NgayHoc1_Session1", "Session 1");
             gridReportAttendance.Columns.Add("NgayHoc1_Session2", "Session 2");
             gridReportAttendance.Columns.Add("NgayHoc2_Session1", "Session 1");
             gridReportAttendance.Columns.Add("NgayHoc2_Session2", "Session 2");
-
-            // Thêm cột "Phần trăm" (chiếm 2 dòng)
             gridReportAttendance.Columns.Add("PhanTram", "Phần trăm");
+
+            // Đặt độ rộng các cột (gấp đôi bình thường)
+            gridReportAttendance.Columns["MaHV"].Width = 120; // Tăng từ ~60 lên 120
+            gridReportAttendance.Columns["TenHV"].Width = 200; // Tăng từ ~100 lên 200
+            gridReportAttendance.Columns["NgayHoc1_Session1"].Width = 80;
+            gridReportAttendance.Columns["NgayHoc1_Session2"].Width = 80;
+            gridReportAttendance.Columns["NgayHoc2_Session1"].Width = 80;
+            gridReportAttendance.Columns["NgayHoc2_Session2"].Width = 80;
+            gridReportAttendance.Columns["PhanTram"].Width = 120;
 
             // Tùy chỉnh header
             gridReportAttendance.RowHeadersVisible = false;
             gridReportAttendance.AllowUserToAddRows = false;
-            gridReportAttendance.ColumnHeadersHeight = 60; // Tăng chiều cao header để hiển thị 2 dòng
+            gridReportAttendance.ColumnHeadersHeight = 60; // Chiều cao header
+            gridReportAttendance.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray; // Màu nền xám
+            gridReportAttendance.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold); // Font đậm
+            gridReportAttendance.EnableHeadersVisualStyles = false; // Tắt style mặc định để áp dụng màu
 
             // Vẽ header tùy chỉnh
             gridReportAttendance.CellPainting += (sender, e) =>
             {
                 if (e.RowIndex == -1) // Header
                 {
-                    e.PaintBackground(e.ClipBounds, true);
+                    // Vẽ nền xám cho toàn bộ header
+                    using (SolidBrush backBrush = new SolidBrush(Color.LightGray))
+                    {
+                        e.Graphics.FillRectangle(backBrush, e.CellBounds);
+                    }
+
+                    // Vẽ border
+                    e.Graphics.DrawRectangle(Pens.Gray, e.CellBounds);
+
                     using (SolidBrush brush = new SolidBrush(gridReportAttendance.ColumnHeadersDefaultCellStyle.ForeColor))
                     {
-                        // Cột "Mã HV" và "Tên HV" (dòng 1)
-                        if (e.ColumnIndex == 0 || e.ColumnIndex == 1)
+                        // Cột "Mã HV", "Tên HV" và "Phần trăm" (chiếm cả 2 dòng)
+                        if (e.ColumnIndex == 0 || e.ColumnIndex == 1 || e.ColumnIndex == 6)
                         {
+                            StringFormat sf = new StringFormat();
+                            sf.Alignment = StringAlignment.Center;
+                            sf.LineAlignment = StringAlignment.Center;
+
                             e.Graphics.DrawString(gridReportAttendance.Columns[e.ColumnIndex].HeaderText,
                                 gridReportAttendance.ColumnHeadersDefaultCellStyle.Font,
-                                brush, e.CellBounds, StringFormat.GenericDefault);
+                                brush, e.CellBounds, sf);
                         }
-                        // Nhóm "Ngày học" (dòng 1)
+                        // Các cột ngày học
                         else if (e.ColumnIndex >= 2 && e.ColumnIndex <= 5)
                         {
-                            if (e.ColumnIndex == 2) // Bắt đầu nhóm "Ngày học 1"
-                            {
-                                Rectangle rect = new Rectangle(e.CellBounds.X, e.CellBounds.Y,
-                                    gridReportAttendance.Columns[3].Width + gridReportAttendance.Columns[2].Width, e.CellBounds.Height);
-                                e.Graphics.DrawString("Ngày học 1", gridReportAttendance.ColumnHeadersDefaultCellStyle.Font,
-                                    brush, rect, new StringFormat { Alignment = StringAlignment.Center });
-                            }
-                            else if (e.ColumnIndex == 4) // Bắt đầu nhóm "Ngày học 2"
-                            {
-                                Rectangle rect = new Rectangle(e.CellBounds.X, e.CellBounds.Y,
-                                    gridReportAttendance.Columns[5].Width + gridReportAttendance.Columns[4].Width, e.CellBounds.Height);
-                                e.Graphics.DrawString("Ngày học 2", gridReportAttendance.ColumnHeadersDefaultCellStyle.Font,
-                                    brush, rect, new StringFormat { Alignment = StringAlignment.Center });
-                            }
-                        }
-                        // Cột "Phần trăm" (dòng 1)
-                        else if (e.ColumnIndex == 6)
-                        {
+                            // Dòng 1: Tên ngày học
+                            Rectangle topRect = new Rectangle(e.CellBounds.X, e.CellBounds.Y,
+                                                            e.CellBounds.Width, e.CellBounds.Height / 2);
+
+                            // Dòng 2: Tên session
+                            Rectangle bottomRect = new Rectangle(e.CellBounds.X, e.CellBounds.Y + e.CellBounds.Height / 2,
+                                                               e.CellBounds.Width, e.CellBounds.Height / 2);
+
+                            // Xác định tên ngày học dựa trên cột
+                            string ngayHoc = e.ColumnIndex <= 3 ? "Ngày học 1" : "Ngày học 2";
+
+                            // Vẽ dòng 1 (ngày học)
+                            StringFormat sfTop = new StringFormat();
+                            sfTop.Alignment = StringAlignment.Center;
+                            sfTop.LineAlignment = StringAlignment.Center;
+                            e.Graphics.DrawString(ngayHoc, gridReportAttendance.ColumnHeadersDefaultCellStyle.Font,
+                                                 brush, topRect, sfTop);
+
+                            // Vẽ dòng 2 (session)
+                            StringFormat sfBottom = new StringFormat();
+                            sfBottom.Alignment = StringAlignment.Center;
+                            sfBottom.LineAlignment = StringAlignment.Center;
                             e.Graphics.DrawString(gridReportAttendance.Columns[e.ColumnIndex].HeaderText,
-                                gridReportAttendance.ColumnHeadersDefaultCellStyle.Font,
-                                brush, e.CellBounds, StringFormat.GenericDefault);
+                                                gridReportAttendance.ColumnHeadersDefaultCellStyle.Font,
+                                                brush, bottomRect, sfBottom);
+
+                            // Vẽ đường phân cách giữa 2 dòng
+                            e.Graphics.DrawLine(Pens.Gray, e.CellBounds.X, e.CellBounds.Y + e.CellBounds.Height / 2,
+                                              e.CellBounds.X + e.CellBounds.Width, e.CellBounds.Y + e.CellBounds.Height / 2);
                         }
                     }
                     e.Handled = true;
                 }
             };
+
+            // Merge header cho các cột chiếm 2 dòng
+            gridReportAttendance.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter;
 
             // Thêm dữ liệu mẫu
             gridReportAttendance.Rows.Add("Student23", "Bui Hoang Tien", "P", "P", "P", "P", "50%");

@@ -6,3 +6,9 @@ E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.cs
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.dll
 E:\DATN_Trung_Huy\FrontEndDATN\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.pdb
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\BusinessLogic\bin\Debug\BusinessLogic.dll
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\BusinessLogic\bin\Debug\BusinessLogic.pdb
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.csproj.AssemblyReference.cache
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.dll
+E:\a43082\Đồ án tốt nghiệp\DevWorld\DevWorld\BusinessLogic\obj\Debug\BusinessLogic.pdb

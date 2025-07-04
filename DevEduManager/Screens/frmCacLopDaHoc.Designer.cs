@@ -36,14 +36,9 @@ namespace DevEduManager.Screens
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.cboKhoaHoc = new System.Windows.Forms.ComboBox();
+            this.cboKyHoc = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.rdKhoaHoc = new System.Windows.Forms.RadioButton();
-            this.dateDenNgay = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTuNgay = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.rdKhoangThoiGian = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -51,6 +46,7 @@ namespace DevEduManager.Screens
             this.gridLop = new System.Windows.Forms.DataGridView();
             this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -114,14 +110,9 @@ namespace DevEduManager.Screens
             // 
             this.panel2.Controls.Add(this.btnDatLai);
             this.panel2.Controls.Add(this.btnTimKiem);
-            this.panel2.Controls.Add(this.cboKhoaHoc);
+            this.panel2.Controls.Add(this.cboKyHoc);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.rdKhoaHoc);
-            this.panel2.Controls.Add(this.dateDenNgay);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.dateTuNgay);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.rdKhoangThoiGian);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 24);
@@ -165,87 +156,37 @@ namespace DevEduManager.Screens
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // cboKhoaHoc
+            // cboKyHoc
             // 
-            this.cboKhoaHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cboKyHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboKhoaHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboKhoaHoc.Enabled = false;
-            this.cboKhoaHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboKhoaHoc.FormattingEnabled = true;
-            this.cboKhoaHoc.Location = new System.Drawing.Point(121, 194);
-            this.cboKhoaHoc.Name = "cboKhoaHoc";
-            this.cboKhoaHoc.Size = new System.Drawing.Size(190, 25);
-            this.cboKhoaHoc.TabIndex = 42;
+            this.cboKyHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKyHoc.Enabled = false;
+            this.cboKyHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboKyHoc.FormattingEnabled = true;
+            this.cboKyHoc.Location = new System.Drawing.Point(121, 83);
+            this.cboKyHoc.Name = "cboKyHoc";
+            this.cboKyHoc.Size = new System.Drawing.Size(190, 25);
+            this.cboKyHoc.TabIndex = 42;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(39, 199);
+            this.label9.Location = new System.Drawing.Point(39, 88);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.Size = new System.Drawing.Size(39, 10);
             this.label9.TabIndex = 41;
-            this.label9.Text = "Chọn khóa:";
+            this.label9.Text = "Chọn kỳ:";
             // 
             // rdKhoaHoc
             // 
             this.rdKhoaHoc.AutoSize = true;
-            this.rdKhoaHoc.Location = new System.Drawing.Point(21, 164);
+            this.rdKhoaHoc.Location = new System.Drawing.Point(21, 53);
             this.rdKhoaHoc.Name = "rdKhoaHoc";
-            this.rdKhoaHoc.Size = new System.Drawing.Size(98, 17);
+            this.rdKhoaHoc.Size = new System.Drawing.Size(68, 14);
             this.rdKhoaHoc.TabIndex = 40;
-            this.rdKhoaHoc.Text = "Theo khóa học";
+            this.rdKhoaHoc.Text = "Theo kỳ học";
             this.rdKhoaHoc.UseVisualStyleBackColor = true;
-            // 
-            // dateDenNgay
-            // 
-            this.dateDenNgay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateDenNgay.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dateDenNgay.Location = new System.Drawing.Point(121, 114);
-            this.dateDenNgay.Name = "dateDenNgay";
-            this.dateDenNgay.Size = new System.Drawing.Size(190, 25);
-            this.dateDenNgay.TabIndex = 39;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 122);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "Đến ngày:";
-            // 
-            // dateTuNgay
-            // 
-            this.dateTuNgay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTuNgay.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dateTuNgay.Location = new System.Drawing.Point(121, 73);
-            this.dateTuNgay.Name = "dateTuNgay";
-            this.dateTuNgay.Size = new System.Drawing.Size(190, 25);
-            this.dateTuNgay.TabIndex = 37;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Từ ngày:";
-            // 
-            // rdKhoangThoiGian
-            // 
-            this.rdKhoangThoiGian.AutoSize = true;
-            this.rdKhoangThoiGian.Checked = true;
-            this.rdKhoangThoiGian.Location = new System.Drawing.Point(21, 46);
-            this.rdKhoangThoiGian.Name = "rdKhoangThoiGian";
-            this.rdKhoangThoiGian.Size = new System.Drawing.Size(132, 17);
-            this.rdKhoangThoiGian.TabIndex = 35;
-            this.rdKhoangThoiGian.TabStop = true;
-            this.rdKhoangThoiGian.Text = "Theo khoảng thời gian";
-            this.rdKhoangThoiGian.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -308,7 +249,8 @@ namespace DevEduManager.Screens
             this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmMaLop,
-            this.clmTenLop});
+            this.clmTenLop,
+            this.clmStatus});
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridLop.Location = new System.Drawing.Point(23, 46);
             this.gridLop.MultiSelect = false;
@@ -320,7 +262,7 @@ namespace DevEduManager.Screens
             // 
             // clmMaLop
             // 
-            this.clmMaLop.DataPropertyName = "MaLop";
+            this.clmMaLop.DataPropertyName = "ClassID";
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
             this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmMaLop.FillWeight = 50F;
@@ -329,9 +271,15 @@ namespace DevEduManager.Screens
             // 
             // clmTenLop
             // 
-            this.clmTenLop.DataPropertyName = "TenLop";
+            this.clmTenLop.DataPropertyName = "ClassName";
             this.clmTenLop.HeaderText = "Tên lớp";
             this.clmTenLop.Name = "clmTenLop";
+            // 
+            // clmStatus
+            // 
+            this.clmStatus.HeaderText = "Trạng thái";
+            this.clmStatus.Name = "clmStatus";
+            this.clmStatus.ReadOnly = true;
             // 
             // label5
             // 
@@ -515,9 +463,9 @@ namespace DevEduManager.Screens
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
             this.label10.Location = new System.Drawing.Point(26, 122);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 19);
+            this.label10.Size = new System.Drawing.Size(26, 19);
             this.label10.TabIndex = 38;
-            this.label10.Text = "Khóa:";
+            this.label10.Text = "Kỳ:";
             // 
             // label8
             // 
@@ -587,21 +535,14 @@ namespace DevEduManager.Screens
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnDatLai;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.ComboBox cboKhoaHoc;
+        private System.Windows.Forms.ComboBox cboKyHoc;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RadioButton rdKhoaHoc;
-        private System.Windows.Forms.DateTimePicker dateDenNgay;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTuNgay;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton rdKhoangThoiGian;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnXemTatCa;
         private System.Windows.Forms.DataGridView gridLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
@@ -621,5 +562,8 @@ namespace DevEduManager.Screens
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTenLop;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmStatus;
     }
 }

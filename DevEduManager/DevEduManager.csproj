@@ -204,6 +204,12 @@
     <Compile Include="Modals\frmThayDoiThongTinNV.Designer.cs">
       <DependentUpon>frmThayDoiThongTinNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\frmThemHocVienVaoLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmThemHocVienVaoLop.Designer.cs">
+      <DependentUpon>frmThemHocVienVaoLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmThongTinPhanMem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -265,6 +271,12 @@
     </Compile>
     <Compile Include="Screens\frmCacLopDaHoc.Designer.cs">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmChuongTrinhHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmChuongTrinhHoc.Designer.cs">
+      <DependentUpon>frmChuongTrinhHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\frmDangNhap.cs">
       <SubType>Form</SubType>
@@ -450,6 +462,9 @@
     <EmbeddedResource Include="Modals\frmThayDoiThongTinNV.resx">
       <DependentUpon>frmThayDoiThongTinNV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmThemHocVienVaoLop.resx">
+      <DependentUpon>frmThemHocVienVaoLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmThongTinPhanMem.resx">
       <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>
     </EmbeddedResource>
@@ -486,6 +501,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmCacLopDaHoc.resx">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmChuongTrinhHoc.resx">
+      <DependentUpon>frmChuongTrinhHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>

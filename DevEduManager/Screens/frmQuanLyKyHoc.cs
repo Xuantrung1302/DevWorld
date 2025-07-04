@@ -210,8 +210,8 @@ namespace DevEduManager.Screens
                 DataGridViewRow row = gridKyHoc.SelectedRows[0];
                 //txtSemesterID.Text = row.Cells["SemesterID"].Value?.ToString() ?? "";
                 txtTenKH.Text = row.Cells["SemesterName"].Value?.ToString() ?? "";
-                dateTuNgay.Value = row.Cells["StartDate"].Value != DBNull.Value ? Convert.ToDateTime(row.Cells["StartDate"].Value) : DateTime.Now;
-                dateDenNgay.Value = row.Cells["EndDate"].Value != DBNull.Value ? Convert.ToDateTime(row.Cells["EndDate"].Value) : DateTime.Now;
+                //dateTuNgay.Value = row.Cells["StartDate"].Value != DBNull.Value ? Convert.ToDateTime(row.Cells["StartDate"].Value) : DateTime.Now;
+                //dateDenNgay.Value = row.Cells["EndDate"].Value != DBNull.Value ? Convert.ToDateTime(row.Cells["EndDate"].Value) : DateTime.Now;
             }
         }
 
@@ -219,17 +219,17 @@ namespace DevEduManager.Screens
         {
             string tenKH = txtTenKH.Text.Trim();
 
-            DateTime? dateStart = chkKhoangTG.Checked ? (DateTime?)DateTime.Parse(dateTuNgay.Value.ToString("dd/MM/yyyy")) : null;
-            DateTime? dateEnd = chkKhoangTG.Checked ? (DateTime?)DateTime.Parse(dateDenNgay.Value.ToString("dd/MM/yyyy")) : null;
+            //DateTime? dateStart = chkKhoangTG.Checked ? (DateTime?)DateTime.Parse(dateTuNgay.Value.ToString("dd/MM/yyyy")) : null;
+            //DateTime? dateEnd = chkKhoangTG.Checked ? (DateTime?)DateTime.Parse(dateDenNgay.Value.ToString("dd/MM/yyyy")) : null;
 
-            LoadDataToGridView(tenKH, dateStart, dateEnd);
+            LoadDataToGridView(tenKH);
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
         {
             // Đặt lại các checkbox và textbox tìm kiếm
             chkTenKH.Checked = false;
-            chkKhoangTG.Checked = false;
+            //chkKhoangTG.Checked = false;
 
             txtTenKH.Text = string.Empty;
             btnHienTatCa_Click(sender, e);
@@ -247,7 +247,7 @@ namespace DevEduManager.Screens
 
         private void chkKhoangTG_CheckedChanged(object sender, EventArgs e)
         {
-            dateTuNgay.Enabled = dateDenNgay.Enabled = chkKhoangTG.Checked;
+            //dateTuNgay.Enabled = dateDenNgay.Enabled = chkKhoangTG.Checked;
         }
 
         private void gridKyHoc_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)

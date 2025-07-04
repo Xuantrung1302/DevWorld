@@ -210,6 +210,12 @@
     <Compile Include="Modals\frmThemHocVienVaoLop.Designer.cs">
       <DependentUpon>frmThemHocVienVaoLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\frmMonHocEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmMonHocEdit.Designer.cs">
+      <DependentUpon>frmMonHocEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmThongTinPhanMem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -464,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmThemHocVienVaoLop.resx">
       <DependentUpon>frmThemHocVienVaoLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmMonHocEdit.resx">
+      <DependentUpon>frmMonHocEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmThongTinPhanMem.resx">
       <DependentUpon>frmThongTinPhanMem.cs</DependentUpon>

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -51,19 +51,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridMon = new System.Windows.Forms.DataGridView();
-            this.lblTongCong = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHienTatCa = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.clmMaMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNgayBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNgayKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTongCong = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.gridLop = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHienTatCa = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGioBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGioKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +79,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMon)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +89,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1445, 30);
             this.panel1.TabIndex = 9;
@@ -111,7 +111,7 @@
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.Location = new System.Drawing.Point(0, 30);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -149,7 +149,7 @@
             this.rdDong.AutoSize = true;
             this.rdDong.Enabled = false;
             this.rdDong.Location = new System.Drawing.Point(239, 335);
-            this.rdDong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdDong.Margin = new System.Windows.Forms.Padding(4);
             this.rdDong.Name = "rdDong";
             this.rdDong.Size = new System.Drawing.Size(79, 20);
             this.rdDong.TabIndex = 72;
@@ -162,7 +162,7 @@
             this.rdMo.Checked = true;
             this.rdMo.Enabled = false;
             this.rdMo.Location = new System.Drawing.Point(68, 335);
-            this.rdMo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdMo.Margin = new System.Windows.Forms.Padding(4);
             this.rdMo.Name = "rdMo";
             this.rdMo.Size = new System.Drawing.Size(82, 20);
             this.rdMo.TabIndex = 71;
@@ -174,7 +174,7 @@
             // 
             this.chkTinhTrang.AutoSize = true;
             this.chkTinhTrang.Location = new System.Drawing.Point(28, 304);
-            this.chkTinhTrang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkTinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.chkTinhTrang.Name = "chkTinhTrang";
             this.chkTinhTrang.Size = new System.Drawing.Size(117, 20);
             this.chkTinhTrang.TabIndex = 70;
@@ -190,7 +190,7 @@
             this.cboKy.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboKy.FormattingEnabled = true;
             this.cboKy.Location = new System.Drawing.Point(185, 250);
-            this.cboKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboKy.Margin = new System.Windows.Forms.Padding(4);
             this.cboKy.Name = "cboKy";
             this.cboKy.Size = new System.Drawing.Size(133, 31);
             this.cboKy.TabIndex = 64;
@@ -209,7 +209,7 @@
             // 
             this.chkKy.AutoSize = true;
             this.chkKy.Location = new System.Drawing.Point(31, 222);
-            this.chkKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkKy.Margin = new System.Windows.Forms.Padding(4);
             this.chkKy.Name = "chkKy";
             this.chkKy.Size = new System.Drawing.Size(78, 20);
             this.chkKy.TabIndex = 62;
@@ -227,7 +227,7 @@
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnDatLai.Location = new System.Drawing.Point(210, 510);
-            this.btnDatLai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDatLai.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(109, 36);
             this.btnDatLai.TabIndex = 61;
@@ -246,7 +246,7 @@
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnTimKiem.Location = new System.Drawing.Point(69, 510);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(132, 36);
             this.btnTimKiem.TabIndex = 60;
@@ -261,7 +261,7 @@
             this.txtTenMon.Enabled = false;
             this.txtTenMon.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtTenMon.Location = new System.Drawing.Point(185, 172);
-            this.txtTenMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenMon.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenMon.Name = "txtTenMon";
             this.txtTenMon.Size = new System.Drawing.Size(133, 30);
             this.txtTenMon.TabIndex = 51;
@@ -280,7 +280,7 @@
             // 
             this.chkTenMon.AutoSize = true;
             this.chkTenMon.Location = new System.Drawing.Point(31, 142);
-            this.chkTenMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkTenMon.Margin = new System.Windows.Forms.Padding(4);
             this.chkTenMon.Name = "chkTenMon";
             this.chkTenMon.Size = new System.Drawing.Size(111, 20);
             this.chkTenMon.TabIndex = 49;
@@ -293,7 +293,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaMon.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtMaMon.Location = new System.Drawing.Point(185, 95);
-            this.txtMaMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaMon.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaMon.Name = "txtMaMon";
             this.txtMaMon.Size = new System.Drawing.Size(133, 30);
             this.txtMaMon.TabIndex = 48;
@@ -312,11 +312,11 @@
             // 
             this.chkMaMon.AutoSize = true;
             this.chkMaMon.Location = new System.Drawing.Point(31, 64);
-            this.chkMaMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkMaMon.Margin = new System.Windows.Forms.Padding(4);
             this.chkMaMon.Name = "chkMaMon";
-            this.chkMaMon.Size = new System.Drawing.Size(105, 20);
+            this.chkMaMon.Size = new System.Drawing.Size(115, 20);
             this.chkMaMon.TabIndex = 46;
-            this.chkMaMon.Text = "Theo mã lớp";
+            this.chkMaMon.Text = "Theo mã môn:";
             this.chkMaMon.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -337,7 +337,7 @@
             this.panel5.Controls.Add(this.lblTongCong);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 46);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1095, 292);
             this.panel5.TabIndex = 4;
@@ -361,7 +361,7 @@
             this.clmNgayKT});
             this.gridMon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridMon.Location = new System.Drawing.Point(16, 6);
-            this.gridMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridMon.Margin = new System.Windows.Forms.Padding(4);
             this.gridMon.MultiSelect = false;
             this.gridMon.Name = "gridMon";
             this.gridMon.ReadOnly = true;
@@ -371,144 +371,11 @@
             this.gridMon.Size = new System.Drawing.Size(1063, 251);
             this.gridMon.TabIndex = 12;
             // 
-            // lblTongCong
-            // 
-            this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblTongCong.AutoSize = true;
-            this.lblTongCong.Location = new System.Drawing.Point(13, 261);
-            this.lblTongCong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(114, 16);
-            this.lblTongCong.TabIndex = 13;
-            this.lblTongCong.Text = "Tổng cộng: 0 môn";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dataGridView1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 338);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1095, 220);
-            this.panel4.TabIndex = 3;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.clmGioBD,
-            this.clmGioKT,
-            this.clmCacNgayTrongTuan,
-            this.clmPhong,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn1});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1095, 220);
-            this.dataGridView1.TabIndex = 13;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnHienTatCa);
-            this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.btnSua);
-            this.panel2.Controls.Add(this.btnThem);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1095, 46);
-            this.panel2.TabIndex = 0;
-            // 
-            // btnHienTatCa
-            // 
-            this.btnHienTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHienTatCa.BackColor = System.Drawing.Color.Silver;
-            this.btnHienTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHienTatCa.FlatAppearance.BorderSize = 0;
-            this.btnHienTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnHienTatCa.Location = new System.Drawing.Point(928, 7);
-            this.btnHienTatCa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnHienTatCa.Name = "btnHienTatCa";
-            this.btnHienTatCa.Size = new System.Drawing.Size(151, 31);
-            this.btnHienTatCa.TabIndex = 46;
-            this.btnHienTatCa.Text = "Hiện tất cả";
-            this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHienTatCa.UseVisualStyleBackColor = false;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.Color.Silver;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoa.Location = new System.Drawing.Point(280, 7);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(95, 31);
-            this.btnXoa.TabIndex = 20;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = false;
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.Silver;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSua.Location = new System.Drawing.Point(177, 7);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(95, 31);
-            this.btnSua.TabIndex = 19;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = false;
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.Silver;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThem.Location = new System.Drawing.Point(16, 7);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(153, 31);
-            this.btnThem.TabIndex = 18;
-            this.btnThem.Text = "Thêm môn";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = false;
-            // 
             // clmMaMon
             // 
             this.clmMaMon.DataPropertyName = "SubjectID";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaMon.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaMon.DefaultCellStyle = dataGridViewCellStyle7;
             this.clmMaMon.FillWeight = 70F;
             this.clmMaMon.HeaderText = "Mã môn";
             this.clmMaMon.MinimumWidth = 6;
@@ -518,8 +385,8 @@
             // clmTenMon
             // 
             this.clmTenMon.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.clmTenMon.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Green;
+            this.clmTenMon.DefaultCellStyle = dataGridViewCellStyle8;
             this.clmTenMon.FillWeight = 93.27411F;
             this.clmTenMon.HeaderText = "Tên môn";
             this.clmTenMon.MinimumWidth = 6;
@@ -555,12 +422,145 @@
             this.clmNgayKT.ReadOnly = true;
             this.clmNgayKT.Visible = false;
             // 
+            // lblTongCong
+            // 
+            this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblTongCong.AutoSize = true;
+            this.lblTongCong.Location = new System.Drawing.Point(13, 261);
+            this.lblTongCong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTongCong.Name = "lblTongCong";
+            this.lblTongCong.Size = new System.Drawing.Size(114, 16);
+            this.lblTongCong.TabIndex = 13;
+            this.lblTongCong.Text = "Tổng cộng: 0 môn";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.gridLop);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 338);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1095, 220);
+            this.panel4.TabIndex = 3;
+            // 
+            // gridLop
+            // 
+            this.gridLop.AllowUserToAddRows = false;
+            this.gridLop.AllowUserToResizeRows = false;
+            this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridLop.BackgroundColor = System.Drawing.Color.White;
+            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.clmGioBD,
+            this.clmGioKT,
+            this.clmCacNgayTrongTuan,
+            this.clmPhong,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewCheckBoxColumn1});
+            this.gridLop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridLop.Location = new System.Drawing.Point(0, 0);
+            this.gridLop.Margin = new System.Windows.Forms.Padding(4);
+            this.gridLop.MultiSelect = false;
+            this.gridLop.Name = "gridLop";
+            this.gridLop.ReadOnly = true;
+            this.gridLop.RowHeadersVisible = false;
+            this.gridLop.RowHeadersWidth = 51;
+            this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridLop.Size = new System.Drawing.Size(1095, 220);
+            this.gridLop.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnHienTatCa);
+            this.panel2.Controls.Add(this.btnXoa);
+            this.panel2.Controls.Add(this.btnSua);
+            this.panel2.Controls.Add(this.btnThem);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1095, 46);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnHienTatCa
+            // 
+            this.btnHienTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHienTatCa.BackColor = System.Drawing.Color.Silver;
+            this.btnHienTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHienTatCa.FlatAppearance.BorderSize = 0;
+            this.btnHienTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHienTatCa.Location = new System.Drawing.Point(928, 7);
+            this.btnHienTatCa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHienTatCa.Name = "btnHienTatCa";
+            this.btnHienTatCa.Size = new System.Drawing.Size(151, 31);
+            this.btnHienTatCa.TabIndex = 46;
+            this.btnHienTatCa.Text = "Hiện tất cả";
+            this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHienTatCa.UseVisualStyleBackColor = false;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.Silver;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoa.Location = new System.Drawing.Point(280, 7);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(95, 31);
+            this.btnXoa.TabIndex = 20;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Silver;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSua.Location = new System.Drawing.Point(177, 7);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(95, 31);
+            this.btnSua.TabIndex = 19;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = false;
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Silver;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.Location = new System.Drawing.Point(16, 7);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(153, 31);
+            this.btnThem.TabIndex = 18;
+            this.btnThem.Text = "Thêm môn";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = false;
+            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "TenLop";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Green;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Green;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn2.FillWeight = 300F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 300;
@@ -647,7 +647,7 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridMon)).EndInit();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -677,7 +677,7 @@
         private System.Windows.Forms.DataGridView gridMon;
         private System.Windows.Forms.Label lblTongCong;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridLop;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnHienTatCa;
         private System.Windows.Forms.Button btnXoa;

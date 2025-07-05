@@ -39,7 +39,7 @@ namespace DevEduManager.Screens
             //cboLoaiHV.SelectedIndexChanged += new EventHandler(cboLoaiHV_SelectedIndexChanged);
         }
 
-        private async void LoadDataToGridView(string maHV = null, string tenHV = null, string gioiTinhHV = null, DateTime? dateStart = null, DateTime? dateEnd = null, string maLoaiHV = null)
+        private async void LoadDataToGridView(string maHV = null, string tenHV = null, string gioiTinhHV = null)
         {
             try
             {
@@ -51,9 +51,8 @@ namespace DevEduManager.Screens
                                    //where (string.IsNullOrEmpty(maLoaiHV) || row.Field<string>("StudentID").Contains(maLoaiHV)) &&
                                    where (string.IsNullOrEmpty(maHV) || row.Field<string>("StudentID").Contains(maHV)) &&
                                          (string.IsNullOrEmpty(tenHV) || row.Field<string>("FullName").ToLower().Contains(tenHV.ToLower())) &&
-                                         (string.IsNullOrEmpty(gioiTinhHV) || row.Field<string>("Gender").Equals(gioiTinhHV)) &&
-                                         (dateStart is null || row.Field<DateTime>("EnrollmentDate") >= dateStart &&
-                                         (dateEnd is null || row.Field<DateTime>("EnrollmentDate") <= dateEnd))
+                                         (string.IsNullOrEmpty(gioiTinhHV) || row.Field<string>("Gender").Equals(gioiTinhHV))
+
                                    select row;
 
                 // Nếu có kết quả lọc, hiển thị trên grid
@@ -107,7 +106,7 @@ namespace DevEduManager.Screens
         {
             // Đặt lại các checkbox và textbox tìm kiếm
             chkMaHV.Checked = true;
-            chkTenHV.Checked = chkGioiTinh.Checked = chkNgayTiepNhan.Checked = false;
+            //chkTenHV.Checked = chkGioiTinh.Checked = chkNgayTiepNhan.Checked = false;
 
             txtMaHV.Text = txtTenHV.Text = string.Empty;
             btnXemTatCa_Click(sender, e);
@@ -136,12 +135,12 @@ namespace DevEduManager.Screens
 
         private void chkNgayTiepNhan_CheckedChanged(object sender, EventArgs e)
         {
-            dateTuNgay.Enabled = dateDenNgay.Enabled = chkNgayTiepNhan.Checked;
+            //dateTuNgay.Enabled = dateDenNgay.Enabled = chkNgayTiepNhan.Checked;
         }
 
         private void dateDenNgay_ValueChanged(object sender, EventArgs e)
         {
-            dateTuNgay.MaxDate = dateDenNgay.Value;
+            //dateTuNgay.MaxDate = dateDenNgay.Value;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -202,16 +201,16 @@ namespace DevEduManager.Screens
         private void cboLoaiHV_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            if(cboLoaiHV.SelectedValue.ToString() == "LHV00")
-            {
-                maHocVien = "LHV00";
-                LoadDataToGridView(null, null, null, null, null, maHocVien);
-            }
-            else
-            {
-                maHocVien = "LHV01";
-                LoadDataToGridView(null, null, null, null, null, maHocVien);
-            }
+            //if(cboLoaiHV.SelectedValue.ToString() == "LHV00")
+            //{
+            //    maHocVien = "LHV00";
+            //    LoadDataToGridView(null, null, null);
+            //}
+            //else
+            //{
+            //    maHocVien = "LHV01";
+            //    LoadDataToGridView(null, null, null);
+            //}
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -225,12 +224,12 @@ namespace DevEduManager.Screens
                 string gioiTinhText = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
 
                 // Lấy giá trị của DateTimePicker nếu checkbox tương ứng được chọn, nếu không thì null
-                DateTime? dateStart = chkNgayTiepNhan.Checked ? (DateTime?)DateTime.Parse(dateTuNgay.Value.ToString("dd/MM/yyyy")) : null;
-                DateTime? dateEnd = chkNgayTiepNhan.Checked ? (DateTime?)DateTime.Parse(dateDenNgay.Value.ToString("dd/MM/yyyy")) : null;
+                //DateTime? dateStart = chkNgayTiepNhan.Checked ? (DateTime?)DateTime.Parse(dateTuNgay.Value.ToString("dd/MM/yyyy")) : null;
+                //DateTime? dateEnd = chkNgayTiepNhan.Checked ? (DateTime?)DateTime.Parse(dateDenNgay.Value.ToString("dd/MM/yyyy")) : null;
 
 
                 // Gọi LoadDataToGridView với tham số cần thiết
-                LoadDataToGridView(maHV, tenHV, gioiTinhText, dateStart, dateEnd);
+                LoadDataToGridView(maHV, tenHV, gioiTinhText);
             }
             catch (ArgumentException ex)
             {

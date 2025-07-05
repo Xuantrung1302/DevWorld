@@ -68,13 +68,13 @@ namespace DevEduManager.Modals
             string result = await callAPI.CallApiAsync(url);
             if (_nv == null)
             {
-                Common.LoadComboBoxLoaiNV(cboLoaiNV);
+                Common.LoadComboBoxLoaiNV(cboGioiTinh);
                 txtMaNV.Text = result.Trim('"');
                 txtTenDangNhap.ReadOnly = false;
             }
             if (_nv != null && _nv.Rows.Count > 0)
             {
-                Common.LoadComboBoxLoaiNV(cboLoaiNV);
+                Common.LoadComboBoxLoaiNV(cboGioiTinh);
                 FillData(_nv.Rows[0]);
                 txtTenDangNhap.ReadOnly = true;
             }
@@ -93,7 +93,7 @@ namespace DevEduManager.Modals
                 //txtDiaChi.Text = hv["DiaChi"].ToString();
                 txtSDT.Text = hv["PhoneNumber"].ToString();
                 txtEmail.Text = hv["Email"].ToString();
-                cboLoaiNV.SelectedValue = hv["Position"].ToString();
+                cboGioiTinh.SelectedValue = hv["Position"].ToString();
 
 
                 //if (hv["MaLoaiHV"].ToString() == "LHV01")
@@ -146,7 +146,7 @@ namespace DevEduManager.Modals
                             SdtNV = txtSDT.Text,
                             EmailNV = txtEmail.Text,
                             //NgayTiepNhan = DateTime.Now.Date,
-                            MaLoaiNV = cboLoaiNV.SelectedValue.ToString(),
+                            GioiTinh = cboGioiTinh.SelectedValue.ToString(),
                             TenDangNhap = txtTenDangNhap.Text,
                             MatKhau = txtMatKhau.Text
                         };
@@ -183,7 +183,7 @@ namespace DevEduManager.Modals
                                 SdtNV = txtSDT.Text,
                                 EmailNV = txtEmail.Text,
                                 //NgayTiepNhan = DateTime.Now.Date,
-                                MaLoaiNV = cboLoaiNV.SelectedValue.ToString(),
+                                GioiTinh = cboGioiTinh.SelectedValue.ToString(),
                                 TenDangNhap = txtTenDangNhap.Text,
                                 MatKhau = txtMatKhau.Text
                             };

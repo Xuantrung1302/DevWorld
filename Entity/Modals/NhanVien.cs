@@ -14,7 +14,7 @@ namespace Enity.Models
         public string EmailNV { get; set; }
 
         // Foreign keys
-        public string MaLoaiNV { get; set; }
+        public string GioiTinh { get; set; }
         public LoaiNV LoaiNV { get; set; }
 
         public string TenDangNhap { get; set; }

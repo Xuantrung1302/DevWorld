@@ -64,16 +64,16 @@ namespace DevEduManager.Screens
 
         private void chkLoaiNV_CheckedChanged(object sender, EventArgs e)
         {
-            cboLoaiNV.Enabled = chkLoaiNV.Checked;
+            //cboLoaiNV.Enabled = chkLoaiNV.Checked;
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
         {
             chkMaNV.Checked = true;
             txtMaNV.Text = txtTenNV.Text = string.Empty;
-            chkTenNV.Checked = chkLoaiNV.Checked = false;
+            //chkTenNV.Checked = chkLoaiNV.Checked = false;
         }
-        private async void LoadDataToGridView(string maNV = null, string tenNV = null, string tenLoaiNV = null)
+        private async void LoadDataToGridView(string maNV = null, string tenNV = null)
         {
             try
             {
@@ -82,7 +82,7 @@ namespace DevEduManager.Screens
 
                 // Lọc dữ liệu dựa trên tham số tìm kiếm
                 var filteredRows = from row in result.AsEnumerable()
-                                   where (string.IsNullOrEmpty(tenLoaiNV) || row.Field<string>("Position").Contains(tenLoaiNV)) &&
+                                   where 
                                          (string.IsNullOrEmpty(maNV) || row.Field<string>("EmployeeID").Contains(maNV)) &&
                                          (string.IsNullOrEmpty(tenNV) || row.Field<string>("FullName").ToLower().Contains(tenNV.ToLower()))
                                    select row;
@@ -121,9 +121,9 @@ namespace DevEduManager.Screens
         {
             //load loại nhân viên
             //cboLoaiNV.DataSource = LoaiNV.SelectAll();
-            cboLoaiNV.DisplayMember = "TenLoaiNV";
-            cboLoaiNV.ValueMember = "MaLoaiNV";
-            Common.LoadComboBoxLoaiNV(cboLoaiNV);
+            //cboLoaiNV.DisplayMember = "TenLoaiNV";
+            //cboLoaiNV.ValueMember = "MaLoaiNV";
+            //Common.LoadComboBoxLoaiNV(cboLoaiNV);
             LoadDataToGridView();
             //cboLoaiNV.SelectedIndexChanged += new EventHandler(cboLoaiNV_SelectedIndexChanged);
             btnDatLai_Click(sender, e);
@@ -154,10 +154,10 @@ namespace DevEduManager.Screens
 
                 string maNV = chkMaNV.Checked ? txtMaNV.Text.Trim() : null;
                 string tenNV = chkTenNV.Checked ? txtTenNV.Text.Trim() : null;
-                string loaiNVText = chkLoaiNV.Checked ? cboLoaiNV.Text : null;
+                //string loaiNVText = chkLoaiNV.Checked ? cboLoaiNV.Text : null;
 
                 // Gọi LoadDataToGridView với tham số cần thiết
-                LoadDataToGridView(maNV, tenNV, loaiNVText);
+                LoadDataToGridView(maNV, tenNV);
             }
             catch (ArgumentException ex)
             {

@@ -35,9 +35,9 @@ namespace DevEduManager.Screens
                 throw new ArgumentException("Họ và tên giảng viên không được trống");
         }
 
-        private async void LoadDataToGridView(string maGV = null, string tenGV = null, string gioiTinh = null)
+        private async void LoadDataToGridView(string maGV = null, string tenGV = null)
         {
-            string url = $"{_url}thongTinGiangVien?maGV={maGV}&tenGV={tenGV}&gioiTinh={gioiTinh}";
+            string url = $"{_url}thongTinGiangVien?maGV={maGV}&tenGV={tenGV}";
             DataTable result = await callAPI.GetAPI(url);
 
             gridGV.Dock = DockStyle.Fill;
@@ -62,15 +62,12 @@ namespace DevEduManager.Screens
 
         private void chkGioiTinh_CheckedChanged(object sender, EventArgs e)
         {
-            cboGioiTinh.Enabled = chkGioiTinh.Checked;
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
         {
             chkMaGV.Checked = true;
-            chkTenGV.Checked = chkGioiTinh.Checked = false;
             txtMaGV.Text = txtTenGV.Text = string.Empty;
-            cboGioiTinh.SelectedIndex = 0;
         }
 
         private void frmQuanLyGiangVien_Load(object sender, EventArgs e)
@@ -78,12 +75,12 @@ namespace DevEduManager.Screens
             btnDatLai_Click(sender, e);
             btnHienTatCa_Click(sender, e);
             gridGV_Click(sender, e);
-            LoadDataToGridView(null,null,null);
+            LoadDataToGridView(null,null);
         }
 
         private void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            LoadDataToGridView(null, null, null);
+            LoadDataToGridView(null, null);
         }
 
         private void gridGV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -180,10 +177,10 @@ namespace DevEduManager.Screens
 
                 string maGV = chkMaGV.Checked ? txtMaGV.Text.Trim() : null;
                 string tenGV = chkTenGV.Checked ? txtTenGV.Text.Trim() : null;
-                string gioiTinhText = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
+                //string gioiTinhText = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
 
                 // Gọi LoadDataToGridView với tham số cần thiết
-                LoadDataToGridView(maGV, tenGV, gioiTinhText);
+                LoadDataToGridView(maGV, tenGV);
             }
             catch (ArgumentException ex)
             {
@@ -213,6 +210,11 @@ namespace DevEduManager.Screens
             {
                 gridLop.DataSource = result;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

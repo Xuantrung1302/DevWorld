@@ -528,7 +528,7 @@ namespace DevEduManager
         private void btnQuanLyDiem_Click(object sender, EventArgs e)
         {
             pnlWorkspace.Controls.Clear();
-            frmQuanLyDiem frm = new frmQuanLyDiem()
+            frmQuanLyLopHoc frm = new frmQuanLyLopHoc()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -668,6 +668,20 @@ namespace DevEduManager
         private void btnHocVienTitle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mniAS_D_SM_13_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyDiem frm = new frmQuanLyDiem()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
         }
     }
 }

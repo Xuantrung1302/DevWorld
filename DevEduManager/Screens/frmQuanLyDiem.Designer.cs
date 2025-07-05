@@ -29,8 +29,8 @@ namespace DevEduManager.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -38,8 +38,6 @@ namespace DevEduManager.Screens
             this.btnHienTatCa = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.gridLop = new System.Windows.Forms.DataGridView();
-            this.clmMaLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtMaLop = new System.Windows.Forms.TextBox();
@@ -49,26 +47,20 @@ namespace DevEduManager.Screens
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.numDiemCuoiKy = new System.Windows.Forms.NumericUpDown();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.numDiemDuAn = new System.Windows.Forms.NumericUpDown();
-            this.label21 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.numDiemThucHanh = new System.Windows.Forms.NumericUpDown();
+            this.numDiemCuoiKy = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.numDiemLyThuyet = new System.Windows.Forms.NumericUpDown();
+            this.numDiemGiuaKy = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.lblTenHV = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lblMaHV = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.lblKhoa = new System.Windows.Forms.Label();
+            this.lblKy = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblTenLop = new System.Windows.Forms.Label();
-            this.lblMaLop = new System.Windows.Forms.Label();
+            this.lblTenMon = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -80,14 +72,16 @@ namespace DevEduManager.Screens
             this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmTenHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboKy = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiemCuoiKy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemDuAn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemThucHanh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemLyThuyet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemGiuaKy)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHV)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +93,7 @@ namespace DevEduManager.Screens
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1461, 30);
             this.panel1.TabIndex = 8;
@@ -122,7 +116,7 @@ namespace DevEduManager.Screens
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Location = new System.Drawing.Point(1408, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(37, 23);
             this.btnClose.TabIndex = 0;
@@ -130,6 +124,8 @@ namespace DevEduManager.Screens
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.cboKy);
+            this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.btnHienTatCa);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.gridLop);
@@ -140,9 +136,9 @@ namespace DevEduManager.Screens
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 30);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(427, 567);
+            this.panel2.Size = new System.Drawing.Size(427, 613);
             this.panel2.TabIndex = 9;
             // 
             // btnHienTatCa
@@ -155,8 +151,8 @@ namespace DevEduManager.Screens
             this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnHienTatCa.Location = new System.Drawing.Point(249, 508);
-            this.btnHienTatCa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHienTatCa.Location = new System.Drawing.Point(249, 564);
+            this.btnHienTatCa.Margin = new System.Windows.Forms.Padding(4);
             this.btnHienTatCa.Name = "btnHienTatCa";
             this.btnHienTatCa.Size = new System.Drawing.Size(151, 36);
             this.btnHienTatCa.TabIndex = 66;
@@ -168,7 +164,7 @@ namespace DevEduManager.Screens
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 176);
+            this.label4.Location = new System.Drawing.Point(24, 210);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 16);
@@ -187,40 +183,20 @@ namespace DevEduManager.Screens
             this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmMaLop,
-            this.clmTenLop});
+            this.SubjectName,
+            this.ClassName});
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridLop.Location = new System.Drawing.Point(28, 198);
-            this.gridLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridLop.Location = new System.Drawing.Point(28, 235);
+            this.gridLop.Margin = new System.Windows.Forms.Padding(4);
             this.gridLop.MultiSelect = false;
             this.gridLop.Name = "gridLop";
             this.gridLop.ReadOnly = true;
             this.gridLop.RowHeadersVisible = false;
             this.gridLop.RowHeadersWidth = 51;
             this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLop.Size = new System.Drawing.Size(372, 298);
+            this.gridLop.Size = new System.Drawing.Size(372, 314);
             this.gridLop.TabIndex = 64;
             this.gridLop.Click += new System.EventHandler(this.gridLop_Click_1);
-            // 
-            // clmMaLop
-            // 
-            this.clmMaLop.DataPropertyName = "MaLop";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaLop.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmMaLop.FillWeight = 70F;
-            this.clmMaLop.HeaderText = "Mã lớp";
-            this.clmMaLop.MinimumWidth = 6;
-            this.clmMaLop.Name = "clmMaLop";
-            this.clmMaLop.ReadOnly = true;
-            // 
-            // clmTenLop
-            // 
-            this.clmTenLop.DataPropertyName = "TenLop";
-            this.clmTenLop.FillWeight = 93.27411F;
-            this.clmTenLop.HeaderText = "Tên lớp";
-            this.clmTenLop.MinimumWidth = 6;
-            this.clmTenLop.Name = "clmTenLop";
-            this.clmTenLop.ReadOnly = true;
             // 
             // btnDatLai
             // 
@@ -232,8 +208,8 @@ namespace DevEduManager.Screens
             this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDatLai.Location = new System.Drawing.Point(291, 110);
-            this.btnDatLai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDatLai.Location = new System.Drawing.Point(291, 156);
+            this.btnDatLai.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatLai.Name = "btnDatLai";
             this.btnDatLai.Size = new System.Drawing.Size(109, 36);
             this.btnDatLai.TabIndex = 63;
@@ -252,8 +228,8 @@ namespace DevEduManager.Screens
             this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnTimKiem.Location = new System.Drawing.Point(153, 110);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTimKiem.Location = new System.Drawing.Point(153, 156);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(129, 36);
             this.btnTimKiem.TabIndex = 62;
@@ -267,8 +243,8 @@ namespace DevEduManager.Screens
             this.txtMaLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaLop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMaLop.Location = new System.Drawing.Point(131, 55);
-            this.txtMaLop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaLop.Location = new System.Drawing.Point(141, 103);
+            this.txtMaLop.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Size = new System.Drawing.Size(268, 30);
             this.txtMaLop.TabIndex = 51;
@@ -276,12 +252,12 @@ namespace DevEduManager.Screens
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 62);
+            this.label3.Location = new System.Drawing.Point(34, 110);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 16);
+            this.label3.Size = new System.Drawing.Size(56, 16);
             this.label3.TabIndex = 50;
-            this.label3.Text = "Mã lớp:";
+            this.label3.Text = "Tên lớp:";
             // 
             // label2
             // 
@@ -300,43 +276,37 @@ namespace DevEduManager.Screens
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(427, 30);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(7, 567);
+            this.panel3.Size = new System.Drawing.Size(7, 613);
             this.panel3.TabIndex = 10;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnHuyBo);
             this.panel4.Controls.Add(this.btnLuuThongTin);
-            this.panel4.Controls.Add(this.label22);
-            this.panel4.Controls.Add(this.numDiemCuoiKy);
-            this.panel4.Controls.Add(this.label23);
-            this.panel4.Controls.Add(this.label20);
-            this.panel4.Controls.Add(this.numDiemDuAn);
-            this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label17);
-            this.panel4.Controls.Add(this.numDiemThucHanh);
+            this.panel4.Controls.Add(this.numDiemCuoiKy);
             this.panel4.Controls.Add(this.label18);
             this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.numDiemLyThuyet);
+            this.panel4.Controls.Add(this.numDiemGiuaKy);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.lblTenHV);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.lblMaHV);
             this.panel4.Controls.Add(this.label11);
-            this.panel4.Controls.Add(this.lblKhoa);
+            this.panel4.Controls.Add(this.lblKy);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.lblTenLop);
-            this.panel4.Controls.Add(this.lblMaLop);
+            this.panel4.Controls.Add(this.lblTenMon);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label19);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(917, 30);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(544, 567);
+            this.panel4.Size = new System.Drawing.Size(544, 613);
             this.panel4.TabIndex = 11;
             // 
             // btnHuyBo
@@ -350,7 +320,7 @@ namespace DevEduManager.Screens
             this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnHuyBo.Location = new System.Drawing.Point(351, 511);
-            this.btnHuyBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyBo.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(124, 42);
             this.btnHuyBo.TabIndex = 77;
@@ -368,87 +338,13 @@ namespace DevEduManager.Screens
             this.btnLuuThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuThongTin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLuuThongTin.Location = new System.Drawing.Point(176, 511);
-            this.btnLuuThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuuThongTin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuThongTin.Name = "btnLuuThongTin";
             this.btnLuuThongTin.Size = new System.Drawing.Size(167, 42);
             this.btnLuuThongTin.TabIndex = 76;
             this.btnLuuThongTin.Text = "Lưu thông tin";
             this.btnLuuThongTin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLuuThongTin.UseVisualStyleBackColor = false;
-            // 
-            // label22
-            // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label22.ForeColor = System.Drawing.Color.Blue;
-            this.label22.Location = new System.Drawing.Point(417, 446);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(51, 23);
-            this.label22.TabIndex = 75;
-            this.label22.Text = "điểm";
-            // 
-            // numDiemCuoiKy
-            // 
-            this.numDiemCuoiKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemCuoiKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemCuoiKy.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemCuoiKy.Location = new System.Drawing.Point(157, 443);
-            this.numDiemCuoiKy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.numDiemCuoiKy.Name = "numDiemCuoiKy";
-            this.numDiemCuoiKy.Size = new System.Drawing.Size(252, 30);
-            this.numDiemCuoiKy.TabIndex = 74;
-            this.numDiemCuoiKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label23.Location = new System.Drawing.Point(25, 443);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(112, 23);
-            this.label23.TabIndex = 73;
-            this.label23.Text = "Điểm cuối kỳ:";
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label20.ForeColor = System.Drawing.Color.Blue;
-            this.label20.Location = new System.Drawing.Point(417, 394);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(51, 23);
-            this.label20.TabIndex = 72;
-            this.label20.Text = "điểm";
-            // 
-            // numDiemDuAn
-            // 
-            this.numDiemDuAn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemDuAn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemDuAn.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemDuAn.Location = new System.Drawing.Point(157, 391);
-            this.numDiemDuAn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.numDiemDuAn.Name = "numDiemDuAn";
-            this.numDiemDuAn.Size = new System.Drawing.Size(252, 30);
-            this.numDiemDuAn.TabIndex = 71;
-            this.numDiemDuAn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label21.Location = new System.Drawing.Point(25, 391);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(103, 23);
-            this.label21.TabIndex = 70;
-            this.label21.Text = "Điểm dự án:";
             // 
             // label17
             // 
@@ -463,18 +359,18 @@ namespace DevEduManager.Screens
             this.label17.TabIndex = 69;
             this.label17.Text = "điểm";
             // 
-            // numDiemThucHanh
+            // numDiemCuoiKy
             // 
-            this.numDiemThucHanh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numDiemCuoiKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemThucHanh.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemThucHanh.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemThucHanh.Location = new System.Drawing.Point(157, 341);
-            this.numDiemThucHanh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.numDiemThucHanh.Name = "numDiemThucHanh";
-            this.numDiemThucHanh.Size = new System.Drawing.Size(252, 30);
-            this.numDiemThucHanh.TabIndex = 68;
-            this.numDiemThucHanh.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDiemCuoiKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.numDiemCuoiKy.ForeColor = System.Drawing.Color.Blue;
+            this.numDiemCuoiKy.Location = new System.Drawing.Point(157, 341);
+            this.numDiemCuoiKy.Margin = new System.Windows.Forms.Padding(4);
+            this.numDiemCuoiKy.Name = "numDiemCuoiKy";
+            this.numDiemCuoiKy.Size = new System.Drawing.Size(252, 30);
+            this.numDiemCuoiKy.TabIndex = 68;
+            this.numDiemCuoiKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label18
             // 
@@ -483,9 +379,9 @@ namespace DevEduManager.Screens
             this.label18.Location = new System.Drawing.Point(25, 341);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(137, 23);
+            this.label18.Size = new System.Drawing.Size(112, 23);
             this.label18.TabIndex = 67;
-            this.label18.Text = "Điểm thực hành:";
+            this.label18.Text = "Điểm cuối kỳ:";
             // 
             // label15
             // 
@@ -500,18 +396,18 @@ namespace DevEduManager.Screens
             this.label15.TabIndex = 66;
             this.label15.Text = "điểm";
             // 
-            // numDiemLyThuyet
+            // numDiemGiuaKy
             // 
-            this.numDiemLyThuyet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.numDiemGiuaKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemLyThuyet.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemLyThuyet.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemLyThuyet.Location = new System.Drawing.Point(157, 289);
-            this.numDiemLyThuyet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.numDiemLyThuyet.Name = "numDiemLyThuyet";
-            this.numDiemLyThuyet.Size = new System.Drawing.Size(252, 30);
-            this.numDiemLyThuyet.TabIndex = 65;
-            this.numDiemLyThuyet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numDiemGiuaKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.numDiemGiuaKy.ForeColor = System.Drawing.Color.Blue;
+            this.numDiemGiuaKy.Location = new System.Drawing.Point(157, 289);
+            this.numDiemGiuaKy.Margin = new System.Windows.Forms.Padding(4);
+            this.numDiemGiuaKy.Name = "numDiemGiuaKy";
+            this.numDiemGiuaKy.Size = new System.Drawing.Size(252, 30);
+            this.numDiemGiuaKy.TabIndex = 65;
+            this.numDiemGiuaKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label16
             // 
@@ -520,9 +416,9 @@ namespace DevEduManager.Screens
             this.label16.Location = new System.Drawing.Point(25, 292);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(125, 23);
+            this.label16.Size = new System.Drawing.Size(113, 23);
             this.label16.TabIndex = 64;
-            this.label16.Text = "Điểm lý thuyết:";
+            this.label16.Text = "Điểm giữa kỳ:";
             // 
             // lblTenHV
             // 
@@ -572,17 +468,17 @@ namespace DevEduManager.Screens
             this.label11.TabIndex = 60;
             this.label11.Text = "Mã học viên:";
             // 
-            // lblKhoa
+            // lblKy
             // 
-            this.lblKhoa.AutoSize = true;
-            this.lblKhoa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblKhoa.ForeColor = System.Drawing.Color.Blue;
-            this.lblKhoa.Location = new System.Drawing.Point(152, 153);
-            this.lblKhoa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblKhoa.Name = "lblKhoa";
-            this.lblKhoa.Size = new System.Drawing.Size(134, 23);
-            this.lblKhoa.TabIndex = 59;
-            this.lblKhoa.Text = "<course name>";
+            this.lblKy.AutoSize = true;
+            this.lblKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblKy.ForeColor = System.Drawing.Color.Blue;
+            this.lblKy.Location = new System.Drawing.Point(152, 153);
+            this.lblKy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblKy.Name = "lblKy";
+            this.lblKy.Size = new System.Drawing.Size(134, 23);
+            this.lblKy.TabIndex = 59;
+            this.lblKy.Text = "<course name>";
             // 
             // label8
             // 
@@ -592,9 +488,9 @@ namespace DevEduManager.Screens
             this.label8.Location = new System.Drawing.Point(25, 153);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 23);
+            this.label8.Size = new System.Drawing.Size(64, 23);
             this.label8.TabIndex = 58;
-            this.label8.Text = "Khóa:";
+            this.label8.Text = "Kỳ học:";
             // 
             // lblTenLop
             // 
@@ -608,17 +504,17 @@ namespace DevEduManager.Screens
             this.lblTenLop.TabIndex = 57;
             this.lblTenLop.Text = "<class name>";
             // 
-            // lblMaLop
+            // lblTenMon
             // 
-            this.lblMaLop.AutoSize = true;
-            this.lblMaLop.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblMaLop.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.lblMaLop.Location = new System.Drawing.Point(152, 63);
-            this.lblMaLop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMaLop.Name = "lblMaLop";
-            this.lblMaLop.Size = new System.Drawing.Size(91, 23);
-            this.lblMaLop.TabIndex = 56;
-            this.lblMaLop.Text = "<class id>";
+            this.lblTenMon.AutoSize = true;
+            this.lblTenMon.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.lblTenMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.lblTenMon.Location = new System.Drawing.Point(152, 63);
+            this.lblTenMon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTenMon.Name = "lblTenMon";
+            this.lblTenMon.Size = new System.Drawing.Size(140, 23);
+            this.lblTenMon.TabIndex = 56;
+            this.lblTenMon.Text = "<subject name>";
             // 
             // label10
             // 
@@ -640,9 +536,9 @@ namespace DevEduManager.Screens
             this.label19.Location = new System.Drawing.Point(25, 63);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(67, 23);
+            this.label19.Size = new System.Drawing.Size(80, 23);
             this.label19.TabIndex = 54;
-            this.label19.Text = "Mã lớp:";
+            this.label19.Text = "Tên môn:";
             // 
             // label5
             // 
@@ -661,9 +557,9 @@ namespace DevEduManager.Screens
             this.panel5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(910, 30);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(7, 567);
+            this.panel5.Size = new System.Drawing.Size(7, 613);
             this.panel5.TabIndex = 12;
             // 
             // panel6
@@ -673,16 +569,16 @@ namespace DevEduManager.Screens
             this.panel6.Controls.Add(this.gridDSHV);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(434, 30);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(476, 567);
+            this.panel6.Size = new System.Drawing.Size(476, 613);
             this.panel6.TabIndex = 13;
             // 
             // lblTongCong
             // 
             this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTongCong.AutoSize = true;
-            this.lblTongCong.Location = new System.Drawing.Point(21, 536);
+            this.lblTongCong.Location = new System.Drawing.Point(21, 582);
             this.lblTongCong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTongCong.Name = "lblTongCong";
             this.lblTongCong.Size = new System.Drawing.Size(170, 16);
@@ -716,14 +612,14 @@ namespace DevEduManager.Screens
             this.clmGioiTinh});
             this.gridDSHV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridDSHV.Location = new System.Drawing.Point(25, 44);
-            this.gridDSHV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridDSHV.Margin = new System.Windows.Forms.Padding(4);
             this.gridDSHV.MultiSelect = false;
             this.gridDSHV.Name = "gridDSHV";
             this.gridDSHV.ReadOnly = true;
             this.gridDSHV.RowHeadersVisible = false;
             this.gridDSHV.RowHeadersWidth = 51;
             this.gridDSHV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSHV.Size = new System.Drawing.Size(431, 488);
+            this.gridDSHV.Size = new System.Drawing.Size(431, 534);
             this.gridDSHV.TabIndex = 66;
             this.gridDSHV.Click += new System.EventHandler(this.gridDSHV_Click);
             // 
@@ -756,12 +652,57 @@ namespace DevEduManager.Screens
             this.clmGioiTinh.Name = "clmGioiTinh";
             this.clmGioiTinh.ReadOnly = true;
             // 
+            // cboKy
+            // 
+            this.cboKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKy.Enabled = false;
+            this.cboKy.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboKy.FormattingEnabled = true;
+            this.cboKy.Location = new System.Drawing.Point(141, 55);
+            this.cboKy.Margin = new System.Windows.Forms.Padding(4);
+            this.cboKy.Name = "cboKy";
+            this.cboKy.Size = new System.Drawing.Size(268, 31);
+            this.cboKy.TabIndex = 68;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(30, 61);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 20);
+            this.label9.TabIndex = 67;
+            this.label9.Text = "Kỳ học:";
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.DataPropertyName = "SubjectName";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle1;
+            this.SubjectName.FillWeight = 70F;
+            this.SubjectName.HeaderText = "Tên môn";
+            this.SubjectName.MinimumWidth = 6;
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
+            // 
+            // ClassName
+            // 
+            this.ClassName.DataPropertyName = "ClassName";
+            this.ClassName.FillWeight = 93.27411F;
+            this.ClassName.HeaderText = "Tên lớp";
+            this.ClassName.MinimumWidth = 6;
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            // 
             // frmQuanLyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1461, 597);
+            this.ClientSize = new System.Drawing.Size(1461, 643);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -769,7 +710,7 @@ namespace DevEduManager.Screens
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmQuanLyDiem";
             this.Text = "frmQuanLyDiem";
             this.Load += new System.EventHandler(this.frmQuanLyDiem_Load);
@@ -782,9 +723,7 @@ namespace DevEduManager.Screens
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiemCuoiKy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemDuAn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemThucHanh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemLyThuyet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numDiemGiuaKy)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHV)).EndInit();
@@ -801,8 +740,6 @@ namespace DevEduManager.Screens
         private System.Windows.Forms.Button btnHienTatCa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView gridLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmMaLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
         private System.Windows.Forms.Button btnDatLai;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtMaLop;
@@ -812,26 +749,20 @@ namespace DevEduManager.Screens
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnHuyBo;
         private System.Windows.Forms.Button btnLuuThongTin;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.NumericUpDown numDiemCuoiKy;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.NumericUpDown numDiemDuAn;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.NumericUpDown numDiemThucHanh;
+        private System.Windows.Forms.NumericUpDown numDiemCuoiKy;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numDiemLyThuyet;
+        private System.Windows.Forms.NumericUpDown numDiemGiuaKy;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblTenHV;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblMaHV;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblKhoa;
+        private System.Windows.Forms.Label lblKy;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblTenLop;
-        private System.Windows.Forms.Label lblMaLop;
+        private System.Windows.Forms.Label lblTenMon;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label5;
@@ -843,5 +774,9 @@ namespace DevEduManager.Screens
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenHV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmGioiTinh;
+        private System.Windows.Forms.ComboBox cboKy;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
     }
 }

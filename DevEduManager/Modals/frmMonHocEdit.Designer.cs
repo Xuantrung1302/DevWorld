@@ -54,7 +54,7 @@
             this.panel1.Controls.Add(this.btnHuyBo);
             this.panel1.Controls.Add(this.btnLuuThongTin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 666);
+            this.panel1.Location = new System.Drawing.Point(0, 593);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(549, 75);
@@ -112,7 +112,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(549, 666);
+            this.panel2.Size = new System.Drawing.Size(549, 593);
             this.panel2.TabIndex = 12;
             // 
             // cboKyHoc
@@ -243,7 +243,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 741);
+            this.ClientSize = new System.Drawing.Size(549, 668);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmMonHocEdit";

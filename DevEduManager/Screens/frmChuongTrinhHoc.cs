@@ -7,7 +7,6 @@ using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,83 +16,138 @@ namespace DevEduManager.Screens
     public partial class frmChuongTrinhHoc : Form
     {
         CallAPI callAPI = new CallAPI();
-        private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Subject/";
+        private string _subjectUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Subject/";
+        private string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
+
         public frmChuongTrinhHoc()
         {
             InitializeComponent();
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDatLai_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmChuongTrinhHoc_Load(object sender, EventArgs e)
-        {
-
-        }
-        private async void LoadDataToGridView(string subjectID = null, string semesterID = null)
         {
             try
             {
-                string url = $"{_url}thongTinMonHoc";
+                LoadSubjects();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message);
+            }
+        }
+
+        private async void LoadSubjects(string subjectID = null, string semesterID = null)
+        {
+            try
+            {
+                string url = $"{_subjectUrl}thongTinMonHoc";
                 DataTable result = await callAPI.GetAPI(url);
 
-                // Lọc dữ liệu dựa trên tham số tìm kiếm
                 var filteredRows = from row in result.AsEnumerable()
-                                       //where (string.IsNullOrEmpty(maLoaiHV) || row.Field<string>("StudentID").Contains(maLoaiHV)) &&
                                    where (string.IsNullOrEmpty(subjectID) || row.Field<string>("SubjectID").Contains(subjectID)) &&
                                          (string.IsNullOrEmpty(semesterID) || row.Field<string>("FullName").ToLower().Contains(semesterID.ToLower()))
-
                                    select row;
 
-                // Nếu có kết quả lọc, hiển thị trên grid
                 if (filteredRows.Any())
                 {
                     DataTable filteredDataTable = filteredRows.CopyToDataTable();
                     gridMon.DataSource = filteredDataTable;
                     gridMon.Dock = DockStyle.Fill;
 
-                    // Ẩn các cột cuối nếu cần thiết
+                    // Ẩn các cột không cần thiết (nếu cần)
+                    HideColumns(gridMon);
+
+                    // Chọn dòng đầu tiên nếu có
                     if (gridMon.Rows.Count > 0)
                     {
-                        int columnCount = gridMon.Columns.Count;
-                        if (columnCount >= 3)
-                        {
-                            gridMon.Columns[columnCount - 1].Visible = false; // Cột cuối
-                            gridMon.Columns[columnCount - 2].Visible = false; // Cột thứ 2 từ cuối
-                            gridMon.Columns[columnCount - 3].Visible = false; // Cột thứ 3 từ cuối
-                        }
+                        gridMon.Rows[0].Selected = true;
+                        string selectedSubjectID = gridMon.Rows[0].Cells["SubjectID"].Value.ToString();
+                        LoadClasses(selectedSubjectID);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy kết quả phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không tìm thấy môn học nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("Lỗi khi tải danh sách môn học: " + ex.Message);
             }
+        }
+
+        private async void LoadClasses(string subjectID)
+        {
+            try
+            {
+                string url = $"{_classUrl}layLop?subjectID={subjectID}";
+                DataTable result = await callAPI.GetAPI(url);
+
+                if (result != null && result.Rows.Count > 0)
+                {
+                    gridLop.DataSource = result;
+                    gridLop.Dock = DockStyle.Fill;
+                    HideColumns(gridLop);
+                }
+                else
+                {
+                    gridLop.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách lớp: " + ex.Message);
+            }
+        }
+
+        private void HideColumns(DataGridView grid)
+        {
+            if (grid.Rows.Count > 0)
+            {
+                int columnCount = grid.Columns.Count;
+                if (columnCount >= 3)
+                {
+                    grid.Columns[columnCount - 1].Visible = false;
+                    grid.Columns[columnCount - 2].Visible = false;
+                    grid.Columns[columnCount - 3].Visible = false;
+                }
+            }
+        }
+
+        private void btnHienTatCa_Click(object sender, EventArgs e)
+        {
+            LoadSubjects();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmMonHocEdit frm = new frmMonHocEdit();
             frm.ShowDialog();
-
-            btnHienTatCa_Click(sender, e);
+            LoadSubjects();
         }
 
-        private void btnHienTatCa_Click(object sender, EventArgs e)
+        private void gridMon_SelectionChanged(object sender, EventArgs e)
         {
-            LoadDataToGridView();
+            if (gridMon.SelectedRows.Count > 0)
+            {
+                string selectedSubjectID = gridMon.SelectedRows[0].Cells["SubjectID"].Value.ToString();
+                LoadClasses(selectedSubjectID);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string subjectID = txtMaMon?.Text.Trim(); // giả sử bạn có textbox tên txtMaMon
+            string subjectName = txtTenMon?.Text.Trim(); // giả sử bạn có textbox tên txtMaMon
+            string semesterID = cboKy.SelectedValue.ToString(); // giả sử bạn có textbox tên txtHocKy
+            LoadSubjects(subjectID, semesterID);
+        }
+
+        private void btnDatLai_Click(object sender, EventArgs e)
+        {
+            txtMaMon.Clear();
+            //txtHocKy.Clear();
+            LoadSubjects();
         }
     }
 }

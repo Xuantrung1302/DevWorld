@@ -121,7 +121,7 @@ namespace DevEduManager.Screens
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            frmMonHocEdit frm = new frmMonHocEdit();
+            frmMonHocEdit frm = new frmMonHocEdit(null);
             frm.ShowDialog();
             LoadSubjects();
         }
@@ -148,6 +148,40 @@ namespace DevEduManager.Screens
             txtMaMon.Clear();
             //txtHocKy.Clear();
             LoadSubjects();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridMon.SelectedRows.Count > 0)
+                {
+                    // Lấy dữ liệu từ hàng đang được chọn
+                    DataGridViewRow selectedRow = gridMon.SelectedRows[0];
+                    DataTable dt = ((DataTable)gridMon.DataSource).Clone();  // Tạo bản sao cấu trúc của DataTable
+                    DataRow row = dt.NewRow();
+
+                    foreach (DataGridViewCell cell in selectedRow.Cells)
+                    {
+                        row[cell.ColumnIndex] = cell.Value;
+                    }
+                    dt.Rows.Add(row);
+
+                    frmMonHocEdit frm = new frmMonHocEdit(dt);
+                    frm.Text = "Cập nhật thông tin môn học";
+                    frm.ShowDialog();
+
+                    btnHienTatCa_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một môn học để sửa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi sửa: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

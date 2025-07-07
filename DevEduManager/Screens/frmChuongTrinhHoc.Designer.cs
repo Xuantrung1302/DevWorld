@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -52,10 +52,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridMon = new System.Windows.Forms.DataGridView();
-            this.SubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TuitionFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gridLop = new System.Windows.Forms.DataGridView();
@@ -73,6 +69,10 @@
             this.clmPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.SubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TuitionFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -405,47 +405,6 @@
             this.gridMon.Size = new System.Drawing.Size(1063, 251);
             this.gridMon.TabIndex = 12;
             // 
-            // SubjectID
-            // 
-            this.SubjectID.DataPropertyName = "SubjectID";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.SubjectID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.SubjectID.FillWeight = 81.09281F;
-            this.SubjectID.HeaderText = "Mã môn";
-            this.SubjectID.MinimumWidth = 6;
-            this.SubjectID.Name = "SubjectID";
-            this.SubjectID.ReadOnly = true;
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle2;
-            this.SubjectName.FillWeight = 108.0551F;
-            this.SubjectName.HeaderText = "Tên môn";
-            this.SubjectName.MinimumWidth = 6;
-            this.SubjectName.Name = "SubjectName";
-            this.SubjectName.ReadOnly = true;
-            // 
-            // clmKy
-            // 
-            this.clmKy.DataPropertyName = "SemesterName";
-            this.clmKy.FillWeight = 115.8469F;
-            this.clmKy.HeaderText = "Tên học kỳ";
-            this.clmKy.MinimumWidth = 6;
-            this.clmKy.Name = "clmKy";
-            this.clmKy.ReadOnly = true;
-            this.clmKy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmKy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // TuitionFee
-            // 
-            this.TuitionFee.FillWeight = 58.27927F;
-            this.TuitionFee.HeaderText = "Học phí";
-            this.TuitionFee.MinimumWidth = 30;
-            this.TuitionFee.Name = "TuitionFee";
-            this.TuitionFee.ReadOnly = true;
-            // 
             // lblTongCong
             // 
             this.lblTongCong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -564,6 +523,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -595,8 +555,8 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ClassName";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Green;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Green;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn2.FillWeight = 300F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 270;
@@ -672,6 +632,48 @@
             this.dataGridViewCheckBoxColumn1.Visible = false;
             this.dataGridViewCheckBoxColumn1.Width = 67;
             // 
+            // SubjectID
+            // 
+            this.SubjectID.DataPropertyName = "SubjectID";
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Blue;
+            this.SubjectID.DefaultCellStyle = dataGridViewCellStyle8;
+            this.SubjectID.FillWeight = 81.09281F;
+            this.SubjectID.HeaderText = "Mã môn";
+            this.SubjectID.MinimumWidth = 6;
+            this.SubjectID.Name = "SubjectID";
+            this.SubjectID.ReadOnly = true;
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.DataPropertyName = "SubjectName";
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Green;
+            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle9;
+            this.SubjectName.FillWeight = 108.0551F;
+            this.SubjectName.HeaderText = "Tên môn";
+            this.SubjectName.MinimumWidth = 6;
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
+            // 
+            // clmKy
+            // 
+            this.clmKy.DataPropertyName = "SemesterName";
+            this.clmKy.FillWeight = 115.8469F;
+            this.clmKy.HeaderText = "Tên học kỳ";
+            this.clmKy.MinimumWidth = 6;
+            this.clmKy.Name = "clmKy";
+            this.clmKy.ReadOnly = true;
+            this.clmKy.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.clmKy.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // TuitionFee
+            // 
+            this.TuitionFee.DataPropertyName = "TuitionFee";
+            this.TuitionFee.FillWeight = 58.27927F;
+            this.TuitionFee.HeaderText = "Học phí";
+            this.TuitionFee.MinimumWidth = 30;
+            this.TuitionFee.Name = "TuitionFee";
+            this.TuitionFee.ReadOnly = true;
+            // 
             // frmChuongTrinhHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -733,10 +735,6 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TuitionFee;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherName;
@@ -746,5 +744,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmKy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TuitionFee;
     }
 }

@@ -33,18 +33,18 @@ namespace DevEduManager.Modals
         {
             try
             {
-                await LoadSemesterToComboBox();
+                await LoadSemesterToComboBox(); // luôn load trước
 
                 if (isInsert)
                 {
                     await GenerateSubjectID();
                     txtTenLH.Text = "";
                     txtHocPhi.Text = "";
-                    cboKyHoc.SelectedIndex = -1;
+                    cboKyHoc.SelectedIndex = 0; // chọn dòng đầu tiên
                 }
                 else if (_subject != null && _subject.Rows.Count > 0)
                 {
-                    FillData(_subject.Rows[0]);
+                    FillData(_subject.Rows[0]); // chỉ gọi sau khi ComboBox đã có dữ liệu
                 }
 
                 txtMaLH.ReadOnly = true;
@@ -54,6 +54,7 @@ namespace DevEduManager.Modals
                 MessageBox.Show("Lỗi khi load dữ liệu: " + ex.Message);
             }
         }
+
 
         private async Task LoadSemesterToComboBox()
         {
@@ -96,14 +97,28 @@ namespace DevEduManager.Modals
                 txtTenLH.Text = row["SubjectName"].ToString();
                 txtHocPhi.Text = row["TuitionFee"].ToString();
 
-                string semesterID = row["SemesterID"].ToString();
-                cboKyHoc.SelectedValue = semesterID;
+                if (cboKyHoc.Items.Count > 0)
+                {
+                    string semesterName = row["SemesterName"].ToString();
+
+                    // Tìm dòng có SemesterName tương ứng
+                    foreach (DataRowView item in cboKyHoc.Items)
+                    {
+                        if (item["SemesterName"].ToString() == semesterName)
+                        {
+                            cboKyHoc.SelectedValue = item["SemesterID"];
+                            break;
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi điền dữ liệu: " + ex.Message);
             }
         }
+
+
 
         private bool ValidateInput()
         {

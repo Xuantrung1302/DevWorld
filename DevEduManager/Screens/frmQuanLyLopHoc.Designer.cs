@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -42,8 +42,6 @@
             this.btnDatLai = new System.Windows.Forms.Button();
             this.chkTenLop = new System.Windows.Forms.CheckBox();
             this.gridLop = new System.Windows.Forms.DataGridView();
-            this.clmTenLop = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -54,9 +52,11 @@
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompletionStatus = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
+            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -178,6 +178,7 @@
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label9
             // 
@@ -220,6 +221,7 @@
             this.btnDatLai.Text = "Đặt lại";
             this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDatLai.UseVisualStyleBackColor = false;
+            this.btnDatLai.Click += new System.EventHandler(this.btnDatLai_Click);
             // 
             // chkTenLop
             // 
@@ -243,8 +245,9 @@
             this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmTenLop,
-            this.clmTenMon});
+            this.ClassID,
+            this.ClassName,
+            this.SubjectName});
             this.tableLayoutPanel1.SetColumnSpan(this.gridLop, 2);
             this.gridLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -258,28 +261,7 @@
             this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridLop.Size = new System.Drawing.Size(438, 326);
             this.gridLop.TabIndex = 12;
-            // 
-            // clmTenLop
-            // 
-            this.clmTenLop.DataPropertyName = "TenLop";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            this.clmTenLop.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmTenLop.FillWeight = 87.31236F;
-            this.clmTenLop.HeaderText = "Tên lớp";
-            this.clmTenLop.MinimumWidth = 100;
-            this.clmTenLop.Name = "clmTenLop";
-            this.clmTenLop.ReadOnly = true;
-            // 
-            // clmTenMon
-            // 
-            this.clmTenMon.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            this.clmTenMon.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clmTenMon.FillWeight = 75.96175F;
-            this.clmTenMon.HeaderText = "Tên môn";
-            this.clmTenMon.MinimumWidth = 150;
-            this.clmTenMon.Name = "clmTenMon";
-            this.clmTenMon.ReadOnly = true;
+            this.gridLop.SelectionChanged += new System.EventHandler(this.gridLop_SelectionChanged_1);
             // 
             // txtTenMon
             // 
@@ -327,6 +309,7 @@
             this.cboKy.Name = "cboKy";
             this.cboKy.Size = new System.Drawing.Size(200, 31);
             this.cboKy.TabIndex = 64;
+            this.cboKy.SelectedIndexChanged += new System.EventHandler(this.cboKy_SelectedIndexChanged_1);
             // 
             // chkTenMon
             // 
@@ -339,7 +322,7 @@
             this.chkTenMon.TabIndex = 46;
             this.chkTenMon.Text = "Theo tên môn:";
             this.chkTenMon.UseVisualStyleBackColor = true;
-            this.chkTenMon.CheckedChanged += new System.EventHandler(this.chkMaLop_CheckedChanged);
+            this.chkTenMon.CheckedChanged += new System.EventHandler(this.chkTenMon_CheckedChanged_1);
             // 
             // panel5
             // 
@@ -362,8 +345,7 @@
             this.gridListStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentID,
             this.Fullname,
-            this.dataGridViewTextBoxColumn4,
-            this.CompletionStatus});
+            this.dataGridViewTextBoxColumn4});
             this.gridListStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridListStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridListStudent.Location = new System.Drawing.Point(0, 0);
@@ -411,17 +393,6 @@
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 83;
             // 
-            // CompletionStatus
-            // 
-            this.CompletionStatus.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.CompletionStatus.DataPropertyName = "CompletionStatus";
-            this.CompletionStatus.FillWeight = 4.286573F;
-            this.CompletionStatus.HeaderText = "Trạng thái";
-            this.CompletionStatus.MinimumWidth = 60;
-            this.CompletionStatus.Name = "CompletionStatus";
-            this.CompletionStatus.ReadOnly = true;
-            this.CompletionStatus.Width = 73;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnThem);
@@ -449,6 +420,36 @@
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            // 
+            // ClassID
+            // 
+            this.ClassID.HeaderText = "mã lớp";
+            this.ClassID.MinimumWidth = 6;
+            this.ClassID.Name = "ClassID";
+            this.ClassID.ReadOnly = true;
+            this.ClassID.Visible = false;
+            // 
+            // ClassName
+            // 
+            this.ClassName.DataPropertyName = "ClassName";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
+            this.ClassName.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ClassName.FillWeight = 87.31236F;
+            this.ClassName.HeaderText = "Tên lớp";
+            this.ClassName.MinimumWidth = 100;
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.DataPropertyName = "SubjectName";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SubjectName.FillWeight = 75.96175F;
+            this.SubjectName.HeaderText = "Tên môn";
+            this.SubjectName.MinimumWidth = 150;
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
             // 
             // frmQuanLyLopHoc
             // 
@@ -498,13 +499,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView gridListStudent;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenMon;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn CompletionStatus;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
     }
 }

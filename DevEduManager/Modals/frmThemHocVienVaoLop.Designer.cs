@@ -32,6 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gridListStudent = new System.Windows.Forms.DataGridView();
+            this.MultiSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSub = new System.Windows.Forms.TextBox();
             this.txtClass = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -39,9 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblStuCur = new System.Windows.Forms.Label();
             this.lblAddStu = new System.Windows.Forms.Label();
-            this.MultiSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridListStudent)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -59,10 +60,11 @@
             this.tableLayoutPanel1.Controls.Add(this.txtSub, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtClass, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnSave, 2, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
@@ -70,6 +72,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(703, 720);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -106,8 +109,29 @@
             this.gridListStudent.Name = "gridListStudent";
             this.gridListStudent.RowHeadersWidth = 51;
             this.gridListStudent.RowTemplate.Height = 24;
-            this.gridListStudent.Size = new System.Drawing.Size(697, 564);
+            this.gridListStudent.Size = new System.Drawing.Size(697, 524);
             this.gridListStudent.TabIndex = 3;
+            // 
+            // MultiSelect
+            // 
+            this.MultiSelect.HeaderText = "";
+            this.MultiSelect.MinimumWidth = 30;
+            this.MultiSelect.Name = "MultiSelect";
+            this.MultiSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MultiSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // StudentID
+            // 
+            this.StudentID.HeaderText = "Mã học viên";
+            this.StudentID.MinimumWidth = 200;
+            this.StudentID.Name = "StudentID";
+            // 
+            // Fullname
+            // 
+            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fullname.HeaderText = "Họ và tên";
+            this.Fullname.MinimumWidth = 440;
+            this.Fullname.Name = "Fullname";
             // 
             // txtSub
             // 
@@ -181,26 +205,16 @@
             this.lblAddStu.TabIndex = 3;
             this.lblAddStu.Text = "num2";
             // 
-            // MultiSelect
+            // btnSave
             // 
-            this.MultiSelect.HeaderText = "";
-            this.MultiSelect.MinimumWidth = 30;
-            this.MultiSelect.Name = "MultiSelect";
-            this.MultiSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MultiSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // StudentID
-            // 
-            this.StudentID.HeaderText = "Mã học viên";
-            this.StudentID.MinimumWidth = 200;
-            this.StudentID.Name = "StudentID";
-            // 
-            // Fullname
-            // 
-            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Fullname.HeaderText = "Họ và tên";
-            this.Fullname.MinimumWidth = 440;
-            this.Fullname.Name = "Fullname";
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSave.Location = new System.Drawing.Point(625, 673);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 34);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "Lưu";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmThemHocVienVaoLop
             // 
@@ -210,6 +224,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmThemHocVienVaoLop";
             this.Text = "Thêm học viên vào lớp";
+            this.Load += new System.EventHandler(this.frmThemHocVienVaoLop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridListStudent)).EndInit();
@@ -235,5 +250,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn MultiSelect;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
+        private System.Windows.Forms.Button btnSave;
     }
 }

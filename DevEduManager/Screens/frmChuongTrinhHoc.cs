@@ -55,7 +55,7 @@ namespace DevEduManager.Screens
                     gridMon.Dock = DockStyle.Fill;
 
                     // Ẩn các cột không cần thiết (nếu cần)
-                    HideColumns(gridMon);
+                    gridMon.AutoGenerateColumns = false;
 
                     // Chọn dòng đầu tiên nếu có
                     if (gridMon.Rows.Count > 0)

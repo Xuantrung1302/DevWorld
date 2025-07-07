@@ -17,7 +17,7 @@ namespace DevEduManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmBaoCaoDiemDanhGiaoVien());
+            Application.Run(new frmDangNhap());
         }
     }
 }

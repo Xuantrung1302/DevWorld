@@ -3,12 +3,9 @@ using DevEduManager.Modals;
 using Enity.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +20,7 @@ namespace DevEduManager.Screens
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Teacher/";
         private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
+        private List<GiangVien> _teachers;
 
         /// <summary>
         /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
@@ -35,16 +33,17 @@ namespace DevEduManager.Screens
                 throw new ArgumentException("Họ và tên giảng viên không được trống");
         }
 
-        private async void LoadDataToGridView(string maGV = null, string tenGV = null, string gioiTinh = null)
+        private async Task LoadDataToGridView(string teacherId = null, string fullName = null, string gender = null)
         {
-            string url = $"{_url}thongTinGiangVien?maGV={maGV}&tenGV={tenGV}&gioiTinh={gioiTinh}";
-            DataTable result = await callAPI.GetAPI(url);
+            string url = $"{_url}thongTinGiangVien?teacherID={teacherId}&fullName={fullName}&gender={gender}";
+            _teachers = await callAPI.GetAPI<GiangVien>(url);
 
             gridGV.Dock = DockStyle.Fill;
+            gridGV.AutoGenerateColumns = false;
 
-            if (result.Rows.Count > 0)
+            if (_teachers.Any())
             {
-                gridGV.DataSource = result;
+                gridGV.DataSource = _teachers;
             }
 
         }
@@ -73,17 +72,15 @@ namespace DevEduManager.Screens
             cboGioiTinh.SelectedIndex = 0;
         }
 
-        private void frmQuanLyGiangVien_Load(object sender, EventArgs e)
+        private async void frmQuanLyGiangVien_Load(object sender, EventArgs e)
         {
             btnDatLai_Click(sender, e);
-            btnHienTatCa_Click(sender, e);
-            gridGV_Click(sender, e);
-            LoadDataToGridView(null,null,null);
+            await LoadDataToGridView();
         }
 
-        private void btnHienTatCa_Click(object sender, EventArgs e)
+        private async void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            LoadDataToGridView(null, null, null);
+            await LoadDataToGridView();
         }
 
         private void gridGV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -101,33 +98,21 @@ namespace DevEduManager.Screens
             btnSua_Click(sender, e);
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private async void btnSua_Click(object sender, EventArgs e)
         {
-            //frmGiangVienEdit frm = new frmGiangVienEdit();
-            //frm.Text = "Cập nhật thông tin giảng viên";
-            //frm.ShowDialog();
             try
             {
-                if (gridGV.SelectedRows.Count > 0)
+                if (gridGV.SelectedRows.Count > 0 && gridGV.CurrentRow != null)
                 {
-                    // Lấy dữ liệu từ hàng đang được chọn
-                    DataGridViewRow selectedRow = gridGV.SelectedRows[0];
-                    DataTable dt = ((DataTable)gridGV.DataSource).Clone();  // Tạo bản sao cấu trúc của DataTable
-                    DataRow row = dt.NewRow();
-
-                    foreach (DataGridViewCell cell in selectedRow.Cells)
-                    {
-                        row[cell.ColumnIndex] = cell.Value;
-                    }
-                    dt.Rows.Add(row);
+                    var teacherId = gridGV.CurrentRow.Cells["clmMaGV"].Value?.ToString();
 
                     // Mở form sửa thông tin giáo viên
-                    frmGiangVienEdit frm = new frmGiangVienEdit(dt);
+                    GiangVien teacherSelected = _teachers.FirstOrDefault(p => p.TeacherID == teacherId);
+                    frmGiangVienEdit frm = new frmGiangVienEdit(teacherSelected);
                     frm.Text = "Cập nhật thông tin học viên";
                     frm.ShowDialog();
 
-                    // Tải lại danh sách sau khi chỉnh sửa
-                    btnHienTatCa_Click(sender, e);
+                    await LoadDataToGridView();
                 }
                 else
                 {
@@ -135,26 +120,53 @@ namespace DevEduManager.Screens
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private async void btnThem_Click(object sender, EventArgs e)
         {
             frmGiangVienEdit frm = new frmGiangVienEdit(null); // Gửi null cho form khi thêm mới
             frm.Text = "Thêm giảng viên mới";
             frm.ShowDialog();
 
-            // Tải lại danh sách sau khi thêm
-            btnHienTatCa_Click(sender, e);
+            await LoadDataToGridView();
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
+        private async void btnXoa_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (gridGV.SelectedRows.Count > 0 && gridGV.CurrentRow != null)
+                {
+                    var teacherId = gridGV.CurrentRow.Cells["clmMaGV"].Value?.ToString();
+                    var userName = _teachers.FirstOrDefault(p => p.TeacherID == teacherId).Username;
 
+                    string url = $"{_url}xoaThongTinGiangVien?teacherID={teacherId}&username={userName}";
+                    var result = await callAPI.PostAPI(url);
+                    if (result)
+                    {
+                        MessageBox.Show("Xóa thông tin giảng viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thông tin giảng viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    await LoadDataToGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void gridLop_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -169,21 +181,21 @@ namespace DevEduManager.Screens
 
         private void gridGV_Click(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private async void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
                 ValidateSearch();
 
-                string maGV = chkMaGV.Checked ? txtMaGV.Text.Trim() : null;
-                string tenGV = chkTenGV.Checked ? txtTenGV.Text.Trim() : null;
-                string gioiTinhText = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
+                string teacherId = chkMaGV.Checked ? txtMaGV.Text.Trim() : null;
+                string fullName = chkTenGV.Checked ? txtTenGV.Text.Trim() : null;
+                string gender = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
 
                 // Gọi LoadDataToGridView với tham số cần thiết
-                LoadDataToGridView(maGV, tenGV, gioiTinhText);
+                await LoadDataToGridView(teacherId, fullName, gender);
             }
             catch (ArgumentException ex)
             {

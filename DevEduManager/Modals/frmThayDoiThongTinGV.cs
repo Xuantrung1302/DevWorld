@@ -79,9 +79,9 @@ namespace DevEduManager.Modals
                     //DiaChi = txtDiaChi.Text,
                     //SdtHV = txtSDT.Text,
                     //EmailHV = txtEmail.Text,
-                    MaGV = txtMaGV.Text,
-                    SdtGV = txtSDT.Text,
-                    EmailGV = txtEmail.Text,
+                    TeacherID = txtMaGV.Text,
+                    PhoneNumber = txtSDT.Text,
+                    Email = txtEmail.Text,
                 };
 
 

@@ -35,14 +35,13 @@ namespace DevEduManager.Screens
         private void frmQuanLyDiem_Load(object sender, EventArgs e)
         {
             // Khởi tạo các control
-            lblMaLop.Text = string.Empty;
+            lblTenMon.Text = string.Empty;
             lblTenLop.Text = string.Empty;
-            lblKhoa.Text = string.Empty;
+            lblKy.Text = string.Empty;
             lblMaHV.Text = string.Empty;
             lblTenHV.Text = string.Empty;
-            numDiemLyThuyet.Value = 0;
-            numDiemThucHanh.Value = 0;
-            numDiemDuAn.Value = 0;
+            numDiemGiuaKy.Value = 0;
+            numDiemCuoiKy.Value = 0;
             numDiemCuoiKy.Value = 0;
 
             gridDSHV.AutoGenerateColumns = false;
@@ -81,36 +80,32 @@ namespace DevEduManager.Screens
             DataTable result = await callAPI.GetAPI(url);
 
             // Reset các control trước khi hiển thị dữ liệu mới
-            lblMaLop.Text = string.Empty;
+            lblTenMon.Text = string.Empty;
             lblTenLop.Text = string.Empty;
-            lblKhoa.Text = string.Empty;
+            lblKy.Text = string.Empty;
             lblMaHV.Text = string.Empty;
             lblTenHV.Text = string.Empty;
-            numDiemLyThuyet.Value = 0;
-            numDiemThucHanh.Value = 0;
-            numDiemDuAn.Value = 0;
+            numDiemGiuaKy.Value = 0;
             numDiemCuoiKy.Value = 0;
+            //numDiemDuAn.Value = 0;
+            //numDiemCuoiKy.Value = 0;
 
             if (result.Rows.Count > 0)
             {
                 try
                 {
                     // Gán giá trị từ DataTable vào các control
-                    lblMaLop.Text = result.Rows[0]["MaLop"]?.ToString() ?? string.Empty;
+                    lblTenMon.Text = result.Rows[0]["MaLop"]?.ToString() ?? string.Empty;
                     lblTenLop.Text = result.Rows[0]["TenLop"]?.ToString() ?? string.Empty;
-                    lblKhoa.Text = result.Rows[0]["TenKH"]?.ToString() ?? string.Empty;
+                    lblKy.Text = result.Rows[0]["TenKH"]?.ToString() ?? string.Empty;
                     lblMaHV.Text = result.Rows[0]["MaHV"]?.ToString() ?? string.Empty;
                     lblTenHV.Text = result.Rows[0]["TenHV"]?.ToString() ?? string.Empty;
 
                     // Chuyển đổi và gán điểm, xử lý trường hợp null hoặc lỗi định dạng
-                    numDiemLyThuyet.Value = result.Rows[0]["DiemLyThuyet"] != DBNull.Value
+                    numDiemGiuaKy.Value = result.Rows[0]["DiemLyThuyet"] != DBNull.Value
                         ? Convert.ToDecimal(result.Rows[0]["DiemLyThuyet"]) : 0;
-                    numDiemThucHanh.Value = result.Rows[0]["DiemThucHanh"] != DBNull.Value
+                    numDiemCuoiKy.Value = result.Rows[0]["DiemThucHanh"] != DBNull.Value
                         ? Convert.ToDecimal(result.Rows[0]["DiemThucHanh"]) : 0;
-                    numDiemDuAn.Value = result.Rows[0]["DiemDuAn"] != DBNull.Value
-                        ? Convert.ToDecimal(result.Rows[0]["DiemDuAn"]) : 0;
-                    numDiemCuoiKy.Value = result.Rows[0]["DiemCuoiKy"] != DBNull.Value
-                        ? Convert.ToDecimal(result.Rows[0]["DiemCuoiKy"]) : 0;
                 }
                 catch (Exception ex)
                 {

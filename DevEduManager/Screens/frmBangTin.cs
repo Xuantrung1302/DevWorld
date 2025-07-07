@@ -41,7 +41,7 @@ namespace DevEduManager.Screens
                     foreach (var post in sortedPosts)
                     {
                         string formattedContent = post.Content.Replace("\n", "<br>");
-                        string formattedDate = post.PostDate.ToString("yyyy-MM-dd"); // Định dạng ngày
+                        string formattedDate = post.PostDate.ToString("dd-MM-yyyy"); // Định dạng ngày
 
                         htmlContent += "<tr valign='top'>";
                         htmlContent += $"<td style='width: 350px; font-weight: bold;'>{formattedDate}</td>"; // Chỉnh độ rộng cột

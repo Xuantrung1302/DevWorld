@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,7 +83,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1445, 30);
             this.panel1.TabIndex = 16;
@@ -129,7 +129,7 @@
             this.clmNote});
             this.gridDSHV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridDSHV.Location = new System.Drawing.Point(4, 235);
-            this.gridDSHV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridDSHV.Margin = new System.Windows.Forms.Padding(4);
             this.gridDSHV.MultiSelect = false;
             this.gridDSHV.Name = "gridDSHV";
             this.gridDSHV.ReadOnly = true;
@@ -142,8 +142,8 @@
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "StudentID";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmMaHV.FillWeight = 75F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.MinimumWidth = 6;
@@ -153,8 +153,8 @@
             // clmTenHV
             // 
             this.clmTenHV.DataPropertyName = "FullName";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Green;
-            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmTenHV.FillWeight = 110F;
             this.clmTenHV.HeaderText = "Họ và tên";
             this.clmTenHV.MinimumWidth = 6;

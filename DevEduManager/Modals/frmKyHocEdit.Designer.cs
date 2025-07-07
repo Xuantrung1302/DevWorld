@@ -67,7 +67,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(549, 599);
             this.panel2.TabIndex = 11;
@@ -78,7 +78,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateStart.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dateStart.Location = new System.Drawing.Point(184, 263);
-            this.dateStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateStart.Margin = new System.Windows.Forms.Padding(4);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(303, 30);
             this.dateStart.TabIndex = 59;
@@ -89,7 +89,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateEnd.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.dateEnd.Location = new System.Drawing.Point(184, 350);
-            this.dateEnd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateEnd.Margin = new System.Windows.Forms.Padding(4);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(303, 30);
             this.dateEnd.TabIndex = 58;
@@ -101,7 +101,7 @@
             this.panel1.Controls.Add(this.btnLuuThongTin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 524);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(549, 75);
             this.panel1.TabIndex = 57;
@@ -117,7 +117,7 @@
             this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.btnHuyBo.Location = new System.Drawing.Point(391, 18);
-            this.btnHuyBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyBo.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(143, 42);
             this.btnHuyBo.TabIndex = 20;
@@ -135,7 +135,7 @@
             this.btnLuuThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuuThongTin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLuuThongTin.Location = new System.Drawing.Point(240, 18);
-            this.btnLuuThongTin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuuThongTin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuThongTin.Name = "btnLuuThongTin";
             this.btnLuuThongTin.Size = new System.Drawing.Size(143, 42);
             this.btnLuuThongTin.TabIndex = 19;
@@ -169,7 +169,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenKyHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtTenKyHoc.Location = new System.Drawing.Point(184, 185);
-            this.txtTenKyHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenKyHoc.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenKyHoc.Name = "txtTenKyHoc";
             this.txtTenKyHoc.Size = new System.Drawing.Size(303, 30);
             this.txtTenKyHoc.TabIndex = 38;
@@ -191,7 +191,7 @@
             this.txtMaKH.Enabled = false;
             this.txtMaKH.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtMaKH.Location = new System.Drawing.Point(184, 106);
-            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(303, 30);
             this.txtMaKH.TabIndex = 36;
@@ -220,7 +220,7 @@
             // 
             this.pictureBox1.Image = global::DevEduManager.Properties.Resources.icon_GiangVien_64dp;
             this.pictureBox1.Location = new System.Drawing.Point(33, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(102, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -249,8 +249,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(549, 599);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKyHocEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm học kỳ mới";
             this.Load += new System.EventHandler(this.frmKyHocEdit_Load);
             this.panel2.ResumeLayout(false);

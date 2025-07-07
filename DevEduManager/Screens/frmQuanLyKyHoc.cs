@@ -205,14 +205,14 @@ namespace DevEduManager.Screens
 
         private void gridKyHoc_SelectionChanged_1(object sender, EventArgs e)
         {
-            if (gridKyHoc.SelectedRows.Count > 0)
-            {
-                DataGridViewRow row = gridKyHoc.SelectedRows[0];
-                //txtSemesterID.Text = row.Cells["SemesterID"].Value?.ToString() ?? "";
-                txtTenKH.Text = row.Cells["SemesterName"].Value?.ToString() ?? "";
-                //dateTuNgay.Value = row.Cells["StartDate"].Value != DBNull.Value ? Convert.ToDateTime(row.Cells["StartDate"].Value) : DateTime.Now;
-                //dateDenNgay.Value = row.Cells["EndDate"].Value != DBNull.Value ? Convert.ToDateTime(row.Cells["EndDate"].Value) : DateTime.Now;
-            }
+            //if (gridKyHoc.SelectedRows.Count > 0)
+            //{
+            //    DataGridViewRow row = gridKyHoc.SelectedRows[0];
+            //    //txtSemesterID.Text = row.Cells["SemesterID"].Value?.ToString() ?? "";
+            //    txtTenKH.Text = row.Cells["SemesterName"].Value?.ToString() ?? "";
+            //    //dateTuNgay.Value = row.Cells["StartDate"].Value != DBNull.Value ? Convert.ToDateTime(row.Cells["StartDate"].Value) : DateTime.Now;
+            //    //dateDenNgay.Value = row.Cells["EndDate"].Value != DBNull.Value ? Convert.ToDateTime(row.Cells["EndDate"].Value) : DateTime.Now;
+            //}
         }
 
         private void btnTimKiem_Click_1(object sender, EventArgs e)

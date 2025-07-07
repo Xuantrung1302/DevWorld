@@ -83,8 +83,7 @@ namespace DevEduManager.Modals
                     MaNV = txtMaNV.Text,
                     TenNV = txtTenNV.Text,
                     SdtNV = txtSDT.Text,
-                    EmailNV = txtEmail.Text,
-                    MaLoaiNV = cboLoaiNV.SelectedValue.ToString()
+                    EmailNV = txtEmail.Text
 
                 };
 

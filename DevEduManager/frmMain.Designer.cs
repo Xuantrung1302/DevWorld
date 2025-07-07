@@ -385,6 +385,7 @@
             this.mniAS_D_SM_13.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.mniAS_D_SM_13.Size = new System.Drawing.Size(344, 38);
             this.mniAS_D_SM_13.Text = "Quản lý điểm học viên";
+            this.mniAS_D_SM_13.Click += new System.EventHandler(this.mniAS_D_SM_13_Click);
             // 
             // mniAS_D_SM_19
             // 

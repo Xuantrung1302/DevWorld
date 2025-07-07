@@ -33,9 +33,9 @@ namespace DevEduManager.Screens
                 throw new ArgumentException("Họ và tên giảng viên không được trống");
         }
 
-        private async Task LoadDataToGridView(string teacherId = null, string fullName = null, string gender = null)
+        private async Task LoadDataToGridView(string teacherId = null, string fullName = null)
         {
-            string url = $"{_url}thongTinGiangVien?teacherID={teacherId}&fullName={fullName}&gender={gender}";
+            string url = $"{_url}thongTinGiangVien?teacherID={teacherId}&fullName={fullName}";
             _teachers = await callAPI.GetAPI<GiangVien>(url);
 
             gridGV.Dock = DockStyle.Fill;
@@ -44,6 +44,8 @@ namespace DevEduManager.Screens
             if (_teachers.Any())
             {
                 gridGV.DataSource = _teachers;
+                string maGV = gridGV.Rows[0].Cells["clmMaGV"].Value.ToString();
+                await LoadGridViewLop(maGV);
             }
 
         }
@@ -59,17 +61,11 @@ namespace DevEduManager.Screens
             txtTenGV.Enabled = chkTenGV.Checked;
         }
 
-        private void chkGioiTinh_CheckedChanged(object sender, EventArgs e)
-        {
-            cboGioiTinh.Enabled = chkGioiTinh.Checked;
-        }
-
         private void btnDatLai_Click(object sender, EventArgs e)
         {
             chkMaGV.Checked = true;
-            chkTenGV.Checked = chkGioiTinh.Checked = false;
+            chkTenGV.Checked = false;
             txtMaGV.Text = txtTenGV.Text = string.Empty;
-            cboGioiTinh.SelectedIndex = 0;
         }
 
         private async void frmQuanLyGiangVien_Load(object sender, EventArgs e)
@@ -192,10 +188,9 @@ namespace DevEduManager.Screens
 
                 string teacherId = chkMaGV.Checked ? txtMaGV.Text.Trim() : null;
                 string fullName = chkTenGV.Checked ? txtTenGV.Text.Trim() : null;
-                string gender = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
 
                 // Gọi LoadDataToGridView với tham số cần thiết
-                await LoadDataToGridView(teacherId, fullName, gender);
+                await LoadDataToGridView(teacherId, fullName);
             }
             catch (ArgumentException ex)
             {
@@ -216,15 +211,17 @@ namespace DevEduManager.Screens
         private async void gridGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string maGV = gridGV.Rows[e.RowIndex].Cells["clmMaGV"].Value.ToString();
-            string url2 = $"{_url2}layLopTheoRole?ma={maGV}";
-            DataTable result = await callAPI.GetAPI(url2);
+            string url = $"{_url}thongTinLopDay?teacherID={maGV}";
+            await LoadGridViewLop(maGV);
+        }
+
+        private async Task LoadGridViewLop(string maGV)
+        {
+            string url = $"{_url}thongTinLopDay?teacherID={maGV}";
+            DataTable result = await callAPI.GetAPI(url);
 
             gridLop.Dock = DockStyle.Fill;
-
-            if (result.Rows.Count > 0)
-            {
-                gridLop.DataSource = result;
-            }
+            gridLop.DataSource = result.Rows.Count > 0 ? result : null;
         }
     }
 }

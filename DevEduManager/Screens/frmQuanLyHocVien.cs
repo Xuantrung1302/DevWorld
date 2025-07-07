@@ -15,7 +15,6 @@ namespace DevEduManager.Screens
 {
     public partial class frmQuanLyHocVien : Form
     {
-        string maHocVien = "LHV00";
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Students/";
 
@@ -39,7 +38,7 @@ namespace DevEduManager.Screens
             //cboLoaiHV.SelectedIndexChanged += new EventHandler(cboLoaiHV_SelectedIndexChanged);
         }
 
-        private async void LoadDataToGridView(string maHV = null, string tenHV = null, string gioiTinhHV = null)
+        private async void LoadDataToGridView(string maHV = null, string tenHV = null)
         {
             try
             {
@@ -50,8 +49,7 @@ namespace DevEduManager.Screens
                 var filteredRows = from row in result.AsEnumerable()
                                    //where (string.IsNullOrEmpty(maLoaiHV) || row.Field<string>("StudentID").Contains(maLoaiHV)) &&
                                    where (string.IsNullOrEmpty(maHV) || row.Field<string>("StudentID").Contains(maHV)) &&
-                                         (string.IsNullOrEmpty(tenHV) || row.Field<string>("FullName").ToLower().Contains(tenHV.ToLower())) &&
-                                         (string.IsNullOrEmpty(gioiTinhHV) || row.Field<string>("Gender").Equals(gioiTinhHV))
+                                         (string.IsNullOrEmpty(tenHV) || row.Field<string>("FullName").ToLower().Contains(tenHV.ToLower()))
 
                                    select row;
 
@@ -130,7 +128,7 @@ namespace DevEduManager.Screens
 
         private void chkGioiTinh_CheckedChanged(object sender, EventArgs e)
         {
-            cboGioiTinh.Enabled = chkGioiTinh.Checked;
+
         }
 
         private void chkNgayTiepNhan_CheckedChanged(object sender, EventArgs e)
@@ -221,7 +219,7 @@ namespace DevEduManager.Screens
 
                 string maHV = chkMaHV.Checked ? txtMaHV.Text.Trim() : null;
                 string tenHV = chkTenHV.Checked ? txtTenHV.Text.Trim() : null;
-                string gioiTinhText = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
+                //string gioiTinhText = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
 
                 // Lấy giá trị của DateTimePicker nếu checkbox tương ứng được chọn, nếu không thì null
                 //DateTime? dateStart = chkNgayTiepNhan.Checked ? (DateTime?)DateTime.Parse(dateTuNgay.Value.ToString("dd/MM/yyyy")) : null;
@@ -229,7 +227,7 @@ namespace DevEduManager.Screens
 
 
                 // Gọi LoadDataToGridView với tham số cần thiết
-                LoadDataToGridView(maHV, tenHV, gioiTinhText);
+                LoadDataToGridView(maHV, tenHV);
             }
             catch (ArgumentException ex)
             {

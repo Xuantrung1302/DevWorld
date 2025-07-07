@@ -39,6 +39,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblStuCur = new System.Windows.Forms.Label();
             this.lblAddStu = new System.Windows.Forms.Label();
+            this.MultiSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridListStudent)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -91,7 +94,12 @@
             // 
             // gridListStudent
             // 
+            this.gridListStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridListStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MultiSelect,
+            this.StudentID,
+            this.Fullname});
             this.tableLayoutPanel1.SetColumnSpan(this.gridListStudent, 3);
             this.gridListStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridListStudent.Location = new System.Drawing.Point(3, 143);
@@ -173,6 +181,27 @@
             this.lblAddStu.TabIndex = 3;
             this.lblAddStu.Text = "num2";
             // 
+            // MultiSelect
+            // 
+            this.MultiSelect.HeaderText = "";
+            this.MultiSelect.MinimumWidth = 30;
+            this.MultiSelect.Name = "MultiSelect";
+            this.MultiSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MultiSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // StudentID
+            // 
+            this.StudentID.HeaderText = "Mã học viên";
+            this.StudentID.MinimumWidth = 200;
+            this.StudentID.Name = "StudentID";
+            // 
+            // Fullname
+            // 
+            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fullname.HeaderText = "Họ và tên";
+            this.Fullname.MinimumWidth = 440;
+            this.Fullname.Name = "Fullname";
+            // 
             // frmThemHocVienVaoLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -203,5 +232,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblStuCur;
         private System.Windows.Forms.Label lblAddStu;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn MultiSelect;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -46,23 +46,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridGV = new System.Windows.Forms.DataGridView();
-            this.clmMaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmTenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmGioiTinhGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSdtGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Degree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmEmailGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongCongGV = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gridLop = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaysOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Study = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmDangMo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTongCongLop = new System.Windows.Forms.Label();
@@ -71,6 +57,20 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.clmMaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmGioiTinhGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSdtGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Degree = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmEmailGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmTenKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaysOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Study = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -334,74 +334,6 @@
             this.gridGV.Click += new System.EventHandler(this.gridGV_Click);
             this.gridGV.DoubleClick += new System.EventHandler(this.gridGV_DoubleClick);
             // 
-            // clmMaGV
-            // 
-            this.clmMaGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.clmMaGV.DataPropertyName = "MaGV";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaGV.DefaultCellStyle = dataGridViewCellStyle1;
-            this.clmMaGV.FillWeight = 70F;
-            this.clmMaGV.HeaderText = "Mã giảng viên";
-            this.clmMaGV.MinimumWidth = 30;
-            this.clmMaGV.Name = "clmMaGV";
-            this.clmMaGV.ReadOnly = true;
-            this.clmMaGV.Width = 120;
-            // 
-            // clmTenGV
-            // 
-            this.clmTenGV.DataPropertyName = "TenGV";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.clmTenGV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.clmTenGV.FillWeight = 93.27411F;
-            this.clmTenGV.HeaderText = "Họ và tên";
-            this.clmTenGV.MinimumWidth = 6;
-            this.clmTenGV.Name = "clmTenGV";
-            this.clmTenGV.ReadOnly = true;
-            // 
-            // clmGioiTinhGV
-            // 
-            this.clmGioiTinhGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.clmGioiTinhGV.DataPropertyName = "GioiTinhGV";
-            this.clmGioiTinhGV.HeaderText = "Giới tính";
-            this.clmGioiTinhGV.MinimumWidth = 20;
-            this.clmGioiTinhGV.Name = "clmGioiTinhGV";
-            this.clmGioiTinhGV.ReadOnly = true;
-            this.clmGioiTinhGV.Width = 83;
-            // 
-            // clmSdtGV
-            // 
-            this.clmSdtGV.DataPropertyName = "SdtGV";
-            this.clmSdtGV.FillWeight = 93.27411F;
-            this.clmSdtGV.HeaderText = "SĐT";
-            this.clmSdtGV.MinimumWidth = 150;
-            this.clmSdtGV.Name = "clmSdtGV";
-            this.clmSdtGV.ReadOnly = true;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Địa chỉ";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.ReadOnly = true;
-            // 
-            // Degree
-            // 
-            this.Degree.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Degree.HeaderText = "Bằng cấp";
-            this.Degree.MinimumWidth = 30;
-            this.Degree.Name = "Degree";
-            this.Degree.ReadOnly = true;
-            this.Degree.Width = 94;
-            // 
-            // clmEmailGV
-            // 
-            this.clmEmailGV.DataPropertyName = "EmailGV";
-            this.clmEmailGV.FillWeight = 93.27411F;
-            this.clmEmailGV.HeaderText = "Email";
-            this.clmEmailGV.MinimumWidth = 6;
-            this.clmEmailGV.Name = "clmEmailGV";
-            this.clmEmailGV.ReadOnly = true;
-            // 
             // lblTongCongGV
             // 
             this.lblTongCongGV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -439,11 +371,11 @@
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
             this.SubjectName,
+            this.clmTenKy,
             this.DaysOfWeek,
             this.Study,
             this.Room,
-            this.dataGridViewTextBoxColumn5,
-            this.clmDangMo});
+            this.dataGridViewTextBoxColumn5});
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridLop.Location = new System.Drawing.Point(16, 26);
             this.gridLop.Margin = new System.Windows.Forms.Padding(4);
@@ -457,71 +389,6 @@
             this.gridLop.TabIndex = 3;
             this.gridLop.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridLop_RowsAdded);
             this.gridLop.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridLop_RowsRemoved);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenLop";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Green;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn2.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 200;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SubjectName.HeaderText = "Môn học";
-            this.SubjectName.MinimumWidth = 250;
-            this.SubjectName.Name = "SubjectName";
-            this.SubjectName.ReadOnly = true;
-            // 
-            // DaysOfWeek
-            // 
-            this.DaysOfWeek.HeaderText = "Thứ";
-            this.DaysOfWeek.MinimumWidth = 50;
-            this.DaysOfWeek.Name = "DaysOfWeek";
-            this.DaysOfWeek.ReadOnly = true;
-            // 
-            // Study
-            // 
-            this.Study.HeaderText = "Ca học";
-            this.Study.MinimumWidth = 200;
-            this.Study.Name = "Study";
-            this.Study.ReadOnly = true;
-            // 
-            // Room
-            // 
-            this.Room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Room.HeaderText = "Phòng";
-            this.Room.MinimumWidth = 10;
-            this.Room.Name = "Room";
-            this.Room.ReadOnly = true;
-            this.Room.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "SiSo";
-            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sỉ số";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 66;
-            // 
-            // clmDangMo
-            // 
-            this.clmDangMo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.clmDangMo.DataPropertyName = "DangMo";
-            this.clmDangMo.HeaderText = "Đang mở";
-            this.clmDangMo.MinimumWidth = 10;
-            this.clmDangMo.Name = "clmDangMo";
-            this.clmDangMo.ReadOnly = true;
-            this.clmDangMo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.clmDangMo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.clmDangMo.Width = 67;
             // 
             // label6
             // 
@@ -640,6 +507,141 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // clmMaGV
+            // 
+            this.clmMaGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.clmMaGV.DataPropertyName = "TeacherID";
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaGV.DefaultCellStyle = dataGridViewCellStyle4;
+            this.clmMaGV.FillWeight = 70F;
+            this.clmMaGV.HeaderText = "Mã giảng viên";
+            this.clmMaGV.MinimumWidth = 30;
+            this.clmMaGV.Name = "clmMaGV";
+            this.clmMaGV.ReadOnly = true;
+            this.clmMaGV.Width = 120;
+            // 
+            // clmTenGV
+            // 
+            this.clmTenGV.DataPropertyName = "FullName";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Green;
+            this.clmTenGV.DefaultCellStyle = dataGridViewCellStyle5;
+            this.clmTenGV.FillWeight = 93.27411F;
+            this.clmTenGV.HeaderText = "Họ và tên";
+            this.clmTenGV.MinimumWidth = 6;
+            this.clmTenGV.Name = "clmTenGV";
+            this.clmTenGV.ReadOnly = true;
+            // 
+            // clmGioiTinhGV
+            // 
+            this.clmGioiTinhGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.clmGioiTinhGV.DataPropertyName = "Gender";
+            this.clmGioiTinhGV.HeaderText = "Giới tính";
+            this.clmGioiTinhGV.MinimumWidth = 20;
+            this.clmGioiTinhGV.Name = "clmGioiTinhGV";
+            this.clmGioiTinhGV.ReadOnly = true;
+            this.clmGioiTinhGV.Width = 83;
+            // 
+            // clmSdtGV
+            // 
+            this.clmSdtGV.DataPropertyName = "PhoneNumber";
+            this.clmSdtGV.FillWeight = 93.27411F;
+            this.clmSdtGV.HeaderText = "SĐT";
+            this.clmSdtGV.MinimumWidth = 150;
+            this.clmSdtGV.Name = "clmSdtGV";
+            this.clmSdtGV.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Địa chỉ";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Degree
+            // 
+            this.Degree.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Degree.DataPropertyName = "Degree";
+            this.Degree.HeaderText = "Bằng cấp";
+            this.Degree.MinimumWidth = 30;
+            this.Degree.Name = "Degree";
+            this.Degree.ReadOnly = true;
+            this.Degree.Width = 94;
+            // 
+            // clmEmailGV
+            // 
+            this.clmEmailGV.DataPropertyName = "Email";
+            this.clmEmailGV.FillWeight = 93.27411F;
+            this.clmEmailGV.HeaderText = "Email";
+            this.clmEmailGV.MinimumWidth = 6;
+            this.clmEmailGV.Name = "clmEmailGV";
+            this.clmEmailGV.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ClassName";
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Green;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn2.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 200;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SubjectName.DataPropertyName = "SubjectName";
+            this.SubjectName.HeaderText = "Môn học";
+            this.SubjectName.MinimumWidth = 250;
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
+            // 
+            // clmTenKy
+            // 
+            this.clmTenKy.DataPropertyName = "SemesterName";
+            this.clmTenKy.HeaderText = "Tên kỳ";
+            this.clmTenKy.MinimumWidth = 6;
+            this.clmTenKy.Name = "clmTenKy";
+            this.clmTenKy.ReadOnly = true;
+            // 
+            // DaysOfWeek
+            // 
+            this.DaysOfWeek.DataPropertyName = "DaysOfWeek";
+            this.DaysOfWeek.HeaderText = "Thứ";
+            this.DaysOfWeek.MinimumWidth = 50;
+            this.DaysOfWeek.Name = "DaysOfWeek";
+            this.DaysOfWeek.ReadOnly = true;
+            // 
+            // Study
+            // 
+            this.Study.DataPropertyName = "StudyTime";
+            this.Study.HeaderText = "Ca học";
+            this.Study.MinimumWidth = 200;
+            this.Study.Name = "Study";
+            this.Study.ReadOnly = true;
+            // 
+            // Room
+            // 
+            this.Room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Room.DataPropertyName = "Room";
+            this.Room.HeaderText = "Phòng";
+            this.Room.MinimumWidth = 10;
+            this.Room.Name = "Room";
+            this.Room.ReadOnly = true;
+            this.Room.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "StudentCount";
+            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Sĩ số";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 68;
+            // 
             // frmQuanLyGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -701,6 +703,7 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmMaGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmTenGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmGioiTinhGV;
@@ -710,11 +713,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmEmailGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmTenKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn DaysOfWeek;
         private System.Windows.Forms.DataGridViewTextBoxColumn Study;
         private System.Windows.Forms.DataGridViewTextBoxColumn Room;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmDangMo;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

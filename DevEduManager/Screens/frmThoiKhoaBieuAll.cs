@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entity.Models;
 using Enity.Models; // Kiểm tra lại namespace này, có thể là lỗi đánh máy
 using BusinessLogic;
 using System.Configuration;

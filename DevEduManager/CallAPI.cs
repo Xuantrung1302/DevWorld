@@ -33,6 +33,27 @@ namespace BusinessLogic
 
             return result;
         }
+
+        public async Task<List<T>> GetAPI<T>(string url)
+        {
+            List<T> result = new List<T>();
+            try
+            {
+                string response = await client.GetStringAsync(url);
+                if (!string.IsNullOrWhiteSpace(response))
+                {
+                    result = JsonConvert.DeserializeObject<List<T>>(response);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi gọi API: " + ex.Message);
+            }
+
+            return result;
+        }
+
+
         // CallAPI.cs
         public async Task<List<Post>> GetListAPI(string url)
         {

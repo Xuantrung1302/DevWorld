@@ -2,49 +2,22 @@
 using Enity.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DevEduManager.Modals
 {
     public partial class frmGiangVienEdit : Form
     {
-        private bool isInsert;
-        private DataTable _gv;
+        private GiangVien _gv;
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
         private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Teacher/";
-        public frmGiangVienEdit(DataTable gv)
+        public frmGiangVienEdit(GiangVien gv)
         {
             InitializeComponent();
             _gv = gv;
-            isInsert = _gv == null;
         }
-
-        /// <summary>
-        /// Kiểm tra hợp lệ
-        /// </summary>
-        //public void ValidateLuu1()
-        //{
-        //    if (string.IsNullOrWhiteSpace(txtTenGV.Text))
-        //        throw new ArgumentException("Họ và tên giảng viên không được trống");
-        //    if (string.IsNullOrWhiteSpace(txtSDT.Text))
-        //        throw new ArgumentException("Số điện thoại giảng viên không được trống");
-        //    if (string.IsNullOrWhiteSpace(txtEmail.Text))
-        //        throw new ArgumentException("Email giảng viên không được trống");
-        //    if (string.IsNullOrWhiteSpace(txtTenDangNhap.Text))
-        //        throw new ArgumentException("Tên đăng nhập giảng viên không được trống");
-        //    if (string.IsNullOrWhiteSpace(txtMatKhau.Text))
-        //        throw new ArgumentException("Mật khẩu giảng viên không được trống");
-        //}
 
         private bool ValidateLuu()
         {
@@ -81,18 +54,17 @@ namespace DevEduManager.Modals
             return true;
         }
 
-        private void FillData(DataRow gv)
+        private void FillData()
         {
-            txtMaGV.Text = gv["MaGV"].ToString();
-            txtTenGV.Text = gv["TenGV"].ToString();
-
-            cboGioiTinh.Text = gv["GioiTinhGV"].ToString();
-            txtSDT.Text = gv["SdtGV"].ToString();
-            txtEmail.Text = gv["EmailGV"].ToString();
-
-            txtTenDangNhap.Text = gv["TenDangNhap"].ToString();
-            txtMatKhau.Text = gv["MatKhau"].ToString();
-
+            txtMaGV.Text = _gv.TeacherID;
+            txtTenGV.Text = _gv.FullName;
+            cboGioiTinh.Text = _gv.Gender;
+            txtSDT.Text = _gv.PhoneNumber;
+            txtEmail.Text = _gv.Email;
+            txtDiaChi.Text = _gv.Address;
+            txtTenDangNhap.Text = _gv.Username;
+            txtMatKhau.Text = _gv.Password;
+            txtBangCap.Text = _gv.Degree;
         }
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
@@ -112,88 +84,58 @@ namespace DevEduManager.Modals
             try
             {
                 errorProvider1.Clear();
-                if (ValidateLuu())
+                if (!ValidateLuu())
                 {
-                    if (isInsert)
+                    return;
+                }
+
+                var giangVien = new GiangVien()
+                {
+                    TeacherID = txtMaGV.Text,
+                    FullName = txtTenGV.Text,
+                    Gender = cboGioiTinh.SelectedItem.ToString(),
+                    Address = txtDiaChi.Text,
+                    Degree = txtBangCap.Text,
+                    PhoneNumber = txtSDT.Text,
+                    Email = txtEmail.Text,
+                    Username = txtTenDangNhap.Text,
+                    Password = txtMatKhau.Text
+                };
+
+                string jsonData = JsonConvert.SerializeObject(giangVien);
+                string url = null;
+                bool result = false;
+
+                // Add new teacher
+                if (_gv is null)
+                {
+                    url = $"{_url2}themThongTinGiangVien";
+                    result = await callAPI.PostAPI(url, jsonData);
+                    if (result)
                     {
-                        //Dieu kien khi them
-
-                        GiangVien giangVien = new GiangVien()
-                        {
-                            MaGV = txtMaGV.Text,
-                            TenGV = txtTenGV.Text,
-                            GioiTinhGV = cboGioiTinh.SelectedItem.ToString(),
-                            //NgaySinhGV = DateTime.Parse(dateNgaySinh.Value.ToString()).Date, // Chuyển đổi giá trị từ DateTimePicker
-                            //DiaChi = txtDiaChi.Text,
-                            SdtGV = txtSDT.Text,
-                            EmailGV = txtEmail.Text,
-                            //NgayTiepNhan = DateTime.Now.Date,
-                            //MaLoaiHV = cboLoaiHV.SelectedValue.ToString(),
-                            TenDangNhap = txtTenDangNhap.Text,
-                            MatKhau = txtMatKhau.Text
-                        };
-
-                        // Chuyển đổi đối tượng thành JSON
-                        string jsonData = JsonConvert.SerializeObject(giangVien);
-
-                        string url = $"{_url2}themThongTinGiangVien";
-                        bool result = await callAPI.PostAPI(url, jsonData);
-                        if (result)
-                        {
-                            MessageBox.Show("Thêm thông tin giảng viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Thêm thông tin giảng viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                        MessageBox.Show("Thêm thông tin giảng viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
                     }
                     else
                     {
-                        try
-                        {
-                            //Dieu kien khi sua
-
-                            GiangVien giangVien = new GiangVien()
-                            {
-                                MaGV = txtMaGV.Text,
-                                TenGV = txtTenGV.Text,
-                                GioiTinhGV = cboGioiTinh.SelectedItem.ToString(),
-                                //NgaySinhGV = DateTime.Parse(dateNgaySinh.Value.ToString()).Date, // Chuyển đổi giá trị từ DateTimePicker
-                                //DiaChi = txtDiaChi.Text,
-                                SdtGV = txtSDT.Text,
-                                EmailGV = txtEmail.Text,
-                                //NgayTiepNhan = DateTime.Now.Date,
-                                //MaLoaiHV = cboLoaiHV.SelectedValue.ToString(),
-                                TenDangNhap = txtTenDangNhap.Text,
-                                MatKhau = txtMatKhau.Text
-                            };
-
-                            // Chuyển đổi đối tượng thành JSON
-                            string jsonData = JsonConvert.SerializeObject(giangVien);
-
-                            string url = $"{_url2}suaThongTinGiangVien";
-                            bool result = await callAPI.PostAPI(url, jsonData);
-                            if (result)
-                            {
-                                MessageBox.Show("Cập nhật thông tin giảng viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Cập nhật thông tin giảng viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                        }
-                        catch (ArgumentException ex)
-                        {
-                            MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Thêm thông tin giảng viên không thành c ông", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
+                    return;
+                }
+
+                // Update teacher info
+                url = $"{_url2}suaThongTinGiangVien";
+                result = await callAPI.PostAPI(url, jsonData);
+
+                if (result)
+                {
+                    MessageBox.Show("Cập nhật thông tin giảng viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin giảng viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (ArgumentException ex)
@@ -208,17 +150,24 @@ namespace DevEduManager.Modals
 
         private async void frmGiangVienEdit_Load(object sender, EventArgs e)
         {
-            string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&ma=GV";
-            string result = await callAPI.CallApiAsync(url);
-            if (_gv == null)
+            try
             {
-                txtMaGV.Text = result.Trim('"');
-                txtTenDangNhap.ReadOnly = false;
-                cboGioiTinh.SelectedIndex = 0;
+                string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&prefix=GV";
+                string result = await callAPI.CallApiAsync(url);
+
+                if (_gv is null)
+                {
+                    txtMaGV.Text = result.Trim('"');
+                    txtTenDangNhap.ReadOnly = false;
+                    cboGioiTinh.SelectedIndex = 0;
+                    return;
+                }
+
+                FillData();
             }
-            if (_gv != null && _gv.Rows.Count > 0)
+            catch (Exception ex)
             {
-                FillData(_gv.Rows[0]);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

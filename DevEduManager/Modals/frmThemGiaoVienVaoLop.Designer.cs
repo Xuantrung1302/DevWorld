@@ -1,6 +1,6 @@
 ﻿namespace DevEduManager.Modals
 {
-    partial class frmThemHocVienVaoLop
+    partial class frmThemGiaoVienVaoLop
     {
         /// <summary>
         /// Required designer variable.
@@ -31,21 +31,15 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.gridListStudent = new System.Windows.Forms.DataGridView();
-            this.txtKyHoc = new System.Windows.Forms.TextBox();
+            this.gridListTeacher = new System.Windows.Forms.DataGridView();
+            this.txtSub = new System.Windows.Forms.TextBox();
             this.txtClass = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblStuCur = new System.Windows.Forms.Label();
-            this.lblAddStu = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.MultiSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridListStudent)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListTeacher)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -56,8 +50,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.gridListStudent, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtKyHoc, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.gridListTeacher, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtSub, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtClass, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 2, 7);
@@ -75,16 +69,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(703, 720);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên kỳ học";
+            this.label1.Text = "Môn học";
             // 
             // label2
             // 
@@ -95,30 +89,29 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên lớp";
             // 
-            // gridListStudent
+            // gridListTeacher
             // 
-            this.gridListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridListStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MultiSelect,
-            this.StudentID,
+            this.gridListTeacher.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridListTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridListTeacher.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TeacherID,
             this.Fullname});
-            this.tableLayoutPanel1.SetColumnSpan(this.gridListStudent, 3);
-            this.gridListStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridListStudent.Location = new System.Drawing.Point(3, 143);
-            this.gridListStudent.Name = "gridListStudent";
-            this.gridListStudent.RowHeadersWidth = 51;
-            this.gridListStudent.RowTemplate.Height = 24;
-            this.gridListStudent.Size = new System.Drawing.Size(697, 524);
-            this.gridListStudent.TabIndex = 3;
-            this.gridListStudent.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.gridListStudent_CellPainting);
+            this.tableLayoutPanel1.SetColumnSpan(this.gridListTeacher, 3);
+            this.gridListTeacher.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridListTeacher.Location = new System.Drawing.Point(3, 143);
+            this.gridListTeacher.Name = "gridListTeacher";
+            this.gridListTeacher.RowHeadersWidth = 51;
+            this.gridListTeacher.RowTemplate.Height = 24;
+            this.gridListTeacher.Size = new System.Drawing.Size(697, 524);
+            this.gridListTeacher.TabIndex = 3;
             // 
-            // txtKyHoc
+            // txtSub
             // 
-            this.txtKyHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtKyHoc.Location = new System.Drawing.Point(3, 33);
-            this.txtKyHoc.Name = "txtKyHoc";
-            this.txtKyHoc.Size = new System.Drawing.Size(343, 22);
-            this.txtKyHoc.TabIndex = 4;
+            this.txtSub.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSub.Location = new System.Drawing.Point(3, 33);
+            this.txtSub.Name = "txtSub";
+            this.txtSub.Size = new System.Drawing.Size(343, 22);
+            this.txtSub.TabIndex = 4;
             // 
             // txtClass
             // 
@@ -133,10 +126,6 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.23755F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.76245F));
-            this.tableLayoutPanel2.Controls.Add(this.label3, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblStuCur, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblAddStu, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 78);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -145,44 +134,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(343, 54);
             this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 16);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Số học sinh hiện tại:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Số học sinh cần thêm:";
-            // 
-            // lblStuCur
-            // 
-            this.lblStuCur.AutoSize = true;
-            this.lblStuCur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.lblStuCur.Location = new System.Drawing.Point(202, 0);
-            this.lblStuCur.Name = "lblStuCur";
-            this.lblStuCur.Size = new System.Drawing.Size(39, 16);
-            this.lblStuCur.TabIndex = 2;
-            this.lblStuCur.Text = "num1";
-            // 
-            // lblAddStu
-            // 
-            this.lblAddStu.AutoSize = true;
-            this.lblAddStu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblAddStu.Location = new System.Drawing.Point(202, 27);
-            this.lblAddStu.Name = "lblAddStu";
-            this.lblAddStu.Size = new System.Drawing.Size(39, 16);
-            this.lblAddStu.TabIndex = 3;
-            this.lblAddStu.Text = "num2";
             // 
             // btnSave
             // 
@@ -193,24 +144,13 @@
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // MultiSelect
+            // TeacherID
             // 
-            this.MultiSelect.HeaderText = "";
-            this.MultiSelect.MinimumWidth = 30;
-            this.MultiSelect.Name = "MultiSelect";
-            this.MultiSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MultiSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.MultiSelect.Width = 30;
-            // 
-            // StudentID
-            // 
-            this.StudentID.DataPropertyName = "StudentID";
-            this.StudentID.HeaderText = "Mã học viên";
-            this.StudentID.MinimumWidth = 200;
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Width = 200;
+            this.TeacherID.DataPropertyName = "TeacherID";
+            this.TeacherID.HeaderText = "Mã giảng viên";
+            this.TeacherID.MinimumWidth = 200;
+            this.TeacherID.Name = "TeacherID";
             // 
             // Fullname
             // 
@@ -220,21 +160,17 @@
             this.Fullname.MinimumWidth = 440;
             this.Fullname.Name = "Fullname";
             // 
-            // frmThemHocVienVaoLop
+            // frmThemGiaoVienVaoLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 720);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "frmThemHocVienVaoLop";
-            this.Text = "Thêm học viên vào lớp";
-            this.Load += new System.EventHandler(this.frmThemHocVienVaoLop_Load);
-            this.Shown += new System.EventHandler(this.frmThemHocVienVaoLop_Shown);
+            this.Name = "frmThemGiaoVienVaoLop";
+            this.Text = "frmThemGiaoVienVaoLop";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridListStudent)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridListTeacher)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -244,17 +180,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView gridListStudent;
-        private System.Windows.Forms.TextBox txtKyHoc;
+        private System.Windows.Forms.DataGridView gridListTeacher;
+        private System.Windows.Forms.TextBox txtSub;
         private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblStuCur;
-        private System.Windows.Forms.Label lblAddStu;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn MultiSelect;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeacherID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
     }
 }

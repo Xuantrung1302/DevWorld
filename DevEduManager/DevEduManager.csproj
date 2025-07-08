@@ -204,6 +204,12 @@
     <Compile Include="Modals\frmThayDoiThongTinNV.Designer.cs">
       <DependentUpon>frmThayDoiThongTinNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\frmThemGiaoVienVaoLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmThemGiaoVienVaoLop.Designer.cs">
+      <DependentUpon>frmThemGiaoVienVaoLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmThemHocVienVaoLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -467,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmThayDoiThongTinNV.resx">
       <DependentUpon>frmThayDoiThongTinNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmThemGiaoVienVaoLop.resx">
+      <DependentUpon>frmThemGiaoVienVaoLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmThemHocVienVaoLop.resx">
       <DependentUpon>frmThemHocVienVaoLop.cs</DependentUpon>

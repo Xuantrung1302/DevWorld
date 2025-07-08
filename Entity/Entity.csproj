@@ -42,23 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modals\BangDiem.cs" />
-    <Compile Include="Modals\ChiTietTrungTam.cs" />
-    <Compile Include="Modals\Class_Plan_Weekly_Models.cs" />
-    <Compile Include="Modals\DangKy.cs" />
-    <Compile Include="Modals\GiangDay.cs" />
-    <Compile Include="Modals\GiangVien.cs" />
-    <Compile Include="Modals\HocVien.cs" />
-    <Compile Include="Modals\KhoaHoc.cs" />
-    <Compile Include="Modals\LoaiHV.cs" />
-    <Compile Include="Modals\LoaiNV.cs" />
-    <Compile Include="Modals\LopHoc.cs" />
-    <Compile Include="Modals\NhanVien.cs" />
-    <Compile Include="Modals\PhieuGhiDanh.cs" />
-    <Compile Include="Modals\Post.cs" />
-    <Compile Include="Modals\QuyDinh.cs" />
-    <Compile Include="Modals\TaiKhoan.cs" />
-    <Compile Include="Models\ModelsConst.cs" />
+    <Compile Include="Models\BangDiem.cs" />
+    <Compile Include="Models\ChiTietTrungTam.cs" />
+    <Compile Include="Models\Class_Plan_Weekly_Models.cs" />
+    <Compile Include="Models\DangKy.cs" />
+    <Compile Include="Models\GiangDay.cs" />
+    <Compile Include="Models\GiangVien.cs" />
+    <Compile Include="Models\HocVien.cs" />
+    <Compile Include="Models\KhoaHoc.cs" />
+    <Compile Include="Models\LoaiHV.cs" />
+    <Compile Include="Models\LoaiNV.cs" />
+    <Compile Include="Models\LopHoc.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\PhieuGhiDanh.cs" />
+    <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\QuyDinh.cs" />
+    <Compile Include="Models\TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

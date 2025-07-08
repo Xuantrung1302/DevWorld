@@ -423,6 +423,7 @@
             // 
             // ClassID
             // 
+            this.ClassID.DataPropertyName = "ClassID";
             this.ClassID.HeaderText = "mã lớp";
             this.ClassID.MinimumWidth = 6;
             this.ClassID.Name = "ClassID";

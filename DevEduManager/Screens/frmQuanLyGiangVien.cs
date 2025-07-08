@@ -210,9 +210,18 @@ namespace DevEduManager.Screens
 
         private async void gridGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string maGV = gridGV.Rows[e.RowIndex].Cells["clmMaGV"].Value.ToString();
-            string url = $"{_url}thongTinLopDay?teacherID={maGV}";
-            await LoadGridViewLop(maGV);
+            try
+            {
+                string maGV = gridGV.Rows[e.RowIndex].Cells["clmMaGV"].Value.ToString();
+                string url = $"{_url}thongTinLopDay?teacherID={maGV}";
+                await LoadGridViewLop(maGV);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private async Task LoadGridViewLop(string maGV)

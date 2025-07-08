@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -52,9 +52,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridMon = new System.Windows.Forms.DataGridView();
+            this.SubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TuitionFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongCong = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.gridLop = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHienTatCa = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TeacherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,16 +72,7 @@
             this.clmCacNgayTrongTuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHienTatCa = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.SubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SemesterName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TuitionFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThemGV = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -404,6 +404,50 @@
             this.gridMon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridMon.Size = new System.Drawing.Size(1063, 251);
             this.gridMon.TabIndex = 12;
+            this.gridMon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMon_CellClick);
+            this.gridMon.SelectionChanged += new System.EventHandler(this.gridMon_SelectionChanged_1);
+            // 
+            // SubjectID
+            // 
+            this.SubjectID.DataPropertyName = "SubjectID";
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
+            this.SubjectID.DefaultCellStyle = dataGridViewCellStyle4;
+            this.SubjectID.FillWeight = 81.09281F;
+            this.SubjectID.HeaderText = "Mã môn";
+            this.SubjectID.MinimumWidth = 6;
+            this.SubjectID.Name = "SubjectID";
+            this.SubjectID.ReadOnly = true;
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.DataPropertyName = "SubjectName";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Green;
+            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle5;
+            this.SubjectName.FillWeight = 108.0551F;
+            this.SubjectName.HeaderText = "Tên môn";
+            this.SubjectName.MinimumWidth = 6;
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
+            // 
+            // SemesterName
+            // 
+            this.SemesterName.DataPropertyName = "SemesterName";
+            this.SemesterName.FillWeight = 115.8469F;
+            this.SemesterName.HeaderText = "Tên học kỳ";
+            this.SemesterName.MinimumWidth = 6;
+            this.SemesterName.Name = "SemesterName";
+            this.SemesterName.ReadOnly = true;
+            this.SemesterName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SemesterName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // TuitionFee
+            // 
+            this.TuitionFee.DataPropertyName = "TuitionFee";
+            this.TuitionFee.FillWeight = 58.27927F;
+            this.TuitionFee.HeaderText = "Học phí";
+            this.TuitionFee.MinimumWidth = 30;
+            this.TuitionFee.Name = "TuitionFee";
+            this.TuitionFee.ReadOnly = true;
             // 
             // lblTongCong
             // 
@@ -442,8 +486,7 @@
             this.clmGioKT,
             this.clmCacNgayTrongTuan,
             this.clmPhong,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn1});
+            this.dataGridViewTextBoxColumn5});
             this.gridLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridLop.Location = new System.Drawing.Point(0, 0);
@@ -457,6 +500,94 @@
             this.gridLop.Size = new System.Drawing.Size(1095, 220);
             this.gridLop.TabIndex = 13;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnThemGV);
+            this.panel2.Controls.Add(this.btnHienTatCa);
+            this.panel2.Controls.Add(this.btnXoa);
+            this.panel2.Controls.Add(this.btnSua);
+            this.panel2.Controls.Add(this.btnThem);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1095, 46);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnHienTatCa
+            // 
+            this.btnHienTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHienTatCa.BackColor = System.Drawing.Color.Silver;
+            this.btnHienTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnHienTatCa.FlatAppearance.BorderSize = 0;
+            this.btnHienTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHienTatCa.Location = new System.Drawing.Point(928, 7);
+            this.btnHienTatCa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHienTatCa.Name = "btnHienTatCa";
+            this.btnHienTatCa.Size = new System.Drawing.Size(151, 31);
+            this.btnHienTatCa.TabIndex = 46;
+            this.btnHienTatCa.Text = "Hiện tất cả";
+            this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHienTatCa.UseVisualStyleBackColor = false;
+            this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.Silver;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoa.Location = new System.Drawing.Point(280, 7);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(95, 31);
+            this.btnXoa.TabIndex = 20;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.Color.Silver;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSua.Location = new System.Drawing.Point(177, 7);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(95, 31);
+            this.btnSua.TabIndex = 19;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Silver;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.Location = new System.Drawing.Point(16, 7);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(153, 31);
+            this.btnThem.TabIndex = 18;
+            this.btnThem.Text = "Thêm môn";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // ClassID
             // 
             this.ClassID.HeaderText = "Mã lớp";
@@ -469,8 +600,8 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ClassName";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Green;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Green;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn2.FillWeight = 300F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 270;
@@ -479,6 +610,7 @@
             // 
             // TeacherName
             // 
+            this.TeacherName.DataPropertyName = "TeacherName";
             this.TeacherName.HeaderText = "Giáo viên phụ trách";
             this.TeacherName.MinimumWidth = 150;
             this.TeacherName.Name = "TeacherName";
@@ -535,145 +667,23 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 83;
             // 
-            // dataGridViewCheckBoxColumn1
+            // btnThemGV
             // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "DangMo";
-            this.dataGridViewCheckBoxColumn1.FillWeight = 7.520319F;
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Đang mở";
-            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Visible = false;
-            this.dataGridViewCheckBoxColumn1.Width = 125;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnHienTatCa);
-            this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.btnSua);
-            this.panel2.Controls.Add(this.btnThem);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1095, 46);
-            this.panel2.TabIndex = 0;
-            // 
-            // btnHienTatCa
-            // 
-            this.btnHienTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHienTatCa.BackColor = System.Drawing.Color.Silver;
-            this.btnHienTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHienTatCa.FlatAppearance.BorderSize = 0;
-            this.btnHienTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnHienTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnHienTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHienTatCa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnHienTatCa.Location = new System.Drawing.Point(928, 7);
-            this.btnHienTatCa.Margin = new System.Windows.Forms.Padding(4);
-            this.btnHienTatCa.Name = "btnHienTatCa";
-            this.btnHienTatCa.Size = new System.Drawing.Size(151, 31);
-            this.btnHienTatCa.TabIndex = 46;
-            this.btnHienTatCa.Text = "Hiện tất cả";
-            this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHienTatCa.UseVisualStyleBackColor = false;
-            this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.Color.Silver;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoa.Location = new System.Drawing.Point(280, 7);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(95, 31);
-            this.btnXoa.TabIndex = 20;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = false;
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.Color.Silver;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSua.Location = new System.Drawing.Point(177, 7);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(95, 31);
-            this.btnSua.TabIndex = 19;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.Silver;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThem.Location = new System.Drawing.Point(16, 7);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(153, 31);
-            this.btnThem.TabIndex = 18;
-            this.btnThem.Text = "Thêm môn";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // SubjectID
-            // 
-            this.SubjectID.DataPropertyName = "SubjectID";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.SubjectID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.SubjectID.FillWeight = 81.09281F;
-            this.SubjectID.HeaderText = "Mã môn";
-            this.SubjectID.MinimumWidth = 6;
-            this.SubjectID.Name = "SubjectID";
-            this.SubjectID.ReadOnly = true;
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle2;
-            this.SubjectName.FillWeight = 108.0551F;
-            this.SubjectName.HeaderText = "Tên môn";
-            this.SubjectName.MinimumWidth = 6;
-            this.SubjectName.Name = "SubjectName";
-            this.SubjectName.ReadOnly = true;
-            // 
-            // SemesterName
-            // 
-            this.SemesterName.DataPropertyName = "SemesterName";
-            this.SemesterName.FillWeight = 115.8469F;
-            this.SemesterName.HeaderText = "Tên học kỳ";
-            this.SemesterName.MinimumWidth = 6;
-            this.SemesterName.Name = "SemesterName";
-            this.SemesterName.ReadOnly = true;
-            this.SemesterName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SemesterName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // TuitionFee
-            // 
-            this.TuitionFee.DataPropertyName = "TuitionFee";
-            this.TuitionFee.FillWeight = 58.27927F;
-            this.TuitionFee.HeaderText = "Học phí";
-            this.TuitionFee.MinimumWidth = 30;
-            this.TuitionFee.Name = "TuitionFee";
-            this.TuitionFee.ReadOnly = true;
+            this.btnThemGV.BackColor = System.Drawing.Color.Silver;
+            this.btnThemGV.FlatAppearance.BorderSize = 0;
+            this.btnThemGV.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnThemGV.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnThemGV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemGV.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThemGV.Location = new System.Drawing.Point(610, 7);
+            this.btnThemGV.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThemGV.Name = "btnThemGV";
+            this.btnThemGV.Size = new System.Drawing.Size(153, 31);
+            this.btnThemGV.TabIndex = 47;
+            this.btnThemGV.Text = "Thêm giảng viên";
+            this.btnThemGV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemGV.UseVisualStyleBackColor = false;
+            this.btnThemGV.Click += new System.EventHandler(this.btnThemGV_Click);
             // 
             // frmChuongTrinhHoc
             // 
@@ -736,6 +746,10 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SemesterName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TuitionFee;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherName;
@@ -744,10 +758,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCacNgayTrongTuan;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SemesterName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TuitionFee;
+        private System.Windows.Forms.Button btnThemGV;
     }
 }

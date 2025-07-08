@@ -33,7 +33,7 @@ namespace DevEduManager.Screens
             try
             {
                 // Load semesters into combo box
-                LoadComBoSemester();
+                //LoadComBoSemester();
                 // Load classes for the selected semester
                 LoadDataToGridView();
                 // Enable/disable text boxes based on checkboxes
@@ -52,20 +52,21 @@ namespace DevEduManager.Screens
             }
         }
 
-        private  void LoadComBoSemester()
+        private async  void LoadComBoSemester()
         {
-            //try
-            //{    string url = $"{_semesterUrl}thongTinKyHoc";
-            //    DataTable result = await callAPI.GetAPI(url);
-            //    cboKy.DataSource = result;
-            //    cboKy.DisplayMember = "SemesterName";
-            //    cboKy.ValueMember = "SemesterID";
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Lỗi khi tải danh sách kỳ học: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            
+            try
+            {
+                string url = $"{_semesterUrl}thongTinKyHoc";
+                DataTable result = await callAPI.GetAPI(url);
+                cboKy.DataSource = result;
+                cboKy.DisplayMember = "SemesterName";
+                cboKy.ValueMember = "SemesterID";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách kỳ học: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private async void LoadDataToGridView()
@@ -170,13 +171,16 @@ namespace DevEduManager.Screens
                 }
 
                 string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
-                string className = gridLop.SelectedRows[0].Cells["TenLop"].Value?.ToString();
+                //string semesterName = ((DataRowView)cboKy.SelectedItem)["SemesterName"].ToString();
+                string semesterName = cboKy.Text; // Lấy giá trị đang hiển thị (tên học kỳ)
+
+                //string className = gridLop.SelectedRows[0].Cells["TenLop"].Value?.ToString();
                 // Fetch max students from API or configuration
                 //string url = $"{_classUrl}thongTinLopHoc?classID={Uri.EscapeDataString(classId)}";
                 //DataTable classInfo = callAPI.GetAPI(url).Result;
                 //int maxStudents = classInfo.Rows.Count > 0 ? Convert.ToInt32(classInfo.Rows[0]["MaxStudents"]) : 30;
 
-                frmThemHocVienVaoLop frm = new frmThemHocVienVaoLop(classId);
+                frmThemHocVienVaoLop frm = new frmThemHocVienVaoLop(classId, semesterName);
                 frm.ShowDialog();
                 // Reload student data after adding
                 LoadStudentData();
@@ -230,6 +234,11 @@ namespace DevEduManager.Screens
             txtTenMon.Enabled = chkTenMon.Checked;
             if (!chkTenMon.Checked)
                 txtTenMon.Text = string.Empty;
+        }
+
+        private void frmQuanLyLopHoc_Shown(object sender, EventArgs e)
+        {
+            LoadComBoSemester();
         }
     }
 }

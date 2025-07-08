@@ -22,6 +22,7 @@ namespace DevEduManager.Screens
         public frmChuongTrinhHoc()
         {
             InitializeComponent();
+
         }
 
         private void frmChuongTrinhHoc_Load(object sender, EventArgs e)
@@ -182,6 +183,55 @@ namespace DevEduManager.Screens
             {
                 MessageBox.Show($"Lỗi khi sửa: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private async void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridMon.SelectedRows.Count > 0)
+                {
+                    // Lấy dòng đang được chọn
+                    DataGridViewRow selectedRow = gridMon.SelectedRows[0];
+
+                    // Lấy subjectID từ cột "SubjectID"
+                    string subjectID = selectedRow.Cells["SubjectID"].Value.ToString();
+
+                    // Gọi API để xoá
+                    string url = $"{_subjectUrl}xoaMonHoc?subjectID={subjectID}";
+                    bool result = await callAPI.PostAPI(url);
+
+                    // Refresh lại danh sách
+                    btnHienTatCa_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một môn học để xoá.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xoá: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void gridMon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gridMon_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (gridMon.SelectedRows.Count > 0)
+            {
+                string selectedSubjectID = gridMon.SelectedRows[0].Cells["SubjectID"].Value.ToString();
+                LoadClasses(selectedSubjectID);
+            }
+        }
+
+        private void btnThemGV_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

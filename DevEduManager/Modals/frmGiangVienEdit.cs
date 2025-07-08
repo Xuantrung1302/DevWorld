@@ -152,11 +152,12 @@ namespace DevEduManager.Modals
         {
             try
             {
-                string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&prefix=GV";
-                string result = await callAPI.CallApiAsync(url);
 
                 if (_gv is null)
                 {
+                    string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&prefix=GV";
+                    string result = await callAPI.CallApiAsync(url);
+
                     txtMaGV.Text = result.Trim('"');
                     txtTenDangNhap.ReadOnly = false;
                     cboGioiTinh.SelectedIndex = 0;

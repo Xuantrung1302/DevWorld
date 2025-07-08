@@ -283,7 +283,7 @@
             this.gridNV.RowHeadersVisible = false;
             this.gridNV.RowHeadersWidth = 51;
             this.gridNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridNV.Size = new System.Drawing.Size(1089, 498);
+            this.gridNV.Size = new System.Drawing.Size(1088, 498);
             this.gridNV.TabIndex = 1;
             this.gridNV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.gridNV_RowsAdded);
             this.gridNV.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.gridNV_RowsRemoved);
@@ -358,6 +358,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -421,6 +422,7 @@
             // Gender
             // 
             this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Gender.DataPropertyName = "Gender";
             this.Gender.HeaderText = "Giới tính";
             this.Gender.MinimumWidth = 40;
             this.Gender.Name = "Gender";
@@ -428,6 +430,7 @@
             // 
             // Address
             // 
+            this.Address.DataPropertyName = "Address";
             this.Address.FillWeight = 346.0172F;
             this.Address.HeaderText = "Địa chỉ";
             this.Address.MinimumWidth = 200;

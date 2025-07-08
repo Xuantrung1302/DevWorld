@@ -19,13 +19,11 @@ namespace DevEduManager.Modals
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
         private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Employee/";
-        DataTable _nv;
-        bool isInsert = true;
-        public frmNhanVienEdit(DataTable nv)
+        private NhanVien _nv;
+        public frmNhanVienEdit(NhanVien nv)
         {
             InitializeComponent();
             _nv = nv;
-            isInsert = _nv == null;
         }
         private bool ValidateLuu()
         {
@@ -64,155 +62,93 @@ namespace DevEduManager.Modals
 
         private async void frmNhanVienEdit_Load(object sender, EventArgs e)
         {
-            string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&ma=NV";
-            string result = await callAPI.CallApiAsync(url);
-            if (_nv == null)
-            {
-                Common.LoadComboBoxLoaiNV(cboGioiTinh);
-                txtMaNV.Text = result.Trim('"');
-                txtTenDangNhap.ReadOnly = false;
-            }
-            if (_nv != null && _nv.Rows.Count > 0)
-            {
-                Common.LoadComboBoxLoaiNV(cboGioiTinh);
-                FillData(_nv.Rows[0]);
-                txtTenDangNhap.ReadOnly = true;
-            }
-        }
-        private void FillData(DataRow hv)
-        {
             try
             {
-                txtMaNV.Text = hv["EmployeeID"].ToString();
-                txtTenNV.Text = hv["FullName"].ToString();
-
-                //if (hv["NgaySinh"] != DBNull.Value)
-                //    dateNgaySinh.Value = Convert.ToDateTime(hv["NgaySinh"]);
-
-                //cboGioiTinh.Text = hv["GioiTinhHV"].ToString();
-                //txtDiaChi.Text = hv["DiaChi"].ToString();
-                txtSDT.Text = hv["PhoneNumber"].ToString();
-                txtEmail.Text = hv["Email"].ToString();
-                cboGioiTinh.SelectedValue = hv["Position"].ToString();
-
-
-                //if (hv["MaLoaiHV"].ToString() == "LHV01")
-                //{
-                //    cboLoaiHV.Enabled = false;
-                //    txtMatKhau.Enabled = false;
-                //}
-                //else
-                //{
-                //    cboLoaiHV.Enabled = true;
-                //    txtMatKhau.Enabled = false;
-                //}
-
-                if (hv["Username"] != DBNull.Value)
+                if (_nv is null)
                 {
-                    txtTenDangNhap.Text = hv["Username"].ToString();
-                    txtMatKhau.Text = hv["Password"].ToString();
-                }
-                else
-                {
-                    txtTenDangNhap.Text = string.Empty;
-                    txtMatKhau.Text = string.Empty;
+                    string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&prefix=NV";
+                    string result = await callAPI.CallApiAsync(url);
+
+                    txtMaNV.Text = result.Trim('"');
+                    txtTenDangNhap.ReadOnly = false;
+                    cboGioiTinh.SelectedIndex = 0;
+                    return;
                 }
 
+                FillData();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FillData()
+        {
+            txtMaNV.Text = _nv.EmployeeID;
+            txtTenNV.Text = _nv.FullName;
+            txtSDT.Text = _nv.PhoneNumber;
+            txtEmail.Text = _nv.Email;
+            cboGioiTinh.Text = _nv.Gender;
+            txtDiaChi.Text = _nv.Address;
+            txtTenDangNhap.Text = _nv.Username;
+            txtMatKhau.Text = _nv.Password;
         }
 
         private async void btnLuuThongTin_Click(object sender, EventArgs e)
         {
             try
             {
-                if (ValidateLuu())
+                if (!ValidateLuu())
                 {
-                    if (isInsert)
+                    return;
+                }
+
+                NhanVien nhanVien = new NhanVien()
+                {
+                    EmployeeID = txtMaNV.Text,
+                    FullName = txtTenNV.Text,
+                    PhoneNumber = txtSDT.Text,
+                    Address = txtDiaChi.Text,
+                    Email = txtEmail.Text,
+                    Gender = cboGioiTinh.SelectedItem.ToString(),
+                    Username = txtTenDangNhap.Text,
+                    Password = txtMatKhau.Text
+                };
+
+                string jsonData = JsonConvert.SerializeObject(nhanVien);
+                string url = null;
+                bool result = false;
+
+                if (_nv is null)
+                {
+                    url = $"{_url2}themThongTinNhanVien";
+                    result = await callAPI.PostAPI(url, jsonData);
+                    if (result)
                     {
-                        //Dieu kien khi them
-
-                        NhanVien nhanVien = new NhanVien()
-                        {
-                            MaNV = txtMaNV.Text,
-                            TenNV = txtTenNV.Text,
-                            //GioiTinhHV = cboGioiTinh.SelectedItem.ToString(),
-                            //NgaySinh = DateTime.Parse(dateNgaySinh.Value.ToString()).Date, // Chuyển đổi giá trị từ DateTimePicker
-                            //DiaChi = txtDiaChi.Text,
-                            SdtNV = txtSDT.Text,
-                            EmailNV = txtEmail.Text,
-                            //NgayTiepNhan = DateTime.Now.Date,
-                            GioiTinh = cboGioiTinh.SelectedValue.ToString(),
-                            TenDangNhap = txtTenDangNhap.Text,
-                            MatKhau = txtMatKhau.Text
-                        };
-
-                        // Chuyển đổi đối tượng thành JSON
-                        string jsonData = JsonConvert.SerializeObject(nhanVien);
-
-                        string url = $"{_url2}themThongTinNhanVien";
-                        bool result = await callAPI.PostAPI(url, jsonData);
-                        if (result)
-                        {
-                            MessageBox.Show("Thêm thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Thêm thông tin nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
+                        MessageBox.Show("Thêm thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
                     }
                     else
                     {
-                        try
-                        {
-                            //Dieu kien khi them
-
-                            NhanVien nhanVien = new NhanVien()
-                            {
-                                MaNV = txtMaNV.Text,
-                                TenNV = txtTenNV.Text,
-                                //GioiTinhHV = cboGioiTinh.SelectedItem.ToString(),
-                                //NgaySinh = DateTime.Parse(dateNgaySinh.Value.ToString()).Date, // Chuyển đổi giá trị từ DateTimePicker
-                                //DiaChi = txtDiaChi.Text,
-                                SdtNV = txtSDT.Text,
-                                EmailNV = txtEmail.Text,
-                                //NgayTiepNhan = DateTime.Now.Date,
-                                GioiTinh = cboGioiTinh.SelectedValue.ToString(),
-                                TenDangNhap = txtTenDangNhap.Text,
-                                MatKhau = txtMatKhau.Text
-                            };
-
-                            // Chuyển đổi đối tượng thành JSON
-                            string jsonData = JsonConvert.SerializeObject(nhanVien);
-
-                            string url = $"{_url2}suaThongTinNhanVien";
-                            bool result = await callAPI.PostAPI(url, jsonData);
-                            if (result)
-                            {
-                                MessageBox.Show("Cập nhật thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Cập nhật thông tin nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                        }
-                        catch (ArgumentException ex)
-                        {
-                            MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        MessageBox.Show("Thêm thông tin nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
+                    return;
+                }
+
+                // Update teacher info
+                url = $"{_url2}suaThongTinNhanVien";
+                result = await callAPI.PostAPI(url, jsonData);
+
+                if (result)
+                {
+                    MessageBox.Show("Cập nhật thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thông tin nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (ArgumentException ex)

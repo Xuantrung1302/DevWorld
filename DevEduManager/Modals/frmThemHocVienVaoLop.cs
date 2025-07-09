@@ -1,36 +1,35 @@
-﻿using BusinessLogic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using BusinessLogic;
+using Newtonsoft.Json;
 
 namespace DevEduManager.Modals
 {
     public partial class frmThemHocVienVaoLop : Form
     {
-
-        CallAPI callAPI = new CallAPI();
-        private string _studentUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Student/";
+        private CallAPI callAPI = new CallAPI();
         private string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
-        string classID = null;
-        string _semesterName = null;
-        public frmThemHocVienVaoLop(string classId, string semesterName)
+        private string classID;
+        private string _semesterName;
+        private string _className;
+
+        private CheckBox chkAll = new CheckBox(); // Check All trên header
+
+        public frmThemHocVienVaoLop(string classId, string semesterName, string className)
         {
             InitializeComponent();
             classID = classId;
             _semesterName = semesterName;
+            _className = className;
         }
 
         private void frmThemHocVienVaoLop_Load(object sender, EventArgs e)
         {
             txtKyHoc.Text = _semesterName;
+            txtClass.Text = _className;
             LoadDataToGridView(classID);
         }
 
@@ -40,46 +39,67 @@ namespace DevEduManager.Modals
             {
                 string url = $"{_classUrl}layDanhSachHVDuocThemVaoLop?classID={classID}";
                 DataTable result = await callAPI.GetAPI(url);
+                gridListStudent.DataSource = result;
+
+                gridListStudent.AllowUserToAddRows = false;
+                gridListStudent.RowHeadersVisible = false;
+                gridListStudent.ScrollBars = ScrollBars.Vertical;
+
+                AddCheckAllHeader(); // thêm check all sau khi load dữ liệu
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("Lỗi load dữ liệu: " + ex.Message);
             }
         }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
 
+        private void AddCheckAllHeader()
+        {
+            gridListStudent.Controls.Remove(chkAll);
+
+            Rectangle rect = gridListStudent.GetCellDisplayRectangle(0, -1, true);
+            chkAll.Size = new Size(18, 18);
+            chkAll.Location = new Point(
+                rect.X + (rect.Width - chkAll.Width) / 2,
+                rect.Y + (rect.Height - chkAll.Height) / 2
+            );
+            chkAll.BackColor = Color.Transparent;
+            chkAll.Checked = false;
+
+            chkAll.CheckedChanged -= ChkAll_CheckedChanged;
+            chkAll.CheckedChanged += ChkAll_CheckedChanged;
+
+            gridListStudent.Controls.Add(chkAll);
         }
 
-        private void gridListStudent_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void ChkAll_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in gridListStudent.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    row.Cells[0].Value = chkAll.Checked;
+                }
+            }
+        }
+        private async void FrmThemHocVienVaoLop_Shown(object sender, EventArgs e)
         {
             try
             {
-                if (e.RowIndex == -1 && e.ColumnIndex == 0)
+                string url = $"{_classUrl}laySoLuongHienTaiVaThieuCuaLop?classID={classID}";
+                DataTable result = await callAPI.GetAPI(url);
+                if (result != null && result.Rows.Count > 0)
                 {
-                    e.PaintBackground(e.CellBounds, true);
-                    CheckBox checkBox = new CheckBox
-                    {
-                        Size = new Size(15, 15),
-                        Location = new Point(
-                            e.CellBounds.Left + (e.CellBounds.Width - 15) / 2,
-                            e.CellBounds.Top + (e.CellBounds.Height - 15) / 2
-                        )
-                    };
-
-                    checkBox.CheckedChanged += (s, ev) =>
-                    {
-                        foreach (DataGridViewRow row in gridListStudent.Rows)
-                        {
-                            row.Cells[0].Value = checkBox.Checked;
-                        }
-                        gridListStudent.Invalidate(); // Vẽ lại
-                    };
-
-                    gridListStudent.Controls.Add(checkBox);
-                    e.Handled = true;
+                    lblStuCur.Text = result.Rows[0]["CurrentCount"].ToString();
+                    lblAddStu.Text = result.Rows[0]["RemainingSeats"].ToString();
                 }
+                else
+                {
+                    lblStuCur.Text = "0";
+                    lblAddStu.Text = "0";
+                }
+
+
             }
             catch (Exception)
             {
@@ -87,40 +107,24 @@ namespace DevEduManager.Modals
                 throw;
             }
         }
-        private void CheckRowsUntilLabel(bool check)
-        {
-            // Xác định vị trí kết thúc dựa trên giá trị hoặc nhãn cụ thể
-            int stopRowIndex = -1;
-
-            foreach (DataGridViewRow row in gridListStudent.Rows)
-            {
-                // Giả sử bạn dừng ở hàng chứa một giá trị cụ thể trong cột "TenLop"
-                if (row.Cells["TenLop"].Value != null &&
-                    row.Cells["TenLop"].Value.ToString() == lblAddStu.Text)
-                {
-                    stopRowIndex = row.Index;
-                    break;
-                }
-            }
-
-            if (stopRowIndex == -1)
-            {
-                MessageBox.Show("Không tìm thấy dòng chứa lblAddStu.", "Thông báo");
-                return;
-            }
-
-            for (int i = 0; i <= stopRowIndex; i++)
-            {
-                gridListStudent.Rows[i].Cells[0].Value = check; // cột checkbox ở index 0
-            }
-        }
-
         private async void frmThemHocVienVaoLop_Shown(object sender, EventArgs e)
         {
             try
             {
                 string url = $"{_classUrl}laySoLuongHienTaiVaThieuCuaLop?classID={classID}";
                 DataTable result = await callAPI.GetAPI(url);
+                if (result != null && result.Rows.Count > 0)
+                {
+                    lblStuCur.Text = result.Rows[0]["CurrentCount"].ToString();
+                    lblAddStu.Text = result.Rows[0]["RemainingSeats"].ToString();
+                }
+                else
+                {
+                    lblStuCur.Text = "0";
+                    lblAddStu.Text = "0";
+                }
+
+
             }
             catch (Exception)
             {
@@ -128,5 +132,57 @@ namespace DevEduManager.Modals
                 throw;
             }
         }
+
+        private async void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime now = DateTime.Now;
+
+                foreach (DataGridViewRow row in gridListStudent.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells[0].Value) != true)
+                        continue;
+
+                    string studentID = row.Cells["StudentID"].Value?.ToString();
+                    if (string.IsNullOrEmpty(studentID))
+                        continue;
+
+                    // Tạo object dữ liệu
+                    var dangKy = new
+                    {
+                        StudentID = studentID,
+                        ClassID = classID,
+                        EnrollmentDate = now,
+                        ApprovedBy = (string)null,
+                        ApprovalDate = now,
+                        CompletionStatus = "Đang học",
+                        CompletionDate = (DateTime?)null
+                    };
+
+                    // Chuyển sang JSON string
+                    string json = JsonConvert.SerializeObject(dangKy);
+
+                    // Gọi API
+                    string url = $"{_classUrl}themSinhVienVaoLop";
+                    bool inserted = await callAPI.PostAPI(url, json);
+
+                    if (!inserted)
+                    {
+                        MessageBox.Show($"Không thể thêm học viên {studentID} vào lớp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+
+                MessageBox.Show("Thêm học viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

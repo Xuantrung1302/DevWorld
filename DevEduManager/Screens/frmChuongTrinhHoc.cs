@@ -229,9 +229,38 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void btnThemGV_Click(object sender, EventArgs e)
-        {
 
+        private void btnThemLH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmLopHocEdit frm = new frmLopHocEdit(null, null);
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnSuaLH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
+
+                string className = gridLop.SelectedRows[0].Cells["ClassName"].Value?.ToString();
+                //string semesterName = ((DataRowView)cboKy.SelectedItem)["SemesterName"].ToString();
+                //string semesterName = cboKy.Text; // Lấy giá trị đang hiển thị (tên học kỳ)
+                frmLopHocEdit frm = new frmLopHocEdit(classId, className);
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="Models\ChiTietTrungTam.cs" />
     <Compile Include="Models\Class_Plan_Weekly_Models.cs" />
     <Compile Include="Models\DangKy.cs" />
+    <Compile Include="Models\DangKyLop.cs" />
     <Compile Include="Models\GiangDay.cs" />
     <Compile Include="Models\GiangVien.cs" />
     <Compile Include="Models\HocVien.cs" />

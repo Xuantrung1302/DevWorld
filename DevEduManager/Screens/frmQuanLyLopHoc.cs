@@ -171,8 +171,12 @@ namespace DevEduManager.Screens
                 }
 
                 string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
+
+                string className = gridLop.SelectedRows[0].Cells["ClassName"].Value?.ToString();
                 //string semesterName = ((DataRowView)cboKy.SelectedItem)["SemesterName"].ToString();
                 string semesterName = cboKy.Text; // Lấy giá trị đang hiển thị (tên học kỳ)
+
+
 
                 //string className = gridLop.SelectedRows[0].Cells["TenLop"].Value?.ToString();
                 // Fetch max students from API or configuration
@@ -180,7 +184,7 @@ namespace DevEduManager.Screens
                 //DataTable classInfo = callAPI.GetAPI(url).Result;
                 //int maxStudents = classInfo.Rows.Count > 0 ? Convert.ToInt32(classInfo.Rows[0]["MaxStudents"]) : 30;
 
-                frmThemHocVienVaoLop frm = new frmThemHocVienVaoLop(classId, semesterName);
+                frmThemHocVienVaoLop frm = new frmThemHocVienVaoLop(classId, semesterName, className);
                 frm.ShowDialog();
                 // Reload student data after adding
                 LoadStudentData();

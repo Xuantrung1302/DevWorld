@@ -32,6 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gridListStudent = new System.Windows.Forms.DataGridView();
+            this.MultiSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtKyHoc = new System.Windows.Forms.TextBox();
             this.txtClass = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -40,9 +43,6 @@
             this.lblStuCur = new System.Windows.Forms.Label();
             this.lblAddStu = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.MultiSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridListStudent)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -97,6 +97,7 @@
             // 
             // gridListStudent
             // 
+            this.gridListStudent.AllowUserToAddRows = false;
             this.gridListStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridListStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MultiSelect,
@@ -106,15 +107,41 @@
             this.gridListStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridListStudent.Location = new System.Drawing.Point(3, 143);
             this.gridListStudent.Name = "gridListStudent";
+            this.gridListStudent.RowHeadersVisible = false;
             this.gridListStudent.RowHeadersWidth = 51;
             this.gridListStudent.RowTemplate.Height = 24;
             this.gridListStudent.Size = new System.Drawing.Size(697, 524);
             this.gridListStudent.TabIndex = 3;
-            this.gridListStudent.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.gridListStudent_CellPainting);
+            // 
+            // MultiSelect
+            // 
+            this.MultiSelect.HeaderText = "";
+            this.MultiSelect.MinimumWidth = 30;
+            this.MultiSelect.Name = "MultiSelect";
+            this.MultiSelect.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.MultiSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.MultiSelect.Width = 30;
+            // 
+            // StudentID
+            // 
+            this.StudentID.DataPropertyName = "StudentID";
+            this.StudentID.HeaderText = "Mã học viên";
+            this.StudentID.MinimumWidth = 200;
+            this.StudentID.Name = "StudentID";
+            this.StudentID.Width = 200;
+            // 
+            // Fullname
+            // 
+            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fullname.DataPropertyName = "Fullname";
+            this.Fullname.HeaderText = "Họ và tên";
+            this.Fullname.MinimumWidth = 440;
+            this.Fullname.Name = "Fullname";
             // 
             // txtKyHoc
             // 
             this.txtKyHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKyHoc.Enabled = false;
             this.txtKyHoc.Location = new System.Drawing.Point(3, 33);
             this.txtKyHoc.Name = "txtKyHoc";
             this.txtKyHoc.Size = new System.Drawing.Size(343, 22);
@@ -194,31 +221,6 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // MultiSelect
-            // 
-            this.MultiSelect.HeaderText = "";
-            this.MultiSelect.MinimumWidth = 30;
-            this.MultiSelect.Name = "MultiSelect";
-            this.MultiSelect.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MultiSelect.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.MultiSelect.Width = 30;
-            // 
-            // StudentID
-            // 
-            this.StudentID.DataPropertyName = "StudentID";
-            this.StudentID.HeaderText = "Mã học viên";
-            this.StudentID.MinimumWidth = 200;
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Width = 200;
-            // 
-            // Fullname
-            // 
-            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Fullname.DataPropertyName = "Fullname";
-            this.Fullname.HeaderText = "Họ và tên";
-            this.Fullname.MinimumWidth = 440;
-            this.Fullname.Name = "Fullname";
             // 
             // frmThemHocVienVaoLop
             // 

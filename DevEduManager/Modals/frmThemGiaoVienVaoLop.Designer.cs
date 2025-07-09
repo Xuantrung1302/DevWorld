@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gridListTeacher = new System.Windows.Forms.DataGridView();
+            this.TeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSub = new System.Windows.Forms.TextBox();
             this.txtClass = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
-            this.TeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridListTeacher)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +105,21 @@
             this.gridListTeacher.Size = new System.Drawing.Size(697, 524);
             this.gridListTeacher.TabIndex = 3;
             // 
+            // TeacherID
+            // 
+            this.TeacherID.DataPropertyName = "TeacherID";
+            this.TeacherID.HeaderText = "Mã giảng viên";
+            this.TeacherID.MinimumWidth = 200;
+            this.TeacherID.Name = "TeacherID";
+            // 
+            // Fullname
+            // 
+            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fullname.DataPropertyName = "Fullname";
+            this.Fullname.HeaderText = "Họ và tên";
+            this.Fullname.MinimumWidth = 440;
+            this.Fullname.Name = "Fullname";
+            // 
             // txtSub
             // 
             this.txtSub.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -145,21 +160,6 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // TeacherID
-            // 
-            this.TeacherID.DataPropertyName = "TeacherID";
-            this.TeacherID.HeaderText = "Mã giảng viên";
-            this.TeacherID.MinimumWidth = 200;
-            this.TeacherID.Name = "TeacherID";
-            // 
-            // Fullname
-            // 
-            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Fullname.DataPropertyName = "Fullname";
-            this.Fullname.HeaderText = "Họ và tên";
-            this.Fullname.MinimumWidth = 440;
-            this.Fullname.Name = "Fullname";
-            // 
             // frmThemGiaoVienVaoLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -167,6 +167,7 @@
             this.ClientSize = new System.Drawing.Size(703, 720);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmThemGiaoVienVaoLop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmThemGiaoVienVaoLop";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

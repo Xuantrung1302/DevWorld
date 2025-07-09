@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -52,11 +52,11 @@
             this.chkTenMon = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridListStudent = new System.Windows.Forms.DataGridView();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnThem = new System.Windows.Forms.Button();
+            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -275,8 +275,8 @@
             // ClassName
             // 
             this.ClassName.DataPropertyName = "ClassName";
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Green;
-            this.ClassName.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
+            this.ClassName.DefaultCellStyle = dataGridViewCellStyle1;
             this.ClassName.FillWeight = 87.31236F;
             this.ClassName.HeaderText = "Tên lớp";
             this.ClassName.MinimumWidth = 100;
@@ -286,8 +286,8 @@
             // SubjectName
             // 
             this.SubjectName.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Blue;
-            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle2;
             this.SubjectName.FillWeight = 75.96175F;
             this.SubjectName.HeaderText = "Tên môn";
             this.SubjectName.MinimumWidth = 150;
@@ -375,7 +375,7 @@
             this.gridListStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentID,
             this.Fullname,
-            this.dataGridViewTextBoxColumn4});
+            this.Gender});
             this.gridListStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridListStudent.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridListStudent.Location = new System.Drawing.Point(0, 0);
@@ -388,40 +388,6 @@
             this.gridListStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridListStudent.Size = new System.Drawing.Size(651, 539);
             this.gridListStudent.TabIndex = 13;
-            // 
-            // StudentID
-            // 
-            this.StudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.StudentID.DataPropertyName = "StudentID";
-            this.StudentID.FillWeight = 4.286573F;
-            this.StudentID.HeaderText = "Mã học viên";
-            this.StudentID.MinimumWidth = 100;
-            this.StudentID.Name = "StudentID";
-            this.StudentID.ReadOnly = true;
-            this.StudentID.Width = 108;
-            // 
-            // Fullname
-            // 
-            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Fullname.DataPropertyName = "Fullname";
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Green;
-            this.Fullname.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Fullname.FillWeight = 3.998264F;
-            this.Fullname.HeaderText = "Tên học viên";
-            this.Fullname.MinimumWidth = 300;
-            this.Fullname.Name = "Fullname";
-            this.Fullname.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NgayKT";
-            this.dataGridViewTextBoxColumn4.FillWeight = 3.998264F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Giới tính";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 30;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 83;
             // 
             // panel2
             // 
@@ -450,6 +416,40 @@
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            // 
+            // StudentID
+            // 
+            this.StudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.StudentID.DataPropertyName = "StudentID";
+            this.StudentID.FillWeight = 4.286573F;
+            this.StudentID.HeaderText = "Mã học viên";
+            this.StudentID.MinimumWidth = 100;
+            this.StudentID.Name = "StudentID";
+            this.StudentID.ReadOnly = true;
+            this.StudentID.Width = 108;
+            // 
+            // Fullname
+            // 
+            this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Fullname.DataPropertyName = "Fullname";
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Green;
+            this.Fullname.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Fullname.FillWeight = 3.998264F;
+            this.Fullname.HeaderText = "Tên học viên";
+            this.Fullname.MinimumWidth = 300;
+            this.Fullname.Name = "Fullname";
+            this.Fullname.ReadOnly = true;
+            // 
+            // Gender
+            // 
+            this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Gender.DataPropertyName = "Gender";
+            this.Gender.FillWeight = 3.998264F;
+            this.Gender.HeaderText = "Giới tính";
+            this.Gender.MinimumWidth = 30;
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            this.Gender.Width = 83;
             // 
             // frmQuanLyLopHoc
             // 
@@ -502,11 +502,11 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
     }
 }

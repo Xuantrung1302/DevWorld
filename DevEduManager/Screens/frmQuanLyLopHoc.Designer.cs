@@ -52,11 +52,11 @@
             this.chkTenMon = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridListStudent = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnThem = new System.Windows.Forms.Button();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnThem = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -389,34 +389,6 @@
             this.gridListStudent.Size = new System.Drawing.Size(651, 539);
             this.gridListStudent.TabIndex = 13;
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnThem);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(651, 46);
-            this.panel2.TabIndex = 0;
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.Silver;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThem.Location = new System.Drawing.Point(13, 7);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(153, 31);
-            this.btnThem.TabIndex = 19;
-            this.btnThem.Text = "Thêm học viên";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
-            // 
             // StudentID
             // 
             this.StudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -450,6 +422,34 @@
             this.Gender.Name = "Gender";
             this.Gender.ReadOnly = true;
             this.Gender.Width = 83;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnThem);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(651, 46);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.Silver;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.Location = new System.Drawing.Point(13, 7);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(153, 31);
+            this.btnThem.TabIndex = 19;
+            this.btnThem.Text = "Thêm học viên";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
             // 
             // frmQuanLyLopHoc
             // 

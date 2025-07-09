@@ -234,7 +234,8 @@ namespace DevEduManager.Screens
         {
             try
             {
-                frmLopHocEdit frm = new frmLopHocEdit(null, null);
+                string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
+                frmLopHocEdit frm = new frmLopHocEdit(classId, null);
                 frm.ShowDialog();
             }
             catch (Exception)

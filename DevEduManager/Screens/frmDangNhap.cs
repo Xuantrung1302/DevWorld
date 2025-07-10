@@ -21,7 +21,6 @@ namespace DevEduManager.Screens
         }
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
-        public DataTable userData;
         #region Events
 
         private bool CheckDangNhap()
@@ -89,8 +88,7 @@ namespace DevEduManager.Screens
                         Settings.Default.Login_Password = txtMatKhau.Text;
                         Settings.Default.Save();
 
-                        userData = result;
-                        frmMain frm = new frmMain(userData);
+                        frmMain frm = new frmMain(result);
                         this.Hide(); // Ẩn frmDangNhap trước khi mở frmMain
                         frm.ShowDialog();
                         this.Close(); // Đóng frmDangNhap sau khi frmMain được đóng

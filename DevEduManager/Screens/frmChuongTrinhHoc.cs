@@ -87,8 +87,9 @@ namespace DevEduManager.Screens
                 if (result != null && result.Rows.Count > 0)
                 {
                     gridLop.DataSource = result;
+                    gridLop.AutoGenerateColumns = false;
                     gridLop.Dock = DockStyle.Fill;
-                    HideColumns(gridLop);
+                    //HideColumns(gridLop);
                 }
                 else
                 {
@@ -234,34 +235,63 @@ namespace DevEduManager.Screens
         {
             try
             {
-                string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
-                frmLopHocEdit frm = new frmLopHocEdit(classId, null);
-                frm.ShowDialog();
-            }
-            catch (Exception)
-            {
+                string subjectId = gridMon.SelectedRows[0].Cells["SubjectID"].Value?.ToString();
 
-                throw;
+                // Truyền null classId và className => thêm lớp mới, không load giảng viên
+                frmLopHocEdit frm = new frmLopHocEdit(null, null, subjectId);
+                frm.ShowDialog();
+
+                LoadClasses(null);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thêm lớp: " + ex.Message);
             }
         }
 
-        private void btnSuaLH_Click(object sender, EventArgs e)
+        private void btnThemGiangVien_Click(object sender, EventArgs e)
         {
             try
             {
                 string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
-
                 string className = gridLop.SelectedRows[0].Cells["ClassName"].Value?.ToString();
-                //string semesterName = ((DataRowView)cboKy.SelectedItem)["SemesterName"].ToString();
-                //string semesterName = cboKy.Text; // Lấy giá trị đang hiển thị (tên học kỳ)
-                frmLopHocEdit frm = new frmLopHocEdit(classId, className);
+                string subjectId = gridMon.SelectedRows[0].Cells["SubjectID"].Value?.ToString();
+
+                // Thêm giảng viên => truyền đủ thông tin, enable combobox giảng viên, không cho chỉnh gì khác
+                frmLopHocEdit frm = new frmLopHocEdit(classId, className, subjectId);
                 frm.ShowDialog();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("Lỗi khi thêm giảng viên: " + ex.Message);
             }
         }
+
+
+
+
+
+        //private void btnSuaLH_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
+
+        //        string className = gridLop.SelectedRows[0].Cells["ClassName"].Value?.ToString();
+
+        //        string subjectId = gridMon.SelectedRows[0].Cells["SubjectID"].Value?.ToString();
+        //        //string semesterName = ((DataRowView)cboKy.SelectedItem)["SemesterName"].ToString();
+        //        //string semesterName = cboKy.Text; // Lấy giá trị đang hiển thị (tên học kỳ)
+        //        frmLopHocEdit frm = new frmLopHocEdit(classId, className, subjectId);
+        //        frm.ShowDialog();
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+        //}
     }
 }

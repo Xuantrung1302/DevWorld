@@ -32,6 +32,9 @@
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.clbDaysOfWeek = new System.Windows.Forms.CheckedListBox();
+            this.cboPhong = new System.Windows.Forms.ComboBox();
+            this.cboGV = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cboCaHoc = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,9 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboGV = new System.Windows.Forms.ComboBox();
-            this.cboPhong = new System.Windows.Forms.ComboBox();
-            this.clbDaysOfWeek = new System.Windows.Forms.CheckedListBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -121,6 +121,46 @@
             this.panel2.Size = new System.Drawing.Size(596, 526);
             this.panel2.TabIndex = 11;
             // 
+            // clbDaysOfWeek
+            // 
+            this.clbDaysOfWeek.FormattingEnabled = true;
+            this.clbDaysOfWeek.Location = new System.Drawing.Point(183, 220);
+            this.clbDaysOfWeek.Name = "clbDaysOfWeek";
+            this.clbDaysOfWeek.Size = new System.Drawing.Size(349, 140);
+            this.clbDaysOfWeek.TabIndex = 61;
+            // 
+            // cboPhong
+            // 
+            this.cboPhong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboPhong.FormattingEnabled = true;
+            this.cboPhong.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cboPhong.Location = new System.Drawing.Point(183, 384);
+            this.cboPhong.Margin = new System.Windows.Forms.Padding(4);
+            this.cboPhong.Name = "cboPhong";
+            this.cboPhong.Size = new System.Drawing.Size(349, 31);
+            this.cboPhong.TabIndex = 60;
+            // 
+            // cboGV
+            // 
+            this.cboGV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboGV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGV.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboGV.FormattingEnabled = true;
+            this.cboGV.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cboGV.Location = new System.Drawing.Point(183, 445);
+            this.cboGV.Margin = new System.Windows.Forms.Padding(4);
+            this.cboGV.Name = "cboGV";
+            this.cboGV.Size = new System.Drawing.Size(349, 31);
+            this.cboGV.TabIndex = 59;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -133,7 +173,7 @@
             // 
             // cboCaHoc
             // 
-            this.cboCaHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cboCaHoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboCaHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCaHoc.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -179,7 +219,7 @@
             // 
             // txtTenLH
             // 
-            this.txtTenLH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtTenLH.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTenLH.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtTenLH.Location = new System.Drawing.Point(183, 119);
@@ -231,46 +271,6 @@
             this.label1.TabIndex = 32;
             this.label1.Text = "Thay đổi thông tin";
             // 
-            // cboGV
-            // 
-            this.cboGV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboGV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGV.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboGV.FormattingEnabled = true;
-            this.cboGV.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cboGV.Location = new System.Drawing.Point(183, 445);
-            this.cboGV.Margin = new System.Windows.Forms.Padding(4);
-            this.cboGV.Name = "cboGV";
-            this.cboGV.Size = new System.Drawing.Size(349, 31);
-            this.cboGV.TabIndex = 59;
-            // 
-            // cboPhong
-            // 
-            this.cboPhong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboPhong.FormattingEnabled = true;
-            this.cboPhong.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cboPhong.Location = new System.Drawing.Point(183, 384);
-            this.cboPhong.Margin = new System.Windows.Forms.Padding(4);
-            this.cboPhong.Name = "cboPhong";
-            this.cboPhong.Size = new System.Drawing.Size(349, 31);
-            this.cboPhong.TabIndex = 60;
-            // 
-            // clbDaysOfWeek
-            // 
-            this.clbDaysOfWeek.FormattingEnabled = true;
-            this.clbDaysOfWeek.Location = new System.Drawing.Point(183, 220);
-            this.clbDaysOfWeek.Name = "clbDaysOfWeek";
-            this.clbDaysOfWeek.Size = new System.Drawing.Size(349, 140);
-            this.clbDaysOfWeek.TabIndex = 61;
-            // 
             // frmLopHocEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -279,6 +279,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "frmLopHocEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lớp học";
             this.Load += new System.EventHandler(this.frmLopHocEdit_Load);
             this.panel1.ResumeLayout(false);

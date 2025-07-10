@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.gridReportAttendance = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,10 +39,11 @@
             this.CboMonHoc = new System.Windows.Forms.ComboBox();
             this.cboLopHoc = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.gridReportAttendance = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridReportAttendance)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridReportAttendance)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,19 +84,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1436, 494);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // gridReportAttendance
-            // 
-            this.gridReportAttendance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridReportAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridReportAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridReportAttendance.Location = new System.Drawing.Point(3, 125);
-            this.gridReportAttendance.Name = "gridReportAttendance";
-            this.gridReportAttendance.RowHeadersWidth = 51;
-            this.gridReportAttendance.RowTemplate.Height = 24;
-            this.gridReportAttendance.Size = new System.Drawing.Size(1430, 366);
-            this.gridReportAttendance.TabIndex = 0;
-            this.gridReportAttendance.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gridReportAttendance_CellFormatting);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 7;
@@ -106,7 +93,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 384F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 319F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
@@ -192,6 +179,19 @@
             this.button1.Text = "Tìm kiếm";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // gridReportAttendance
+            // 
+            this.gridReportAttendance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridReportAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridReportAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridReportAttendance.Location = new System.Drawing.Point(3, 125);
+            this.gridReportAttendance.Name = "gridReportAttendance";
+            this.gridReportAttendance.RowHeadersWidth = 51;
+            this.gridReportAttendance.RowTemplate.Height = 24;
+            this.gridReportAttendance.Size = new System.Drawing.Size(1430, 366);
+            this.gridReportAttendance.TabIndex = 0;
+            this.gridReportAttendance.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gridReportAttendance_CellFormatting);
+            // 
             // frmBaoCaoDiemDanhGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -205,9 +205,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridReportAttendance)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridReportAttendance)).EndInit();
             this.ResumeLayout(false);
 
         }

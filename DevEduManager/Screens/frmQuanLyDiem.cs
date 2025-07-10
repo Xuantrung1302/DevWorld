@@ -1,15 +1,8 @@
 ﻿using BusinessLogic;
 using Enity.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,173 +10,175 @@ namespace DevEduManager.Screens
 {
     public partial class frmQuanLyDiem : Form
     {
-        private Thread thLop;
-        private Thread thHocVien;
-        private Thread thPanelDiem;
+        CallAPI callAPI = new CallAPI();
+        private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
+        private string _semesterUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Semester/";
+        private string _examUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Exam/";
+
         public frmQuanLyDiem()
         {
             InitializeComponent();
         }
 
-        CallAPI callAPI = new CallAPI();
-        private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
-        private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Score/";
-        private void frmQuanLyDiem_Click(object sender, EventArgs e)
+        private async void frmQuanLyDiem_Shown(object sender, EventArgs e)
         {
-            
-        }
-        private void frmQuanLyDiem_Load(object sender, EventArgs e)
-        {
-            // Khởi tạo các control
-            lblTenMon.Text = string.Empty;
-            lblTenLop.Text = string.Empty;
-            lblKy.Text = string.Empty;
-            lblMaHV.Text = string.Empty;
-            lblTenHV.Text = string.Empty;
-            numDiemGiuaKy.Value = 0;
-            numDiemCuoiKy.Value = 0;
-            numDiemCuoiKy.Value = 0;
-
-            gridDSHV.AutoGenerateColumns = false;
-            gridLop.AutoGenerateColumns = false;
-
-            // Tải dữ liệu ban đầu
-            btnHienTatCa_Click(sender, e);
-            LoadClassesToGrid();
+            await LoadComBoSemester();
         }
 
-        private async void LoadClassesToGrid(string maLop = null)
+        private async Task LoadComBoSemester()
         {
-            string url = $"{_url}layLopTheoID?maLop={maLop}";
-            DataTable result = await callAPI.GetAPI(url);
-
-            if (result.Rows.Count > 0)
+            try
             {
+                //UIHelper.ShowWaitForm(this);
+                string url = $"{_semesterUrl}thongTinKyHoc";
+                DataTable result = await callAPI.GetAPI(url);
+                cboKy.DataSource = result;
+                cboKy.DisplayMember = "SemesterName";
+                cboKy.ValueMember = "SemesterID";
+                await LoadDataToGridView(); // Load lớp ngay sau khi có kỳ
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải kỳ học: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //UIHelper.CloseWaitForm();
+            }
+        }
+
+        private async Task LoadDataToGridView()
+        {
+            try
+            {
+                //UIHelper.ShowWaitForm(this);
+
+                string semesterId = cboKy.SelectedValue?.ToString();
+                string url = $"{_url}layLop";
+
+                if (!string.IsNullOrEmpty(semesterId))
+                    url += $"?semesterID={Uri.EscapeDataString(semesterId)}";
+
+                DataTable result = await callAPI.GetAPI(url);
                 gridLop.DataSource = result;
+                gridLop.ClearSelection();
+
+                if (gridLop.Rows.Count > 0)
+                {
+                    gridLop.Rows[0].Selected = true;
+                    string classID = gridLop.Rows[0].Cells["ClassID"].Value?.ToString();
+                    await LoadStudentsToGrid(classID);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách lớp: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //UIHelper.CloseWaitForm();
             }
         }
 
-        private async void LoadStudentsToGrid(string maLop = null)
+        private async Task LoadStudentsToGrid(string classID)
         {
-            string url = $"{_url}layDanhSachHVTheoLop?maLop={maLop}";
-            DataTable result = await callAPI.GetAPI(url);
-
-            if (result.Rows.Count > 0)
+            try
             {
+                if (string.IsNullOrEmpty(classID)) return;
+                //UIHelper.ShowWaitForm(this);
+
+                string url = $"{_url}layDanhSachSinhVienTheoLop?ClassID={classID}";
+                DataTable result = await callAPI.GetAPI(url);
                 gridDSHV.DataSource = result;
+                gridDSHV.ClearSelection();
             }
-        }
-
-        private async void LoadStudentScores(string maHv = null)
-        {
-            string url = $"{_url2}thongTinDiem?maHv={maHv}";
-            DataTable result = await callAPI.GetAPI(url);
-
-            // Reset các control trước khi hiển thị dữ liệu mới
-            lblTenMon.Text = string.Empty;
-            lblTenLop.Text = string.Empty;
-            lblKy.Text = string.Empty;
-            lblMaHV.Text = string.Empty;
-            lblTenHV.Text = string.Empty;
-            numDiemGiuaKy.Value = 0;
-            numDiemCuoiKy.Value = 0;
-            //numDiemDuAn.Value = 0;
-            //numDiemCuoiKy.Value = 0;
-
-            if (result.Rows.Count > 0)
+            catch (Exception ex)
             {
-                try
-                {
-                    // Gán giá trị từ DataTable vào các control
-                    lblTenMon.Text = result.Rows[0]["MaLop"]?.ToString() ?? string.Empty;
-                    lblTenLop.Text = result.Rows[0]["TenLop"]?.ToString() ?? string.Empty;
-                    lblKy.Text = result.Rows[0]["TenKH"]?.ToString() ?? string.Empty;
-                    lblMaHV.Text = result.Rows[0]["MaHV"]?.ToString() ?? string.Empty;
-                    lblTenHV.Text = result.Rows[0]["TenHV"]?.ToString() ?? string.Empty;
-
-                    // Chuyển đổi và gán điểm, xử lý trường hợp null hoặc lỗi định dạng
-                    numDiemGiuaKy.Value = result.Rows[0]["DiemLyThuyet"] != DBNull.Value
-                        ? Convert.ToDecimal(result.Rows[0]["DiemLyThuyet"]) : 0;
-                    numDiemCuoiKy.Value = result.Rows[0]["DiemThucHanh"] != DBNull.Value
-                        ? Convert.ToDecimal(result.Rows[0]["DiemThucHanh"]) : 0;
-                }
-                catch (Exception ex)
-                {
-                    // Xử lý lỗi (ví dụ: thông báo cho người dùng)
-                    MessageBox.Show($"Lỗi khi tải thông tin điểm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show($"Lỗi khi tải học viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //UIHelper.CloseWaitForm();
             }
         }
 
-        private void btnHienTatCa_Click(object sender, EventArgs e)
-        {
-            LoadClassesToGrid();
-        }
-
-        private void gridDSHV_Click(object sender, EventArgs e)
+        private async Task LoadStudentScores(string studentID)
         {
             try
             {
-                if (gridDSHV.SelectedRows.Count > 0)
+                string classID = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
+                if (string.IsNullOrEmpty(classID) || string.IsNullOrEmpty(studentID)) return;
+
+                //UIHelper.ShowWaitForm(this);
+                string url = $"{_examUrl}diemHocSinhTheoLop?StudentID={studentID}&ClassID={classID}";
+                DataTable result = await callAPI.GetAPI(url);
+
+                // Reset trước
+                lblTenMon.Text = lblTenLop.Text = lblKy.Text = lblMaHV.Text = lblTenHV.Text = "";
+                numDiemGiuaKy.Value = numDiemCuoiKy.Value = 0;
+
+                if (result.Rows.Count > 0)
                 {
-                    string maHv = gridDSHV.SelectedRows[0].Cells["clmMaHV"].Value.ToString();
-                    LoadStudentScores(maHv);
+                    DataRow row = result.Rows[0];
+                    lblTenMon.Text = row["SubjectName"]?.ToString();
+                    lblTenLop.Text = row["ClassName"]?.ToString();
+                    lblKy.Text = row["SemesterName"]?.ToString();
+                    lblMaHV.Text = row["StudentID"]?.ToString();
+                    lblTenHV.Text = row["FullName"]?.ToString();
+
+                    if (decimal.TryParse(row["ScoreMid"]?.ToString(), out decimal mid))
+                        numDiemGiuaKy.Value = mid;
+                    if (decimal.TryParse(row["ScoreEnd"]?.ToString(), out decimal end))
+                        numDiemCuoiKy.Value = end;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Lỗi khi tải điểm: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //UIHelper.CloseWaitForm();
             }
         }
 
-
-        public void ValidateSearch()
+        private async void cboKy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMaLop.Text))
-                throw new ArgumentException("Mã lớp không được trống");
+            await LoadDataToGridView();
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private async void gridLop_SelectionChanged(object sender, EventArgs e)
         {
-            try
+            if (gridLop.SelectedRows.Count > 0)
             {
-                ValidateSearch();
-                LoadClassesToGrid(txtMaLop.Text);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void gridLop_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                if (gridLop.SelectedRows.Count > 0)
+                var cell = gridLop.SelectedRows[0].Cells["ClassID"].Value;
+                if (cell != null)
                 {
-                    string maLop = gridLop.SelectedRows[0].Cells["clmMaLop"].Value.ToString();
-                    LoadStudentsToGrid(maLop);
+                    await LoadStudentsToGrid(cell.ToString());
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
-        private void btnHienTatCa_Click_1(object sender, EventArgs e)
+        private async void gridDSHV_SelectionChanged(object sender, EventArgs e)
         {
-            LoadClassesToGrid();
+            if (gridDSHV.SelectedRows.Count > 0)
+            {
+                var cell = gridDSHV.SelectedRows[0].Cells["StudentID"].Value;
+                if (cell != null)
+                {
+                    await LoadStudentScores(cell.ToString());
+                }
+            }
         }
 
         private void btnDatLai_Click(object sender, EventArgs e)
         {
             txtMaLop.Text = string.Empty;
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            // Đang để trống xử lý
         }
     }
 }

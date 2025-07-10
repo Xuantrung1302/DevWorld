@@ -115,39 +115,39 @@ namespace DevEduManager.Modals
 
         private async void btnLuuThongTin_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //if (!ValidateLuu()) return;
+            //try
+            //{
+            //    //if (!ValidateLuu()) return;
 
-                // Tạo đối tượng Semester để gửi
-                var subject = new
-                {
+            //    // Tạo đối tượng Semester để gửi
+            //    var subject = new
+            //    {
                     
-                };
+            //    };
 
-                string jsonData = JsonConvert.SerializeObject(subject, new JsonSerializerSettings
-                {
-                    DateFormatHandling = DateFormatHandling.IsoDateFormat,
-                    DateTimeZoneHandling = DateTimeZoneHandling.Utc
-                });
-                string url = isInsert ? $"{_classUrl}themLop" : $"{_classUrl}suaThongTinLop";
+            //    string jsonData = JsonConvert.SerializeObject(subject, new JsonSerializerSettings
+            //    {
+            //        DateFormatHandling = DateFormatHandling.IsoDateFormat,
+            //        DateTimeZoneHandling = DateTimeZoneHandling.Utc
+            //    });
+            //    string url = isInsert ? $"{_classUrl}themLop" : $"{_classUrl}suaThongTinLop";
 
-                bool result = await callAPI.PostAPI(url, jsonData);
+            //    bool result = await callAPI.PostAPI(url, jsonData);
 
-                if (result)
-                {
-                    MessageBox.Show($"{(isInsert ? "Thêm" : "Cập nhật")} lớp học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show($"{(isInsert ? "Thêm" : "Cập nhật")} lớp học không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi {(isInsert ? "thêm" : "cập nhật")}: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //    if (result)
+            //    {
+            //        MessageBox.Show($"{(isInsert ? "Thêm" : "Cập nhật")} lớp học thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        this.Close();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show($"{(isInsert ? "Thêm" : "Cập nhật")} lớp học không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"Lỗi khi {(isInsert ? "thêm" : "cập nhật")}: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
         }
 

@@ -105,14 +105,14 @@ namespace DevEduManager.Screens
                     // Mở form sửa thông tin giáo viên
                     GiangVien teacherSelected = _teachers.FirstOrDefault(p => p.TeacherID == teacherId);
                     frmGiangVienEdit frm = new frmGiangVienEdit(teacherSelected);
-                    frm.Text = "Cập nhật thông tin học viên";
+                    frm.Text = "Cập nhật thông tin giảng viên";
                     frm.ShowDialog();
 
                     await LoadDataToGridView();
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+                    MessageBox.Show("Vui lòng chọn một giảng viên để sửa.");
                 }
 
             }
@@ -155,7 +155,7 @@ namespace DevEduManager.Screens
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+                    MessageBox.Show("Vui lòng chọn một giảng viên để sửa.");
                 }
 
             }
@@ -212,15 +212,19 @@ namespace DevEduManager.Screens
         {
             try
             {
+                if (e.RowIndex == -1)
+                {
+                    return;
+                }
+
                 string maGV = gridGV.Rows[e.RowIndex].Cells["clmMaGV"].Value.ToString();
                 string url = $"{_url}thongTinLopDay?teacherID={maGV}";
                 await LoadGridViewLop(maGV);
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

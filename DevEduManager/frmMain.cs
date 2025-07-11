@@ -381,6 +381,7 @@ namespace DevEduManager
         {
             if (!string.IsNullOrEmpty(role))
             {
+                UserSession.Role = role;
                 switch (role)
                 {
                     case "Employee": // Nhân viên
@@ -389,6 +390,7 @@ namespace DevEduManager
                         btnHocVienTitle.Visible = false;
                         btnGiangVienTitle.Visible = false;
                         btnNhanVienTitle_Click(btnNhanVienTitle, null);
+                        UserSession.UserId = receivedData.Rows[0]["EmployeeID"].ToString();
                         break;
 
 
@@ -406,6 +408,7 @@ namespace DevEduManager
                         btnHocVienTitle.Visible = false;
                         btnGiangVienTitle.Visible = true;
                         btnGiangVienTitle_Click_1(btnGiangVienTitle, null);
+                        UserSession.UserId = receivedData.Rows[0]["TeacherID"].ToString();
                         break;
 
                     case "Student": // học viên       
@@ -414,6 +417,7 @@ namespace DevEduManager
                         btnGiangVienTitle.Visible = false;
                         btnHocVienTitle.Visible = true;
                         btnHocVienTitle_Click(this.btnHocVienTitle, null);
+                        UserSession.UserId = receivedData.Rows[0]["StudentID"].ToString();
                         break;
                 }
             }

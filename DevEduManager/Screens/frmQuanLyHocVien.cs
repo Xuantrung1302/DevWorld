@@ -3,13 +3,12 @@ using DevEduManager.Modals;
 using Enity.Models;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Globalization;
 using System.Linq;
-using System.Security.Policy;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DevEduManager.Screens
 {
@@ -17,6 +16,7 @@ namespace DevEduManager.Screens
     {
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Students/";
+        private List<HocVien> _students;
 
         public frmQuanLyHocVien()
         {
@@ -31,62 +31,34 @@ namespace DevEduManager.Screens
                 throw new ArgumentException("Họ và tên học viên không được trống.");
         }
 
-        private void frmQuanLyHocVien_Load(object sender, EventArgs e)
+        private async void frmQuanLyHocVien_Load(object sender, EventArgs e)
         {
-            //Common.LoadComboBoxLoaiHV(cboLoaiHV);
-            LoadDataToGridView();
-            //cboLoaiHV.SelectedIndexChanged += new EventHandler(cboLoaiHV_SelectedIndexChanged);
+            await LoadDataToGridView();
         }
 
-        private async void LoadDataToGridView(string maHV = null, string tenHV = null)
+        private async Task LoadDataToGridView(string studentId = null, string studentName = null)
         {
             try
             {
-                string url = $"{_url}thongTinHocVien";
-                DataTable result = await callAPI.GetAPI(url);
+                string url = $"{_url}thongTinHocVien?studentID={studentId}&fullName={studentName}";
+                _students = await callAPI.GetAPI<HocVien>(url);
 
-                // Lọc dữ liệu dựa trên tham số tìm kiếm
-                var filteredRows = from row in result.AsEnumerable()
-                                   //where (string.IsNullOrEmpty(maLoaiHV) || row.Field<string>("StudentID").Contains(maLoaiHV)) &&
-                                   where (string.IsNullOrEmpty(maHV) || row.Field<string>("StudentID").Contains(maHV)) &&
-                                         (string.IsNullOrEmpty(tenHV) || row.Field<string>("FullName").ToLower().Contains(tenHV.ToLower()))
+                gridDSHV.AutoGenerateColumns = false;
 
-                                   select row;
-
-                // Nếu có kết quả lọc, hiển thị trên grid
-                if (filteredRows.Any())
+                if (_students.Any())
                 {
-                    DataTable filteredDataTable = filteredRows.CopyToDataTable();
-                    gridDSHV.DataSource = filteredDataTable;
-                    gridDSHV.Dock = DockStyle.Fill;
-
-                    // Ẩn các cột cuối nếu cần thiết
-                    if (gridDSHV.Rows.Count > 0)
-                    {
-                        int columnCount = gridDSHV.Columns.Count;
-                        if (columnCount >= 3)
-                        {
-                            gridDSHV.Columns[columnCount - 1].Visible = false; // Cột cuối
-                            gridDSHV.Columns[columnCount - 2].Visible = false; // Cột thứ 2 từ cuối
-                            gridDSHV.Columns[columnCount - 3].Visible = false; // Cột thứ 3 từ cuối
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy kết quả phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    gridDSHV.DataSource = _students;
                 }
             }
             catch (Exception ex)
             {
-                
-                throw;
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private async void btnThem_Click(object sender, EventArgs e)
@@ -97,23 +69,21 @@ namespace DevEduManager.Screens
             frm.ShowDialog();
 
             // Tải lại danh sách sau khi thêm
-            btnXemTatCa_Click(sender, e);
+            await LoadDataToGridView();
         }
 
-        private void btnDatLai_Click(object sender, EventArgs e)
+        private async void btnDatLai_Click(object sender, EventArgs e)
         {
             // Đặt lại các checkbox và textbox tìm kiếm
             chkMaHV.Checked = true;
-            //chkTenHV.Checked = chkGioiTinh.Checked = chkNgayTiepNhan.Checked = false;
-
             txtMaHV.Text = txtTenHV.Text = string.Empty;
-            btnXemTatCa_Click(sender, e);
+            await LoadDataToGridView();
         }
 
-        private void btnXemTatCa_Click(object sender, EventArgs e)
+        private async void btnXemTatCa_Click(object sender, EventArgs e)
         {
             // Tải lại tất cả danh sách học viên
-            LoadDataToGridView();
+            await LoadDataToGridView();
         }
 
         private void chkMaHV_CheckedChanged(object sender, EventArgs e)
@@ -126,68 +96,31 @@ namespace DevEduManager.Screens
             txtTenHV.Enabled = chkTenHV.Checked;
         }
 
-        private void chkGioiTinh_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkNgayTiepNhan_CheckedChanged(object sender, EventArgs e)
-        {
-            //dateTuNgay.Enabled = dateDenNgay.Enabled = chkNgayTiepNhan.Checked;
-        }
-
-        private void dateDenNgay_ValueChanged(object sender, EventArgs e)
-        {
-            //dateTuNgay.MaxDate = dateDenNgay.Value;
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
+        private async void btnSua_Click(object sender, EventArgs e)
         {
             try
             {
-                if (gridDSHV.SelectedRows.Count > 0)
+                if (gridDSHV.SelectedRows.Count > 0 && gridDSHV.CurrentRow != null)
                 {
-                    DataGridViewRow selectedRow = gridDSHV.SelectedRows[0];
-                    DataTable dt = ((DataTable)gridDSHV.DataSource).Clone(); // Sao chép cấu trúc
-                    DataRow row = dt.NewRow();
+                    var studentId = gridDSHV.CurrentRow.Cells["clmMaHV"].Value?.ToString();
 
-                    // Gán giá trị dựa trên tên cột trong DataGridView
-                    row["StudentID"] = selectedRow.Cells["clmMaHV"].Value;
-                    row["FullName"] = selectedRow.Cells["clmTenHV"].Value; // Giả sử cột Họ Tên là clmHoTen
-                    row["Gender"] = selectedRow.Cells["clmGioiTinh"].Value; // Giả sử cột Giới Tính là clmGioiTinh
-                    row["Address"] = selectedRow.Cells["clmDiaChi"].Value; // Giả sử cột Địa Chỉ là clmDiaChi
-                    row["PhoneNumber"] = selectedRow.Cells["clmSdtHV"].Value; // Giả sử cột SĐT là clmSoDienThoai
-                    row["Email"] = selectedRow.Cells["clmEmail"].Value; // Giả sử cột Email là clmEmail
-                    row["EnrollmentDate"] = selectedRow.Cells["clmNgayTiepNhan"].Value; // Giả sử cột Ngày ĐK là clmNgayDangKy
-                    row["BirthDate"] = selectedRow.Cells["clmNgaySinh"].Value; // Giả sử cột Ngày Sinh là clmNgaySinh
-                    row["Username"] = selectedRow.Cells["Username"].Value;
-                    row["Password"] = selectedRow.Cells["Password"].Value;
-                    // Xử lý BirthDate nếu cần
-                    if (row["BirthDate"] != DBNull.Value && row["BirthDate"] != null)
-                    {
-                        if (!DateTime.TryParse(row["BirthDate"].ToString(), out DateTime birthDate))
-                        {
-                            row["BirthDate"] = DBNull.Value; // Gán null nếu không hợp lệ
-                            Console.WriteLine($"Invalid BirthDate: {selectedRow.Cells["clmNgaySinh"].Value}, set to NULL");
-                        }
-                    }
-
-                    dt.Rows.Add(row);
-
-                    frmHocVienEdit frm = new frmHocVienEdit(dt);
+                    // Mở form sửa thông tin giáo viên
+                    HocVien studentSelected = _students.FirstOrDefault(p => p.StudentID == studentId);
+                    frmHocVienEdit frm = new frmHocVienEdit(studentSelected);
                     frm.Text = "Cập nhật thông tin học viên";
                     frm.ShowDialog();
 
-                    btnXemTatCa_Click(sender, e);
+                    await LoadDataToGridView();
                 }
                 else
                 {
                     MessageBox.Show("Vui lòng chọn một học viên để sửa.");
                 }
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -196,22 +129,7 @@ namespace DevEduManager.Screens
             btnSua_Click(sender, e);
         }
 
-        private void cboLoaiHV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            //if(cboLoaiHV.SelectedValue.ToString() == "LHV00")
-            //{
-            //    maHocVien = "LHV00";
-            //    LoadDataToGridView(null, null, null);
-            //}
-            //else
-            //{
-            //    maHocVien = "LHV01";
-            //    LoadDataToGridView(null, null, null);
-            //}
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private async void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -227,7 +145,7 @@ namespace DevEduManager.Screens
 
 
                 // Gọi LoadDataToGridView với tham số cần thiết
-                LoadDataToGridView(maHV, tenHV);
+               await LoadDataToGridView(maHV, tenHV);
             }
             catch (ArgumentException ex)
             {
@@ -253,31 +171,33 @@ namespace DevEduManager.Screens
         {
             try
             {
-                if (MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (gridDSHV.SelectedRows.Count > 0 && gridDSHV.CurrentRow != null)
                 {
-                    HocVien hocVien = new HocVien()
-                    {
-                        StudentID = txtMaHV.Text,
-                    };
+                    var studentId = gridDSHV.CurrentRow.Cells["clmMaHV"].Value?.ToString();
+                    var userName = _students.FirstOrDefault(p => p.StudentID == studentId).Username;
 
-                    string jsonData = JsonConvert.SerializeObject(hocVien);
-
-                    string url = $"{_url}xoaThongTinHocVien";
-                    bool result = await callAPI.PostAPI(url, jsonData);
+                    string url = $"{_url}xoaThongTinHocVien?studentID={studentId}&username={userName}";
+                    var result = await callAPI.PostAPI(url);
                     if (result)
                     {
                         MessageBox.Show("Xóa thông tin học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        btnXemTatCa_Click(sender, e);
                     }
                     else
                     {
                         MessageBox.Show("Xóa thông tin học viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }                                      
+                    }
+
+                    await LoadDataToGridView();
                 }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+                }
+
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Có lỗi xảy ra", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

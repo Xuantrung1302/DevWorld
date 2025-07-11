@@ -3,13 +3,9 @@ using DevEduManager.Modals;
 using Enity.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Policy;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +19,8 @@ namespace DevEduManager.Screens
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
         private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Employee/";
+        List<NhanVien> _employees;
+
         public frmQuanLyNhanVien()
         {
             InitializeComponent();
@@ -71,69 +69,35 @@ namespace DevEduManager.Screens
         {
             chkMaNV.Checked = true;
             txtMaNV.Text = txtTenNV.Text = string.Empty;
-            //chkTenNV.Checked = chkLoaiNV.Checked = false;
         }
-        private async void LoadDataToGridView(string maNV = null, string tenNV = null)
+        private async Task LoadDataToGridView(string employeeId = null, string name = null)
         {
             try
             {
-                string url = $"{_url2}thongTinNhanVien";
-                DataTable result = await callAPI.GetAPI(url);
+                string url = $"{_url2}thongTinNhanVien?employeeID={employeeId}&fullName={name}";
+                _employees = await callAPI.GetAPI<NhanVien>(url);
 
-                // Lọc dữ liệu dựa trên tham số tìm kiếm
-                var filteredRows = from row in result.AsEnumerable()
-                                   where 
-                                         (string.IsNullOrEmpty(maNV) || row.Field<string>("EmployeeID").Contains(maNV)) &&
-                                         (string.IsNullOrEmpty(tenNV) || row.Field<string>("FullName").ToLower().Contains(tenNV.ToLower()))
-                                   select row;
-
-                // Nếu có kết quả lọc, hiển thị trên grid
-                if (filteredRows.Any())
+                gridNV.AutoGenerateColumns = false;
+                if (_employees.Any())
                 {
-                    DataTable filteredDataTable = filteredRows.CopyToDataTable();
-                    gridNV.DataSource = filteredDataTable;
-                    gridNV.Dock = DockStyle.Fill;
-
-                    // Ẩn các cột cuối nếu cần thiết
-                    if (gridNV.Rows.Count > 0)
-                    {
-                        int columnCount = gridNV.Columns.Count;
-                        if (columnCount >= 5)
-                        {
-                            gridNV.Columns[columnCount - 1].Visible = false; // Cột cuối
-
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy kết quả phù hợp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    gridNV.DataSource = _employees;
                 }
             }
             catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void frmQuanLyNhanVien_Load(object sender, EventArgs e)
+        private async void frmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            //load loại nhân viên
-            //cboLoaiNV.DataSource = LoaiNV.SelectAll();
-            //cboLoaiNV.DisplayMember = "TenLoaiNV";
-            //cboLoaiNV.ValueMember = "MaLoaiNV";
-            //Common.LoadComboBoxLoaiNV(cboLoaiNV);
-            LoadDataToGridView();
-            //cboLoaiNV.SelectedIndexChanged += new EventHandler(cboLoaiNV_SelectedIndexChanged);
             btnDatLai_Click(sender, e);
-            LoadDataToGridView();
-            btnHienTatCa_Click(sender, e);
+            await LoadDataToGridView();
         }
 
-        private void btnHienTatCa_Click(object sender, EventArgs e)
+        private async void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            LoadDataToGridView();
+            await LoadDataToGridView();
         }
 
         private void gridNV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -146,7 +110,7 @@ namespace DevEduManager.Screens
             lblTongCong.Text = string.Format("Tổng cộng: {0} nhân viên", gridNV.Rows.Count);
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private async void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -154,10 +118,9 @@ namespace DevEduManager.Screens
 
                 string maNV = chkMaNV.Checked ? txtMaNV.Text.Trim() : null;
                 string tenNV = chkTenNV.Checked ? txtTenNV.Text.Trim() : null;
-                //string loaiNVText = chkLoaiNV.Checked ? cboLoaiNV.Text : null;
 
                 // Gọi LoadDataToGridView với tham số cần thiết
-                LoadDataToGridView(maNV, tenNV);
+                await LoadDataToGridView(maNV, tenNV);
             }
             catch (ArgumentException ex)
             {
@@ -169,38 +132,71 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private async void btnSua_Click(object sender, EventArgs e)
         {
-            if (gridNV.SelectedRows.Count > 0)
+            try
             {
-                // Lấy dữ liệu từ hàng đang được chọn
-                DataGridViewRow selectedRow = gridNV.SelectedRows[0];
-                DataTable dt = ((DataTable)gridNV.DataSource).Clone();  // Tạo bản sao cấu trúc của DataTable
-                DataRow row = dt.NewRow();
-
-                foreach (DataGridViewCell cell in selectedRow.Cells)
+                if (gridNV.SelectedRows.Count > 0 && gridNV.CurrentRow != null)
                 {
-                    row[cell.ColumnIndex] = cell.Value;
+                    var employeeId = gridNV.CurrentRow.Cells["clmMaNV"].Value?.ToString();
+
+                    // Mở form sửa thông tin giáo viên
+                    NhanVien employeeSelected = _employees.FirstOrDefault(p => p.EmployeeID == employeeId);
+                    frmNhanVienEdit frm = new frmNhanVienEdit(employeeSelected);
+                    frm.Text = "Cập nhật thông tin nhân viên";
+                    frm.ShowDialog();
+
+                    await LoadDataToGridView();
                 }
-                dt.Rows.Add(row);
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một nhân viên để sửa.");
+                }
 
-                // Mở form sửa thông tin nhân viên
-                frmNhanVienEdit frm = new frmNhanVienEdit(dt);
-                frm.Text = "Cập nhật thông tin nhân viên";
-                frm.ShowDialog();
-
-                // Tải lại danh sách sau khi chỉnh sửa
-                btnHienTatCa_Click(sender, e);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn một nhân viên để sửa.");
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void gridNV_DoubleClick(object sender, EventArgs e)
         {
             btnSua_Click(sender, e);
+        }
+
+        private async void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridNV.SelectedRows.Count > 0 && gridNV.CurrentRow != null)
+                {
+                    var employeeId = gridNV.CurrentRow.Cells["clmMaNV"].Value?.ToString();
+                    var userName = _employees.FirstOrDefault(p => p.EmployeeID == employeeId).Username;
+
+                    string url = $"{_url}xoaThongTinNhanVien?employeeID={employeeId}&username={userName}";
+                    var result = await callAPI.PostAPI(url);
+                    if (result)
+                    {
+                        MessageBox.Show("Xóa thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa thông tin nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                    await LoadDataToGridView();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một nhân viên để sửa.");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

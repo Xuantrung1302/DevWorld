@@ -80,10 +80,10 @@ namespace DevEduManager.Modals
 
                 NhanVien nhanVien = new NhanVien()
                 {
-                    MaNV = txtMaNV.Text,
-                    TenNV = txtTenNV.Text,
-                    SdtNV = txtSDT.Text,
-                    EmailNV = txtEmail.Text
+                    EmployeeID = txtMaNV.Text,
+                    FullName = txtTenNV.Text,
+                    PhoneNumber = txtSDT.Text,
+                    Email = txtEmail.Text
 
                 };
 

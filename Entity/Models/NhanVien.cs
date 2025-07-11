@@ -1,25 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Enity.Models
+﻿namespace Enity.Models
 {
     public class NhanVien
     {
-
-        public string MaNV { get; set; }
-        public string TenNV { get; set; }
-        public string SdtNV { get; set; }
-        public string EmailNV { get; set; }
-
+        public string EmployeeID { get; set; }
+        public string FullName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
         // Foreign keys
-        public string GioiTinh { get; set; }
-        public LoaiNV LoaiNV { get; set; }
-
-        public string TenDangNhap { get; set; }
-        public string TaiKhoan { get; set; }
-        public string MatKhau {  get; set; }
+        public string Gender { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 
 }

@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace DevEduManager
 {
-
     public static class Common
     {
 
@@ -45,4 +44,11 @@ namespace DevEduManager
         public string Name { get; set; }
         public string Value { get; set; }
     }
+
+    public static class UserSession
+    {
+        public static string UserId { get; set; }      // ID tương ứng theo Role
+        public static string Role { get; set; }     // "Admin", "Employee", "Teacher", "Student"
+    }
+
 }

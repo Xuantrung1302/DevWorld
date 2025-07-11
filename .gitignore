@@ -1,10 +1,11 @@
-/BusinessLogic/bin
-/BusinessLogic/obj
-/DevEduManager/bin
-/DevEduManager/obj
-/Entity/bin
-/Entity/obj
-/WaitWnd/obj
-/WaitWnd/bin
-/Module
-/packages
+# Build results
+**/bin/
+**/obj/
+
+# User-specific files
+.vs/
+*.user
+*.suo
+
+# Packages
+/packages/

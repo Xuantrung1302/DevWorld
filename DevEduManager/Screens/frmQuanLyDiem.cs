@@ -60,7 +60,9 @@ namespace DevEduManager.Screens
                     url += $"?semesterID={Uri.EscapeDataString(semesterId)}";
 
                 DataTable result = await callAPI.GetAPI(url);
+                gridLop.AutoGenerateColumns = false;
                 gridLop.DataSource = result;
+
                 gridLop.ClearSelection();
 
                 if (gridLop.Rows.Count > 0)
@@ -89,7 +91,9 @@ namespace DevEduManager.Screens
 
                 string url = $"{_url}layDanhSachSinhVienTheoLop?ClassID={classID}";
                 DataTable result = await callAPI.GetAPI(url);
+                gridDSHV.AutoGenerateColumns = false;
                 gridDSHV.DataSource = result;
+
                 gridDSHV.ClearSelection();
             }
             catch (Exception ex)

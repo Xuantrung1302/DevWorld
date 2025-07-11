@@ -29,8 +29,8 @@ namespace DevEduManager.Screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
@@ -40,6 +40,9 @@ namespace DevEduManager.Screens
             this.btnHienTatCa = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.gridLop = new System.Windows.Forms.DataGridView();
+            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtMaLop = new System.Windows.Forms.TextBox();
@@ -74,9 +77,6 @@ namespace DevEduManager.Screens
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
@@ -144,7 +144,7 @@ namespace DevEduManager.Screens
             // 
             // cboKy
             // 
-            this.cboKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.cboKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cboKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboKy.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -184,7 +184,6 @@ namespace DevEduManager.Screens
             this.btnHienTatCa.Text = "Hiện tất cả";
             this.btnHienTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHienTatCa.UseVisualStyleBackColor = false;
-            //this.btnHienTatCa.Click += new System.EventHandler(this.btnHienTatCa_Click_1);
             // 
             // label4
             // 
@@ -200,8 +199,8 @@ namespace DevEduManager.Screens
             // 
             this.gridLop.AllowUserToAddRows = false;
             this.gridLop.AllowUserToResizeRows = false;
-            this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.gridLop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridLop.BackgroundColor = System.Drawing.Color.White;
@@ -212,7 +211,7 @@ namespace DevEduManager.Screens
             this.SubjectName,
             this.ClassName});
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridLop.Location = new System.Drawing.Point(28, 235);
+            this.gridLop.Location = new System.Drawing.Point(28, 239);
             this.gridLop.Margin = new System.Windows.Forms.Padding(4);
             this.gridLop.MultiSelect = false;
             this.gridLop.Name = "gridLop";
@@ -223,7 +222,35 @@ namespace DevEduManager.Screens
             this.gridLop.Size = new System.Drawing.Size(372, 314);
             this.gridLop.TabIndex = 64;
             this.gridLop.SelectionChanged += new System.EventHandler(this.gridLop_SelectionChanged);
-            //this.gridLop.Click += new System.EventHandler(this.gridLop_Click_1);
+            // 
+            // ClassID
+            // 
+            this.ClassID.DataPropertyName = "ClassID";
+            this.ClassID.HeaderText = "Mã Lớp";
+            this.ClassID.MinimumWidth = 6;
+            this.ClassID.Name = "ClassID";
+            this.ClassID.ReadOnly = true;
+            this.ClassID.Visible = false;
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.DataPropertyName = "SubjectName";
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle1;
+            this.SubjectName.FillWeight = 70F;
+            this.SubjectName.HeaderText = "Tên môn";
+            this.SubjectName.MinimumWidth = 6;
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
+            // 
+            // ClassName
+            // 
+            this.ClassName.DataPropertyName = "ClassName";
+            this.ClassName.FillWeight = 93.27411F;
+            this.ClassName.HeaderText = "Tên lớp";
+            this.ClassName.MinimumWidth = 6;
+            this.ClassName.Name = "ClassName";
+            this.ClassName.ReadOnly = true;
             // 
             // btnDatLai
             // 
@@ -267,7 +294,7 @@ namespace DevEduManager.Screens
             // 
             // txtMaLop
             // 
-            this.txtMaLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtMaLop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMaLop.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.txtMaLop.Location = new System.Drawing.Point(141, 103);
@@ -388,7 +415,7 @@ namespace DevEduManager.Screens
             // 
             // numDiemCuoiKy
             // 
-            this.numDiemCuoiKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.numDiemCuoiKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numDiemCuoiKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.numDiemCuoiKy.ForeColor = System.Drawing.Color.Blue;
@@ -425,7 +452,7 @@ namespace DevEduManager.Screens
             // 
             // numDiemGiuaKy
             // 
-            this.numDiemGiuaKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.numDiemGiuaKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.numDiemGiuaKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.numDiemGiuaKy.ForeColor = System.Drawing.Color.Blue;
@@ -626,8 +653,8 @@ namespace DevEduManager.Screens
             // 
             this.gridDSHV.AllowUserToAddRows = false;
             this.gridDSHV.AllowUserToResizeRows = false;
-            this.gridDSHV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.gridDSHV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridDSHV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridDSHV.BackgroundColor = System.Drawing.Color.White;
@@ -649,7 +676,6 @@ namespace DevEduManager.Screens
             this.gridDSHV.Size = new System.Drawing.Size(431, 534);
             this.gridDSHV.TabIndex = 66;
             this.gridDSHV.SelectionChanged += new System.EventHandler(this.gridDSHV_SelectionChanged);
-            //this.gridDSHV.Click += new System.EventHandler(this.gridDSHV_Click);
             // 
             // StudentID
             // 
@@ -680,35 +706,6 @@ namespace DevEduManager.Screens
             this.Gender.Name = "Gender";
             this.Gender.ReadOnly = true;
             // 
-            // ClassID
-            // 
-            this.ClassID.DataPropertyName = "ClassID";
-            this.ClassID.HeaderText = "Mã Lớp";
-            this.ClassID.MinimumWidth = 6;
-            this.ClassID.Name = "ClassID";
-            this.ClassID.ReadOnly = true;
-            this.ClassID.Visible = false;
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle1;
-            this.SubjectName.FillWeight = 70F;
-            this.SubjectName.HeaderText = "Tên môn";
-            this.SubjectName.MinimumWidth = 6;
-            this.SubjectName.Name = "SubjectName";
-            this.SubjectName.ReadOnly = true;
-            // 
-            // ClassName
-            // 
-            this.ClassName.DataPropertyName = "ClassName";
-            this.ClassName.FillWeight = 93.27411F;
-            this.ClassName.HeaderText = "Tên lớp";
-            this.ClassName.MinimumWidth = 6;
-            this.ClassName.Name = "ClassName";
-            this.ClassName.ReadOnly = true;
-            // 
             // frmQuanLyDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -725,7 +722,6 @@ namespace DevEduManager.Screens
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmQuanLyDiem";
             this.Text = "frmQuanLyDiem";
-            //this.Load += new System.EventHandler(this.frmQuanLyDiem_Load);
             this.Shown += new System.EventHandler(this.frmQuanLyDiem_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

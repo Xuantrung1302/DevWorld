@@ -44,7 +44,7 @@ namespace DevEduManager.Screens
                         string formattedDate = post.PostDate.ToString("dd-MM-yyyy"); // Định dạng ngày
 
                         htmlContent += "<tr valign='top'>";
-                        htmlContent += $"<td style='width: 350px; font-weight: bold;'>{formattedDate}</td>"; // Chỉnh độ rộng cột
+                        htmlContent += $"<td style='width: 600px; font-weight: bold;'>{formattedDate}</td>"; // Chỉnh độ rộng cột
                         htmlContent += "<td style='width: 150px;'>&nbsp;</td>";
                         htmlContent += "<td style='width: 90%;'>";
                         htmlContent += $"<h3 style='margin: 0; font-size: 16px;'>{post.Title}</h3>";

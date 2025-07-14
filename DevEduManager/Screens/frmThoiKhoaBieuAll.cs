@@ -39,7 +39,7 @@ namespace DevEduManager.Screens
         }
         private void LoadClassGroups()
         {
-            flowLayoutPanel1.Controls.Clear(); // Xóa nếu đã có
+            flpLich.Controls.Clear(); // Xóa nếu đã có
 
             // Dữ liệu giả lập
             Dictionary<string, List<LopHoc>> data = new Dictionary<string, List<LopHoc>>
@@ -68,7 +68,7 @@ namespace DevEduManager.Screens
                 // Tạo GroupBox cho từng môn
                 GroupBox group = new GroupBox();
                 group.Text = subject.Key;
-                group.Width = flowLayoutPanel1.Width - 30;
+                group.Width = flpLich.Width - 30;
                 group.Height = 200;
 
                 // Tạo DataGridView bên trong GroupBox
@@ -84,73 +84,13 @@ namespace DevEduManager.Screens
                 group.Controls.Add(dgv);
 
                 // Thêm GroupBox vào FlowLayoutPanel
-                flowLayoutPanel1.Controls.Add(group);
+                flpLich.Controls.Add(group);
             }
         }
 
 
 
-        private void SetEnableService()
-        {
-            // Để trống hoặc thêm logic nếu cần
-        }
 
-        /// <summary>
-        /// When double Click Schedule
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void scheduleUctrl1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            //int values = scheduleUctrl1.scrollbar.Value;
-            //if (scheduleUctrl1.SelectedOD_User_Order != null)
-            //{
-            //    UpdateOrderscheduleUctrl1();
-            //}
-            //else
-            //{
-            //    //IsUpdate = false;
-            //    Point p = scheduleUctrl1.PointToScreen(Point.Empty);
-            //    //Get the row and col.
-            //    DateTime? WeekDayNeedSetOrder = scheduleUctrl1.GetTimeAt(MousePosition.X - p.X, MousePosition.Y - p.Y);
-            //    //isCheckService code when addnewService                          
-            //    if (WeekDayNeedSetOrder != null)
-            //    {
-            //        //2021.11.01 Rep CuongNH S
-            //        //CreateOrderWeekly(WeekDayNeedSetOrder.Value, true, AppInfo.ServiceLogin.UNIQ_KEY);
-            //        var idFCOrder = GetIdFCOrder(MousePosition.X - p.X, MousePosition.Y - p.Y);
-            //        //2021.12.15 Upd Hau S
-            //        Guid guidServiceUniq = new Guid();
-            //        var lstT_SCHEDULE_MANAGEMENT_INHOUSE_FC = this.scheduleUctrl1.T_SCHEDULE_MANAGEMENT_INHOUSE_FC as List<T_SCHEDULE_MANAGEMENT_INHOUSE_WEEKLY_Model>;
-            //        var recordResult = idFCOrder == new Guid() ? null : (lstT_SCHEDULE_MANAGEMENT_INHOUSE_FC != null ? lstT_SCHEDULE_MANAGEMENT_INHOUSE_FC.FirstOrDefault(r => r.UNIQ_KEY == idFCOrder) : null);
-            //        if (recordResult != null)
-            //        {
-            //            //get service type from FC order 
-            //            guidServiceUniq = ListServices.FirstOrDefault(o => o.SERVICE_CODE == recordResult.SERVICE_CODE).UNIQ_KEY;
-            //        }
-            //        else
-            //        {
-            //            //get service type from login
-            //            guidServiceUniq = AppInfo.ServiceLogin.UNIQ_KEY;
-            //        }
-
-            //        if (CurrentPermission != null && CurrentPermission.EDIT_ALLOW_FLG) //2023.06.12 ChinhTN -S
-            //            CreateOrderWeekly(WeekDayNeedSetOrder.Value, true, guidServiceUniq, idFCOrder);
-
-            //        //2021.12.15 Upd Hau E
-            //        //2021.11.01 Rep CuongNH E
-            //    }
-            //}
-            //if (values >= 0)
-            //{
-            //    scheduleUctrl1.scrollbar.Value = values;
-            //}
-        }
-
-        private void button_MouseMove(object sender, MouseEventArgs e)
-        {
-            //this.button_ShowChildForm();
-        }
 
         private async void LoadCboSemester()
         {
@@ -186,12 +126,7 @@ namespace DevEduManager.Screens
 
                 if (selectedRow != null)
                 {
-                    // Gán giá trị StartDate và EndDate cho DateTimePicker
-                    if (dtpkNgayBatDau != null && dtpkNgayKetThuc != null)
-                    {
-                        dtpkNgayBatDau.Value = selectedRow.Field<DateTime>("StartDate");
-                        dtpkNgayKetThuc.Value = selectedRow.Field<DateTime>("EndDate");
-                    }
+
                 }
             }
         }
@@ -208,29 +143,6 @@ namespace DevEduManager.Screens
         }
 
 
-        #region " "
-        /// <summary>
-        /// 
-        /// Author: bannt
-        /// </summary>
-        /// <param name="pCloudCode"></param>
-        /// <param name="pUserUniqKey"></param>
-        /// <param name="pBeginTime"></param>
-        /// <param name="pEndTime"></param>
-        /// <returns></returns>
-        private async Task GetClassPlan(string maKyHoc)
-        {
-            try
-            {
-                string url = $"{_url2}layDanhSachLopKeHoachByMaKy?semesterID ={maKyHoc}";
-                DataTable result = await callAPI.GetAPI(url);
 
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-        #endregion
     }
 }

@@ -52,7 +52,7 @@ namespace DevEduManager.Screens
             }
         }
 
-        private async  void LoadComBoSemester()
+        private async void LoadComBoSemester()
         {
             try
             {
@@ -73,16 +73,15 @@ namespace DevEduManager.Screens
         {
             try
             {
-                //string semesterId = cboKy.SelectedValue?.ToString();
-                //if (string.IsNullOrEmpty(semesterId))
-                //    return;
+                string semesterId = cboKy.SelectedValue?.ToString();
 
-                // Construct API URL for classes with semester filter
                 string url = $"{_classUrl}layLop";
-                //if (chkTenMon.Checked && !string.IsNullOrEmpty(txtTenMon.Text))
-                //    url += $"&subjectName={Uri.EscapeDataString(txtTenMon.Text)}";
-                //if (chkTenLop.Checked && !string.IsNullOrEmpty(txtTenLop.Text))
-                //    url += $"&className={Uri.EscapeDataString(txtTenLop.Text)}";
+
+                // Nếu có giá trị SemesterID thì thêm vào query string
+                if (!string.IsNullOrEmpty(semesterId))
+                {
+                    url += $"?semesterID={Uri.EscapeDataString(semesterId)}";
+                }
 
                 DataTable result = await callAPI.GetAPI(url);
                 gridLop.AutoGenerateColumns = false;
@@ -93,6 +92,7 @@ namespace DevEduManager.Screens
                 MessageBox.Show($"Lỗi khi tải danh sách lớp: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private async void LoadStudentData()
         {
@@ -213,7 +213,7 @@ namespace DevEduManager.Screens
             }
         }
 
-       
+
         private void cboKy_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             LoadDataToGridView();

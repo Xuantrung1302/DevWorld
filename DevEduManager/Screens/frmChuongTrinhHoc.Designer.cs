@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -68,8 +68,8 @@
             this.clmPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnThemGiangVien = new System.Windows.Forms.Button();
             this.btnThemLH = new System.Windows.Forms.Button();
-            this.btnSuaLH = new System.Windows.Forms.Button();
             this.btnHienTatCa = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -411,8 +411,8 @@
             // SubjectID
             // 
             this.SubjectID.DataPropertyName = "SubjectID";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
-            this.SubjectID.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
+            this.SubjectID.DefaultCellStyle = dataGridViewCellStyle4;
             this.SubjectID.FillWeight = 81.09281F;
             this.SubjectID.HeaderText = "Mã môn";
             this.SubjectID.MinimumWidth = 6;
@@ -422,8 +422,8 @@
             // SubjectName
             // 
             this.SubjectName.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
-            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Green;
+            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle5;
             this.SubjectName.FillWeight = 108.0551F;
             this.SubjectName.HeaderText = "Tên môn";
             this.SubjectName.MinimumWidth = 6;
@@ -514,8 +514,8 @@
             // 
             this.ClassName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ClassName.DataPropertyName = "ClassName";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Green;
-            this.ClassName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Green;
+            this.ClassName.DefaultCellStyle = dataGridViewCellStyle6;
             this.ClassName.FillWeight = 300F;
             this.ClassName.HeaderText = "Tên lớp";
             this.ClassName.MinimumWidth = 270;
@@ -583,8 +583,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnThemGiangVien);
             this.panel2.Controls.Add(this.btnThemLH);
-            this.panel2.Controls.Add(this.btnSuaLH);
             this.panel2.Controls.Add(this.btnHienTatCa);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
@@ -595,6 +595,24 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 46);
             this.panel2.TabIndex = 0;
+            // 
+            // btnThemGiangVien
+            // 
+            this.btnThemGiangVien.BackColor = System.Drawing.Color.Silver;
+            this.btnThemGiangVien.FlatAppearance.BorderSize = 0;
+            this.btnThemGiangVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnThemGiangVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnThemGiangVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemGiangVien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThemGiangVien.Location = new System.Drawing.Point(631, 8);
+            this.btnThemGiangVien.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThemGiangVien.Name = "btnThemGiangVien";
+            this.btnThemGiangVien.Size = new System.Drawing.Size(153, 31);
+            this.btnThemGiangVien.TabIndex = 49;
+            this.btnThemGiangVien.Text = "Thêm giảng viên";
+            this.btnThemGiangVien.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemGiangVien.UseVisualStyleBackColor = false;
+            this.btnThemGiangVien.Click += new System.EventHandler(this.btnThemGiangVien_Click);
             // 
             // btnThemLH
             // 
@@ -613,24 +631,6 @@
             this.btnThemLH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThemLH.UseVisualStyleBackColor = false;
             this.btnThemLH.Click += new System.EventHandler(this.btnThemLH_Click);
-            // 
-            // btnSuaLH
-            // 
-            this.btnSuaLH.BackColor = System.Drawing.Color.Silver;
-            this.btnSuaLH.FlatAppearance.BorderSize = 0;
-            this.btnSuaLH.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnSuaLH.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnSuaLH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSuaLH.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSuaLH.Location = new System.Drawing.Point(631, 8);
-            this.btnSuaLH.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSuaLH.Name = "btnSuaLH";
-            this.btnSuaLH.Size = new System.Drawing.Size(153, 31);
-            this.btnSuaLH.TabIndex = 47;
-            this.btnSuaLH.Text = "Sửa lớp";
-            this.btnSuaLH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSuaLH.UseVisualStyleBackColor = false;
-            this.btnSuaLH.Click += new System.EventHandler(this.btnSuaLH_Click);
             // 
             // btnHienTatCa
             // 
@@ -771,7 +771,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SemesterName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TuitionFee;
-        private System.Windows.Forms.Button btnSuaLH;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherName;
@@ -781,5 +780,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.Button btnThemLH;
+        private System.Windows.Forms.Button btnThemGiangVien;
     }
 }

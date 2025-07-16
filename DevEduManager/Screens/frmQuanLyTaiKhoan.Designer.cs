@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDatLai = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.cboVaiTro = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.chkTen = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.chkVaiTro = new System.Windows.Forms.CheckBox();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.chkTen = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.btnLuuThongTin = new System.Windows.Forms.Button();
@@ -52,25 +53,24 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnXemTatCa = new System.Windows.Forms.Button();
+            this.lblTongCong = new System.Windows.Forms.Label();
             this.gridKetQua = new System.Windows.Forms.DataGridView();
             this.clmTenDangNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmMatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTongCong = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnXemTatCa = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridKetQua)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -119,6 +119,37 @@
             this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 9;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.54142F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.45858F));
+            this.tableLayoutPanel2.Controls.Add(this.btnDatLai, 2, 7);
+            this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.cboVaiTro, 2, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label9, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label5, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.chkTen, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.chkVaiTro, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.txtTen, 2, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 9;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(345, 576);
+            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // btnDatLai
             // 
@@ -182,6 +213,39 @@
             this.label9.TabIndex = 68;
             this.label9.Text = "Vai trò:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label5.ForeColor = System.Drawing.Color.Green;
+            this.label5.Location = new System.Drawing.Point(34, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 28);
+            this.label5.TabIndex = 63;
+            this.label5.Text = "Tìm kiếm";
+            // 
+            // chkTen
+            // 
+            this.chkTen.AutoSize = true;
+            this.chkTen.Location = new System.Drawing.Point(34, 33);
+            this.chkTen.Margin = new System.Windows.Forms.Padding(4);
+            this.chkTen.Name = "chkTen";
+            this.chkTen.Size = new System.Drawing.Size(149, 20);
+            this.chkTen.TabIndex = 64;
+            this.chkTen.Text = "Theo tên đăng nhập";
+            this.chkTen.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(34, 63);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 16);
+            this.label3.TabIndex = 65;
+            this.label3.Text = "Tên đăng nhập:";
+            // 
             // chkVaiTro
             // 
             this.chkVaiTro.AutoSize = true;
@@ -203,39 +267,6 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(139, 30);
             this.txtTen.TabIndex = 66;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(34, 63);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 16);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Tên đăng nhập:";
-            // 
-            // chkTen
-            // 
-            this.chkTen.AutoSize = true;
-            this.chkTen.Location = new System.Drawing.Point(34, 33);
-            this.chkTen.Margin = new System.Windows.Forms.Padding(4);
-            this.chkTen.Name = "chkTen";
-            this.chkTen.Size = new System.Drawing.Size(149, 20);
-            this.chkTen.TabIndex = 64;
-            this.chkTen.Text = "Theo tên đăng nhập";
-            this.chkTen.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.label5.ForeColor = System.Drawing.Color.Green;
-            this.label5.Location = new System.Drawing.Point(34, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 28);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Tìm kiếm";
             // 
             // panel3
             // 
@@ -386,6 +417,64 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(616, 576);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button1.Location = new System.Drawing.Point(4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 30);
+            this.button1.TabIndex = 68;
+            this.button1.Text = "Thêm tài khoản";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 38);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 16);
+            this.label4.TabIndex = 66;
+            this.label4.Text = "Kết quả tìm kiếm";
+            // 
+            // btnXemTatCa
+            // 
+            this.btnXemTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXemTatCa.BackColor = System.Drawing.Color.Silver;
+            this.btnXemTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnXemTatCa.FlatAppearance.BorderSize = 0;
+            this.btnXemTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnXemTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnXemTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXemTatCa.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.btnXemTatCa.Location = new System.Drawing.Point(461, 540);
+            this.btnXemTatCa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXemTatCa.Name = "btnXemTatCa";
+            this.btnXemTatCa.Size = new System.Drawing.Size(151, 32);
+            this.btnXemTatCa.TabIndex = 67;
+            this.btnXemTatCa.Text = "Xem tất cả";
+            this.btnXemTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXemTatCa.UseVisualStyleBackColor = false;
+            // 
+            // lblTongCong
+            // 
+            this.lblTongCong.AutoSize = true;
+            this.lblTongCong.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTongCong.Location = new System.Drawing.Point(4, 536);
+            this.lblTongCong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTongCong.Name = "lblTongCong";
+            this.lblTongCong.Size = new System.Drawing.Size(132, 40);
+            this.lblTongCong.TabIndex = 65;
+            this.lblTongCong.Text = "Tổng cộng: 0 kết quả";
+            // 
             // gridKetQua
             // 
             this.gridKetQua.AllowUserToAddRows = false;
@@ -403,7 +492,7 @@
             this.Role});
             this.tableLayoutPanel1.SetColumnSpan(this.gridKetQua, 2);
             this.gridKetQua.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridKetQua.Location = new System.Drawing.Point(4, 74);
+            this.gridKetQua.Location = new System.Drawing.Point(4, 67);
             this.gridKetQua.Margin = new System.Windows.Forms.Padding(4);
             this.gridKetQua.MultiSelect = false;
             this.gridKetQua.Name = "gridKetQua";
@@ -411,14 +500,14 @@
             this.gridKetQua.RowHeadersVisible = false;
             this.gridKetQua.RowHeadersWidth = 51;
             this.gridKetQua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridKetQua.Size = new System.Drawing.Size(608, 447);
+            this.gridKetQua.Size = new System.Drawing.Size(608, 465);
             this.gridKetQua.TabIndex = 64;
             // 
             // clmTenDangNhap
             // 
             this.clmTenDangNhap.DataPropertyName = "TenDangNhap";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.clmTenDangNhap.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmTenDangNhap.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmTenDangNhap.HeaderText = "Tên đăng nhập";
             this.clmTenDangNhap.MinimumWidth = 6;
             this.clmTenDangNhap.Name = "clmTenDangNhap";
@@ -439,95 +528,6 @@
             this.Role.Name = "Role";
             this.Role.ReadOnly = true;
             // 
-            // lblTongCong
-            // 
-            this.lblTongCong.AutoSize = true;
-            this.lblTongCong.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTongCong.Location = new System.Drawing.Point(4, 525);
-            this.lblTongCong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTongCong.Name = "lblTongCong";
-            this.lblTongCong.Size = new System.Drawing.Size(132, 51);
-            this.lblTongCong.TabIndex = 65;
-            this.lblTongCong.Text = "Tổng cộng: 0 kết quả";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 36);
-            this.button1.TabIndex = 68;
-            this.button1.Text = "Thêm tài khoản";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 44);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 16);
-            this.label4.TabIndex = 66;
-            this.label4.Text = "Kết quả tìm kiếm";
-            // 
-            // btnXemTatCa
-            // 
-            this.btnXemTatCa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXemTatCa.BackColor = System.Drawing.Color.Silver;
-            this.btnXemTatCa.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnXemTatCa.FlatAppearance.BorderSize = 0;
-            this.btnXemTatCa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnXemTatCa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnXemTatCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXemTatCa.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnXemTatCa.Location = new System.Drawing.Point(461, 536);
-            this.btnXemTatCa.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXemTatCa.Name = "btnXemTatCa";
-            this.btnXemTatCa.Size = new System.Drawing.Size(151, 36);
-            this.btnXemTatCa.TabIndex = 67;
-            this.btnXemTatCa.Text = "Xem tất cả";
-            this.btnXemTatCa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXemTatCa.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.54142F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.45858F));
-            this.tableLayoutPanel2.Controls.Add(this.btnDatLai, 2, 7);
-            this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 1, 7);
-            this.tableLayoutPanel2.Controls.Add(this.cboVaiTro, 2, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label9, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.chkTen, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label3, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.chkVaiTro, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.txtTen, 2, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 9;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(345, 576);
-            this.tableLayoutPanel2.TabIndex = 1;
-            // 
             // frmQuanLyTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -546,14 +546,14 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridKetQua)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

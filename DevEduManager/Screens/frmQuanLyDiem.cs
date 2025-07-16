@@ -119,7 +119,7 @@ namespace DevEduManager.Screens
 
                 // Reset trước
                 lblTenMon.Text = lblTenLop.Text = lblKy.Text = lblMaHV.Text = lblTenHV.Text = "";
-                numDiemGiuaKy.Value = numDiemCuoiKy.Value = 0;
+                //numDiemGiuaKy.Value = numDiemCuoiKy.Value = 0;
 
                 if (result.Rows.Count > 0)
                 {
@@ -130,8 +130,8 @@ namespace DevEduManager.Screens
                     lblMaHV.Text = row["StudentID"]?.ToString();
                     lblTenHV.Text = row["FullName"]?.ToString();
 
-                    if (decimal.TryParse(row["ScoreMid"]?.ToString(), out decimal mid))
-                        numDiemGiuaKy.Value = mid;
+                    //if (decimal.TryParse(row["ScoreMid"]?.ToString(), out decimal mid))
+                    //    numDiemGiuaKy.Value = mid;
                     if (decimal.TryParse(row["ScoreEnd"]?.ToString(), out decimal end))
                         numDiemCuoiKy.Value = end;
                 }

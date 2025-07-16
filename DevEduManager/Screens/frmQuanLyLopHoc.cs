@@ -1,49 +1,41 @@
 ﻿using BusinessLogic;
 using DevEduManager.Modals;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace DevEduManager.Screens
 {
     public partial class frmQuanLyLopHoc : Form
     {
-        CallAPI callAPI = new CallAPI();
-        private string _subjectUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Subject/";
-        private string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
-        private string _semesterUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Semester/";
+        private readonly CallAPI callAPI = new CallAPI();
+
+        private readonly string _courseUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Course/";
+        private readonly string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
 
         public frmQuanLyLopHoc()
         {
             InitializeComponent();
-            // Disable auto-generated columns
             gridLop.AutoGenerateColumns = false;
             gridListStudent.AutoGenerateColumns = false;
         }
 
-        private void frmQuanLyLopHoc_Load(object sender, EventArgs e)
+        private async void frmQuanLyLopHoc_Load(object sender, EventArgs e)
         {
             try
             {
-                // Load semesters into combo box
-                //LoadComBoSemester();
-                // Load classes for the selected semester
-                LoadDataToGridView();
-                // Enable/disable text boxes based on checkboxes
+                await LoadComboBoxCourseAsync();
+
                 txtTenMon.Enabled = chkTenMon.Checked;
                 txtTenLop.Enabled = chkTenLop.Checked;
-                // Load students for the first class if available
+
                 if (gridLop.Rows.Count > 0)
                 {
                     gridLop.Rows[0].Selected = true;
-                    LoadStudentData();
+                    await LoadStudentDataAsync();
                 }
             }
             catch (Exception ex)
@@ -52,49 +44,66 @@ namespace DevEduManager.Screens
             }
         }
 
-        private async void LoadComBoSemester()
+        private async Task LoadComboBoxCourseAsync()
         {
             try
             {
-                string url = $"{_semesterUrl}thongTinKyHoc";
-                DataTable result = await callAPI.GetAPI(url);
-                cboKy.DataSource = result;
-                cboKy.DisplayMember = "SemesterName";
-                cboKy.ValueMember = "SemesterID";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi tải danh sách kỳ học: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                string url = $"{_courseUrl}danhSachKhoaHoc";
+                DataTable dt = await callAPI.GetAPI(url);
 
-        }
-
-        private async void LoadDataToGridView()
-        {
-            try
-            {
-                string semesterId = cboKy.SelectedValue?.ToString();
-
-                string url = $"{_classUrl}layLop";
-
-                // Nếu có giá trị SemesterID thì thêm vào query string
-                if (!string.IsNullOrEmpty(semesterId))
+                if (dt != null && dt.Rows.Count > 0)
                 {
-                    url += $"?semesterID={Uri.EscapeDataString(semesterId)}";
-                }
+                    cboCT.SelectedIndexChanged -= cboCT_SelectedIndexChanged;
 
-                DataTable result = await callAPI.GetAPI(url);
-                gridLop.AutoGenerateColumns = false;
-                gridLop.DataSource = result;
+                    cboCT.DataSource = dt;
+                    cboCT.DisplayMember = "CourseName";
+                    cboCT.ValueMember = "CourseID";
+
+                    cboCT.SelectedIndex = 0;
+
+                    cboCT.SelectedIndexChanged += cboCT_SelectedIndexChanged;
+
+                    string selectedCourseID = cboCT.SelectedValue?.ToString();
+                    if (!string.IsNullOrEmpty(selectedCourseID))
+                        await LoadClassDataAsync(selectedCourseID);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi tải danh sách lớp: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi tải danh sách khóa học: " + ex.Message);
             }
         }
 
+        private async void cboCT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboCT.SelectedValue != null && Guid.TryParse(cboCT.SelectedValue.ToString(), out Guid courseId))
+                {
+                    await LoadClassDataAsync(courseId.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi chọn khóa học: " + ex.Message);
+            }
+        }
 
-        private async void LoadStudentData()
+        private async Task LoadClassDataAsync(string courseId)
+        {
+            try
+            {
+                string url = $"{_courseUrl}chiTietChuongTrinhHoc?CourseID={courseId}";
+                DataTable dt = await callAPI.GetAPI(url);
+                gridLop.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải danh sách lớp học: " + ex.Message);
+            }
+        }
+
+        private async Task LoadStudentDataAsync()
         {
             try
             {
@@ -105,15 +114,11 @@ namespace DevEduManager.Screens
                 }
 
                 string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
-                if (string.IsNullOrEmpty(classId))
-                {
-                    gridListStudent.DataSource = null;
-                    return;
-                }
+                if (string.IsNullOrEmpty(classId)) return;
 
                 string url = $"{_classUrl}layDanhSachSinhVienTheoLop?classID={Uri.EscapeDataString(classId)}";
-                DataTable result = await callAPI.GetAPI(url);
-                gridListStudent.DataSource = result;
+                DataTable dt = await callAPI.GetAPI(url);
+                gridListStudent.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -121,38 +126,30 @@ namespace DevEduManager.Screens
             }
         }
 
-        public void ValidateSearch()
+        private void chkTenMon_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkTenMon.Checked && string.IsNullOrEmpty(txtTenMon.Text))
-                throw new ArgumentException("Tên môn không được trống");
-            if (chkTenLop.Checked && string.IsNullOrEmpty(txtTenLop.Text))
-                throw new ArgumentException("Tên lớp không được trống");
+            txtTenMon.Enabled = chkTenMon.Checked;
+            if (!chkTenMon.Checked) txtTenMon.Text = string.Empty;
         }
-
-
 
         private void chkTenLop_CheckedChanged(object sender, EventArgs e)
         {
             txtTenLop.Enabled = chkTenLop.Checked;
-            if (!chkTenLop.Checked)
-                txtTenLop.Text = string.Empty;
+            if (!chkTenLop.Checked) txtTenLop.Text = string.Empty;
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private async void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
                 ValidateSearch();
-                LoadDataToGridView();
+                await LoadClassDataAsync(cboCT.SelectedValue?.ToString());
                 if (gridLop.Rows.Count > 0)
                 {
                     gridLop.Rows[0].Selected = true;
-                    LoadStudentData();
+                    await LoadStudentDataAsync();
                 }
-                else
-                {
-                    gridListStudent.DataSource = null;
-                }
+                else gridListStudent.DataSource = null;
             }
             catch (Exception ex)
             {
@@ -160,7 +157,37 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void btnThem_Click_1(object sender, EventArgs e)
+        private async void btnDatLai_Click(object sender, EventArgs e)
+        {
+            chkTenMon.Checked = false;
+            chkTenLop.Checked = false;
+            txtTenMon.Text = string.Empty;
+            txtTenLop.Text = string.Empty;
+
+            await LoadClassDataAsync(cboCT.SelectedValue?.ToString());
+
+            if (gridLop.Rows.Count > 0)
+            {
+                gridLop.Rows[0].Selected = true;
+                await LoadStudentDataAsync();
+            }
+            else gridListStudent.DataSource = null;
+        }
+
+        private async void gridLop_SelectionChanged(object sender, EventArgs e)
+        {
+            await LoadStudentDataAsync();
+        }
+
+        private void ValidateSearch()
+        {
+            if (chkTenMon.Checked && string.IsNullOrEmpty(txtTenMon.Text))
+                throw new ArgumentException("Tên môn không được để trống");
+            if (chkTenLop.Checked && string.IsNullOrEmpty(txtTenLop.Text))
+                throw new ArgumentException("Tên lớp không được để trống");
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -174,75 +201,18 @@ namespace DevEduManager.Screens
 
                 string className = gridLop.SelectedRows[0].Cells["ClassName"].Value?.ToString();
                 //string semesterName = ((DataRowView)cboKy.SelectedItem)["SemesterName"].ToString();
-                string semesterName = cboKy.Text; // Lấy giá trị đang hiển thị (tên học kỳ)
+                //string semesterName = cboKy.Text; // Lấy giá trị đang hiển thị (tên học kỳ)
 
 
-
-                //string className = gridLop.SelectedRows[0].Cells["TenLop"].Value?.ToString();
-                // Fetch max students from API or configuration
-                //string url = $"{_classUrl}thongTinLopHoc?classID={Uri.EscapeDataString(classId)}";
-                //DataTable classInfo = callAPI.GetAPI(url).Result;
-                //int maxStudents = classInfo.Rows.Count > 0 ? Convert.ToInt32(classInfo.Rows[0]["MaxStudents"]) : 30;
-
-                frmThemHocVienVaoLop frm = new frmThemHocVienVaoLop(classId, semesterName, className);
-                frm.ShowDialog();
+                //frmThemHocVienVaoLop frm = new frmThemHocVienVaoLop(classId, semesterName, className);
+                //frm.ShowDialog();
                 // Reload student data after adding
-                LoadStudentData();
+                //LoadStudentData();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi mở form thêm học viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnDatLai_Click(object sender, EventArgs e)
-        {
-            chkTenMon.Checked = false;
-            chkTenLop.Checked = false;
-            txtTenMon.Text = string.Empty;
-            txtTenLop.Text = string.Empty;
-            LoadDataToGridView();
-            if (gridLop.Rows.Count > 0)
-            {
-                gridLop.Rows[0].Selected = true;
-                LoadStudentData();
-            }
-            else
-            {
-                gridListStudent.DataSource = null;
-            }
-        }
-
-
-        private void cboKy_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            LoadDataToGridView();
-            if (gridLop.Rows.Count > 0)
-            {
-                gridLop.Rows[0].Selected = true;
-                LoadStudentData();
-            }
-            else
-            {
-                gridListStudent.DataSource = null;
-            }
-        }
-
-        private void gridLop_SelectionChanged_1(object sender, EventArgs e)
-        {
-            LoadStudentData();
-        }
-
-        private void chkTenMon_CheckedChanged_1(object sender, EventArgs e)
-        {
-            txtTenMon.Enabled = chkTenMon.Checked;
-            if (!chkTenMon.Checked)
-                txtTenMon.Text = string.Empty;
-        }
-
-        private void frmQuanLyLopHoc_Shown(object sender, EventArgs e)
-        {
-            LoadComBoSemester();
         }
     }
 }

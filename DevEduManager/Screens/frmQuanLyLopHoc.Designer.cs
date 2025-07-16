@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -48,7 +48,7 @@
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cboKy = new System.Windows.Forms.ComboBox();
+            this.cboCT = new System.Windows.Forms.ComboBox();
             this.chkTenMon = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.gridListStudent = new System.Windows.Forms.DataGridView();
@@ -111,7 +111,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.panel5);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Size = new System.Drawing.Size(1132, 585);
-            this.splitContainer1.SplitterDistance = 476;
+            this.splitContainer1.SplitterDistance = 395;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 8;
             // 
@@ -119,8 +119,8 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.54142F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.45858F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.84932F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.15068F));
             this.tableLayoutPanel1.Controls.Add(this.txtTenLop, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.btnTimKiem, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label9, 1, 1);
@@ -131,22 +131,22 @@
             this.tableLayoutPanel1.Controls.Add(this.txtTenMon, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.cboKy, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboCT, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.chkTenMon, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 9;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(476, 585);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(395, 585);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // txtTenLop
@@ -154,10 +154,10 @@
             this.txtTenLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTenLop.Enabled = false;
             this.txtTenLop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTenLop.Location = new System.Drawing.Point(272, 167);
+            this.txtTenLop.Location = new System.Drawing.Point(205, 172);
             this.txtTenLop.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Size = new System.Drawing.Size(200, 30);
+            this.txtTenLop.Size = new System.Drawing.Size(186, 30);
             this.txtTenLop.TabIndex = 51;
             // 
             // btnTimKiem
@@ -173,7 +173,7 @@
             this.btnTimKiem.Location = new System.Drawing.Point(34, 538);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(230, 35);
+            this.btnTimKiem.Size = new System.Drawing.Size(163, 35);
             this.btnTimKiem.TabIndex = 60;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -185,21 +185,21 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(34, 27);
+            this.label9.Location = new System.Drawing.Point(34, 32);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(230, 36);
+            this.label9.Size = new System.Drawing.Size(163, 39);
             this.label9.TabIndex = 63;
-            this.label9.Text = "Kỳ học:";
+            this.label9.Text = "Chương trình học:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(34, 163);
+            this.label4.Location = new System.Drawing.Point(34, 168);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 37);
+            this.label4.Size = new System.Drawing.Size(163, 37);
             this.label4.TabIndex = 50;
             this.label4.Text = "Tên lớp:";
             // 
@@ -213,10 +213,10 @@
             this.btnDatLai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnDatLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDatLai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnDatLai.Location = new System.Drawing.Point(272, 538);
+            this.btnDatLai.Location = new System.Drawing.Point(205, 538);
             this.btnDatLai.Margin = new System.Windows.Forms.Padding(4);
             this.btnDatLai.Name = "btnDatLai";
-            this.btnDatLai.Size = new System.Drawing.Size(200, 35);
+            this.btnDatLai.Size = new System.Drawing.Size(186, 35);
             this.btnDatLai.TabIndex = 61;
             this.btnDatLai.Text = "Đặt lại";
             this.btnDatLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -227,10 +227,10 @@
             // 
             this.chkTenLop.AutoSize = true;
             this.chkTenLop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkTenLop.Location = new System.Drawing.Point(34, 136);
+            this.chkTenLop.Location = new System.Drawing.Point(34, 141);
             this.chkTenLop.Margin = new System.Windows.Forms.Padding(4);
             this.chkTenLop.Name = "chkTenLop";
-            this.chkTenLop.Size = new System.Drawing.Size(230, 23);
+            this.chkTenLop.Size = new System.Drawing.Size(163, 23);
             this.chkTenLop.TabIndex = 49;
             this.chkTenLop.Text = "Theo tên lớp";
             this.chkTenLop.UseVisualStyleBackColor = true;
@@ -251,7 +251,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.gridLop, 2);
             this.gridLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridLop.Location = new System.Drawing.Point(34, 204);
+            this.gridLop.Location = new System.Drawing.Point(34, 209);
             this.gridLop.Margin = new System.Windows.Forms.Padding(4);
             this.gridLop.MultiSelect = false;
             this.gridLop.Name = "gridLop";
@@ -259,9 +259,9 @@
             this.gridLop.RowHeadersVisible = false;
             this.gridLop.RowHeadersWidth = 51;
             this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLop.Size = new System.Drawing.Size(438, 326);
+            this.gridLop.Size = new System.Drawing.Size(357, 321);
             this.gridLop.TabIndex = 12;
-            this.gridLop.SelectionChanged += new System.EventHandler(this.gridLop_SelectionChanged_1);
+            this.gridLop.SelectionChanged += new System.EventHandler(this.gridLop_SelectionChanged);
             // 
             // ClassID
             // 
@@ -275,8 +275,8 @@
             // ClassName
             // 
             this.ClassName.DataPropertyName = "ClassName";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            this.ClassName.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Green;
+            this.ClassName.DefaultCellStyle = dataGridViewCellStyle4;
             this.ClassName.FillWeight = 87.31236F;
             this.ClassName.HeaderText = "Tên lớp";
             this.ClassName.MinimumWidth = 100;
@@ -286,22 +286,23 @@
             // SubjectName
             // 
             this.SubjectName.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
+            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle5;
             this.SubjectName.FillWeight = 75.96175F;
             this.SubjectName.HeaderText = "Tên môn";
             this.SubjectName.MinimumWidth = 150;
             this.SubjectName.Name = "SubjectName";
             this.SubjectName.ReadOnly = true;
+            this.SubjectName.Visible = false;
             // 
             // txtTenMon
             // 
             this.txtTenMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTenMon.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTenMon.Location = new System.Drawing.Point(272, 92);
+            this.txtTenMon.Location = new System.Drawing.Point(205, 103);
             this.txtTenMon.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenMon.Name = "txtTenMon";
-            this.txtTenMon.Size = new System.Drawing.Size(200, 30);
+            this.txtTenMon.Size = new System.Drawing.Size(186, 30);
             this.txtTenMon.TabIndex = 48;
             // 
             // label2
@@ -313,7 +314,7 @@
             this.label2.Location = new System.Drawing.Point(34, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 27);
+            this.label2.Size = new System.Drawing.Size(163, 32);
             this.label2.TabIndex = 45;
             this.label2.Text = "Tìm kiếm lớp học";
             // 
@@ -321,38 +322,36 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(34, 88);
+            this.label3.Location = new System.Drawing.Point(34, 99);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 44);
+            this.label3.Size = new System.Drawing.Size(163, 38);
             this.label3.TabIndex = 47;
             this.label3.Text = "Tên môn:";
             // 
-            // cboKy
+            // cboCT
             // 
-            this.cboKy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboKy.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboKy.FormattingEnabled = true;
-            this.cboKy.Location = new System.Drawing.Point(272, 31);
-            this.cboKy.Margin = new System.Windows.Forms.Padding(4);
-            this.cboKy.Name = "cboKy";
-            this.cboKy.Size = new System.Drawing.Size(200, 31);
-            this.cboKy.TabIndex = 64;
-            this.cboKy.SelectedIndexChanged += new System.EventHandler(this.cboKy_SelectedIndexChanged_1);
+            this.cboCT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboCT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCT.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboCT.FormattingEnabled = true;
+            this.cboCT.Location = new System.Drawing.Point(205, 36);
+            this.cboCT.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCT.Name = "cboCT";
+            this.cboCT.Size = new System.Drawing.Size(186, 31);
+            this.cboCT.TabIndex = 64;
             // 
             // chkTenMon
             // 
             this.chkTenMon.AutoSize = true;
             this.chkTenMon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkTenMon.Location = new System.Drawing.Point(34, 67);
+            this.chkTenMon.Location = new System.Drawing.Point(34, 75);
             this.chkTenMon.Margin = new System.Windows.Forms.Padding(4);
             this.chkTenMon.Name = "chkTenMon";
-            this.chkTenMon.Size = new System.Drawing.Size(230, 17);
+            this.chkTenMon.Size = new System.Drawing.Size(163, 20);
             this.chkTenMon.TabIndex = 46;
             this.chkTenMon.Text = "Theo tên môn:";
             this.chkTenMon.UseVisualStyleBackColor = true;
-            this.chkTenMon.CheckedChanged += new System.EventHandler(this.chkTenMon_CheckedChanged_1);
             // 
             // panel5
             // 
@@ -361,7 +360,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 46);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(651, 539);
+            this.panel5.Size = new System.Drawing.Size(732, 539);
             this.panel5.TabIndex = 4;
             // 
             // gridListStudent
@@ -386,7 +385,7 @@
             this.gridListStudent.RowHeadersVisible = false;
             this.gridListStudent.RowHeadersWidth = 51;
             this.gridListStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridListStudent.Size = new System.Drawing.Size(651, 539);
+            this.gridListStudent.Size = new System.Drawing.Size(732, 539);
             this.gridListStudent.TabIndex = 13;
             // 
             // StudentID
@@ -404,8 +403,8 @@
             // 
             this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Fullname.DataPropertyName = "Fullname";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Green;
-            this.Fullname.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Green;
+            this.Fullname.DefaultCellStyle = dataGridViewCellStyle6;
             this.Fullname.FillWeight = 3.998264F;
             this.Fullname.HeaderText = "Tên học viên";
             this.Fullname.MinimumWidth = 300;
@@ -430,7 +429,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(651, 46);
+            this.panel2.Size = new System.Drawing.Size(732, 46);
             this.panel2.TabIndex = 0;
             // 
             // btnThem
@@ -449,7 +448,7 @@
             this.btnThem.Text = "Thêm học viên";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click_1);
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // frmQuanLyLopHoc
             // 
@@ -463,7 +462,6 @@
             this.Name = "frmQuanLyLopHoc";
             this.Text = "Quản lý lớp học";
             this.Load += new System.EventHandler(this.frmQuanLyLopHoc_Load);
-            this.Shown += new System.EventHandler(this.frmQuanLyLopHoc_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -485,7 +483,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox cboKy;
+        private System.Windows.Forms.ComboBox cboCT;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnDatLai;
         private System.Windows.Forms.Button btnTimKiem;
@@ -502,11 +500,11 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
     }
 }

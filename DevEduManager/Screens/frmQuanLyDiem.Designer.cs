@@ -55,9 +55,6 @@ namespace DevEduManager.Screens
             this.label17 = new System.Windows.Forms.Label();
             this.numDiemCuoiKy = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.numDiemGiuaKy = new System.Windows.Forms.NumericUpDown();
-            this.label16 = new System.Windows.Forms.Label();
             this.lblTenHV = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lblMaHV = new System.Windows.Forms.Label();
@@ -82,7 +79,6 @@ namespace DevEduManager.Screens
             ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiemCuoiKy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemGiuaKy)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHV)).BeginInit();
             this.SuspendLayout();
@@ -342,9 +338,6 @@ namespace DevEduManager.Screens
             this.panel4.Controls.Add(this.label17);
             this.panel4.Controls.Add(this.numDiemCuoiKy);
             this.panel4.Controls.Add(this.label18);
-            this.panel4.Controls.Add(this.label15);
-            this.panel4.Controls.Add(this.numDiemGiuaKy);
-            this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.lblTenHV);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.lblMaHV);
@@ -433,46 +426,9 @@ namespace DevEduManager.Screens
             this.label18.Location = new System.Drawing.Point(25, 341);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(112, 23);
+            this.label18.Size = new System.Drawing.Size(59, 23);
             this.label18.TabIndex = 67;
-            this.label18.Text = "Điểm cuối kỳ:";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.Blue;
-            this.label15.Location = new System.Drawing.Point(417, 292);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 23);
-            this.label15.TabIndex = 66;
-            this.label15.Text = "điểm";
-            // 
-            // numDiemGiuaKy
-            // 
-            this.numDiemGiuaKy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.numDiemGiuaKy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.numDiemGiuaKy.ForeColor = System.Drawing.Color.Blue;
-            this.numDiemGiuaKy.Location = new System.Drawing.Point(157, 289);
-            this.numDiemGiuaKy.Margin = new System.Windows.Forms.Padding(4);
-            this.numDiemGiuaKy.Name = "numDiemGiuaKy";
-            this.numDiemGiuaKy.Size = new System.Drawing.Size(252, 30);
-            this.numDiemGiuaKy.TabIndex = 65;
-            this.numDiemGiuaKy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label16.Location = new System.Drawing.Point(25, 292);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(113, 23);
-            this.label16.TabIndex = 64;
-            this.label16.Text = "Điểm giữa kỳ:";
+            this.label18.Text = "Điểm :";
             // 
             // lblTenHV
             // 
@@ -731,7 +687,6 @@ namespace DevEduManager.Screens
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiemCuoiKy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numDiemGiuaKy)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHV)).EndInit();
@@ -760,9 +715,6 @@ namespace DevEduManager.Screens
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.NumericUpDown numDiemCuoiKy;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.NumericUpDown numDiemGiuaKy;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblTenHV;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lblMaHV;

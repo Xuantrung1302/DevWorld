@@ -47,7 +47,7 @@
             this.btnBaoCaoHocVienTheoThang = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongKeNoHocVien = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanLyDiem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnThongKeDiemTheoLop = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLichAll = new System.Windows.Forms.ToolStripMenuItem();
             this.btnXepLop = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAS_D_SM_13 = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAS_D_SM_19 = new System.Windows.Forms.ToolStripMenuItem();
@@ -296,7 +296,7 @@
             this.btnBaoCaoHocVienTheoThang,
             this.btnThongKeNoHocVien,
             this.btnQuanLyDiem,
-            this.btnThongKeDiemTheoLop,
+            this.btnLichAll,
             this.btnXepLop,
             this.mniAS_D_SM_13,
             this.mniAS_D_SM_19,
@@ -360,14 +360,14 @@
             this.btnQuanLyDiem.Text = "Quản lý lớp học";
             this.btnQuanLyDiem.Click += new System.EventHandler(this.btnQuanLyDiem_Click);
             // 
-            // btnThongKeDiemTheoLop
+            // btnLichAll
             // 
-            this.btnThongKeDiemTheoLop.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnThongKeDiemTheoLop.Name = "btnThongKeDiemTheoLop";
-            this.btnThongKeDiemTheoLop.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnThongKeDiemTheoLop.Size = new System.Drawing.Size(344, 38);
-            this.btnThongKeDiemTheoLop.Text = "Lịch";
-            this.btnThongKeDiemTheoLop.Click += new System.EventHandler(this.btnThongKeDiemTheoLop_Click);
+            this.btnLichAll.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnLichAll.Name = "btnLichAll";
+            this.btnLichAll.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnLichAll.Size = new System.Drawing.Size(344, 38);
+            this.btnLichAll.Text = "Lịch";
+            this.btnLichAll.Click += new System.EventHandler(this.btnLichAll_Click);
             // 
             // btnXepLop
             // 
@@ -426,6 +426,7 @@
             this.toolStripMenuItem10.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem10.Size = new System.Drawing.Size(344, 38);
             this.toolStripMenuItem10.Text = "Quản lý học phí";
+            this.toolStripMenuItem10.Click += new System.EventHandler(this.toolStripMenuItem10_Click);
             // 
             // btnQuanTriTitle
             // 
@@ -540,6 +541,7 @@
             this.toolStripMenuItem9.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem9.Size = new System.Drawing.Size(292, 38);
             this.toolStripMenuItem9.Text = "Báo cáo điểm danh";
+            this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
             // btnHocVienTitle
             // 
@@ -582,8 +584,9 @@
             this.toolStripMenuItem3.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(230, 38);
             this.toolStripMenuItem3.Text = "Điểm";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -814,7 +817,7 @@
         private System.Windows.Forms.ToolStripMenuItem btnBaoCaoHocVienTheoThang;
         private System.Windows.Forms.ToolStripMenuItem btnThongKeNoHocVien;
         private System.Windows.Forms.ToolStripMenuItem btnQuanLyDiem;
-        private System.Windows.Forms.ToolStripMenuItem btnThongKeDiemTheoLop;
+        private System.Windows.Forms.ToolStripMenuItem btnLichAll;
         private System.Windows.Forms.ToolStripMenuItem btnXepLop;
         private System.Windows.Forms.ToolStripMenuItem mniAS_D_SM_13;
         private System.Windows.Forms.ToolStripMenuItem mniAS_D_SM_19;

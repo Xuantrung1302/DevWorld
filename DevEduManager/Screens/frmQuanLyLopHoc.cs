@@ -93,7 +93,7 @@ namespace DevEduManager.Screens
         {
             try
             {
-                string url = $"{_courseUrl}chiTietChuongTrinhHoc?CourseID={courseId}";
+                string url = $"{_courseUrl}danhSachLopTrongKhoaHoc?CourseID={courseId}";
                 DataTable dt = await callAPI.GetAPI(url);
                 gridLop.DataSource = dt;
             }
@@ -118,6 +118,7 @@ namespace DevEduManager.Screens
 
                 string url = $"{_classUrl}layDanhSachSinhVienTheoLop?classID={Uri.EscapeDataString(classId)}";
                 DataTable dt = await callAPI.GetAPI(url);
+
                 gridListStudent.DataSource = dt;
             }
             catch (Exception ex)
@@ -125,6 +126,7 @@ namespace DevEduManager.Screens
                 MessageBox.Show($"Lỗi khi tải danh sách học viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void chkTenMon_CheckedChanged(object sender, EventArgs e)
         {
@@ -187,7 +189,7 @@ namespace DevEduManager.Screens
                 throw new ArgumentException("Tên lớp không được để trống");
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private async void btnThem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -198,21 +200,22 @@ namespace DevEduManager.Screens
                 }
 
                 string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
-
                 string className = gridLop.SelectedRows[0].Cells["ClassName"].Value?.ToString();
-                //string semesterName = ((DataRowView)cboKy.SelectedItem)["SemesterName"].ToString();
-                //string semesterName = cboKy.Text; // Lấy giá trị đang hiển thị (tên học kỳ)
 
+                // Nếu có combobox kỳ học (cboKy)
+                string courseName = cboCT.Text; // lấy tên hiển thị trong combobox
 
-                //frmThemHocVienVaoLop frm = new frmThemHocVienVaoLop(classId, semesterName, className);
-                //frm.ShowDialog();
-                // Reload student data after adding
-                //LoadStudentData();
+                frmThemHocVienVaoLop frm = new frmThemHocVienVaoLop(classId, courseName, className);
+                frm.ShowDialog();
+
+                // Sau khi form đóng, load lại danh sách học viên
+                await LoadStudentDataAsync();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi mở form thêm học viên: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

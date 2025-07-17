@@ -140,8 +140,8 @@
             // 
             // courseid
             // 
-            this.courseid.DataPropertyName = "CourseID";
-            this.courseid.HeaderText = "Mã chương trình";
+            this.courseid.DataPropertyName = "course_id";
+            this.courseid.HeaderText = "ID chương trình";
             this.courseid.MinimumWidth = 6;
             this.courseid.Name = "courseid";
             this.courseid.Visible = false;
@@ -156,7 +156,7 @@
             // 
             // coursecode
             // 
-            this.coursecode.DataPropertyName = "CourseCode";
+            this.coursecode.DataPropertyName = "course_code";
             this.coursecode.HeaderText = "Mã chương trình";
             this.coursecode.MinimumWidth = 6;
             this.coursecode.Name = "coursecode";
@@ -178,7 +178,7 @@
             // 
             // Fee
             // 
-            this.Fee.DataPropertyName = "Fee";
+            this.Fee.DataPropertyName = "TuitionFee";
             this.Fee.HeaderText = "Học phí";
             this.Fee.MinimumWidth = 6;
             this.Fee.Name = "Fee";

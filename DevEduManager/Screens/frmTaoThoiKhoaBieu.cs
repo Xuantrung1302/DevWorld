@@ -1,49 +1,53 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Configuration;
+using System.Data;
 using System.Drawing;
-using System.Windows.Forms;
-using System;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using BusinessLogic;
+using ClosedXML.Excel;
 
 namespace DevEduManager.Screens
 {
     public partial class frmTaoThoiKhoaBieu : Form
     {
+        private readonly CallAPI callAPI = new CallAPI();
+        private readonly string _courseUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Course/";
+        private readonly string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
+        private readonly string _scheduleUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Schedule/";
+
         public frmTaoThoiKhoaBieu()
         {
             InitializeComponent();
             InitializeDataGridView();
-            LoadSampleData();
+            this.Load += frmTaoThoiKhoaBieu_Load;
+            cboCT.SelectedIndexChanged += cboCT_SelectedIndexChanged;
+            cboLH.SelectedIndexChanged += cboLH_SelectedIndexChanged;
+            btnExportExcel.Click += btnExportExcel_Click;
+        }
+
+        private async void frmTaoThoiKhoaBieu_Load(object sender, EventArgs e)
+        {
+            await LoadComboBoxCourseAsync();
         }
 
         private void InitializeDataGridView()
         {
-            // Cấu hình DataGridView
             dtgvLich.AllowUserToAddRows = false;
             dtgvLich.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtgvLich.ColumnHeadersHeight = 35;
             dtgvLich.RowHeadersVisible = false;
-            dtgvLich.EnableHeadersVisualStyles = false;
 
-            dtgvLich.DefaultCellStyle = new DataGridViewCellStyle
-            {
-                Padding = new Padding(3),
-                Alignment = DataGridViewContentAlignment.MiddleCenter
-            };
-
-            // Nếu đã thiết kế cột sẵn trong Designer thì KHÔNG cần add lại
-            // Nếu chưa có cột, thêm vào đây:
             if (dtgvLich.Columns.Count == 0)
             {
-                dtgvLich.Columns.Add("ClassID", "Mã lớp");
                 dtgvLich.Columns.Add("ClassName", "Tên lớp");
+                dtgvLich.Columns.Add("Session", "Ca học");
                 dtgvLich.Columns.Add("DayOfWeek", "Thứ");
-                dtgvLich.Columns.Add("StartTime", "Bắt đầu");
-                dtgvLich.Columns.Add("EndTime", "Kết thúc");
+                dtgvLich.Columns.Add("StudyDate", "Ngày học");
                 dtgvLich.Columns.Add("Room", "Phòng");
-                dtgvLich.Columns.Add("MaxSeats", "Số chỗ");
+                dtgvLich.Columns.Add("TeacherName", "Tên GV");
             }
 
-            // Định dạng header
             dtgvLich.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle
             {
                 BackColor = Color.Navy,
@@ -52,171 +56,203 @@ namespace DevEduManager.Screens
                 Alignment = DataGridViewContentAlignment.MiddleCenter
             };
 
-            // Định dạng cột giờ
-            if (dtgvLich.Columns.Contains("StartTime"))
-                dtgvLich.Columns["StartTime"].DefaultCellStyle.Format = "hh\\:mm";
-
-            if (dtgvLich.Columns.Contains("EndTime"))
-                dtgvLich.Columns["EndTime"].DefaultCellStyle.Format = "hh\\:mm";
+            dtgvLich.CellClick += DtgvLich_CellClick;
         }
 
-        private void LoadSampleData()
+        private async Task LoadComboBoxCourseAsync()
         {
-            var sampleData = new List<ClassSchedule>
+            string url = $"{_courseUrl}danhSachKhoaHoc";
+            DataTable dt = await callAPI.GetAPI(url);
+            if (dt != null && dt.Rows.Count > 0)
             {
-                // 8 bản ghi cho Python.1
-                new ClassSchedule("PYTHON.1", "Lập trình Python nâng cao", "Thứ 2", "09:00", "11:00", "P501", 30),
-                new ClassSchedule("PYTHON.1", "Lập trình Python nâng cao", "Thứ 3", "14:00", "16:00", "P502", 30),
-                new ClassSchedule("PYTHON.1", "Lập trình Python nâng cao", "Thứ 4", "09:00", "11:00", "P501", 30),
-                new ClassSchedule("PYTHON.1", "Lập trình Python nâng cao", "Thứ 5", "14:00", "16:00", "P503", 30),
-                new ClassSchedule("PYTHON.1", "Lập trình Python nâng cao", "Thứ 6", "09:00", "11:00", "P502", 30),
-                new ClassSchedule("PYTHON.1", "Lập trình Python nâng cao", "Thứ 7", "08:00", "10:00", "P504", 30),
-                new ClassSchedule("PYTHON.1", "Lập trình Python nâng cao", "Thứ 2", "13:00", "15:00", "P501", 30),
-                new ClassSchedule("PYTHON.1", "Lập trình Python nâng cao", "Thứ 4", "13:00", "15:00", "P503", 30),
+                cboCT.SelectedIndexChanged -= cboCT_SelectedIndexChanged;
 
-                // 8 bản ghi cho Java.1
-                new ClassSchedule("JAVA.1", "Lập trình Java OOP", "Thứ 2", "08:00", "10:00", "J301", 25),
-                new ClassSchedule("JAVA.1", "Lập trình Java OOP", "Thứ 3", "10:00", "12:00", "J302", 25),
-                new ClassSchedule("JAVA.1", "Lập trình Java OOP", "Thứ 4", "13:00", "15:00", "J303", 25),
-                new ClassSchedule("JAVA.1", "Lập trình Java OOP", "Thứ 5", "15:00", "17:00", "J301", 25),
-                new ClassSchedule("JAVA.1", "Lập trình Java OOP", "Thứ 6", "08:00", "10:00", "J302", 25),
-                new ClassSchedule("JAVA.1", "Lập trình Java OOP", "Thứ 2", "15:00", "17:00", "J304", 25),
-                new ClassSchedule("JAVA.1", "Lập trình Java OOP", "Thứ 3", "13:00", "15:00", "J303", 25),
-                new ClassSchedule("JAVA.1", "Lập trình Java OOP", "Thứ 5", "10:00", "12:00", "J302", 25),
+                cboCT.DataSource = dt;
+                cboCT.DisplayMember = "CourseName";
+                cboCT.ValueMember = "CourseID";
+                cboCT.SelectedIndex = 0;
 
+                cboCT.SelectedIndexChanged += cboCT_SelectedIndexChanged;
 
-                new ClassSchedule("OOP.1", "Lập trình  OOP", "Thứ 2", "08:00", "10:00", "J301", 25),
-                new ClassSchedule("OOP.1", "Lập trình  OOP", "Thứ 3", "10:00", "12:00", "J302", 25),
-                new ClassSchedule("OOP.1", "Lập trình  OOP", "Thứ 4", "13:00", "15:00", "J303", 25),
-                new ClassSchedule("OOP.1", "Lập trình  OOP", "Thứ 5", "15:00", "17:00", "J301", 25),
-                new ClassSchedule("OOP.1", "Lập trình  OOP", "Thứ 6", "08:00", "10:00", "J302", 25),
-                new ClassSchedule("OOP.1", "Lập trình  OOP", "Thứ 2", "15:00", "17:00", "J304", 25),
-                new ClassSchedule("OOP.1", "Lập trình  OOP", "Thứ 3", "13:00", "15:00", "J303", 25),
-                new ClassSchedule("OOP.1", "Lập trình  OOP", "Thứ 5", "10:00", "12:00", "J302", 25),
+                await LoadComboBoxClassAsync(cboCT.SelectedValue?.ToString());
+            }
+        }
 
+        private async void cboCT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCT.SelectedValue != null)
+                await LoadComboBoxClassAsync(cboCT.SelectedValue.ToString());
+        }
 
-
-                new ClassSchedule("Ruby.1", "Lập trình Ruby", "Thứ 2", "08:00", "10:00", "J301", 25),
-                new ClassSchedule("Ruby.1", "Lập trình Ruby", "Thứ 3", "10:00", "12:00", "J302", 25),
-                new ClassSchedule("Ruby.1", "Lập trình Ruby", "Thứ 4", "13:00", "15:00", "J303", 25),
-                new ClassSchedule("Ruby.1", "Lập trình Ruby", "Thứ 5", "15:00", "17:00", "J301", 25),
-                new ClassSchedule("Ruby.1", "Lập trình Ruby", "Thứ 6", "08:00", "10:00", "J302", 25),
-                new ClassSchedule("Ruby.1", "Lập trình Ruby", "Thứ 2", "15:00", "17:00", "J304", 25),
-                new ClassSchedule("Ruby.1", "Lập trình Ruby", "Thứ 3", "13:00", "15:00", "J303", 25),
-                new ClassSchedule("Ruby.1", "Lập trình Ruby", "Thứ 5", "10:00", "12:00", "J302", 25),
-
-
-                new ClassSchedule("CSharp.1", "Lập trình C#", "Thứ 2", "08:00", "10:00", "J301", 25),
-                new ClassSchedule("CSharp.1", "Lập trình C#", "Thứ 3", "10:00", "12:00", "J302", 25),
-                new ClassSchedule("CSharp.1", "Lập trình C#", "Thứ 4", "13:00", "15:00", "J303", 25),
-                new ClassSchedule("CSharp.1", "Lập trình C#", "Thứ 5", "15:00", "17:00", "J301", 25),
-                new ClassSchedule("CSharp.1", "Lập trình C#", "Thứ 6", "08:00", "10:00", "J302", 25),
-                new ClassSchedule("CSharp.1", "Lập trình C#", "Thứ 2", "15:00", "17:00", "J304", 25),
-                new ClassSchedule("CSharp.1", "Lập trình C#", "Thứ 3", "13:00", "15:00", "J303", 25),
-                new ClassSchedule("CSharp.1", "Lập trình C#", "Thứ 5", "10:00", "12:00", "J302", 25)
-
-
-            };
-
-            var groupedData = sampleData.GroupBy(x => x.ClassName);
-
-            foreach (var subjectGroup in groupedData)
+        private async Task LoadComboBoxClassAsync(string courseId)
+        {
+            string url = $"{_courseUrl}danhSachLopTrongKhoaHoc?CourseID={courseId}";
+            DataTable dt = await callAPI.GetAPI(url);
+            if (dt != null && dt.Rows.Count > 0)
             {
-                // Thêm hàng tiêu đề môn học
-                int headerRowIndex = dtgvLich.Rows.Add();
-                DataGridViewRow headerRow = dtgvLich.Rows[headerRowIndex];
+                cboLH.SelectedIndexChanged -= cboLH_SelectedIndexChanged;
 
-                headerRow.Cells[0].Value = subjectGroup.Key;
-                headerRow.DefaultCellStyle = new DataGridViewCellStyle
+                cboLH.DataSource = dt;
+                cboLH.DisplayMember = "ClassName";
+                cboLH.ValueMember = "ClassID";
+                cboLH.SelectedIndex = 0;
+
+                cboLH.SelectedIndexChanged += cboLH_SelectedIndexChanged;
+
+                await LoadScheduleDataAsync(courseId, cboLH.SelectedValue.ToString());
+            }
+        }
+
+        private async void cboLH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCT.SelectedValue != null && cboLH.SelectedValue != null)
+            {
+                await LoadScheduleDataAsync(cboCT.SelectedValue.ToString(), cboLH.SelectedValue.ToString());
+            }
+        }
+
+        private async Task LoadScheduleDataAsync(string courseId, string classId)
+        {
+            try
+            {
+                string url = $"{_classUrl}layDanhSachLichHoc?CourseID={courseId}&ClassID={classId}";
+                DataTable dt = await callAPI.GetAPI(url);
+
+                dtgvLich.Rows.Clear();
+
+                if (dt == null || dt.Rows.Count == 0) return;
+
+                var grouped = dt.AsEnumerable().GroupBy(r => r.Field<string>("SubjectName"));
+
+                foreach (var subjectGroup in grouped)
                 {
-                    Font = new Font("Arial", 11, FontStyle.Bold),
-                    BackColor = Color.SteelBlue,
-                    ForeColor = Color.White,
-                    Alignment = DataGridViewContentAlignment.MiddleCenter
-                };
-                headerRow.Height = 32;
-
-                for (int i = 1; i < dtgvLich.Columns.Count; i++)
-                {
-                    headerRow.Cells[i].Value = "";
-                    headerRow.Cells[i].Style.BackColor = Color.SteelBlue;
-                }
-
-                // Thêm các lớp học
-                foreach (var classItem in subjectGroup)
-                {
-                    int rowIndex = dtgvLich.Rows.Add(
-                        classItem.ClassID,
-                        "",
-                        classItem.DayOfWeek,
-                        classItem.StartTime,
-                        classItem.EndTime,
-                        classItem.Room,
-                        classItem.MaxSeats
-                    );
-
-                    DataGridViewRow dataRow = dtgvLich.Rows[rowIndex];
-                    dataRow.DefaultCellStyle.BackColor = (classItem.StartTime.Hours < 12)
-                        ? Color.LightYellow : Color.LightCyan;
-
-                    if (classItem.Room.StartsWith("P") || classItem.Room.StartsWith("J"))
+                    // Header môn học
+                    int headerIndex = dtgvLich.Rows.Add();
+                    DataGridViewRow headerRow = dtgvLich.Rows[headerIndex];
+                    headerRow.Cells[0].Value = subjectGroup.Key;
+                    headerRow.DefaultCellStyle = new DataGridViewCellStyle
                     {
-                        dataRow.Cells["Room"].Style.Font = new Font(dtgvLich.Font, FontStyle.Bold);
-                        dataRow.Cells["Room"].Style.ForeColor = Color.DarkBlue;
+                        BackColor = Color.SteelBlue,
+                        ForeColor = Color.White,
+                        Font = new Font("Arial", 11, FontStyle.Bold),
+                        Alignment = DataGridViewContentAlignment.MiddleCenter
+                    };
+                    headerRow.Height = 32;
+                    for (int i = 1; i < dtgvLich.Columns.Count; i++)
+                        headerRow.Cells[i].Value = "";
+
+                    // Các dòng dữ liệu
+                    foreach (var row in subjectGroup)
+                    {
+                        int rowIndex = dtgvLich.Rows.Add(
+                            row["ClassName"].ToString(),
+                            $"{Convert.ToDateTime(row["StartTime"]).ToString("HH:mm")}-{Convert.ToDateTime(row["EndTime"]).ToString("HH:mm")}",
+                            row["DayOfWeek"].ToString(),
+                            Convert.ToDateTime(row["StartTime"]).ToString("dd/MM/yyyy"),
+                            "P101", // Có thể thay bằng field nếu có
+                            row["FullName"].ToString()
+                        );
+
+                        var dataRow = dtgvLich.Rows[rowIndex];
+                        dataRow.DefaultCellStyle.BackColor = Convert.ToDateTime(row["StartTime"]).Hour < 12
+                            ? Color.LightYellow : Color.LightCyan;
                     }
                 }
             }
-
-            dtgvLich.CellClick += (sender, e) =>
+            catch (Exception ex)
             {
-                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-                {
-                    var row = dtgvLich.Rows[e.RowIndex];
-                    if (row.Cells[0].Style.Font?.Bold == true) return;
-
-                    string classInfo = "Mã lớp: " + row.Cells["ClassID"].Value + Environment.NewLine +
-                                     "Môn học: " + GetSubjectNameForRow(e.RowIndex) + Environment.NewLine +
-                                     "Thời gian: " + row.Cells["DayOfWeek"].Value + " " +
-                                     row.Cells["StartTime"].Value + " - " + row.Cells["EndTime"].Value + Environment.NewLine +
-                                     "Phòng: " + row.Cells["Room"].Value + " (Tối đa: " +
-                                     row.Cells["MaxSeats"].Value + " chỗ)";
-
-                    MessageBox.Show(classInfo, "Thông tin lớp học", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            };
+                MessageBox.Show($"Lỗi tải lịch học: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private string GetSubjectNameForRow(int rowIndex)
+        private void DtgvLich_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = rowIndex; i >= 0; i--)
+            if (e.RowIndex >= 0 && dtgvLich.Rows[e.RowIndex].Cells[0].Style.Font?.Bold != true)
             {
-                if (dtgvLich.Rows[i].Cells[0].Style.Font?.Bold == true)
+                var row = dtgvLich.Rows[e.RowIndex];
+                string info = $"Tên lớp: {row.Cells["ClassName"].Value}\n" +
+                              $"Ca học: {row.Cells["Session"].Value}\n" +
+                              $"Thứ: {row.Cells["DayOfWeek"].Value}\n" +
+                              $"Ngày học: {row.Cells["StudyDate"].Value}\n" +
+                              $"Phòng: {row.Cells["Room"].Value}\n" +
+                              $"Giảng viên: {row.Cells["TeacherName"].Value}";
+                MessageBox.Show(info, "Thông tin chi tiết", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtgvLich.Rows.Count == 0)
                 {
-                    return dtgvLich.Rows[i].Cells[0].Value.ToString();
+                    MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx", FileName = "ThoiKhoaBieu.xlsx" })
+                {
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        using (var workbook = new XLWorkbook())
+                        {
+                            var ws = workbook.Worksheets.Add("Lịch học");
+                            int currentRow = 1;
+
+                            ws.Cell(currentRow, 1).Value = "THỜI KHÓA BIỂU LỚP";
+                            ws.Range(currentRow, 1, currentRow, 6).Merge().Style
+                                .Font.SetBold().Font.FontSize = 16;
+                            ws.Cell(currentRow, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                            currentRow += 2;
+
+                            string[] headers = { "Tên lớp", "Ca học", "Thứ", "Ngày học", "Phòng", "Tên GV" };
+                            for (int i = 0; i < headers.Length; i++)
+                            {
+                                ws.Cell(currentRow, i + 1).Value = headers[i];
+                                ws.Cell(currentRow, i + 1).Style.Fill.BackgroundColor = XLColor.DarkBlue;
+                                ws.Cell(currentRow, i + 1).Style.Font.FontColor = XLColor.White;
+                                ws.Cell(currentRow, i + 1).Style.Font.SetBold();
+                                ws.Cell(currentRow, i + 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                            }
+                            currentRow++;
+
+                            foreach (DataGridViewRow row in dtgvLich.Rows)
+                            {
+                                if (row.Cells[0].Style.Font?.Bold == true)
+                                {
+                                    ws.Cell(currentRow, 1).Value = (XLCellValue)row.Cells[0].Value;
+                                    ws.Range(currentRow, 1, currentRow, 6).Merge();
+                                    ws.Range(currentRow, 1, currentRow, 6).Style
+                                        .Fill.SetBackgroundColor(XLColor.SteelBlue)
+                                        .Font.SetBold()
+                                        .Font.SetFontColor(XLColor.White)
+                                        .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+                                    currentRow++;
+                                }
+                                else
+                                {
+                                    for (int col = 0; col < 6; col++)
+                                        ws.Cell(currentRow, col + 1).Value = row.Cells[col].Value?.ToString();
+
+                                    if (row.DefaultCellStyle.BackColor == Color.LightYellow)
+                                        ws.Range(currentRow, 1, currentRow, 6).Style.Fill.BackgroundColor = XLColor.LightYellow;
+                                    else if (row.DefaultCellStyle.BackColor == Color.LightCyan)
+                                        ws.Range(currentRow, 1, currentRow, 6).Style.Fill.BackgroundColor = XLColor.LightCyan;
+
+                                    currentRow++;
+                                }
+                            }
+
+                            ws.Columns().AdjustToContents();
+                            workbook.SaveAs(sfd.FileName);
+                        }
+                        MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
-            return "Không xác định";
-        }
-
-        public class ClassSchedule
-        {
-            public string ClassID { get; set; }
-            public string ClassName { get; set; }
-            public string DayOfWeek { get; set; }
-            public TimeSpan StartTime { get; set; }
-            public TimeSpan EndTime { get; set; }
-            public string Room { get; set; }
-            public int MaxSeats { get; set; }
-
-            public ClassSchedule(string id, string name, string day, string start, string end, string room, int seats)
+            catch (Exception ex)
             {
-                ClassID = id;
-                ClassName = name;
-                DayOfWeek = day;
-                StartTime = TimeSpan.Parse(start);
-                EndTime = TimeSpan.Parse(end);
-                Room = room;
-                MaxSeats = seats;
+                MessageBox.Show($"Lỗi khi xuất Excel: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

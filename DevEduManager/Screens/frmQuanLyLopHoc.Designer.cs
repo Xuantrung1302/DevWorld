@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -44,7 +43,6 @@
             this.gridLop = new System.Windows.Forms.DataGridView();
             this.ClassID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -246,8 +244,7 @@
             this.gridLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClassID,
-            this.ClassName,
-            this.SubjectName});
+            this.ClassName});
             this.tableLayoutPanel1.SetColumnSpan(this.gridLop, 2);
             this.gridLop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -275,25 +272,13 @@
             // ClassName
             // 
             this.ClassName.DataPropertyName = "ClassName";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Green;
-            this.ClassName.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
+            this.ClassName.DefaultCellStyle = dataGridViewCellStyle1;
             this.ClassName.FillWeight = 87.31236F;
             this.ClassName.HeaderText = "Tên lớp";
             this.ClassName.MinimumWidth = 100;
             this.ClassName.Name = "ClassName";
             this.ClassName.ReadOnly = true;
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.DataPropertyName = "SubjectName";
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
-            this.SubjectName.DefaultCellStyle = dataGridViewCellStyle5;
-            this.SubjectName.FillWeight = 75.96175F;
-            this.SubjectName.HeaderText = "Tên môn";
-            this.SubjectName.MinimumWidth = 150;
-            this.SubjectName.Name = "SubjectName";
-            this.SubjectName.ReadOnly = true;
-            this.SubjectName.Visible = false;
             // 
             // txtTenMon
             // 
@@ -403,8 +388,8 @@
             // 
             this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Fullname.DataPropertyName = "Fullname";
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Green;
-            this.Fullname.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Green;
+            this.Fullname.DefaultCellStyle = dataGridViewCellStyle2;
             this.Fullname.FillWeight = 3.998264F;
             this.Fullname.HeaderText = "Tên học viên";
             this.Fullname.MinimumWidth = 300;
@@ -505,6 +490,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
     }
 }

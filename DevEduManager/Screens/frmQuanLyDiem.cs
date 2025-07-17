@@ -32,9 +32,9 @@ namespace DevEduManager.Screens
                 //UIHelper.ShowWaitForm(this);
                 string url = $"{_semesterUrl}thongTinKyHoc";
                 DataTable result = await callAPI.GetAPI(url);
-                cboKy.DataSource = result;
-                cboKy.DisplayMember = "SemesterName";
-                cboKy.ValueMember = "SemesterID";
+                cboCT.DataSource = result;
+                cboCT.DisplayMember = "SemesterName";
+                cboCT.ValueMember = "SemesterID";
                 await LoadDataToGridView(); // Load lớp ngay sau khi có kỳ
             }
             catch (Exception ex)
@@ -53,7 +53,7 @@ namespace DevEduManager.Screens
             {
                 //UIHelper.ShowWaitForm(this);
 
-                string semesterId = cboKy.SelectedValue?.ToString();
+                string semesterId = cboCT.SelectedValue?.ToString();
                 string url = $"{_url}layLop";
 
                 if (!string.IsNullOrEmpty(semesterId))
@@ -177,7 +177,7 @@ namespace DevEduManager.Screens
 
         private void btnDatLai_Click(object sender, EventArgs e)
         {
-            txtMaLop.Text = string.Empty;
+            txtTenLop.Text = string.Empty;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

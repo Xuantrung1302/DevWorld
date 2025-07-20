@@ -224,6 +224,12 @@
     <Compile Include="Modals\frmQuyDinh.Designer.cs">
       <DependentUpon>frmQuyDinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\frmTaoKetQuaThi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmTaoKetQuaThi.Designer.cs">
+      <DependentUpon>frmTaoKetQuaThi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmTaoLichThi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +357,12 @@
     </Compile>
     <Compile Include="Screens\frmDonTu.Designer.cs">
       <DependentUpon>frmDonTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmHocPhi.Designer.cs">
+      <DependentUpon>frmHocPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\frmLapPhieuGhiDanh.cs">
       <SubType>Form</SubType>
@@ -521,6 +533,9 @@
     <EmbeddedResource Include="Modals\frmQuyDinh.resx">
       <DependentUpon>frmQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmTaoKetQuaThi.resx">
+      <DependentUpon>frmTaoKetQuaThi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmTaoLichThi.resx">
       <DependentUpon>frmTaoLichThi.cs</DependentUpon>
     </EmbeddedResource>
@@ -591,6 +606,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmDonTu.resx">
       <DependentUpon>frmDonTu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmHocPhi.resx">
+      <DependentUpon>frmHocPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmLapPhieuGhiDanh.resx">
       <DependentUpon>frmLapPhieuGhiDanh.cs</DependentUpon>

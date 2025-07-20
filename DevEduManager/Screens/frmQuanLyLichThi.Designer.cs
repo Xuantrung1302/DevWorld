@@ -48,6 +48,7 @@
             this.SubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThemLich = new System.Windows.Forms.Button();
+            this.txtTenMon = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLichThi)).BeginInit();
@@ -77,6 +78,7 @@
             this.tableLayoutPanel1.Controls.Add(this.cboKH, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.dtgvLichThi, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnThemLich, 9, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtTenMon, 8, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -150,7 +152,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(194, 16);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Kỳ học";
+            this.label4.Text = "Môn học";
             // 
             // btnTK
             // 
@@ -161,6 +163,7 @@
             this.btnTK.TabIndex = 16;
             this.btnTK.Text = "Tìm kiếm";
             this.btnTK.UseVisualStyleBackColor = true;
+            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
             // 
             // cboLH
             // 
@@ -198,6 +201,7 @@
             this.dtgvLichThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvLichThi.Location = new System.Drawing.Point(23, 150);
             this.dtgvLichThi.Name = "dtgvLichThi";
+            this.dtgvLichThi.RowHeadersVisible = false;
             this.dtgvLichThi.RowHeadersWidth = 51;
             this.dtgvLichThi.RowTemplate.Height = 24;
             this.dtgvLichThi.Size = new System.Drawing.Size(1385, 631);
@@ -205,6 +209,7 @@
             // 
             // ExamID
             // 
+            this.ExamID.DataPropertyName = "ExamID";
             this.ExamID.HeaderText = "Mã lịch thi";
             this.ExamID.MinimumWidth = 6;
             this.ExamID.Name = "ExamID";
@@ -212,36 +217,42 @@
             // 
             // ExamName
             // 
+            this.ExamName.DataPropertyName = "ExamName";
             this.ExamName.HeaderText = "Tên lịch thi";
             this.ExamName.MinimumWidth = 6;
             this.ExamName.Name = "ExamName";
             // 
             // ExamType
             // 
+            this.ExamType.DataPropertyName = "ExamType";
             this.ExamType.HeaderText = "Kì thi";
             this.ExamType.MinimumWidth = 6;
             this.ExamType.Name = "ExamType";
             // 
             // ExamDateStart
             // 
+            this.ExamDateStart.DataPropertyName = "ExamDateStart";
             this.ExamDateStart.HeaderText = "Ngày bắt đầu";
             this.ExamDateStart.MinimumWidth = 6;
             this.ExamDateStart.Name = "ExamDateStart";
             // 
             // ExamDateEnd
             // 
+            this.ExamDateEnd.DataPropertyName = "ExamDateEnd";
             this.ExamDateEnd.HeaderText = "Ngày kết thúc";
             this.ExamDateEnd.MinimumWidth = 6;
             this.ExamDateEnd.Name = "ExamDateEnd";
             // 
             // Room
             // 
+            this.Room.DataPropertyName = "Room";
             this.Room.HeaderText = "Phòng thi";
             this.Room.MinimumWidth = 6;
             this.Room.Name = "Room";
             // 
             // SubjectID
             // 
+            this.SubjectID.DataPropertyName = "SubjectID";
             this.SubjectID.HeaderText = "Mã môn học";
             this.SubjectID.MinimumWidth = 6;
             this.SubjectID.Name = "SubjectID";
@@ -249,6 +260,7 @@
             // 
             // SubjectName
             // 
+            this.SubjectName.DataPropertyName = "SubjectName";
             this.SubjectName.HeaderText = "Tên môn học";
             this.SubjectName.MinimumWidth = 6;
             this.SubjectName.Name = "SubjectName";
@@ -263,6 +275,14 @@
             this.btnThemLich.UseVisualStyleBackColor = true;
             this.btnThemLich.Click += new System.EventHandler(this.btnThemLich_Click);
             // 
+            // txtTenMon
+            // 
+            this.txtTenMon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTenMon.Location = new System.Drawing.Point(753, 69);
+            this.txtTenMon.Name = "txtTenMon";
+            this.txtTenMon.Size = new System.Drawing.Size(355, 22);
+            this.txtTenMon.TabIndex = 21;
+            // 
             // frmQuanLyLichThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -272,6 +292,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmQuanLyLichThi";
             this.Text = "frmQuanLyLichThi";
+            this.Load += new System.EventHandler(this.frmQuanLyLichThi_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -294,6 +315,8 @@
         private System.Windows.Forms.ComboBox cboLH;
         private System.Windows.Forms.ComboBox cboKH;
         private System.Windows.Forms.DataGridView dtgvLichThi;
+        private System.Windows.Forms.Button btnThemLich;
+        private System.Windows.Forms.TextBox txtTenMon;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExamType;
@@ -302,6 +325,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Room;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
-        private System.Windows.Forms.Button btnThemLich;
     }
 }

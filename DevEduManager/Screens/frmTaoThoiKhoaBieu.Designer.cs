@@ -35,7 +35,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnTK = new System.Windows.Forms.Button();
             this.cboLH = new System.Windows.Forms.ComboBox();
             this.cboKH = new System.Windows.Forms.ComboBox();
             this.dtgvLich = new System.Windows.Forms.DataGridView();
@@ -64,11 +63,10 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnTK, 7, 2);
             this.tableLayoutPanel1.Controls.Add(this.cboLH, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.cboKH, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.dtgvLich, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnExportExcel, 8, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btnExportExcel, 7, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -140,15 +138,6 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Kỳ học";
             // 
-            // btnTK
-            // 
-            this.btnTK.Location = new System.Drawing.Point(653, 69);
-            this.btnTK.Name = "btnTK";
-            this.btnTK.Size = new System.Drawing.Size(75, 23);
-            this.btnTK.TabIndex = 16;
-            this.btnTK.Text = "Tìm kiếm";
-            this.btnTK.UseVisualStyleBackColor = true;
-            // 
             // cboLH
             // 
             this.cboLH.FormattingEnabled = true;
@@ -179,9 +168,10 @@
             // 
             // btnExportExcel
             // 
-            this.btnExportExcel.Location = new System.Drawing.Point(753, 69);
+            this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExportExcel.Location = new System.Drawing.Point(653, 69);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnExportExcel.Size = new System.Drawing.Size(94, 32);
             this.btnExportExcel.TabIndex = 20;
             this.btnExportExcel.Text = "In";
             this.btnExportExcel.UseVisualStyleBackColor = true;
@@ -214,7 +204,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnTK;
         private System.Windows.Forms.ComboBox cboLH;
         private System.Windows.Forms.ComboBox cboKH;
         private System.Windows.Forms.DataGridView dtgvLich;

@@ -340,6 +340,7 @@
             this.btnBaoCaoHocVienTheoThang.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnBaoCaoHocVienTheoThang.Size = new System.Drawing.Size(344, 38);
             this.btnBaoCaoHocVienTheoThang.Text = "Quản lý kỳ học";
+            this.btnBaoCaoHocVienTheoThang.Visible = false;
             this.btnBaoCaoHocVienTheoThang.Click += new System.EventHandler(this.btnBaoCaoHocVienTheoThang_Click);
             // 
             // btnThongKeNoHocVien
@@ -394,6 +395,7 @@
             this.mniAS_D_SM_19.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.mniAS_D_SM_19.Size = new System.Drawing.Size(344, 38);
             this.mniAS_D_SM_19.Text = "Quản lý feedback";
+            this.mniAS_D_SM_19.Visible = false;
             // 
             // mniAS_D_SM_15
             // 
@@ -402,6 +404,7 @@
             this.mniAS_D_SM_15.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.mniAS_D_SM_15.Size = new System.Drawing.Size(344, 38);
             this.mniAS_D_SM_15.Text = "Quản lý điểm giảng viên";
+            this.mniAS_D_SM_15.Visible = false;
             // 
             // toolStripMenuItem7
             // 
@@ -418,6 +421,7 @@
             this.toolStripMenuItem8.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem8.Size = new System.Drawing.Size(344, 38);
             this.toolStripMenuItem8.Text = "Quản lý thông báo";
+            this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripMenuItem10
             // 
@@ -524,6 +528,7 @@
             this.mniAS_D_US_06.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.mniAS_D_US_06.Size = new System.Drawing.Size(292, 38);
             this.mniAS_D_US_06.Text = "Thay đổi thông tin";
+            this.mniAS_D_US_06.Visible = false;
             // 
             // toolStripMenuItem5
             // 
@@ -567,7 +572,7 @@
             this.mniAS_D_OD_06.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.mniAS_D_OD_06.Name = "mniAS_D_OD_06";
             this.mniAS_D_OD_06.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.mniAS_D_OD_06.Size = new System.Drawing.Size(196, 38);
+            this.mniAS_D_OD_06.Size = new System.Drawing.Size(230, 38);
             this.mniAS_D_OD_06.Text = "Lịch học";
             this.mniAS_D_OD_06.Click += new System.EventHandler(this.mniAS_D_OD_06_Click);
             // 
@@ -576,8 +581,9 @@
             this.toolStripMenuItem4.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(230, 38);
             this.toolStripMenuItem4.Text = "Lịch thi";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -593,7 +599,7 @@
             this.toolStripMenuItem2.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(230, 38);
             this.toolStripMenuItem2.Text = "Học phí";
             // 
             // toolStripMenuItem11
@@ -601,7 +607,7 @@
             this.toolStripMenuItem11.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
             this.toolStripMenuItem11.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(230, 38);
             this.toolStripMenuItem11.Text = "Feedback";
             // 
             // pmniAS_D_WS

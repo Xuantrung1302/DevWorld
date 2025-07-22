@@ -1,6 +1,7 @@
 ﻿using BusinessLogic;
 using DevEduManager.Modals;
 using DevEduManager.Screens;
+using Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -435,7 +436,7 @@ namespace DevEduManager
         /// </summary>
         public void LoadGiaoDien(DataTable userName)
         {
-            lblUserName.Text = "Xin chào, " + userName.Rows[0]["Username"].ToString();
+            lblUserName.Text = CurrentUser.Username;
             ResetRibbonControlStatus();
             string role = userName.Rows[0]["Role"].ToString();
 
@@ -758,6 +759,11 @@ namespace DevEduManager
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mniAS_D_SM_15_Click(object sender, EventArgs e)
         {
 
         }

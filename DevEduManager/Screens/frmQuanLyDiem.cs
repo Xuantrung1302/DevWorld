@@ -14,6 +14,7 @@ namespace DevEduManager.Screens
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
         private string _semesterUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Semester/";
         private string _examUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Exam/";
+        private string _courseUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Course/";
 
         public frmQuanLyDiem()
         {
@@ -30,12 +31,12 @@ namespace DevEduManager.Screens
             try
             {
                 //UIHelper.ShowWaitForm(this);
-                string url = $"{_semesterUrl}thongTinKyHoc";
+                string url = $"{_courseUrl}danhSachKhoaHoc";
                 DataTable result = await callAPI.GetAPI(url);
                 cboCT.DataSource = result;
-                cboCT.DisplayMember = "SemesterName";
-                cboCT.ValueMember = "SemesterID";
-                await LoadDataToGridView(); // Load lớp ngay sau khi có kỳ
+                cboCT.DisplayMember = "CourseName";
+                cboCT.ValueMember = "CourseID";
+                await LoadDataToGridView();
             }
             catch (Exception ex)
             {
@@ -53,11 +54,11 @@ namespace DevEduManager.Screens
             {
                 //UIHelper.ShowWaitForm(this);
 
-                string semesterId = cboCT.SelectedValue?.ToString();
+                string courseId = cboCT.SelectedValue?.ToString();
                 string url = $"{_url}layLop";
 
-                if (!string.IsNullOrEmpty(semesterId))
-                    url += $"?semesterID={Uri.EscapeDataString(semesterId)}";
+                if (!string.IsNullOrEmpty(courseId))
+                    url += $"?CourseID={Uri.EscapeDataString(courseId)}";
 
                 DataTable result = await callAPI.GetAPI(url);
                 gridLop.AutoGenerateColumns = false;
@@ -177,7 +178,7 @@ namespace DevEduManager.Screens
 
         private void btnDatLai_Click(object sender, EventArgs e)
         {
-            txtTenLop.Text = string.Empty;
+            //txtTenLop.Text = string.Empty;
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

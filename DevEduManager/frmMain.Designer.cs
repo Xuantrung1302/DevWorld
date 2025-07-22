@@ -405,6 +405,7 @@
             this.mniAS_D_SM_15.Size = new System.Drawing.Size(344, 38);
             this.mniAS_D_SM_15.Text = "Quản lý điểm giảng viên";
             this.mniAS_D_SM_15.Visible = false;
+            this.mniAS_D_SM_15.Click += new System.EventHandler(this.mniAS_D_SM_15_Click);
             // 
             // toolStripMenuItem7
             // 

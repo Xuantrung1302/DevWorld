@@ -4,7 +4,6 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace DevEduManager.Screens
@@ -14,6 +13,8 @@ namespace DevEduManager.Screens
         private readonly CallAPI callAPI = new CallAPI();
         private readonly string _courseUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Course/";
         private readonly string _examUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Exam/";
+        private readonly string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
+        private readonly string _subjectUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Subject/";
 
         public frmQuanLyLichThi()
         {
@@ -46,8 +47,8 @@ namespace DevEduManager.Screens
 
                     cboCT.SelectedIndexChanged += cboCT_SelectedIndexChanged;
 
-                    // Load DataGridView với CourseID đầu tiên
-                    await LoadExamScheduleAsync(cboCT.SelectedValue?.ToString(), null);
+                    // Load môn học khi form load
+                    await LoadComboBoxMonHocAsync(cboCT.SelectedValue?.ToString());
                 }
             }
             catch (Exception ex)
@@ -57,37 +58,73 @@ namespace DevEduManager.Screens
         }
 
         /// <summary>
-        /// Sự kiện khi chọn khóa học khác => load lại lịch thi
+        /// Hàm load danh sách môn học dựa vào CourseID
+        /// </summary>
+        private async Task LoadComboBoxMonHocAsync(string courseID)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(courseID))
+                    return;
+
+                string url = $"{_subjectUrl}layDanhSachMonHocTheoKhoaHoc?courseId={courseID}";
+                DataTable dt = await callAPI.GetAPI(url);
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    cboMH.SelectedIndexChanged -= cboMH_SelectedIndexChanged;
+
+                    cboMH.DataSource = dt;
+                    cboMH.DisplayMember = "SubjectName"; 
+                    cboMH.ValueMember = "SubjectID";     
+                    cboMH.SelectedIndex = 0;
+
+                    cboMH.SelectedIndexChanged += cboMH_SelectedIndexChanged;
+
+                    await LoadExamScheduleAsync(courseID, cboMH.SelectedValue?.ToString());
+                }
+                else
+                {
+                    cboMH.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi load danh sách môn học: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Sự kiện khi chọn khóa học khác => load lại cboMH và dtgv
         /// </summary>
         private async void cboCT_SelectedIndexChanged(object sender, EventArgs e)
         {
             string courseID = cboCT.SelectedValue?.ToString();
-            await LoadExamScheduleAsync(courseID, txtTenMon.Text.Trim());
+            await LoadComboBoxMonHocAsync(courseID);
         }
 
         /// <summary>
-        /// Sự kiện click nút tìm kiếm
+        /// Sự kiện khi chọn môn học => load lại DataGridView
         /// </summary>
-        private async void btnTK_Click(object sender, EventArgs e)
+        private async void cboMH_SelectedIndexChanged(object sender, EventArgs e)
         {
             string courseID = cboCT.SelectedValue?.ToString();
-            string subjectName = txtTenMon.Text.Trim();
-            await LoadExamScheduleAsync(courseID, subjectName);
+            string subjectID = cboMH.SelectedValue?.ToString();
+            await LoadExamScheduleAsync(courseID, subjectID);
         }
 
         /// <summary>
         /// Gọi API lấy danh sách lịch thi và bind vào DataGridView
         /// </summary>
-        private async Task LoadExamScheduleAsync(string courseID, string subjectName)
+        private async Task LoadExamScheduleAsync(string courseID, string subjectID)
         {
             try
             {
                 string url = $"{_examUrl}LayDanhSachLichThi";
 
-                // Nếu có tham số => thêm query string
-                if (!string.IsNullOrEmpty(courseID) || !string.IsNullOrEmpty(subjectName))
+                if (!string.IsNullOrEmpty(courseID) || !string.IsNullOrEmpty(subjectID))
                 {
-                    url += $"?courseID={courseID}&subjectName={subjectName}";
+                    url += $"?courseID={courseID}&SubjectID={subjectID}";
                 }
 
                 DataTable dt = await callAPI.GetAPI(url);
@@ -95,7 +132,6 @@ namespace DevEduManager.Screens
                 {
                     dtgvLichThi.AutoGenerateColumns = false;
                     dtgvLichThi.DataSource = dt;
-
                 }
                 else
                 {
@@ -109,11 +145,18 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void btnThemLich_Click(object sender, EventArgs e)
+        private async void btnThemLich_Click(object sender, EventArgs e)
         {
             frmTaoLichThi frm = new frmTaoLichThi();
             frm.ShowDialog();
-
+            string courseID = cboCT.SelectedValue?.ToString();
+            string subjectID = cboMH.SelectedValue?.ToString();
+            await LoadExamScheduleAsync(courseID, subjectID);
+        }
+        private void btnTK_Click(object sender, EventArgs e)
+        {
+            //frmTaoLichThi frm = new frmTaoLichThi();
+            //frm.ShowDialog();
         }
     }
 }

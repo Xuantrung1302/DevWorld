@@ -45,6 +45,7 @@
     <Compile Include="Models\BangDiem.cs" />
     <Compile Include="Models\ChiTietTrungTam.cs" />
     <Compile Include="Models\Class_Plan_Weekly_Models.cs" />
+    <Compile Include="Models\CurrentUser.cs" />
     <Compile Include="Models\DangKy.cs" />
     <Compile Include="Models\DangKyLop.cs" />
     <Compile Include="Models\GiangDay.cs" />

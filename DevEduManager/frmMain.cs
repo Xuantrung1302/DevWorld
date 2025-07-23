@@ -692,7 +692,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmQuanLyDiem frm = new frmQuanLyDiem()
+            frmQuanLyDiemHocSinh frm = new frmQuanLyDiemHocSinh()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -746,16 +746,16 @@ namespace DevEduManager
 
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
         {
-            //pnlWorkspace.Controls.Clear();
+            pnlWorkspace.Controls.Clear();
 
-            //frmBangDiem frm = new frmBangDiem()
-            //{
-            //    Dock = DockStyle.Fill,
-            //    TopLevel = false
-            //};
+            frmQuanLyThongBao frm = new frmQuanLyThongBao()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
 
-            //pnlWorkspace.Controls.Add(frm);
-            //frm.Show();
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
@@ -764,6 +764,11 @@ namespace DevEduManager
         }
 
         private void mniAS_D_SM_15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
 
         }

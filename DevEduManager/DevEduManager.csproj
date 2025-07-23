@@ -278,6 +278,12 @@
     <Compile Include="Modals\frmMonHocEdit.Designer.cs">
       <DependentUpon>frmMonHocEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\frmThongBaoPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmThongBaoPopup.Designer.cs">
+      <DependentUpon>frmThongBaoPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmThongTinPhanMem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -453,6 +459,12 @@
     </Compile>
     <Compile Include="Screens\frmQuanLyTaiKhoan.Designer.cs">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\frmQuanLyThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmQuanLyThongBao.Designer.cs">
+      <DependentUpon>frmQuanLyThongBao.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\frmTaoThoiKhoaBieu.cs">
       <SubType>Form</SubType>
@@ -664,6 +676,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmQuanLyThongBao.resx">
+      <DependentUpon>frmQuanLyThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmTaoThoiKhoaBieu.resx">
       <DependentUpon>frmTaoThoiKhoaBieu.cs</DependentUpon>

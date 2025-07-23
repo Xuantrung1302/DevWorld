@@ -1,4 +1,6 @@
 ﻿using BusinessLogic;
+using Entity.Models;
+using Newtonsoft.Json;
 using System;
 using System.Configuration;
 using System.Data;
@@ -175,6 +177,70 @@ namespace DevEduManager.Modals
                 MessageBox.Show($"Lỗi load danh sách học viên & điểm: {ex.Message}");
             }
         }
+
+        private async void btnLuu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string classID = cboLH.SelectedValue?.ToString();
+                string subjectID = cboMH.SelectedValue?.ToString();
+
+                if (string.IsNullOrEmpty(classID) || string.IsNullOrEmpty(subjectID))
+                {
+                    MessageBox.Show("Vui lòng chọn lớp và môn học.");
+                    return;
+                }
+
+                foreach (DataGridViewRow row in dgvNhapDiem.Rows)
+                {
+                    if (row.IsNewRow) continue;
+
+                    string studentID = row.Cells["StudentID"].Value?.ToString();
+                    string scoreText = row.Cells["Score"].Value?.ToString();
+
+                    if (string.IsNullOrEmpty(studentID)) continue;
+
+                    decimal score = 0;
+                    if (!string.IsNullOrEmpty(scoreText))
+                    {
+                        if (!decimal.TryParse(scoreText, out score))
+                        {
+                            MessageBox.Show($"Điểm nhập cho học viên {studentID} không hợp lệ!");
+                            return;
+                        }
+                    }
+
+                    // Tạo object KetQua
+                    var ketQua = new
+                    {
+                        StudentID = studentID,
+                        ClassID = classID,
+                        SubjectID = subjectID,
+                        Score = score
+                    };
+
+                    // Chuyển sang JSON
+                    string jsonData = JsonConvert.SerializeObject(ketQua);
+
+                    // Gọi API Post
+                    string url = $"{_examUrl}themKetQua";
+                    bool result = await callAPI.PostAPI(url, jsonData);
+
+                    if (!result)
+                    {
+                        MessageBox.Show($"Lưu điểm thất bại cho học viên {studentID}");
+                        return;
+                    }
+                }
+
+                MessageBox.Show("Lưu điểm thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi lưu điểm: {ex.Message}");
+            }
+        }
+
 
     }
 }

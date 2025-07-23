@@ -163,6 +163,7 @@
             this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "LƯU ĐIỂM";
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // tableLayoutPanel1
             // 

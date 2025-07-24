@@ -233,6 +233,7 @@ namespace DevEduManager.Screens
             string url = $"{_url}thongTinLopDay?teacherID={maGV}";
             DataTable result = await callAPI.GetAPI(url);
 
+            gridLop.AutoGenerateColumns = false;
             gridLop.Dock = DockStyle.Fill;
             gridLop.DataSource = result.Rows.Count > 0 ? result : null;
         }

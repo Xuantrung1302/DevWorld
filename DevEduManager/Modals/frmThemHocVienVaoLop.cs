@@ -13,22 +13,22 @@ namespace DevEduManager.Modals
         private CallAPI callAPI = new CallAPI();
         private string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
         private string classID;
-        private string _semesterName;
+        private string _courseName;
         private string _className;
 
         private CheckBox chkAll = new CheckBox(); // Check All trên header
 
-        public frmThemHocVienVaoLop(string classId, string semesterName, string className)
+        public frmThemHocVienVaoLop(string classId, string courseName, string className)
         {
             InitializeComponent();
             classID = classId;
-            _semesterName = semesterName;
+            _courseName = courseName;
             _className = className;
         }
 
         private void frmThemHocVienVaoLop_Load(object sender, EventArgs e)
         {
-            txtKyHoc.Text = _semesterName;
+            txtCT.Text = _courseName;
             txtClass.Text = _className;
             LoadDataToGridView(classID);
         }

@@ -35,7 +35,7 @@
             this.MultiSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtKyHoc = new System.Windows.Forms.TextBox();
+            this.txtCT = new System.Windows.Forms.TextBox();
             this.txtClass = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.gridListStudent, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtKyHoc, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtCT, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtClass, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnSave, 2, 7);
@@ -82,9 +82,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(130, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên kỳ học";
+            this.label1.Text = "Tên chương trình học";
             // 
             // label2
             // 
@@ -138,14 +138,14 @@
             this.Fullname.MinimumWidth = 440;
             this.Fullname.Name = "Fullname";
             // 
-            // txtKyHoc
+            // txtCT
             // 
-            this.txtKyHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtKyHoc.Enabled = false;
-            this.txtKyHoc.Location = new System.Drawing.Point(3, 33);
-            this.txtKyHoc.Name = "txtKyHoc";
-            this.txtKyHoc.Size = new System.Drawing.Size(343, 22);
-            this.txtKyHoc.TabIndex = 4;
+            this.txtCT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCT.Enabled = false;
+            this.txtCT.Location = new System.Drawing.Point(3, 33);
+            this.txtCT.Name = "txtCT";
+            this.txtCT.Size = new System.Drawing.Size(343, 22);
+            this.txtCT.TabIndex = 4;
             // 
             // txtClass
             // 
@@ -229,6 +229,7 @@
             this.ClientSize = new System.Drawing.Size(703, 720);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmThemHocVienVaoLop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm học viên vào lớp";
             this.Load += new System.EventHandler(this.frmThemHocVienVaoLop_Load);
             this.Shown += new System.EventHandler(this.frmThemHocVienVaoLop_Shown);
@@ -247,7 +248,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView gridListStudent;
-        private System.Windows.Forms.TextBox txtKyHoc;
+        private System.Windows.Forms.TextBox txtCT;
         private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label3;

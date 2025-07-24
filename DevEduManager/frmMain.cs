@@ -1,6 +1,7 @@
 ﻿using BusinessLogic;
 using DevEduManager.Modals;
 using DevEduManager.Screens;
+using Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -241,8 +242,16 @@ namespace DevEduManager
 
         private void btnKetNoiCSDL_Click(object sender, EventArgs e)
         {
-            frmKetNoiCSDL frm = new frmKetNoiCSDL();
-            frm.ShowDialog();
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyDoanhThu frm = new frmQuanLyDoanhThu()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
         }
 
         private void btnNVDoiMatKhau_Click(object sender, EventArgs e)
@@ -431,7 +440,7 @@ namespace DevEduManager
         /// </summary>
         public void LoadGiaoDien(DataTable userName)
         {
-            lblUserName.Text = "Xin chào, " + userName.Rows[0]["Username"].ToString();
+            lblUserName.Text = CurrentUser.Username;
             ResetRibbonControlStatus();
             string role = userName.Rows[0]["Role"].ToString();
 
@@ -542,11 +551,11 @@ namespace DevEduManager
             frm.Show();
         }
 
-        private void btnThongKeDiemTheoLop_Click(object sender, EventArgs e)
+        private void btnLichAll_Click(object sender, EventArgs e)
         {
             pnlWorkspace.Controls.Clear();
 
-            frmThongKeDiemTheoLop frm = new frmThongKeDiemTheoLop()
+            frmTaoThoiKhoaBieu frm = new frmTaoThoiKhoaBieu()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -560,7 +569,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmThoiKhoaBieuAll frm = new frmThoiKhoaBieuAll()
+            frmQuanLyLichThi frm = new frmQuanLyLichThi()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -628,7 +637,16 @@ namespace DevEduManager
 
         private void mniAS_D_OD_06_Click(object sender, EventArgs e)
         {
+            pnlWorkspace.Controls.Clear();
 
+            frmQuanLyDiem frm = new frmQuanLyDiem()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
         }
 
         private void btnBaoCaoHocVienTheoThang_Click(object sender, EventArgs e)
@@ -649,7 +667,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmChuongTrinhHoc frm = new frmChuongTrinhHoc()
+            frmQuanLyKhoaHoc frm = new frmQuanLyKhoaHoc()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -678,7 +696,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmQuanLyDiem frm = new frmQuanLyDiem()
+            frmQuanLyDiemHocSinh frm = new frmQuanLyDiemHocSinh()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -686,6 +704,77 @@ namespace DevEduManager
 
             pnlWorkspace.Controls.Add(frm);
             frm.Show();
+        }
+
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyHocPhi frm = new frmQuanLyHocPhi()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmBaoCaoDiemDanhGiaoVien frm = new frmBaoCaoDiemDanhGiaoVien()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmBangDiem frm = new frmBangDiem()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyThongBao frm = new frmQuanLyThongBao()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mniAS_D_SM_15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
 using System.Configuration;
+using Entity.Models;
 
 namespace DevEduManager.Screens
 {
@@ -21,6 +22,7 @@ namespace DevEduManager.Screens
         }
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
+        public DataTable userData;
         #region Events
 
         private bool CheckDangNhap()
@@ -77,27 +79,51 @@ namespace DevEduManager.Screens
 
                 try
                 {
-                    // Gọi API
-                    string url = $"{_url}dangNhap?Username={userName}&Password={passWord}"; // Thay bằng URL API thực tế
+                    string url = $"{_url}dangNhap?Username={userName}&Password={passWord}";
                     DataTable result = await callAPI.GetAPI(url);
 
-                    // Kiểm tra kết quả
                     if (result.Rows.Count > 0)
                     {
+                        DataRow row = result.Rows[0];
+
+                        // Gán Role và Username gốc
+                        CurrentUser.Role = row["Role"].ToString();
+                        CurrentUser.Username = row["Username"].ToString();
+
+                        // Nếu không phải Admin, thì gán tên thực dựa trên ID
+                        if (CurrentUser.Role != "Admin")
+                        {
+                            if (!string.IsNullOrEmpty(row["EmployeeID"].ToString()))
+                            {
+                                CurrentUser.Username = row["EmployeeName"].ToString();
+                            }
+                            else if (!string.IsNullOrEmpty(row["StudentID"].ToString()))
+                            {
+                                CurrentUser.Username = row["StudentName"].ToString();
+                            }
+                            else if (!string.IsNullOrEmpty(row["TeacherID"].ToString()))
+                            {
+                                CurrentUser.Username = row["TeacherName"].ToString();
+                            }
+                        }
+
+                        // Lưu thông tin vào Settings (nếu muốn lưu đăng nhập)
                         Settings.Default.Login_UserName = txtTenDangNhap.Text;
                         Settings.Default.Login_Password = txtMatKhau.Text;
                         Settings.Default.Save();
 
-                        frmMain frm = new frmMain(result);
-                        this.Hide(); // Ẩn frmDangNhap trước khi mở frmMain
+                        // Mở form chính
+                        userData = result;
+                        frmMain frm = new frmMain(userData);
+                        this.Hide();
                         frm.ShowDialog();
-                        this.Close(); // Đóng frmDangNhap sau khi frmMain được đóng
+                        this.Close();
                     }
                     else
                     {
-                        lblNotification.Text = "Tên đăng nhập hoặc mật khẩu không chính xác";
-                        System.Media.SystemSounds.Exclamation.Play();
+                        MessageBox.Show("Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
+
                 }
                 catch (Exception ex)
                 {

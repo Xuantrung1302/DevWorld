@@ -516,6 +516,7 @@
             this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem1.Size = new System.Drawing.Size(292, 38);
             this.toolStripMenuItem1.Text = "Đổi mật khẩu";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // mniAS_D_US_06
             // 

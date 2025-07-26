@@ -288,8 +288,8 @@ namespace DevEduManager
                 tenNguoiDung = receivedData.Rows[0]["TenGV"].ToString();
             }
 
-            frmDoiMatKhau frm = new frmDoiMatKhau(tenNguoiDung, tenDangNhap, matKhau);
-            frm.ShowDialog();
+            //frmDoiMatKhau frm = new frmDoiMatKhau(tenNguoiDung, tenDangNhap, matKhau);
+            //frm.ShowDialog();
         }
 
         #endregion
@@ -764,7 +764,16 @@ namespace DevEduManager
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
+            pnlWorkspace.Controls.Clear();
 
+            frmLichThiHocSinh frm = new frmLichThiHocSinh()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
         }
 
         private void mniAS_D_SM_15_Click(object sender, EventArgs e)
@@ -773,6 +782,11 @@ namespace DevEduManager
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }

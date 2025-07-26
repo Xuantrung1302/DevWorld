@@ -2,15 +2,8 @@
 {
     partial class frmDoiMatKhau
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,239 +15,179 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnHuyBo = new System.Windows.Forms.Button();
-            this.btnLuuThongTin = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMatKhauMoiAgain = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblMatKhauCu = new System.Windows.Forms.Label();
+            this.lblMatKhauMoi = new System.Windows.Forms.Label();
+            this.lblNhapLai = new System.Windows.Forms.Label();
             this.txtMatKhauCu = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTenDangNhap = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblUserName = new System.Windows.Forms.Label();
+            this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
+            this.txtMatKhauMoiAgain = new System.Windows.Forms.TextBox();
+            this.panelButton = new System.Windows.Forms.Panel();
+            this.btnHuyBo = new System.Windows.Forms.Button();
+            this.btnDoiMatKhau = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanelMain.SuspendLayout();
+            this.panelButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel2
+            // tableLayoutPanelMain
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel2.Controls.Add(this.btnHuyBo);
-            this.panel2.Controls.Add(this.btnLuuThongTin);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 310);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(429, 61);
-            this.panel2.TabIndex = 31;
+            this.tableLayoutPanelMain.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanelMain.ColumnCount = 2;
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanelMain.Controls.Add(this.lblTitle, 0, 0);
+            this.tableLayoutPanelMain.Controls.Add(this.lblMatKhauCu, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.lblMatKhauMoi, 0, 2);
+            this.tableLayoutPanelMain.Controls.Add(this.lblNhapLai, 0, 3);
+            this.tableLayoutPanelMain.Controls.Add(this.txtMatKhauCu, 1, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.txtMatKhauMoi, 1, 2);
+            this.tableLayoutPanelMain.Controls.Add(this.txtMatKhauMoiAgain, 1, 3);
+            this.tableLayoutPanelMain.Controls.Add(this.panelButton, 0, 4);
+            this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelMain.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
+            this.tableLayoutPanelMain.RowCount = 5;
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(600, 394);
+            this.tableLayoutPanelMain.TabIndex = 0;
             // 
-            // btnHuyBo
+            // lblTitle
             // 
-            this.btnHuyBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuyBo.BackColor = System.Drawing.Color.Silver;
-            this.btnHuyBo.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuyBo.FlatAppearance.BorderSize = 0;
-            this.btnHuyBo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnHuyBo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnHuyBo.Location = new System.Drawing.Point(309, 12);
-            this.btnHuyBo.Name = "btnHuyBo";
-            this.btnHuyBo.Size = new System.Drawing.Size(107, 37);
-            this.btnHuyBo.TabIndex = 3;
-            this.btnHuyBo.Text = "Hủy bỏ";
-            this.btnHuyBo.UseVisualStyleBackColor = false;
+            this.lblTitle.BackColor = System.Drawing.Color.SteelBlue;
+            this.tableLayoutPanelMain.SetColumnSpan(this.lblTitle, 2);
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(4, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(592, 74);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "ĐỔI MẬT KHẨU";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnLuuThongTin
+            // lblMatKhauCu
             // 
-            this.btnLuuThongTin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLuuThongTin.BackColor = System.Drawing.Color.Silver;
-            this.btnLuuThongTin.FlatAppearance.BorderSize = 0;
-            this.btnLuuThongTin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnLuuThongTin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnLuuThongTin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLuuThongTin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnLuuThongTin.Location = new System.Drawing.Point(173, 12);
-            this.btnLuuThongTin.Name = "btnLuuThongTin";
-            this.btnLuuThongTin.Size = new System.Drawing.Size(130, 37);
-            this.btnLuuThongTin.TabIndex = 2;
-            this.btnLuuThongTin.Text = "Đổi mật khẩu";
-            this.btnLuuThongTin.UseVisualStyleBackColor = false;
-            this.btnLuuThongTin.Click += new System.EventHandler(this.btnLuuThongTin_Click);
+            this.lblMatKhauCu.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblMatKhauCu.AutoSize = true;
+            this.lblMatKhauCu.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblMatKhauCu.Location = new System.Drawing.Point(50, 99);
+            this.lblMatKhauCu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMatKhauCu.Name = "lblMatKhauCu";
+            this.lblMatKhauCu.Size = new System.Drawing.Size(156, 23);
+            this.lblMatKhauCu.TabIndex = 1;
+            this.lblMatKhauCu.Text = "Nhập mật khẩu cũ:";
             // 
-            // panel1
+            // lblMatKhauMoi
             // 
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtMatKhauMoiAgain);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txtMatKhauMoi);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.txtMatKhauCu);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtTenDangNhap);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.lblUserName);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(429, 310);
-            this.panel1.TabIndex = 32;
+            this.lblMatKhauMoi.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblMatKhauMoi.AutoSize = true;
+            this.lblMatKhauMoi.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblMatKhauMoi.Location = new System.Drawing.Point(39, 173);
+            this.lblMatKhauMoi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMatKhauMoi.Name = "lblMatKhauMoi";
+            this.lblMatKhauMoi.Size = new System.Drawing.Size(167, 23);
+            this.lblMatKhauMoi.TabIndex = 2;
+            this.lblMatKhauMoi.Text = "Nhập mật khẩu mới:";
             // 
-            // label8
+            // lblNhapLai
             // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(390, 246);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(17, 13);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "(*)";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(390, 203);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(17, 13);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "(*)";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(390, 159);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 13);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "(*)";
-            // 
-            // txtMatKhauMoiAgain
-            // 
-            this.txtMatKhauMoiAgain.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMatKhauMoiAgain.Location = new System.Drawing.Point(146, 241);
-            this.txtMatKhauMoiAgain.Name = "txtMatKhauMoiAgain";
-            this.txtMatKhauMoiAgain.PasswordChar = '*';
-            this.txtMatKhauMoiAgain.Size = new System.Drawing.Size(238, 25);
-            this.txtMatKhauMoiAgain.TabIndex = 39;
-            this.txtMatKhauMoiAgain.UseSystemPasswordChar = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 13);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Nhập lại mật khẩu:";
-            // 
-            // txtMatKhauMoi
-            // 
-            this.txtMatKhauMoi.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMatKhauMoi.Location = new System.Drawing.Point(146, 198);
-            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
-            this.txtMatKhauMoi.PasswordChar = '*';
-            this.txtMatKhauMoi.Size = new System.Drawing.Size(238, 25);
-            this.txtMatKhauMoi.TabIndex = 37;
-            this.txtMatKhauMoi.UseSystemPasswordChar = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(36, 203);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Mật khẩu mới:";
+            this.lblNhapLai.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblNhapLai.AutoSize = true;
+            this.lblNhapLai.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblNhapLai.Location = new System.Drawing.Point(17, 247);
+            this.lblNhapLai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNhapLai.Name = "lblNhapLai";
+            this.lblNhapLai.Size = new System.Drawing.Size(189, 23);
+            this.lblNhapLai.TabIndex = 3;
+            this.lblNhapLai.Text = "Nhập lại mật khẩu mới:";
             // 
             // txtMatKhauCu
             // 
+            this.txtMatKhauCu.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtMatKhauCu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMatKhauCu.Location = new System.Drawing.Point(146, 154);
+            this.txtMatKhauCu.Location = new System.Drawing.Point(214, 96);
+            this.txtMatKhauCu.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.PasswordChar = '*';
-            this.txtMatKhauCu.Size = new System.Drawing.Size(238, 25);
-            this.txtMatKhauCu.TabIndex = 35;
-            this.txtMatKhauCu.UseSystemPasswordChar = true;
+            this.txtMatKhauCu.Size = new System.Drawing.Size(332, 30);
+            this.txtMatKhauCu.TabIndex = 4;
             // 
-            // label3
+            // txtMatKhauMoi
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 13);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Mật khẩu cũ:";
+            this.txtMatKhauMoi.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtMatKhauMoi.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(214, 170);
+            this.txtMatKhauMoi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.PasswordChar = '*';
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(332, 30);
+            this.txtMatKhauMoi.TabIndex = 5;
             // 
-            // txtTenDangNhap
+            // txtMatKhauMoiAgain
             // 
-            this.txtTenDangNhap.Enabled = false;
-            this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTenDangNhap.Location = new System.Drawing.Point(146, 109);
-            this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.ReadOnly = true;
-            this.txtTenDangNhap.Size = new System.Drawing.Size(238, 25);
-            this.txtTenDangNhap.TabIndex = 33;
+            this.txtMatKhauMoiAgain.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtMatKhauMoiAgain.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtMatKhauMoiAgain.Location = new System.Drawing.Point(214, 244);
+            this.txtMatKhauMoiAgain.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMatKhauMoiAgain.Name = "txtMatKhauMoiAgain";
+            this.txtMatKhauMoiAgain.PasswordChar = '*';
+            this.txtMatKhauMoiAgain.Size = new System.Drawing.Size(332, 30);
+            this.txtMatKhauMoiAgain.TabIndex = 6;
             // 
-            // label4
+            // panelButton
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 114);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Tên đăng nhập:";
+            this.panelButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tableLayoutPanelMain.SetColumnSpan(this.panelButton, 2);
+            this.panelButton.Controls.Add(this.btnHuyBo);
+            this.panelButton.Controls.Add(this.btnDoiMatKhau);
+            this.panelButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelButton.Location = new System.Drawing.Point(4, 300);
+            this.panelButton.Margin = new System.Windows.Forms.Padding(4);
+            this.panelButton.Name = "panelButton";
+            this.panelButton.Size = new System.Drawing.Size(592, 90);
+            this.panelButton.TabIndex = 7;
             // 
-            // label2
+            // btnHuyBo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 13);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Nhập đủ vào các trường để đổi mật khẩu";
+            this.btnHuyBo.BackColor = System.Drawing.Color.LightSalmon;
+            this.btnHuyBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuyBo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnHuyBo.ForeColor = System.Drawing.Color.White;
+            this.btnHuyBo.Location = new System.Drawing.Point(313, 22);
+            this.btnHuyBo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHuyBo.Name = "btnHuyBo";
+            this.btnHuyBo.Size = new System.Drawing.Size(133, 43);
+            this.btnHuyBo.TabIndex = 1;
+            this.btnHuyBo.Text = "Hủy bỏ";
+            this.btnHuyBo.UseVisualStyleBackColor = false;
+            this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
-            // pictureBox1
+            // btnDoiMatKhau
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(27, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.lblUserName.ForeColor = System.Drawing.Color.Green;
-            this.lblUserName.Location = new System.Drawing.Point(110, 29);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(126, 25);
-            this.lblUserName.TabIndex = 29;
-            this.lblUserName.Text = "<user name>";
+            this.btnDoiMatKhau.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(147, 22);
+            this.btnDoiMatKhau.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(160, 43);
+            this.btnDoiMatKhau.TabIndex = 0;
+            this.btnDoiMatKhau.Text = "Đổi mật khẩu";
+            this.btnDoiMatKhau.UseVisualStyleBackColor = false;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // errorProvider1
             // 
@@ -262,24 +195,19 @@
             // 
             // frmDoiMatKhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.CancelButton = this.btnHuyBo;
-            this.ClientSize = new System.Drawing.Size(429, 371);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(600, 394);
+            this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanelMain.ResumeLayout(false);
+            this.tableLayoutPanelMain.PerformLayout();
+            this.panelButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -287,24 +215,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnHuyBo;
-        private System.Windows.Forms.Button btnLuuThongTin;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMatKhauMoiAgain;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMatKhauMoi;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblMatKhauCu;
+        private System.Windows.Forms.Label lblMatKhauMoi;
+        private System.Windows.Forms.Label lblNhapLai;
         private System.Windows.Forms.TextBox txtMatKhauCu;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTenDangNhap;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.TextBox txtMatKhauMoi;
+        private System.Windows.Forms.TextBox txtMatKhauMoiAgain;
+        private System.Windows.Forms.Panel panelButton;
+        private System.Windows.Forms.Button btnHuyBo;
+        private System.Windows.Forms.Button btnDoiMatKhau;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

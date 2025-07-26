@@ -639,7 +639,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmQuanLyDiem frm = new frmQuanLyDiem()
+            frmThoiKhoaBieu frm = new frmThoiKhoaBieu()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false

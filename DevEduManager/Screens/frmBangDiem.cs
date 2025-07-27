@@ -1,6 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
+﻿using BusinessLogic;
+using Entity.Models;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
+using System;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using ClosedXML.Excel;
@@ -9,84 +13,77 @@ namespace DevEduManager.Screens
 {
     public partial class frmBangDiem : Form
     {
-        private List<(string ChuongTrinh, string MonHoc, double? Diem)> dsBangDiem;
+        private readonly CallAPI callAPI = new CallAPI();
+        private readonly string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Score/";
+        private DataTable _dtBangDiem;
 
         public frmBangDiem()
         {
             InitializeComponent();
-            LoadBangDiemMau();
-            dtgvBangDiem.CellPainting += DgvBangDiem_CellPainting;
+            dtgvBangDiem.CellPainting += DtgvBangDiem_CellPainting;
             btnXuatExcel.Click += BtnXuatExcel_Click;
         }
 
-        private void LoadBangDiemMau()
+        private async void frmBangDiem_Load(object sender, EventArgs e)
         {
-            dsBangDiem = new List<(string, string, double?)>
+            await LoadBangDiem();
+        }
+
+        private async Task LoadBangDiem()
+        {
+            try
             {
-                // Java
-                ("Chương trình Java", "Lập trình Java Cơ bản", 8.5),
-                ("Chương trình Java", "Cấu trúc dữ liệu", 7.5),
-                ("Chương trình Java", "Spring Boot", 9.0),
-                ("Chương trình Java", "Hibernate", null),
+                string url = $"{_url}diemTheoHocVien?StudentID={CurrentUser.UserId}";
+                _dtBangDiem = await callAPI.GetAPI(url);
 
-                // C#
-                ("Chương trình C#", "C# Cơ bản", 8.0),
-                ("Chương trình C#", "WinForms", 4.5),
-                ("Chương trình C#", "Entity Framework", 8.8),
-                ("Chương trình C#", "ASP.NET Core", 9.2),
+                dtgvBangDiem.Rows.Clear();
 
-                // Web Frontend
-                ("Chương trình Web Frontend", "HTML & CSS", 9.0),
-                ("Chương trình Web Frontend", "JavaScript", 8.5),
-                ("Chương trình Web Frontend", "ReactJS", 8.8),
-                ("Chương trình Web Frontend", "TypeScript", 8.7),
-
-                // Python
-                ("Chương trình Python", "Python Cơ bản", 8.9),
-                ("Chương trình Python", "Django", 9.0),
-                ("Chương trình Python", "Flask", 8.3),
-                ("Chương trình Python", "Machine Learning", null)
-            };
-
-            dtgvBangDiem.Rows.Clear();
-
-            foreach (var item in dsBangDiem)
-            {
-                string trangThai = "";
-                if (item.Diem.HasValue)
+                if (_dtBangDiem != null && _dtBangDiem.Rows.Count > 0)
                 {
-                    if (item.Diem.Value >= 5) trangThai = "Đạt";
-                    else trangThai = "Chưa đạt";
+                    string lastCourseName = "";
+                    foreach (DataRow row in _dtBangDiem.Rows)
+                    {
+                        string courseName = row["CourseName"].ToString();
+                        string courseId = row["CourseID"].ToString();
+                        string subjectId = row["SubjectID"].ToString();
+                        string subjectName = row["SubjectName"].ToString();
+
+                        double? score = null;
+                        if (double.TryParse(row["Score"].ToString(), out double s))
+                            score = s;
+
+                        string status = "";
+                        if (score.HasValue)
+                            status = score.Value >= 5 ? "Đạt" : "Chưa đạt";
+
+                        string displayCourseName = courseName == lastCourseName ? "" : courseName;
+                        lastCourseName = courseName;
+
+                        dtgvBangDiem.Rows.Add(courseId, displayCourseName, subjectId, subjectName,
+                                              score?.ToString("0.00") ?? "", status);
+                    }
                 }
-
-                dtgvBangDiem.Rows.Add(item.ChuongTrinh, item.MonHoc, item.Diem?.ToString() ?? "", trangThai);
-            }
-
-            // Xóa giá trị trùng ở cột Chương trình
-            for (int i = 1; i < dtgvBangDiem.Rows.Count; i++)
-            {
-                if (dtgvBangDiem.Rows[i].Cells[0].Value?.ToString() ==
-                    dtgvBangDiem.Rows[i - 1].Cells[0].Value?.ToString())
+                else
                 {
-                    dtgvBangDiem.Rows[i].Cells[0].Value = "";
+                    MessageBox.Show("Không có dữ liệu bảng điểm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-
-            // Thêm dòng tổng kết
-            var chuongTrinhGroups = dsBangDiem.GroupBy(x => x.ChuongTrinh);
-            foreach (var group in chuongTrinhGroups)
+            catch (Exception ex)
             {
-                double avg = group.Where(x => x.Diem.HasValue).Average(x => x.Diem.Value);
-                dtgvBangDiem.Rows.Add($"→ Trung bình ({group.Key})", "", avg.ToString("0.00"), "");
+                MessageBox.Show("Lỗi tải bảng điểm: " + ex.Message);
             }
         }
 
-        private void DgvBangDiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+
+        /// <summary>
+        /// Xóa đường kẻ ở ô bị để trống (CourseName)
+        /// </summary>
+        private void DtgvBangDiem_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == 0 && e.RowIndex >= 0)
+            if (e.ColumnIndex == 1 && e.RowIndex >= 0) // Cột CourseName
             {
                 string value = e.FormattedValue?.ToString();
-                if (string.IsNullOrEmpty(value) || value.StartsWith("→"))
+                if (string.IsNullOrEmpty(value))
                 {
                     e.AdvancedBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
                 }
@@ -97,65 +94,75 @@ namespace DevEduManager.Screens
             }
         }
 
+        /// <summary>
+        /// Xuất Excel
+        /// </summary>
         private void BtnXuatExcel_Click(object sender, EventArgs e)
         {
-            using (var workbook = new XLWorkbook())
+            try
             {
-                var ws = workbook.Worksheets.Add("Bảng điểm");
-
-                // Header
-                ws.Cell(1, 1).Value = "BẢNG ĐIỂM HỌC VIÊN";
-                ws.Range(1, 1, 1, 4).Merge().Style
-                    .Font.SetBold().Font.SetFontSize(16)
-                    .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
-
-                // Tiêu đề cột
-                ws.Cell(3, 1).Value = "Chương trình";
-                ws.Cell(3, 2).Value = "Môn học";
-                ws.Cell(3, 3).Value = "Điểm";
-                ws.Cell(3, 4).Value = "Trạng thái";
-                ws.Range(3, 1, 3, 4).Style
-                    .Font.SetBold()
-                    .Fill.SetBackgroundColor(XLColor.SteelBlue)
-                    .Font.SetFontColor(XLColor.White)
-                    .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
-
-                int row = 4;
-                var groups = dsBangDiem.GroupBy(x => x.ChuongTrinh);
-                foreach (var group in groups)
+                using (var workbook = new XLWorkbook())
                 {
-                    int startRow = row;
-                    foreach (var item in group)
+                    var ws = workbook.Worksheets.Add("Bảng điểm");
+
+                    // Header
+                    ws.Cell(1, 1).Value = "BẢNG ĐIỂM HỌC VIÊN";
+                    ws.Range(1, 1, 1, 6).Merge().Style
+                        .Font.SetBold().Font.SetFontSize(16)
+                        .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+                    // Tiêu đề cột
+                    //ws.Cell(3, 1).Value = "Mã khóa";
+                    ws.Cell(3, 2).Value = "Chương trình";
+                    //ws.Cell(3, 3).Value = "Mã môn";
+                    ws.Cell(3, 4).Value = "Tên môn";
+                    ws.Cell(3, 5).Value = "Điểm";
+                    ws.Cell(3, 6).Value = "Trạng thái";
+                    ws.Range(3, 1, 3, 6).Style
+                        .Font.SetBold()
+                        .Fill.SetBackgroundColor(XLColor.SteelBlue)
+                        .Font.SetFontColor(XLColor.White)
+                        .Alignment.SetHorizontal(XLAlignmentHorizontalValues.Center);
+
+                    int row = 4;
+                    string lastCourseName = "";
+
+                    foreach (DataRow dr in _dtBangDiem.Rows)
                     {
-                        ws.Cell(row, 1).Value = item.ChuongTrinh;
-                        ws.Cell(row, 2).Value = item.MonHoc;
-                        ws.Cell(row, 3).Value = item.Diem.HasValue ? item.Diem.Value.ToString("0.00") : "";
-                        ws.Cell(row, 4).Value = item.Diem.HasValue ? (item.Diem >= 5 ? "Đạt" : "Chưa đạt") : "";
+                        string courseName = dr["CourseName"].ToString();
+                        string displayCourseName = courseName == lastCourseName ? "" : courseName;
+                        lastCourseName = courseName;
+
+                        //ws.Cell(row, 1).Value = dr["CourseID"].ToString();
+                        ws.Cell(row, 2).Value = displayCourseName;
+                        //ws.Cell(row, 3).Value = dr["SubjectID"].ToString();
+                        ws.Cell(row, 4).Value = dr["SubjectName"].ToString();
+                        ws.Cell(row, 5).Value = dr["Score"].ToString();
+                        ws.Cell(row, 6).Value = dr["Score"] != DBNull.Value && double.Parse(dr["Score"].ToString()) >= 5 ? "Đạt" : "Chưa đạt";
+
                         row++;
                     }
-                    ws.Range(startRow, 1, row - 1, 1).Merge().Style.Alignment.SetVertical(XLAlignmentVerticalValues.Center);
 
-                    double avg = group.Where(x => x.Diem.HasValue).Average(x => x.Diem.Value);
-                    ws.Cell(row, 1).Value = $"→ Trung bình ({group.Key})";
-                    ws.Cell(row, 3).Value = avg.ToString("0.00");
-                    ws.Row(row).Style.Font.SetItalic();
-                    row++;
-                }
+                    ws.Columns().AdjustToContents();
 
-                ws.Columns().AdjustToContents();
+                    SaveFileDialog saveDialog = new SaveFileDialog
+                    {
+                        Filter = "Excel Files|*.xlsx",
+                        Title = "Lưu bảng điểm"
+                    };
 
-                SaveFileDialog saveDialog = new SaveFileDialog
-                {
-                    Filter = "Excel Files|*.xlsx",
-                    Title = "Lưu bảng điểm"
-                };
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    workbook.SaveAs(saveDialog.FileName);
-                    MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (saveDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        workbook.SaveAs(saveDialog.FileName);
+                        MessageBox.Show("Xuất Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi xuất Excel: " + ex.Message);
+            }
         }
+
     }
 }

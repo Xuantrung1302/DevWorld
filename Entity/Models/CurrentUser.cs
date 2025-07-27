@@ -10,6 +10,7 @@ namespace Entity.Models
     {
         public static string UserId { get; set; }
         public static string Username { get; set; }
+        public static string Password { get; set; }
         public static string Role { get; set; }
     }
 }

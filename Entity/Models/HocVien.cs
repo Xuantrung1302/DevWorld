@@ -19,4 +19,9 @@ namespace Enity.Models
         public string Password { get; set; }
     }
 
+    public class HocVienResponse
+    {
+        public int TotalCount { get; set; }
+        public List<HocVien> Data { get; set; }
+    }
 }

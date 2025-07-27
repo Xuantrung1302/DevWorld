@@ -531,6 +531,12 @@
     <Compile Include="Screens\frmThongKeNoHocVien.Designer.cs">
       <DependentUpon>frmThongKeNoHocVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmThongTinGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmThongTinGiangVien.Designer.cs">
+      <DependentUpon>frmThongTinGiangVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmThongTinHocVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -747,6 +753,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmThongKeNoHocVien.resx">
       <DependentUpon>frmThongKeNoHocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmThongTinGiangVien.resx">
+      <DependentUpon>frmThongTinGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmThongTinHocVien.resx">
+      <DependentUpon>frmThongTinHocVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmTiepNhanHocVien.resx">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>

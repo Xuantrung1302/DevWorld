@@ -13,92 +13,80 @@ namespace DevEduManager.Screens
 {
     public partial class frmDiemDanhGiaoVien : Form
     {
-        private List<KyHoc> _semesters;
-        private List<MonHoc> _subjects;
-        private List<LopDay> _classes;
-        private List<DiemDanh> _attendance;
+        private List<ThongTinGiangDay> _thongTinGiangDay;
+        private List<DiemDanhViewModel> _attendance;
         private CallAPI callAPI = new CallAPI();
         private string _hostApiConfig = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/";
 
         public frmDiemDanhGiaoVien()
         {
             InitializeComponent();
-            _semesters = new List<KyHoc>();
-            _subjects = new List<MonHoc>();
-            _classes = new List<LopDay>();
+            _thongTinGiangDay = new List<ThongTinGiangDay>();
         }
 
         private async void frmDiemDanhGiaoVien_Load(object sender, EventArgs e)
         {
-            await GetData();
-            LoadComboBoxSemester();
-            cboKyHoc.SelectedIndexChanged += new EventHandler(cboKyHoc_SelectedIndexChanged);
+            string url = $"{_hostApiConfig}Teacher/thongTinGiangDay?teacherID={UserSession.UserId}";
+            _thongTinGiangDay = await callAPI.GetAPI<ThongTinGiangDay>(url);
+
+            LoadComboBoxCourse();
+            cboChuongTrinhHoc.SelectedIndexChanged += new EventHandler(cboChuongTrinhHoc_SelectedIndexChanged);
         }
 
-        private async Task GetData()
+        private void cboChuongTrinhHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string url = $"{_hostApiConfig}Semester/thongTinKyHoc";
-                _semesters = await callAPI.GetAPI<KyHoc>(url);
-
-                url = $"{_hostApiConfig}Subject/thongTinMonHoc";
-                _subjects = await callAPI.GetAPI<MonHoc>(url);
-
-                url = $"{_hostApiConfig}Teacher/thongTinLopDay?teacherID={UserSession.UserId}";
-                _classes = await callAPI.GetAPI<LopDay>(url);
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
-        private void cboKyHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedId = cboKyHoc.SelectedValue?.ToString();
+            string selectedId = cboChuongTrinhHoc.SelectedValue?.ToString();
 
             if (selectedId is null) return;
 
-            LoadComboBoxSubject(selectedId);
+            LoadComboBoxClass();
+            cboLopHoc.Enabled = true;
+            cboMonHoc.Enabled = false;
+            cboMonHoc.DataSource = null;
+            cboNgayHoc.Enabled = false;
+            cboNgayHoc.DataSource = null;
+        }
+
+        private void cboLopHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboChuongTrinhHoc.SelectedValue is null || cboLopHoc.SelectedValue is null)
+                return;
+
+            LoadComboBoxSubject();
             cboMonHoc.Enabled = true;
-            cboLop.Enabled = false;
-            cboLop.DataSource = null;
             cboNgayHoc.Enabled = false;
             cboNgayHoc.DataSource = null;
         }
 
-        private void cboMonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboMon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedId = cboMonHoc.SelectedValue?.ToString();
-
-            if (selectedId is null) return;
-            LoadComboBoxClass(selectedId);
-            cboLop.Enabled = true;
-            cboNgayHoc.Enabled = false;
-            cboNgayHoc.DataSource = null;
-        }
-
-        private void cboLop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedId = cboLop.SelectedValue?.ToString();
-
-            if (selectedId is null) return;
-            LoadComboBoxDate(selectedId);
+            if (cboChuongTrinhHoc.SelectedValue is null || cboLopHoc.SelectedValue is null || cboMonHoc.SelectedValue is null)
+                return;
+            LoadComboBoxDate();
             cboNgayHoc.Enabled = true;
         }
 
-        private void LoadComboBoxSemester()
+        private void LoadComboBoxCourse()
         {
-            cboKyHoc.DataSource = _semesters;
-            cboKyHoc.DisplayMember = "SemesterName";
-            cboKyHoc.ValueMember = "SemesterID";
+            var chuongTrinhs = _thongTinGiangDay
+                .GroupBy(x => new { x.CourseID, x.CourseName })
+                .Select(g => g.Key)
+                .ToList();
+
+            cboChuongTrinhHoc.DataSource = chuongTrinhs;
+            cboChuongTrinhHoc.DisplayMember = "CourseName";
+            cboChuongTrinhHoc.ValueMember = "CourseID";
         }
 
-        private void LoadComboBoxSubject(string semesterId)
+        private void LoadComboBoxSubject()
         {
-            var filteredSubjects = _subjects
-                .Where(s => s.SemesterID == semesterId)
+            string selectedCourseID = cboChuongTrinhHoc.SelectedValue.ToString();
+            string selectedClassID = cboLopHoc.SelectedValue.ToString();
+
+            var filteredSubjects = _thongTinGiangDay
+                .Where(x => x.CourseID == selectedCourseID && x.ClassID == selectedClassID)
+                .GroupBy(x => new { x.SubjectID, x.SubjectName })
+                .Select(g => g.Key)
                 .ToList();
 
             cboMonHoc.DataSource = filteredSubjects;
@@ -106,125 +94,118 @@ namespace DevEduManager.Screens
             cboMonHoc.ValueMember = "SubjectID";
         }
 
-        private void LoadComboBoxClass(string subjectId)
+        private void LoadComboBoxClass()
         {
-            var filteredClasses = _classes
-                .Where(s => s.SubjectID == subjectId)
+            string selectedCourseID = cboChuongTrinhHoc.SelectedValue.ToString();
+
+            var filteredClasses = _thongTinGiangDay
+                .Where(x => x.CourseID == selectedCourseID)
+                .GroupBy(x => new { x.ClassID, x.ClassName })
+                .Select(g => g.Key)
                 .ToList();
 
-            cboLop.DataSource = filteredClasses;
-            cboLop.DisplayMember = "ClassName";
-            cboLop.ValueMember = "ClassID";
+            cboLopHoc.DataSource = filteredClasses;
+            cboLopHoc.DisplayMember = "ClassName";
+            cboLopHoc.ValueMember = "ClassID";
         }
 
-        private void LoadComboBoxDate(string classID)
+        private void LoadComboBoxDate()
         {
-            var uniqueDates = _classes
-                .Where(l => l.ClassID == classID)
-                .Select(l => l.StartTime.Date)
-                .Distinct()
-                .OrderBy(d => d)
-                .Select(d => new
-                {
-                    Text = d.ToString("yyyy-MM-dd"),
-                    Value = d
-                })
+            string courseID = cboChuongTrinhHoc.SelectedValue.ToString();
+            string classID = cboLopHoc.SelectedValue.ToString();
+            string subjectID = cboMonHoc.SelectedValue.ToString();
+
+            var ngayHocList = _thongTinGiangDay
+                .Where(x => x.CourseID == courseID
+                         && x.ClassID == classID
+                         && x.SubjectID == subjectID)
+                .GroupBy(x => new { x.ClassScheduleID, x.Date.Date })
+                .Select(g => g.Key)
+                .OrderBy(x => x.Date)
                 .ToList();
 
-            cboNgayHoc.DisplayMember = "Text";
-            cboNgayHoc.ValueMember = "Value";
-            cboNgayHoc.DataSource = uniqueDates;
+            cboNgayHoc.DataSource = ngayHocList;
+            cboNgayHoc.DisplayMember = "Date";
+            cboNgayHoc.ValueMember = "ClassScheduleID";
         }
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
-            string semesterId = cboKyHoc.SelectedValue.ToString();
-            string subjectId = cboMonHoc.SelectedValue.ToString();
-            string classId = cboLop.SelectedValue.ToString();
-            DateTime selectedDate = (DateTime)cboNgayHoc.SelectedValue;
-            string url = $"{_hostApiConfig}Record/danhSachDiemDanh?semesterID={semesterId}&subjectID={subjectId}&classID={classId}";
-            _attendance = await callAPI.GetAPI<DiemDanh>(url);
+            await LoadGrid();
+        }
 
-            var diemDanhViewList = _attendance
-                .Where(p => p.StartTime.Date == selectedDate)
-                .Select(dd => new DiemDanhViewModel
-                {
-                    AttendanceID = dd.AttendanceID,
-                    StudentID = dd.StudentID,
-                    StudentName = dd.StudentName,
-                    Notes = dd.Notes,
-                    IsChecked = dd.Status == 1
-                })
-                .ToList();
+        private async Task LoadGrid()
+        {
+            var selectedSchedule = cboNgayHoc.SelectedValue.ToString();
+            string url = $"{_hostApiConfig}Record/danhSachDiemDanh?scheduleID={selectedSchedule}";
+            _attendance = await callAPI.GetAPI<DiemDanhViewModel>(url);
 
             dgvHV.AutoGenerateColumns = false;
-            if (diemDanhViewList.Any())
+            if (_attendance.Any())
             {
-                dgvHV.DataSource = diemDanhViewList;
+                dgvHV.DataSource = _attendance;
             }
         }
 
         private async void btnLuu_Click(object sender, EventArgs e)
         {
-            //var giangVien = new GiangVien()
-            //{
-            //    TeacherID = txtMaGV.Text,
-            //    FullName = txtTenGV.Text,
-            //    Gender = cboGioiTinh.SelectedItem.ToString(),
-            //    Address = txtDiaChi.Text,
-            //    Degree = txtBangCap.Text,
-            //    PhoneNumber = txtSDT.Text,
-            //    Email = txtEmail.Text,
-            //    Username = txtTenDangNhap.Text,
-            //    Password = txtMatKhau.Text
-            //};
-
-            //string jsonData = JsonConvert.SerializeObject(giangVien);
-
-            //string url = $"{_hostApiConfig}Record/suaThongTinDiemDanh";
-            //var result = await callAPI.PostAPI(url, jsonData);
-
-            //if (result)
-            //{
-            //    MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Cập nhật không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-        }
-
-        private void dgvHV_CurrentCellDirtyStateChanged(object sender, EventArgs e)
-        {
-            if (dgvHV.IsCurrentCellDirty && dgvHV.CurrentCell is DataGridViewCheckBoxCell)
+            if (_attendance == null || !_attendance.Any())
             {
-                dgvHV.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                MessageBox.Show("Không có dữ liệu để lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
+
+            Guid classScheduleId = Guid.Parse(cboNgayHoc.SelectedValue.ToString());
+
+            var diemDanhModel = new DiemDanh
+            {
+                ClassScheduleID = classScheduleId,
+                RecordedBy = UserSession.UserId,
+                ChiTiet = new List<ChiTietDiemDanh>()
+            };
+
+            foreach (DataGridViewRow row in dgvHV.Rows)
+            {
+                if (row.DataBoundItem is DiemDanhViewModel hv)
+                {
+                    diemDanhModel.ChiTiet.Add(new ChiTietDiemDanh
+                    {
+                        StudentID = hv.StudentID,
+                        Status = hv.Status,
+                        Notes = hv.Notes
+                    });
+                }
+            }
+
+            string url = $"{_hostApiConfig}Record/themThongTinDiemDanh";
+            string json = JsonConvert.SerializeObject(diemDanhModel);
+
+            bool success = await callAPI.PostAPI(url, json);
+
+            if (success)
+            {
+                MessageBox.Show("Lưu điểm danh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Lưu điểm danh thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            await LoadGrid();
         }
 
-        private async void dgvHV_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void cboNgayHoc_EnabledChanged(object sender, EventArgs e)
         {
-            if (dgvHV.Columns[e.ColumnIndex].Name == "clmDiemDanh")
+            btnSearch.Enabled = cboNgayHoc.Enabled;
+        }
+
+        private void cboNgayHoc_Format(object sender, ListControlConvertEventArgs e)
+        {
+            var item = (dynamic)e.ListItem;
+            if (item != null)
             {
-                var row = dgvHV.Rows[e.RowIndex];
-
-                var maDiemDanh = row.Cells["clmMaDiemDanh"].Value?.ToString();
-
-                bool isChecked = Convert.ToBoolean(row.Cells["clmDiemDanh"].Value);
-                int status = isChecked ? 1 : 2;
-
-                DiemDanh diemDanh = new DiemDanh()
-                {
-                    AttendanceID = Guid.Parse(maDiemDanh),
-                    Status = status,
-                    RecordedBy = UserSession.UserId
-                };
-
-                string jsonData = JsonConvert.SerializeObject(diemDanh);
-
-                string url = $"{_hostApiConfig}Record/suaThongTinDiemDanh";
-                var result = await callAPI.PostAPI(url, jsonData);
+                DateTime date = item.Date;
+                e.Value = date.ToString("yyyy-MM-dd");
             }
         }
     }

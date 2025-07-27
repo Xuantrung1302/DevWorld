@@ -181,7 +181,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmQuanLyHocVien frm = new frmQuanLyHocVien()
+            frmQuanLyHocVien frm = new frmQuanLyHocVien(pnlWorkspace)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -194,7 +194,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmQuanLyGiangVien frm = new frmQuanLyGiangVien()
+            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(pnlWorkspace)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -219,21 +219,7 @@ namespace DevEduManager
                 frm.Show();
             }
         }
-        private void btnQuanLyHocVien_Click(object sender, EventArgs e)
-        {
-            pnlWorkspace.Controls.Clear();
-            if (GlobalPages.QuanLyHocVien == null)
-            {
-                frmQuanLyHocVien frm = new frmQuanLyHocVien()
-                {
-                    Dock = DockStyle.Fill,
-                    TopLevel = false
-                };
 
-                pnlWorkspace.Controls.Add(frm);
-                frm.Show();
-            }
-        }
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -597,7 +583,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmQuanLyGiangVien frm = new frmQuanLyGiangVien()
+            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(pnlWorkspace)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false

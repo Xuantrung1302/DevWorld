@@ -1,4 +1,6 @@
-﻿namespace Enity.Models
+﻿using System.Collections.Generic;
+
+namespace Enity.Models
 {
     public class NhanVien
     {
@@ -11,6 +13,12 @@
         public string Gender { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+    }
+
+    public class NhanVienResponse
+    {
+        public int TotalCount { get; set; }
+        public List<NhanVien> Data { get; set; }
     }
 
 }

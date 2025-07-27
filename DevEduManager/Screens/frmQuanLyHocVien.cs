@@ -1,11 +1,9 @@
 ﻿using BusinessLogic;
 using DevEduManager.Modals;
 using Enity.Models;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,18 +15,16 @@ namespace DevEduManager.Screens
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Students/";
         private List<HocVien> _students;
+        private int _pageIndex = 1;
+        private int _pageSize = 30;
+        private int _totalCount = 0;
+        private int _totalPages = 1;
+        private Panel _mainPanel;
 
-        public frmQuanLyHocVien()
+        public frmQuanLyHocVien(Panel mainPanel)
         {
             InitializeComponent();
-        }
-
-        public void ValidateSearch()
-        {
-            if (chkMaHV.Checked && string.IsNullOrEmpty(txtMaHV.Text))
-                throw new ArgumentException("Mã học viên không được trống.");
-            if (chkTenHV.Checked && string.IsNullOrEmpty(txtTenHV.Text))
-                throw new ArgumentException("Họ và tên học viên không được trống.");
+            _mainPanel = mainPanel;
         }
 
         private async void frmQuanLyHocVien_Load(object sender, EventArgs e)
@@ -36,19 +32,23 @@ namespace DevEduManager.Screens
             await LoadDataToGridView();
         }
 
-        private async Task LoadDataToGridView(string studentId = null, string studentName = null)
+        private async Task LoadDataToGridView(string search = "")
         {
             try
             {
-                string url = $"{_url}thongTinHocVien?studentID={studentId}&fullName={studentName}";
-                _students = await callAPI.GetAPI<HocVien>(url);
+                string url = $"{_url}thongTinHocVien?search={search}&pageIndex={_pageIndex}&pageSize={_pageSize}";
+                var result = await callAPI.GetApiObject<HocVienResponse>(url);
 
+                if (result == null)
+                    return;
+
+                _totalCount = result.TotalCount;
+                _totalPages = (int)Math.Ceiling(_totalCount / (double)_pageSize);
+                _students = result.Data;
                 gridDSHV.AutoGenerateColumns = false;
+                gridDSHV.DataSource = _students;
 
-                if (_students.Any())
-                {
-                    gridDSHV.DataSource = _students;
-                }
+                UpdatePagingStatus();
             }
             catch (Exception ex)
             {
@@ -56,9 +56,30 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void UpdatePagingStatus()
         {
-            Close();
+            lblPageInfo.Text = $"Trang {_pageIndex} / {_totalPages}";
+
+            btnPrev.Enabled = _pageIndex > 1;
+            btnNext.Enabled = _pageIndex < _totalPages;
+        }
+
+        private async void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (_pageIndex > 1)
+            {
+                _pageIndex--;
+                await LoadDataToGridView();
+            }
+        }
+
+        private async void btnNext_Click(object sender, EventArgs e)
+        {
+            if (_pageIndex < _totalPages)
+            {
+                _pageIndex++;
+                await LoadDataToGridView();
+            }
         }
 
         private async void btnThem_Click(object sender, EventArgs e)
@@ -70,30 +91,6 @@ namespace DevEduManager.Screens
 
             // Tải lại danh sách sau khi thêm
             await LoadDataToGridView();
-        }
-
-        private async void btnDatLai_Click(object sender, EventArgs e)
-        {
-            // Đặt lại các checkbox và textbox tìm kiếm
-            chkMaHV.Checked = true;
-            txtMaHV.Text = txtTenHV.Text = string.Empty;
-            await LoadDataToGridView();
-        }
-
-        private async void btnXemTatCa_Click(object sender, EventArgs e)
-        {
-            // Tải lại tất cả danh sách học viên
-            await LoadDataToGridView();
-        }
-
-        private void chkMaHV_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMaHV.Enabled = chkMaHV.Checked;
-        }
-
-        private void chkTenHV_CheckedChanged(object sender, EventArgs e)
-        {
-            txtTenHV.Enabled = chkTenHV.Checked;
         }
 
         private async void btnSua_Click(object sender, EventArgs e)
@@ -124,47 +121,10 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void gridDSHV_DoubleClick(object sender, EventArgs e)
-        {
-            btnSua_Click(sender, e);
-        }
-
         private async void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ValidateSearch();
-
-                string maHV = chkMaHV.Checked ? txtMaHV.Text.Trim() : null;
-                string tenHV = chkTenHV.Checked ? txtTenHV.Text.Trim() : null;
-                //string gioiTinhText = chkGioiTinh.Checked ? cboGioiTinh.Text : null;
-
-                // Lấy giá trị của DateTimePicker nếu checkbox tương ứng được chọn, nếu không thì null
-                //DateTime? dateStart = chkNgayTiepNhan.Checked ? (DateTime?)DateTime.Parse(dateTuNgay.Value.ToString("dd/MM/yyyy")) : null;
-                //DateTime? dateEnd = chkNgayTiepNhan.Checked ? (DateTime?)DateTime.Parse(dateDenNgay.Value.ToString("dd/MM/yyyy")) : null;
-
-
-                // Gọi LoadDataToGridView với tham số cần thiết
-               await LoadDataToGridView(maHV, tenHV);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void gridDSHV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            lblTongCong.Text = string.Format("Tổng cộng: {0} học viên", gridDSHV.Rows.Count);
-        }
-
-        private void gridDSHV_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            lblTongCong.Text = string.Format("Tổng cộng: {0} học viên", gridDSHV.Rows.Count);
+            _pageIndex = 1;
+            await LoadDataToGridView(txtSearch.Text);
         }
 
         private async void btnXoa_Click(object sender, EventArgs e)
@@ -198,6 +158,27 @@ namespace DevEduManager.Screens
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void btnHienTatCa_Click(object sender, EventArgs e)
+        {
+            await LoadDataToGridView();
+        }
+
+        private void gridDSHV_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var frm = new frmThongTinHocVien(_mainPanel)
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false
+                };
+
+                _mainPanel.Controls.Clear();
+                _mainPanel.Controls.Add(frm);
+                frm.Show();
             }
         }
     }

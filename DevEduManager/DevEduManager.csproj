@@ -181,6 +181,12 @@
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalPages.cs" />
+    <Compile Include="Modals\frmAddTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmAddTeacher.Designer.cs">
+      <DependentUpon>frmAddTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,12 @@
     </Compile>
     <Compile Include="Modals\frmMonHocEdit.Designer.cs">
       <DependentUpon>frmMonHocEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\frmThoiKhoaBieuChiTiet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmThoiKhoaBieuChiTiet.Designer.cs">
+      <DependentUpon>frmThoiKhoaBieuChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="Modals\frmThongBaoPopup.cs">
       <SubType>Form</SubType>
@@ -573,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmAddTeacher.resx">
+      <DependentUpon>frmAddTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>

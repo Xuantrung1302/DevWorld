@@ -1,123 +1,125 @@
 ﻿using BusinessLogic;
+using Entity.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DevEduManager.Modals
 {
     public partial class frmDoiMatKhau : Form
     {
-        private string _userName;
-        private string _userFullName;
-        private string _password;
-        CallAPI callAPI = new CallAPI();
-        private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
-        public frmDoiMatKhau(string userFullName, string userName, string password)
+        private string _dbPassword = string.Empty; // Mật khẩu lấy từ DB
+        private readonly CallAPI callAPI = new CallAPI();
+        private readonly string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
+
+        public frmDoiMatKhau()
         {
             InitializeComponent();
-            _userFullName = userFullName;
-            _userName = userName;
-            _password = password;
         }
-        private bool CheckDoiMatKhau()
-        {
-            if (txtMatKhauCu.Text == "")
-            {
-                errorProvider1.SetError(txtMatKhauCu, "Bạn chưa nhập mật khẩu cũ");
-                txtMatKhauCu.Focus();
-                return false;
-            }
-            else if (txtMatKhauMoi.Text == "")
-            {
-                errorProvider1.SetError(txtMatKhauMoi, "Bạn chưa nhập mật khẩu mới");
-                txtMatKhauMoi.Focus();
-                return false;
-            }
-            else if (txtMatKhauMoiAgain.Text == "")
-            {
-                errorProvider1.SetError(txtMatKhauMoiAgain, "Bạn chưa nhập mật khẩu mới lần hai");
-                txtMatKhauMoiAgain.Focus();
-                return false;
-            }
 
+        private bool ValidateInput()
+        {
+            errorProvider1.Clear();
+
+            if (string.IsNullOrWhiteSpace(txtMatKhauCu.Text))
+            {
+                errorProvider1.SetError(txtMatKhauCu, "Vui lòng nhập mật khẩu cũ");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtMatKhauMoi.Text))
+            {
+                errorProvider1.SetError(txtMatKhauMoi, "Vui lòng nhập mật khẩu mới");
+                return false;
+            }
+            if (txtMatKhauMoi.Text.Length < 6)
+            {
+                errorProvider1.SetError(txtMatKhauMoi, "Mật khẩu mới phải từ 6 ký tự trở lên");
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(txtMatKhauMoiAgain.Text))
+            {
+                errorProvider1.SetError(txtMatKhauMoiAgain, "Vui lòng nhập lại mật khẩu mới");
+                return false;
+            }
+            if (txtMatKhauMoi.Text != txtMatKhauMoiAgain.Text)
+            {
+                errorProvider1.SetError(txtMatKhauMoiAgain, "Mật khẩu nhập lại không khớp");
+                return false;
+            }
             return true;
         }
-        private void Refresh()
-        {
-            txtMatKhauCu.Text = "";
-            txtMatKhauMoi.Text = "";
-            txtMatKhauMoiAgain.Text = "";
 
-        }
-        #region Events
-        private void frmDoiMatKhau_Load(object sender, EventArgs e)
+        private void ResetFields()
         {
-            lblUserName.Text = _userFullName;
-
-            txtTenDangNhap.Text = _userName;
+            txtMatKhauCu.Clear();
+            txtMatKhauMoi.Clear();
+            txtMatKhauMoiAgain.Clear();
         }
 
-        private async void btnLuuThongTin_Click(object sender, EventArgs e)
+        private async void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
             try
             {
-                // Kiểm tra điều kiện thay đổi mật khẩu trước khi gọi API
-                if (CheckDoiMatKhau())
+                // Gọi API lấy thông tin tài khoản hiện tại
+                string url = $"{_url}layThongTinTaiKhoan?username={CurrentUser.Username}";
+                DataTable dt = await callAPI.GetAPI(url); // Hàm này trả về DataTable
+
+                if (dt != null && dt.Rows.Count > 0)
                 {
-                    errorProvider1.Clear();
-                    // Kiểm tra mật khẩu cũ có khớp với mật khẩu hiện tại không
-                    if (txtMatKhauCu.Text == _password)
-                    {
-                        // Kiểm tra mật khẩu mới không rỗng và khớp nhau
-                        if (!string.IsNullOrEmpty(txtMatKhauMoi.Text) && txtMatKhauMoi.Text == txtMatKhauMoiAgain.Text)
-                        {
-                            string tenDangNhap = txtTenDangNhap.Text;
-                            string matKhauMoi = txtMatKhauMoi.Text;
+                    DataRow row = dt.Rows[0];
+                    _dbPassword = row["Password"].ToString();  // Lấy mật khẩu từ DB
+                }
+                else
+                {
+                    MessageBox.Show("Không lấy được thông tin tài khoản", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+        }
 
 
-                            // Tạo đối tượng JSON để gửi lên API
-                            var accountData = new
-                            {
-                                TenDangNhap = tenDangNhap,
-                                MatKhau = matKhauMoi
+        private async void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!ValidateInput()) return;
 
-                            };
+                // Kiểm tra mật khẩu cũ từ DB
+                if (txtMatKhauCu.Text != _dbPassword)
+                {
+                    MessageBox.Show("Mật khẩu cũ không chính xác", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                            // Chuyển đổi đối tượng thành JSON
-                            string jsonData = JsonConvert.SerializeObject(accountData);
-                            // Gọi API để thay đổi mật khẩu
-                            string url = $"{_url}doiMatKhau";
-                            bool result = await callAPI.PostAPI(url, jsonData);
+                // Tạo payload gửi API
+                var data = new
+                {
+                    Username = CurrentUser.Username,
+                    Password = txtMatKhauMoi.Text,
+                    Role = CurrentUser.Role
+                };
 
-                            // Kiểm tra kết quả từ API
-                            if (result)
-                            {
-                                MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();  // Đóng form sau khi đổi mật khẩu thành công
-                            }
-                            else
-                            {
-                                MessageBox.Show("Đổi mật khẩu không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Refresh(); // Làm mới giao diện hoặc thực hiện lại thao tác
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Mật khẩu mới trống hoặc không khớp", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Mật khẩu cũ không chính xác", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                string jsonData = JsonConvert.SerializeObject(data);
+                string url = $"{_url}doiMatKhau";
+
+                bool result = await callAPI.PostAPI(url, jsonData);
+
+                if (result)
+                {
+                    MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Đổi mật khẩu không thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ResetFields();
                 }
             }
             catch (Exception ex)
@@ -126,8 +128,9 @@ namespace DevEduManager.Modals
             }
         }
 
-
-
-        #endregion
+        private void btnHuyBo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

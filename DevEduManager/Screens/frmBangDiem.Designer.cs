@@ -6,13 +6,8 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dtgvBangDiem;
         private System.Windows.Forms.Button btnXuatExcel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
 
         protected override void Dispose(bool disposing)
         {
@@ -27,9 +22,10 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dtgvBangDiem = new System.Windows.Forms.DataGridView();
+            this.CourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +62,6 @@
             this.tableLayoutPanelMain.ColumnCount = 2;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.comboBox1, 1, 0);
             this.tableLayoutPanelMain.Controls.Add(this.dtgvBangDiem, 0, 1);
             this.tableLayoutPanelMain.Controls.Add(this.btnXuatExcel, 1, 2);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -80,27 +74,6 @@
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(1077, 517);
             this.tableLayoutPanelMain.TabIndex = 1;
             // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.Location = new System.Drawing.Point(31, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chương trình:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(153, 14);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(300, 31);
-            this.comboBox1.TabIndex = 1;
-            // 
             // dtgvBangDiem
             // 
             this.dtgvBangDiem.AllowUserToAddRows = false;
@@ -108,7 +81,7 @@
             this.dtgvBangDiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvBangDiem.BackgroundColor = System.Drawing.Color.White;
             this.dtgvBangDiem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dtgvBangDiem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            //this.dtgvBangDiem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvBangDiem.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
@@ -120,6 +93,9 @@
             this.dtgvBangDiem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvBangDiem.ColumnHeadersHeight = 35;
             this.dtgvBangDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CourseID,
+            this.CourseName,
+            this.SubjectID,
             this.SubjectName,
             this.Score,
             this.Status});
@@ -134,6 +110,31 @@
             this.dtgvBangDiem.RowTemplate.Height = 30;
             this.dtgvBangDiem.Size = new System.Drawing.Size(1071, 391);
             this.dtgvBangDiem.TabIndex = 2;
+            // 
+            // CourseID
+            // 
+            this.CourseID.DataPropertyName = "CourseID";
+            this.CourseID.HeaderText = "Mã khóa học";
+            this.CourseID.MinimumWidth = 6;
+            this.CourseID.Name = "CourseID";
+            this.CourseID.ReadOnly = true;
+            this.CourseID.Visible = false;
+            // 
+            // CourseName
+            // 
+            this.CourseName.DataPropertyName = "CourseName";
+            this.CourseName.HeaderText = "Tên khóa học";
+            this.CourseName.MinimumWidth = 6;
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
+            // 
+            // SubjectID
+            // 
+            this.SubjectID.HeaderText = "Mã môn";
+            this.SubjectID.MinimumWidth = 6;
+            this.SubjectID.Name = "SubjectID";
+            this.SubjectID.ReadOnly = true;
+            this.SubjectID.Visible = false;
             // 
             // SubjectName
             // 
@@ -184,13 +185,20 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBangDiem";
             this.Text = "Bảng Điểm Học Viên";
+            this.Load += new System.EventHandler(this.frmBangDiem_Load);
             this.panelHeader.ResumeLayout(false);
             this.tableLayoutPanelMain.ResumeLayout(false);
-            this.tableLayoutPanelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBangDiem)).EndInit();
             this.ResumeLayout(false);
 
         }
         #endregion
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Score;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

@@ -1,54 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.Configuration;
+using Entity.Models;
 
 namespace DevEduManager.Screens
 {
     public partial class frmThoiKhoaBieu : Form
     {
         private DateTime currentMonday;
-        private ToolTip toolTip1 = new ToolTip();
+        private readonly string maHocVien = CurrentUser.UserId; // Lấy từ thông tin đăng nhập
+        private readonly string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
 
         public frmThoiKhoaBieu()
         {
             InitializeComponent();
+            EnableDoubleBuffering(dtgvTKB); // Giảm flicker
             InitializeTKB();
         }
 
         private void InitializeTKB()
         {
-            // Thêm dữ liệu lớp mẫu
-            cboLop.Items.AddRange(new string[] { "C1307G", "C1310H" });
-            cboLop.SelectedIndex = 0;
-
-            // Xác định thứ 2 hiện tại
             currentMonday = GetMonday(DateTime.Now);
             dtpWeek.Value = currentMonday;
 
-            // Cấu hình DataGridView
             dtgvTKB.EnableHeadersVisualStyles = false;
             dtgvTKB.ColumnHeadersDefaultCellStyle.BackColor = Color.SteelBlue;
             dtgvTKB.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dtgvTKB.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             dtgvTKB.DefaultCellStyle.Font = new Font("Segoe UI", 10);
 
-            dtgvTKB.CellMouseEnter += dtgvTKB_CellMouseEnter;
-
+            dtgvTKB.ShowCellToolTips = true;  // Bật tooltip
+            InitializeCustomToolTip();
             LoadHeaders();
-            LoadSampleData();
+            _ = LoadScheduleFromAPI();
 
             btnPrevWeek.Click += BtnPrevWeek_Click;
             btnNextWeek.Click += BtnNextWeek_Click;
             dtpWeek.ValueChanged += DtpWeek_ValueChanged;
         }
 
+
         private void BtnPrevWeek_Click(object sender, EventArgs e)
         {
             currentMonday = currentMonday.AddDays(-7);
             dtpWeek.Value = currentMonday;
             LoadHeaders();
-            LoadSampleData();
+            _ = LoadScheduleFromAPI();
         }
 
         private void BtnNextWeek_Click(object sender, EventArgs e)
@@ -56,14 +58,14 @@ namespace DevEduManager.Screens
             currentMonday = currentMonday.AddDays(7);
             dtpWeek.Value = currentMonday;
             LoadHeaders();
-            LoadSampleData();
+            _ = LoadScheduleFromAPI();
         }
 
         private void DtpWeek_ValueChanged(object sender, EventArgs e)
         {
             currentMonday = GetMonday(dtpWeek.Value);
             LoadHeaders();
-            LoadSampleData();
+            _ = LoadScheduleFromAPI();
         }
 
         private DateTime GetMonday(DateTime date)
@@ -75,7 +77,6 @@ namespace DevEduManager.Screens
         private void LoadHeaders()
         {
             string[] thu = { "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy", "Chủ nhật" };
-
             for (int i = 0; i < 7; i++)
             {
                 DateTime day = currentMonday.AddDays(i);
@@ -83,50 +84,98 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void LoadSampleData()
+        private async Task LoadScheduleFromAPI()
         {
-            dtgvTKB.Rows.Clear();
-
-            // Các ca học cố định
-            string[] caHoc = {
-                "08:00-10:00",
-                "10:00-12:00",
-                "13:00-15:00",
-                "15:00-17:00",
-                "17:00-19:00",
-                "19:00-21:00"
-            };
-
-            foreach (var ca in caHoc)
+            try
             {
-                dtgvTKB.Rows.Add(ca, "", "", "", "", "", "", "");
-            }
+                dtgvTKB.Rows.Clear();
 
-            // Auto chỉnh chiều cao để full DataGridView
-            int totalHeight = dtgvTKB.Height - dtgvTKB.ColumnHeadersHeight;
-            int rowHeight = totalHeight / dtgvTKB.Rows.Count;
-            foreach (DataGridViewRow row in dtgvTKB.Rows)
-            {
-                row.Height = rowHeight;
-            }
+                string[] caHoc = {
+            "08:00-10:00",
+            "10:00-12:00",
+            "13:00-15:00",
+            "15:00-17:00",
+            "17:00-19:00",
+            "19:00-21:00"
+        };
 
-            // Load dữ liệu mẫu
-            string selectedClass = cboLop.SelectedItem.ToString();
-            var scheduleData = GetSampleSchedule(selectedClass);
-
-            foreach (var item in scheduleData)
-            {
-                int rowIndex = GetRowIndex(item.Ca);
-                int colIndex = GetColumnIndex(item.Day);
-
-                if (rowIndex >= 0 && colIndex >= 0)
+                foreach (var ca in caHoc)
                 {
-                    var cell = dtgvTKB.Rows[rowIndex].Cells[colIndex];
-                    cell.Value = selectedClass;
-                    cell.Tag = $"Môn: {item.Subject}\nGV: {item.Teacher}\nPhòng: {item.Room}";
-                    cell.Style.BackColor = Color.LightBlue;
-                    cell.Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                    dtgvTKB.Rows.Add(ca, "", "", "", "", "", "", "");
                 }
+
+                string url = $"{_classUrl}layDanhSachLichHocTheoNguoiDung?studentID={maHocVien}";
+                string jsonResponse = await GetAPI(url);
+                var scheduleData = JsonConvert.DeserializeObject<List<ScheduleResponse>>(jsonResponse);
+
+                if (scheduleData != null)
+                {
+                    foreach (var item in scheduleData)
+                    {
+                        DateTime startTime = item.StartTime;
+                        DateTime endTime = item.EndTime;
+
+                        if (startTime.Date < currentMonday || startTime.Date > currentMonday.AddDays(6))
+                            continue;
+
+                        string ca = $"{startTime:HH:mm}-{endTime:HH:mm}";
+                        int rowIndex = GetRowIndex(ca);
+                        int colIndex = GetColumnIndex(startTime.DayOfWeek);
+
+                        if (rowIndex >= 0 && colIndex >= 0)
+                        {
+                            var cell = dtgvTKB.Rows[rowIndex].Cells[colIndex];
+                            cell.Value = item.SubjectName;
+                            cell.Style.BackColor = Color.LightSkyBlue;
+                            cell.Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+                            // Tooltip trực tiếp
+                            cell.ToolTipText =
+                                    $"📘 Chương trình: {item.CourseName}\n" +  // course_name từ SP
+                                    $"🏫 Lớp: {item.ClassName}\n" +
+                                    $"📍 Phòng: {item.Room}\n" +              // lấy đúng Room
+                                    $"👨‍🏫 GV: {item.TeacherName}";
+
+                        }
+                    }
+                }
+
+                int totalHeight = dtgvTKB.Height - dtgvTKB.ColumnHeadersHeight;
+                int rowHeight = totalHeight / dtgvTKB.Rows.Count;
+                foreach (DataGridViewRow row in dtgvTKB.Rows)
+                {
+                    row.Height = rowHeight;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi tải dữ liệu: " + ex.Message);
+            }
+        }
+
+
+        private void OptimizeDataGridViewPerformance()
+        {
+            dtgvTKB.GetType().GetProperty("DoubleBuffered",
+                System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)
+                ?.SetValue(dtgvTKB, true, null);
+
+            dtgvTKB.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dtgvTKB.ScrollBars = ScrollBars.None;
+            dtgvTKB.AllowUserToResizeRows = false;
+            dtgvTKB.AllowUserToResizeColumns = false;
+
+            this.DoubleBuffered = true; // Form cũng double buffered
+        }
+
+
+
+        private void DtgvTKB_CellToolTipTextNeeded(object sender, DataGridViewCellToolTipTextNeededEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex > 0)
+            {
+                var cell = dtgvTKB.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                e.ToolTipText = cell.Tag?.ToString() ?? string.Empty;
             }
         }
 
@@ -155,47 +204,91 @@ namespace DevEduManager.Screens
             }
         }
 
-        private List<ScheduleItem> GetSampleSchedule(string className)
+        private async Task<string> GetAPI(string url)
         {
-            DateTime start = currentMonday;
-
-            return new List<ScheduleItem>()
+            using (HttpClient client = new HttpClient())
             {
-                new ScheduleItem(start.AddDays(0).DayOfWeek, "08:00-10:00", "Java", "GV Huy", "P101"),
-                new ScheduleItem(start.AddDays(2).DayOfWeek, "10:00-12:00", "Java", "GV Huy", "P101"),
-                new ScheduleItem(start.AddDays(1).DayOfWeek, "13:00-15:00", "C#", "GV Nam", "P102"),
-                new ScheduleItem(start.AddDays(3).DayOfWeek, "19:00-21:00", "C#", "GV Nam", "P102"),
+                var response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                return await response.Content.ReadAsStringAsync();
+            }
+        }
+
+        // Giảm giật khi redraw DataGridView
+        private void EnableDoubleBuffering(DataGridView dgv)
+        {
+            typeof(DataGridView).InvokeMember("DoubleBuffered",
+                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.SetProperty,
+                null, dgv, new object[] { true });
+        }
+
+        // Model mapping dữ liệu trả về từ API
+        private class ScheduleResponse
+        {
+            public string ClassName { get; set; }         // Lớp học
+            public string SubjectName { get; set; }       // Môn học
+            public string TeacherName { get; set; }       // GV
+            public string SemesterName { get; set; }      // Học kỳ
+            public string CourseName { get; set; }        // Tên chương trình
+            public string Room { get; set; }              // Phòng học - từ c.Room
+            public DateTime StartTime { get; set; }
+            public DateTime EndTime { get; set; }
+        }
+
+        private ToolTip toolTipDefault;
+
+        private void InitializeCustomToolTip()
+        {
+            toolTipDefault = new ToolTip
+            {
+                AutoPopDelay = 15000,    // 15 giây hiển thị
+                InitialDelay = 500,      // Chờ 0.5s mới hiển thị
+                ReshowDelay = 100,
+                ShowAlways = true,
+                UseFading = true,
+                IsBalloon = true // bóng đẹp hơn
             };
+
+            toolTipDefault.OwnerDraw = true; // vẽ lại để tăng kích thước
+            toolTipDefault.Draw += ToolTipDefault_Draw;
         }
 
-        private void dtgvTKB_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        private void ToolTipDefault_Draw(object sender, DrawToolTipEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex > 0)
+            e.Graphics.FillRectangle(Brushes.White, e.Bounds);
+            e.Graphics.DrawRectangle(Pens.Gray, e.Bounds);
+            using (Font font = new Font("Segoe UI", 11, FontStyle.Regular)) // Tăng font chữ
             {
-                var cell = dtgvTKB.Rows[e.RowIndex].Cells[e.ColumnIndex];
-                if (cell.Tag != null)
-                {
-                    toolTip1.SetToolTip(dtgvTKB, cell.Tag.ToString());
-                }
-                else
-                {
-                    toolTip1.SetToolTip(dtgvTKB, "");
-                }
+                e.Graphics.DrawString(e.ToolTipText, font, Brushes.Black, e.Bounds);
             }
         }
 
-        private class ScheduleItem
-        {
-            public DayOfWeek Day { get; set; }
-            public string Ca { get; set; }
-            public string Subject { get; set; }
-            public string Teacher { get; set; }
-            public string Room { get; set; }
 
-            public ScheduleItem(DayOfWeek day, string ca, string subject, string teacher, string room)
+        private void CustomToolTip_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            // Vẽ nền
+            using (SolidBrush backgroundBrush = new SolidBrush(Color.FromArgb(40, 40, 60)))
             {
-                Day = day; Ca = ca; Subject = subject; Teacher = teacher; Room = room;
+                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+            }
+
+            // Vẽ viền
+            using (Pen borderPen = new Pen(Color.LightBlue, 1))
+            {
+                e.Graphics.DrawRectangle(borderPen, e.Bounds);
+            }
+
+            // Vẽ icon
+            var icon = SystemIcons.Information.ToBitmap();
+            e.Graphics.DrawImage(icon, e.Bounds.Left + 5, e.Bounds.Top + 5, 16, 16);
+
+            // Vẽ text
+            using (Font font = new Font("Segoe UI", 10, FontStyle.Bold))
+            {
+                e.Graphics.DrawString(e.ToolTipText, font, Brushes.White, e.Bounds.Left + 26, e.Bounds.Top + 5);
             }
         }
+
+
     }
 }

@@ -89,6 +89,23 @@ namespace DevEduManager.Screens
                         // Gán Role và Username gốc
                         CurrentUser.Role = row["Role"].ToString();
                         CurrentUser.Username = row["Username"].ToString();
+                        CurrentUser.Password = row["Password"].ToString();
+                        if (row["EmployeeID"] != DBNull.Value && !string.IsNullOrEmpty(row["EmployeeID"].ToString()))
+                        {
+                            CurrentUser.UserId = row["EmployeeID"].ToString();
+                        }
+                        else if (row["StudentID"] != DBNull.Value && !string.IsNullOrEmpty(row["StudentID"].ToString()))
+                        {
+                            CurrentUser.UserId = row["StudentID"].ToString();
+                        }
+                        else if (row["TeacherID"] != DBNull.Value && !string.IsNullOrEmpty(row["TeacherID"].ToString()))
+                        {
+                            CurrentUser.UserId = row["TeacherID"].ToString();
+                        }
+                        else
+                        {
+                            CurrentUser.UserId = string.Empty; // Hoặc null
+                        }
 
                         // Nếu không phải Admin, thì gán tên thực dựa trên ID
                         if (CurrentUser.Role != "Admin")

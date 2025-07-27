@@ -61,9 +61,9 @@ namespace DevEduManager
                 //if (QuanLyDiem == null) QuanLyDiem = new frmQuanLyDiem() { Dock = DockStyle.Fill, TopLevel = false };
                 //if (ThongKeDiemTheoLop == null) ThongKeDiemTheoLop = new frmThongKeDiemTheoLop() { Dock = DockStyle.Fill, TopLevel = false };
                 //if (XepLop == null) XepLop = new frmXepLop() { Dock = DockStyle.Fill, TopLevel = false };
-                if (QuanLyHocVien == null) QuanLyHocVien = new frmQuanLyHocVien() { Dock = DockStyle.Fill, TopLevel = false };
+                //if (QuanLyHocVien == null) QuanLyHocVien = new frmQuanLyHocVien() { Dock = DockStyle.Fill, TopLevel = false };
                 if (QuanLyNhanVien == null) QuanLyNhanVien = new frmQuanLyNhanVien() { Dock = DockStyle.Fill, TopLevel = false };
-                if (QuanLyGiangVien == null) QuanLyGiangVien = new frmQuanLyGiangVien() { Dock = DockStyle.Fill, TopLevel = false };
+                //if (QuanLyGiangVien == null) QuanLyGiangVien = new frmQuanLyGiangVien() { Dock = DockStyle.Fill, TopLevel = false };
                 if (QuanLyLopHoc == null) QuanLyLopHoc = new frmQuanLyLopHoc() { Dock = DockStyle.Fill, TopLevel = false };
                 if (QuanLyKhoaHoc == null) QuanLyKhoaHoc = new frmQuanLyKhoaHoc() { Dock = DockStyle.Fill, TopLevel = false };
                 //if (QuanLyHocPhi == null) QuanLyHocPhi = new frmQuanLyHocPhi() { Dock = DockStyle.Fill, TopLevel = false };

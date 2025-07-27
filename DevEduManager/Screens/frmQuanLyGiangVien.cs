@@ -4,7 +4,6 @@ using Enity.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,85 +12,59 @@ namespace DevEduManager.Screens
 {
     public partial class frmQuanLyGiangVien : Form
     {
-        public frmQuanLyGiangVien()
-        {
-            InitializeComponent();
-        }
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Teacher/";
-        private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
         private List<GiangVien> _teachers;
+        private int _pageIndex = 1;
+        private int _pageSize = 30;
+        private int _totalCount = 0;
+        private int _totalPages = 1;
+        private Panel _mainPanel;
 
-        /// <summary>
-        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
-        /// </summary>
-        public void ValidateSearch()
+        public frmQuanLyGiangVien(Panel mainPanel)
         {
-            if (chkMaGV.Checked && txtMaGV.Text == string.Empty)
-                throw new ArgumentException("Mã giảng viên không được trống");
-            if (chkTenGV.Checked && txtTenGV.Text == string.Empty)
-                throw new ArgumentException("Họ và tên giảng viên không được trống");
+            InitializeComponent();
+            _mainPanel = mainPanel;
         }
 
-        private async Task LoadDataToGridView(string teacherId = null, string fullName = null)
+        private async Task LoadDataToGridView(string search = "")
         {
-            string url = $"{_url}thongTinGiangVien?teacherID={teacherId}&fullName={fullName}";
-            _teachers = await callAPI.GetAPI<GiangVien>(url);
-
-            gridGV.Dock = DockStyle.Fill;
-            gridGV.AutoGenerateColumns = false;
-
-            if (_teachers.Any())
+            try
             {
-                gridGV.DataSource = _teachers;
-                string maGV = gridGV.Rows[0].Cells["clmMaGV"].Value.ToString();
-                await LoadGridViewLop(maGV);
-            }
+                string url = $"{_url}thongTinGiangVien?search={search}&pageIndex={_pageIndex}&pageSize={_pageSize}";
+                var result = await callAPI.GetApiObject<GiangVienResponse>(url);
 
+                if (result == null)
+                    return;
+
+                _totalCount = result.TotalCount;
+                _totalPages = (int)Math.Ceiling(_totalCount / (double)_pageSize);
+                _teachers = result.Data;
+
+                gridGV.AutoGenerateColumns = false;
+                gridGV.DataSource = _teachers;
+
+                UpdatePagingStatus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdatePagingStatus()
+        {
+            lblPageInfo.Text = $"Trang {_pageIndex} / {_totalPages}";
+
+            btnPrev.Enabled = _pageIndex > 1;
+            btnNext.Enabled = _pageIndex < _totalPages;
         }
 
         #region Events
-        private void chkMaGV_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMaGV.Enabled = chkMaGV.Checked;
-        }
-
-        private void chkTenGV_CheckedChanged(object sender, EventArgs e)
-        {
-            txtTenGV.Enabled = chkTenGV.Checked;
-        }
-
-        private void btnDatLai_Click(object sender, EventArgs e)
-        {
-            chkMaGV.Checked = true;
-            chkTenGV.Checked = false;
-            txtMaGV.Text = txtTenGV.Text = string.Empty;
-        }
 
         private async void frmQuanLyGiangVien_Load(object sender, EventArgs e)
         {
-            btnDatLai_Click(sender, e);
             await LoadDataToGridView();
-        }
-
-        private async void btnHienTatCa_Click(object sender, EventArgs e)
-        {
-            await LoadDataToGridView();
-        }
-
-        private void gridGV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            lblTongCongGV.Text = string.Format("Tổng cộng: {0} giảng viên", gridGV.Rows.Count);
-        }
-
-        private void gridGV_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            lblTongCongGV.Text = string.Format("Tổng cộng: {0} giảng viên", gridGV.Rows.Count);
-        }
-
-        private void gridGV_DoubleClick(object sender, EventArgs e)
-        {
-            btnSua_Click(sender, e);
         }
 
         private async void btnSua_Click(object sender, EventArgs e)
@@ -165,77 +138,56 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void gridLop_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            lblTongCongLop.Text = string.Format("Tổng cộng: {0} lớp", gridLop.Rows.Count);
-        }
-
-        private void gridLop_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            lblTongCongLop.Text = string.Format("Tổng cộng: {0} lớp", gridLop.Rows.Count);
-        }
-
-        private void gridGV_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private async void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ValidateSearch();
-
-                string teacherId = chkMaGV.Checked ? txtMaGV.Text.Trim() : null;
-                string fullName = chkTenGV.Checked ? txtTenGV.Text.Trim() : null;
-
-                // Gọi LoadDataToGridView với tham số cần thiết
-                await LoadDataToGridView(teacherId, fullName);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            _pageIndex = 1;
+            await LoadDataToGridView(txtSearch.Text);
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
 
-        }
         #endregion
 
-        private async void gridGV_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.RowIndex == -1)
-                {
-                    return;
-                }
 
+        private void gridGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
                 string maGV = gridGV.Rows[e.RowIndex].Cells["clmMaGV"].Value.ToString();
-                string url = $"{_url}thongTinLopDay?teacherID={maGV}";
-                await LoadGridViewLop(maGV);
+                var frm = new frmThongTinGiangVien(_mainPanel, maGV)
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false
+                };
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Đã xảy ra lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _mainPanel.Controls.Clear();
+                _mainPanel.Controls.Add(frm);
+                frm.Show();
             }
         }
 
-        private async Task LoadGridViewLop(string maGV)
+
+        private async void btnHienTatCa_Click(object sender, EventArgs e)
         {
-            string url = $"{_url}thongTinLopDay?teacherID={maGV}";
-            DataTable result = await callAPI.GetAPI(url);
-
-            gridLop.AutoGenerateColumns = false;
-            gridLop.Dock = DockStyle.Fill;
-            gridLop.DataSource = result.Rows.Count > 0 ? result : null;
+            await LoadDataToGridView();
         }
+
+        private async void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (_pageIndex > 1)
+            {
+                _pageIndex--;
+                await LoadDataToGridView();
+            }
+        }
+
+        private async void btnNext_Click(object sender, EventArgs e)
+        {
+            if (_pageIndex < _totalPages)
+            {
+                _pageIndex++;
+                await LoadDataToGridView();
+            }
+        }
+
     }
 }

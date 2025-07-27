@@ -4,41 +4,26 @@ using Enity.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DevEduManager.Screens
 {
-    //string maHocVien = "LNV00";
-
-
     public partial class frmQuanLyNhanVien : Form
     {
         CallAPI callAPI = new CallAPI();
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
         private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Employee/";
-        List<NhanVien> _employees;
+        private List<NhanVien> _employees;
+        private int _pageIndex = 1;
+        private int _pageSize = 30;
+        private int _totalCount = 0;
+        private int _totalPages = 1;
 
         public frmQuanLyNhanVien()
         {
             InitializeComponent();
-        }
-
-        /// <summary>
-        /// Kiểm tra nhập liệu tìm kiếm có hợp lệ
-        /// </summary>
-        public void ValidateSearch()
-        {
-            if (chkMaNV.Checked && txtMaNV.Text == string.Empty)
-                throw new ArgumentException("Mã nhân viên không được trống");
-            if (chkTenNV.Checked && txtTenNV.Text == string.Empty)
-                throw new ArgumentException("Họ và tên nhân viên không được trống");
-        }
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -50,48 +35,38 @@ namespace DevEduManager.Screens
             btnHienTatCa_Click(sender, e);
         }
 
-        private void chkMaNV_CheckedChanged(object sender, EventArgs e)
-        {
-            txtMaNV.Enabled = chkMaNV.Checked;
-        }
-
-        private void chkTenNV_CheckedChanged(object sender, EventArgs e)
-        {
-            txtTenNV.Enabled = chkTenNV.Checked;
-        }
-
-        private void chkLoaiNV_CheckedChanged(object sender, EventArgs e)
-        {
-            //cboLoaiNV.Enabled = chkLoaiNV.Checked;
-        }
-
-        private void btnDatLai_Click(object sender, EventArgs e)
-        {
-            chkMaNV.Checked = true;
-            txtMaNV.Text = txtTenNV.Text = string.Empty;
-        }
-        private async Task LoadDataToGridView(string employeeId = null, string name = null)
+        private async Task LoadDataToGridView(string search = "")
         {
             try
             {
-                string url = $"{_url2}thongTinNhanVien?employeeID={employeeId}&fullName={name}";
-                _employees = await callAPI.GetAPI<NhanVien>(url);
+                string url = $"{_url2}thongTinNhanVien?search={search}&pageIndex={_pageIndex}&pageSize={_pageSize}";
+                var result = await callAPI.GetApiObject<NhanVienResponse>(url);
 
+                if (result == null) return;
+
+                _totalCount = result.TotalCount;
+                _totalPages = (int)Math.Ceiling(_totalCount / (double)_pageSize);
+                _employees = result.Data;
                 gridNV.AutoGenerateColumns = false;
-                if (_employees.Any())
-                {
-                    gridNV.DataSource = _employees;
-                }
+                gridNV.DataSource = _employees;
+
+                UpdatePagingStatus();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void UpdatePagingStatus()
+        {
+            lblPageInfo.Text = $"Trang {_pageIndex} / {_totalPages}";
+            btnPrev.Enabled = _pageIndex > 1;
+            btnNext.Enabled = _pageIndex < _totalPages;
         }
 
         private async void frmQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            btnDatLai_Click(sender, e);
             await LoadDataToGridView();
         }
 
@@ -100,36 +75,10 @@ namespace DevEduManager.Screens
             await LoadDataToGridView();
         }
 
-        private void gridNV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            lblTongCong.Text = string.Format("Tổng cộng: {0} nhân viên", gridNV.Rows.Count);
-        }
-
-        private void gridNV_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            lblTongCong.Text = string.Format("Tổng cộng: {0} nhân viên", gridNV.Rows.Count);
-        }
-
         private async void btnTimKiem_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ValidateSearch();
-
-                string maNV = chkMaNV.Checked ? txtMaNV.Text.Trim() : null;
-                string tenNV = chkTenNV.Checked ? txtTenNV.Text.Trim() : null;
-
-                // Gọi LoadDataToGridView với tham số cần thiết
-                await LoadDataToGridView(maNV, tenNV);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message, "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            _pageIndex = 1;
+            await LoadDataToGridView(txtSearch.Text);
         }
 
         private async void btnSua_Click(object sender, EventArgs e)
@@ -158,11 +107,6 @@ namespace DevEduManager.Screens
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void gridNV_DoubleClick(object sender, EventArgs e)
-        {
-            btnSua_Click(sender, e);
         }
 
         private async void btnXoa_Click(object sender, EventArgs e)

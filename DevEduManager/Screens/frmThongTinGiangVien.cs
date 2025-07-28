@@ -14,14 +14,24 @@ namespace DevEduManager.Screens
         private string _teacherId;
         CallAPI callAPI = new CallAPI();
 
-
-        public frmThongTinGiangVien(Panel mainPanel, string teacherId)
+        public frmThongTinGiangVien(Panel mainPanel, string teacherId, string teacherName, bool showTeacherInfo = true)
         {
             InitializeComponent();
             _teacherId = teacherId;
             _mainPanel = mainPanel;
             Load += frmThongTinHocVien_Load;
             gridLop.CellPainting += gridLop_CellPainting;
+
+            if (!showTeacherInfo)
+            {
+                splitContainer1.Panel1Collapsed = true;
+                btnQuayLai.Visible = false;
+                return;
+            }
+
+            splitContainer1.IsSplitterFixed = true;
+            lblMaGV.Text = teacherId;
+            lblHoTen.Text = teacherName;
         }
 
         private async void frmThongTinHocVien_Load(object sender, EventArgs e)
@@ -116,11 +126,5 @@ namespace DevEduManager.Screens
             _mainPanel.Controls.Add(frm);
             frm.Show();
         }
-
-        //public class HocVienChuongTrinh
-        //{
-        //    public string ChuongTrinh { get; set; }
-        //    public string MonHoc { get; set; }
-        //}
     }
 }

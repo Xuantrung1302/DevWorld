@@ -153,7 +153,9 @@ namespace DevEduManager.Screens
             if (e.RowIndex >= 0)
             {
                 string maGV = gridGV.Rows[e.RowIndex].Cells["clmMaGV"].Value.ToString();
-                var frm = new frmThongTinGiangVien(_mainPanel, maGV)
+                string tenGV = gridGV.Rows[e.RowIndex].Cells["clmTenGV"].Value.ToString();
+
+                var frm = new frmThongTinGiangVien(_mainPanel, maGV, tenGV)
                 {
                     Dock = DockStyle.Fill,
                     TopLevel = false

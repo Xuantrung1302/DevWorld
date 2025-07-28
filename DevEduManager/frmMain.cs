@@ -597,7 +597,7 @@ namespace DevEduManager
         {
             pnlWorkspace.Controls.Clear();
 
-            frmXemCacLopDay frm = new frmXemCacLopDay()
+            var frm = new frmThongTinGiangVien(null, UserSession.UserId, null, false)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false

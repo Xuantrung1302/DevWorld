@@ -1,21 +1,24 @@
-﻿using System;
+﻿using BusinessLogic;
+using Enity.Models;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DevEduManager.Screens
 {
     public partial class frmBaoCaoDiemDanhGiaoVien : Form
     {
+        private List<ThongTinGiangDay> _thongTinGiangDay;
+        private CallAPI callAPI = new CallAPI();
+        private string _hostApiConfig = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/";
+
         public frmBaoCaoDiemDanhGiaoVien()
         {
             InitializeComponent();
-            SetupDataGridView();
+            _thongTinGiangDay = new List<ThongTinGiangDay>();
         }
 
         private void SetupDataGridView()
@@ -88,5 +91,93 @@ namespace DevEduManager.Screens
             }
         }
 
+        private async void frmBaoCaoDiemDanhGiaoVien_Load(object sender, EventArgs e)
+        {
+            string url = $"{_hostApiConfig}Teacher/thongTinGiangDay?teacherID={UserSession.UserId}";
+            _thongTinGiangDay = await callAPI.GetAPI<ThongTinGiangDay>(url);
+
+            LoadComboBoxCourse();
+            cboChuongTrinhHoc.SelectedIndexChanged += new EventHandler(cboChuongTrinhHoc_SelectedIndexChanged);
+            cboLopHoc.Enabled = false;
+        }
+
+        private void cboChuongTrinhHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedId = cboChuongTrinhHoc.SelectedValue?.ToString();
+
+            if (selectedId is null) return;
+
+            LoadComboBoxClass();
+            cboLopHoc.Enabled = true;
+            cboMonHoc.Enabled = false;
+            cboMonHoc.DataSource = null;
+        }
+
+        private void cboLopHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboChuongTrinhHoc.SelectedValue is null || cboLopHoc.SelectedValue is null)
+                return;
+
+            LoadComboBoxSubject();
+            cboMonHoc.Enabled = true;
+        }
+
+        private void cboMonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadComboBoxCourse()
+        {
+            var chuongTrinhs = _thongTinGiangDay
+                .GroupBy(x => new { x.CourseID, x.CourseName })
+                .Select(g => g.Key)
+                .ToList();
+
+            cboChuongTrinhHoc.DataSource = chuongTrinhs;
+            cboChuongTrinhHoc.DisplayMember = "CourseName";
+            cboChuongTrinhHoc.ValueMember = "CourseID";
+        }
+
+        private void LoadComboBoxSubject()
+        {
+            string selectedCourseID = cboChuongTrinhHoc.SelectedValue.ToString();
+            string selectedClassID = cboLopHoc.SelectedValue.ToString();
+
+            var filteredSubjects = _thongTinGiangDay
+                .Where(x => x.CourseID == selectedCourseID && x.ClassID == selectedClassID)
+                .GroupBy(x => new { x.SubjectID, x.SubjectName })
+                .Select(g => g.Key)
+                .ToList();
+
+            cboMonHoc.DataSource = filteredSubjects;
+            cboMonHoc.DisplayMember = "SubjectName";
+            cboMonHoc.ValueMember = "SubjectID";
+        }
+
+        private void LoadComboBoxClass()
+        {
+            string selectedCourseID = cboChuongTrinhHoc.SelectedValue.ToString();
+
+            var filteredClasses = _thongTinGiangDay
+                .Where(x => x.CourseID == selectedCourseID)
+                .GroupBy(x => new { x.ClassID, x.ClassName })
+                .Select(g => g.Key)
+                .ToList();
+
+            cboLopHoc.DataSource = filteredClasses;
+            cboLopHoc.DisplayMember = "ClassName";
+            cboLopHoc.ValueMember = "ClassID";
+        }
+
+        private void cboMonHoc_EnabledChanged(object sender, EventArgs e)
+        {
+            btnTimKiem.Enabled = cboMonHoc.Enabled;
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            SetupDataGridView();
+        }
     }
 }

@@ -35,10 +35,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboKyHoc = new System.Windows.Forms.ComboBox();
-            this.CboMonHoc = new System.Windows.Forms.ComboBox();
+            this.cboChuongTrinhHoc = new System.Windows.Forms.ComboBox();
             this.cboLopHoc = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cboMonHoc = new System.Windows.Forms.ComboBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.gridReportAttendance = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -99,10 +99,10 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label3, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 4, 1);
-            this.tableLayoutPanel2.Controls.Add(this.cboKyHoc, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.CboMonHoc, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.cboLopHoc, 4, 2);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 5, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cboChuongTrinhHoc, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cboLopHoc, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cboMonHoc, 4, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 5, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -119,9 +119,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
+            this.label2.Size = new System.Drawing.Size(105, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Kỳ học";
+            this.label2.Text = "Chương trình học";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -129,55 +129,60 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(296, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.Size = new System.Drawing.Size(55, 16);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Môn học";
+            this.label3.Text = "Lớp học";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(634, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Lớp học";
+            this.label4.Text = "Môn học";
             // 
-            // cboKyHoc
+            // cboChuongTrinhHoc
             // 
-            this.cboKyHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboKyHoc.FormattingEnabled = true;
-            this.cboKyHoc.Location = new System.Drawing.Point(3, 53);
-            this.cboKyHoc.Name = "cboKyHoc";
-            this.cboKyHoc.Size = new System.Drawing.Size(271, 24);
-            this.cboKyHoc.TabIndex = 3;
-            // 
-            // CboMonHoc
-            // 
-            this.CboMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CboMonHoc.FormattingEnabled = true;
-            this.CboMonHoc.Location = new System.Drawing.Point(296, 53);
-            this.CboMonHoc.Name = "CboMonHoc";
-            this.CboMonHoc.Size = new System.Drawing.Size(319, 24);
-            this.CboMonHoc.TabIndex = 4;
+            this.cboChuongTrinhHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboChuongTrinhHoc.FormattingEnabled = true;
+            this.cboChuongTrinhHoc.Location = new System.Drawing.Point(3, 53);
+            this.cboChuongTrinhHoc.Name = "cboChuongTrinhHoc";
+            this.cboChuongTrinhHoc.Size = new System.Drawing.Size(271, 24);
+            this.cboChuongTrinhHoc.TabIndex = 3;
+            this.cboChuongTrinhHoc.SelectedIndexChanged += new System.EventHandler(this.cboChuongTrinhHoc_SelectedIndexChanged);
             // 
             // cboLopHoc
             // 
             this.cboLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboLopHoc.FormattingEnabled = true;
-            this.cboLopHoc.Location = new System.Drawing.Point(634, 53);
+            this.cboLopHoc.Location = new System.Drawing.Point(296, 53);
             this.cboLopHoc.Name = "cboLopHoc";
-            this.cboLopHoc.Size = new System.Drawing.Size(378, 24);
-            this.cboLopHoc.TabIndex = 5;
+            this.cboLopHoc.Size = new System.Drawing.Size(319, 24);
+            this.cboLopHoc.TabIndex = 4;
+            this.cboLopHoc.SelectedIndexChanged += new System.EventHandler(this.cboLopHoc_SelectedIndexChanged);
             // 
-            // button1
+            // cboMonHoc
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(1018, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 37);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cboMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboMonHoc.FormattingEnabled = true;
+            this.cboMonHoc.Location = new System.Drawing.Point(634, 53);
+            this.cboMonHoc.Name = "cboMonHoc";
+            this.cboMonHoc.Size = new System.Drawing.Size(378, 24);
+            this.cboMonHoc.TabIndex = 5;
+            this.cboMonHoc.SelectedIndexChanged += new System.EventHandler(this.cboMonHoc_SelectedIndexChanged);
+            this.cboMonHoc.EnabledChanged += new System.EventHandler(this.cboMonHoc_EnabledChanged);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimKiem.Location = new System.Drawing.Point(1018, 53);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(90, 37);
+            this.btnTimKiem.TabIndex = 6;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // gridReportAttendance
             // 
@@ -202,6 +207,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBaoCaoDiemDanhGiaoVien";
             this.Text = "frmBaoCaoDiemDanhGiaoVien";
+            this.Load += new System.EventHandler(this.frmBaoCaoDiemDanhGiaoVien_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -222,9 +228,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboKyHoc;
-        private System.Windows.Forms.ComboBox CboMonHoc;
+        private System.Windows.Forms.ComboBox cboChuongTrinhHoc;
         private System.Windows.Forms.ComboBox cboLopHoc;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cboMonHoc;
+        private System.Windows.Forms.Button btnTimKiem;
     }
 }

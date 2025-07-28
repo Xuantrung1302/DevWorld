@@ -15,12 +15,14 @@ namespace DevEduManager.Screens
 
         private readonly string _courseUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Course/";
         private readonly string _classUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
+        private readonly string _studentUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Students/";
 
         public frmQuanLyLopHoc()
         {
             InitializeComponent();
             gridLop.AutoGenerateColumns = false;
             gridListStudent.AutoGenerateColumns = false;
+            gridLop.CellFormatting += new DataGridViewCellFormattingEventHandler(gridClasses_CellFormatting);
         }
 
         private async void frmQuanLyLopHoc_Load(object sender, EventArgs e)
@@ -29,8 +31,6 @@ namespace DevEduManager.Screens
             {
                 await LoadComboBoxCourseAsync();
 
-                txtTenMon.Enabled = chkTenMon.Checked;
-                txtTenLop.Enabled = chkTenLop.Checked;
 
                 if (gridLop.Rows.Count > 0)
                 {
@@ -94,12 +94,50 @@ namespace DevEduManager.Screens
             try
             {
                 string url = $"{_courseUrl}danhSachLopTrongKhoaHoc?CourseID={courseId}";
-                DataTable dt = await callAPI.GetAPI(url);
-                gridLop.DataSource = dt;
+                DataTable result = await callAPI.GetAPI(url);
+                gridLop.DataSource = result;
+
+                if (!result.Columns.Contains("StatusText"))
+                {
+                    result.Columns.Add("StatusText", typeof(string));
+                    foreach (DataRow row in result.Rows)
+                    {
+                        int status = row["Status"] != DBNull.Value ? Convert.ToInt32(row["Status"]) : 0;
+                        row["StatusText"] = GetStatusText(status);
+                    }
+                }
+
+                gridLop.ClearSelection();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải danh sách lớp học: " + ex.Message);
+            }
+        }
+
+        // Hàm chuyển đổi giá trị Status sang chuỗi
+        private string GetStatusText(int status)
+        {
+            switch (status)
+            {
+                case 1:
+                    return "Đang học";
+                case 2:
+                    return "Đã kết thúc";
+                case 3:
+                    return "Chưa có lịch";
+                default:
+                    return "Không xác định";
+            }
+        }
+
+        // Thêm sự kiện CellFormatting để định dạng hiển thị
+        private void gridClasses_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == gridLop.Columns["StatusText"].Index && e.RowIndex >= 0)
+            {
+                int status = Convert.ToInt32(gridLop.Rows[e.RowIndex].Cells["Status"].Value);
+                e.Value = GetStatusText(status);
             }
         }
 
@@ -116,7 +154,7 @@ namespace DevEduManager.Screens
                 string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
                 if (string.IsNullOrEmpty(classId)) return;
 
-                string url = $"{_classUrl}layDanhSachSinhVienTheoLop?classID={Uri.EscapeDataString(classId)}";
+                string url = $"{_studentUrl}thongTinHocVienCuaLop?classID={Uri.EscapeDataString(classId)}";
                 DataTable dt = await callAPI.GetAPI(url);
 
                 gridListStudent.DataSource = dt;
@@ -127,24 +165,11 @@ namespace DevEduManager.Screens
             }
         }
 
-
-        private void chkTenMon_CheckedChanged(object sender, EventArgs e)
-        {
-            txtTenMon.Enabled = chkTenMon.Checked;
-            if (!chkTenMon.Checked) txtTenMon.Text = string.Empty;
-        }
-
-        private void chkTenLop_CheckedChanged(object sender, EventArgs e)
-        {
-            txtTenLop.Enabled = chkTenLop.Checked;
-            if (!chkTenLop.Checked) txtTenLop.Text = string.Empty;
-        }
-
         private async void btnTimKiem_Click(object sender, EventArgs e)
         {
             try
             {
-                ValidateSearch();
+                //ValidateSearch();
                 await LoadClassDataAsync(cboCT.SelectedValue?.ToString());
                 if (gridLop.Rows.Count > 0)
                 {
@@ -161,10 +186,7 @@ namespace DevEduManager.Screens
 
         private async void btnDatLai_Click(object sender, EventArgs e)
         {
-            chkTenMon.Checked = false;
-            chkTenLop.Checked = false;
             txtTenMon.Text = string.Empty;
-            txtTenLop.Text = string.Empty;
 
             await LoadClassDataAsync(cboCT.SelectedValue?.ToString());
 
@@ -181,13 +203,13 @@ namespace DevEduManager.Screens
             await LoadStudentDataAsync();
         }
 
-        private void ValidateSearch()
-        {
-            if (chkTenMon.Checked && string.IsNullOrEmpty(txtTenMon.Text))
-                throw new ArgumentException("Tên môn không được để trống");
-            if (chkTenLop.Checked && string.IsNullOrEmpty(txtTenLop.Text))
-                throw new ArgumentException("Tên lớp không được để trống");
-        }
+        //private void ValidateSearch()
+        //{
+        //    if (chkTenMon.Checked && string.IsNullOrEmpty(txtTenMon.Text))
+        //        throw new ArgumentException("Tên môn không được để trống");
+        //    if (chkTenLop.Checked && string.IsNullOrEmpty(txtTenLop.Text))
+        //        throw new ArgumentException("Tên lớp không được để trống");
+        //}
 
         private async void btnThem_Click(object sender, EventArgs e)
         {
@@ -217,5 +239,53 @@ namespace DevEduManager.Screens
             }
         }
 
+        private void btnAddTeacher_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (gridLop.SelectedRows.Count > 0)
+                {
+                    string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
+                    //int status = (int)gridLop.SelectedRows[0].Cells["Status"].Value; // Giả sử cột Status đã có
+                    int status;
+
+                    // Kiểm tra và ép kiểu an toàn
+                    if (gridLop.SelectedRows[0].Cells["Status"].Value == null ||
+                        !int.TryParse(gridLop.SelectedRows[0].Cells["Status"].Value.ToString(), out status))
+                    {
+                        MessageBox.Show("Trạng thái lớp không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    if (status == 3)
+                    {
+                        string className = gridLop.SelectedRows[0].Cells["ClassName"].Value?.ToString();
+                        //string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
+
+                        // Giả sử lấy courseId từ dữ liệu hoặc cấu hình, cần điều chỉnh theo API thực tế
+                        string courseId = cboCT.SelectedValue?.ToString(); // Lấy mã khóa từ ValueMember (CourseID)
+                        string programName = cboCT.Text;
+
+                        frmAddTeacher addTeacherForm = new frmAddTeacher(courseId, classId, programName, className);
+                        addTeacherForm.ShowDialog();
+                        // Reload dữ liệu sau khi thêm thành công (nếu cần)
+                        //LoadDataToGridView().Wait();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lớp học đã có giảng viên hoặc không thể thêm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn một lớp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

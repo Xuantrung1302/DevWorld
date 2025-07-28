@@ -22,35 +22,37 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.panelThongTin = new System.Windows.Forms.Panel();
+            this.lblThongTin = new System.Windows.Forms.Label();
             this.panelGrid = new System.Windows.Forms.Panel();
-            this.gridLop = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaysOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Study = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridHocVien = new System.Windows.Forms.DataGridView();
+
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelHeader.SuspendLayout();
+            this.panelThongTin.SuspendLayout();
             this.panelGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridHocVien)).BeginInit();
             this.SuspendLayout();
+
             // 
             // tableLayoutPanelMain
             // 
             this.tableLayoutPanelMain.ColumnCount = 1;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.Controls.Add(this.panelHeader, 0, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.panelGrid, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.panelThongTin, 0, 1);
+            this.tableLayoutPanelMain.Controls.Add(this.panelGrid, 0, 2);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
-            this.tableLayoutPanelMain.RowCount = 2;
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(1114, 619);
+            this.tableLayoutPanelMain.RowCount = 4;
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));  // Header
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));  // Info section
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));  // Grid
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));  // Bottom margin
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(1000, 600);
             this.tableLayoutPanelMain.TabIndex = 0;
+
             // 
             // panelHeader
             // 
@@ -61,168 +63,113 @@
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
             this.panelHeader.Margin = new System.Windows.Forms.Padding(0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(1114, 60);
+            this.panelHeader.Size = new System.Drawing.Size(1000, 60);
             this.panelHeader.TabIndex = 0;
+
             // 
             // btnQuayLai
             // 
-            this.btnQuayLai.BackColor = System.Drawing.Color.SteelBlue;
             this.btnQuayLai.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnQuayLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnQuayLai.ForeColor = System.Drawing.Color.White;
-            this.btnQuayLai.Location = new System.Drawing.Point(953, 0);
+            this.btnQuayLai.Location = new System.Drawing.Point(850, 0);
             this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(161, 60);
-            this.btnQuayLai.TabIndex = 5;
+            this.btnQuayLai.Size = new System.Drawing.Size(150, 60);
+            this.btnQuayLai.TabIndex = 1;
             this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = false;
-            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            this.btnQuayLai.UseVisualStyleBackColor = true;
+
             // 
             // lblTitle
             // 
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1114, 60);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "THÔNG TIN GIẢNG VIÊN";
+            this.lblTitle.Text = "THÔNG TIN HỌC VIÊN";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+            // 
+            // panelThongTin
+            // 
+            this.panelThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelThongTin.Padding = new System.Windows.Forms.Padding(10);
+            this.panelThongTin.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelThongTin.Controls.Add(this.lblThongTin);
+            this.panelThongTin.Location = new System.Drawing.Point(0, 60);
+            this.panelThongTin.Margin = new System.Windows.Forms.Padding(0);
+            this.panelThongTin.Name = "panelThongTin";
+            this.panelThongTin.Size = new System.Drawing.Size(1000, 80);
+            this.panelThongTin.TabIndex = 1;
+
+            // 
+            // lblThongTin
+            // 
+            this.lblThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblThongTin.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblThongTin.Text = "Tên học viên: Nguyễn Văn A - Mã số: HV001";
+            this.lblThongTin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             // 
             // panelGrid
             // 
-            this.panelGrid.BackColor = System.Drawing.Color.White;
-            this.panelGrid.Controls.Add(this.gridLop);
             this.panelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelGrid.Location = new System.Drawing.Point(3, 63);
-            this.panelGrid.Name = "panelGrid";
             this.panelGrid.Padding = new System.Windows.Forms.Padding(10);
-            this.panelGrid.Size = new System.Drawing.Size(1108, 553);
-            this.panelGrid.TabIndex = 1;
+            this.panelGrid.BackColor = System.Drawing.Color.White;
+            this.panelGrid.Controls.Add(this.gridHocVien);
+            this.panelGrid.Location = new System.Drawing.Point(0, 140);
+            this.panelGrid.Margin = new System.Windows.Forms.Padding(0);
+            this.panelGrid.Name = "panelGrid";
+            this.panelGrid.Size = new System.Drawing.Size(1000, 450);
+            this.panelGrid.TabIndex = 2;
+
             // 
-            // gridLop
+            // gridHocVien
             // 
-            this.gridLop.AllowUserToAddRows = false;
-            this.gridLop.AllowUserToOrderColumns = true;
-            this.gridLop.AllowUserToResizeRows = false;
-            this.gridLop.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gridLop.BackgroundColor = System.Drawing.Color.White;
-            this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.gridLop.ColumnHeadersHeight = 40;
-            this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.CourseName,
-            this.DaysOfWeek,
-            this.Study,
-            this.Room,
-            this.dataGridViewTextBoxColumn5});
-            this.gridLop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridLop.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridLop.Location = new System.Drawing.Point(10, 10);
-            this.gridLop.Margin = new System.Windows.Forms.Padding(4);
-            this.gridLop.MultiSelect = false;
-            this.gridLop.Name = "gridLop";
-            this.gridLop.ReadOnly = true;
-            this.gridLop.RowHeadersVisible = false;
-            this.gridLop.RowHeadersWidth = 51;
-            this.gridLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridLop.Size = new System.Drawing.Size(1088, 533);
-            this.gridLop.TabIndex = 4;
+            this.gridHocVien.AllowUserToAddRows = false;
+            this.gridHocVien.AllowUserToDeleteRows = false;
+            this.gridHocVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gridHocVien.BackgroundColor = System.Drawing.Color.White;
+            this.gridHocVien.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.gridHocVien.ColumnHeadersHeight = 40;
+            this.gridHocVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridHocVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridHocVien.Location = new System.Drawing.Point(10, 10);
+            this.gridHocVien.MultiSelect = false;
+            this.gridHocVien.Name = "gridHocVien";
+            this.gridHocVien.ReadOnly = true;
+            this.gridHocVien.RowHeadersVisible = false;
+            this.gridHocVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridHocVien.Size = new System.Drawing.Size(980, 430);
+            this.gridHocVien.TabIndex = 0;
+
             // 
-            // dataGridViewTextBoxColumn2
+            // frmThongTinHocVien
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ClassName";
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Green;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn2.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên lớp";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 200;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // CourseName
-            // 
-            this.CourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CourseName.DataPropertyName = "course_name";
-            this.CourseName.HeaderText = "Môn học";
-            this.CourseName.MinimumWidth = 250;
-            this.CourseName.Name = "CourseName";
-            this.CourseName.ReadOnly = true;
-            this.CourseName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DaysOfWeek
-            // 
-            this.DaysOfWeek.DataPropertyName = "DaysOfWeek";
-            this.DaysOfWeek.HeaderText = "Thứ";
-            this.DaysOfWeek.MinimumWidth = 50;
-            this.DaysOfWeek.Name = "DaysOfWeek";
-            this.DaysOfWeek.ReadOnly = true;
-            this.DaysOfWeek.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Study
-            // 
-            this.Study.DataPropertyName = "StudyTime";
-            this.Study.HeaderText = "Ca học";
-            this.Study.MinimumWidth = 200;
-            this.Study.Name = "Study";
-            this.Study.ReadOnly = true;
-            this.Study.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Room
-            // 
-            this.Room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Room.DataPropertyName = "Room";
-            this.Room.HeaderText = "Phòng";
-            this.Room.MinimumWidth = 10;
-            this.Room.Name = "Room";
-            this.Room.ReadOnly = true;
-            this.Room.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Room.Width = 52;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "StudentCount";
-            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sĩ số";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn5.Width = 41;
-            // 
-            // frmThongTinGiangVien
-            // 
-            this.ClientSize = new System.Drawing.Size(1114, 619);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmThongTinGiangVien";
+            this.Name = "frmThongTinHocVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thông tin học viên";
+
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
+            this.panelThongTin.ResumeLayout(false);
             this.panelGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridHocVien)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.Panel panelHeader;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel panelGrid;
         private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.DataGridView gridLop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CourseName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DaysOfWeek;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Study;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Room;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panelThongTin;
+        private System.Windows.Forms.Label lblThongTin;
+        private System.Windows.Forms.Panel panelGrid;
+        private System.Windows.Forms.DataGridView gridHocVien;
     }
 }

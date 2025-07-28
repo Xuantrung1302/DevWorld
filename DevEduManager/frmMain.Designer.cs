@@ -569,7 +569,7 @@
             this.mniAS_D_OD_06.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.mniAS_D_OD_06.Name = "mniAS_D_OD_06";
             this.mniAS_D_OD_06.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.mniAS_D_OD_06.Size = new System.Drawing.Size(196, 38);
+            this.mniAS_D_OD_06.Size = new System.Drawing.Size(230, 38);
             this.mniAS_D_OD_06.Text = "Lịch học";
             this.mniAS_D_OD_06.Click += new System.EventHandler(this.mniAS_D_OD_06_Click);
             // 
@@ -578,7 +578,7 @@
             this.toolStripMenuItem4.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(230, 38);
             this.toolStripMenuItem4.Text = "Lịch thi";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -587,7 +587,7 @@
             this.toolStripMenuItem3.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(230, 38);
             this.toolStripMenuItem3.Text = "Điểm";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -596,16 +596,18 @@
             this.toolStripMenuItem2.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(230, 38);
             this.toolStripMenuItem2.Text = "Học phí";
+            this.toolStripMenuItem2.Visible = false;
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
             this.toolStripMenuItem11.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(196, 38);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(230, 38);
             this.toolStripMenuItem11.Text = "Feedback";
+            this.toolStripMenuItem11.Visible = false;
             // 
             // pmniAS_D_WS
             // 

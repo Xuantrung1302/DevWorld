@@ -131,7 +131,7 @@ namespace DevEduManager.Screens
 
                             // Tooltip trực tiếp
                             cell.ToolTipText =
-                                    $"📘 Chương trình: {item.CourseName}\n" +  // course_name từ SP
+                                    $"📘 {item.CourseName}\n" +  // course_name từ SP
                                     $"🏫 Lớp: {item.ClassName}\n" +
                                     $"📍 Phòng: {item.Room}\n" +              // lấy đúng Room
                                     $"👨‍🏫 GV: {item.TeacherName}";

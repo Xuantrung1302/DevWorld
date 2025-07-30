@@ -36,7 +36,7 @@ namespace DevEduManager.Screens
         {
             try
             {
-                string url = $"{_courseUrl}layKhoaHocTheoHocVien?studentID={_studentID}";
+                string url = $"{_courseUrl}layKhoaHocTheoHocVienForLichThi?studentID={_studentID}";
                 DataTable result = await callAPI.GetAPI(url);
 
                 if (result != null && result.Rows.Count > 0)

@@ -57,9 +57,9 @@
             this.btnQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.btnKetNoiCSDL = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongTinTrungTam = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_DoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGiangVienTitle = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAS_D_US_02 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHocVienTitle = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +74,6 @@
             this.japanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DemoScreen = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlWorkspace = new System.Windows.Forms.Panel();
-            this.tsmi_DoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -442,11 +441,18 @@
             this.btnThongTinTrungTam.Text = "Quản lý trung tâm";
             this.btnThongTinTrungTam.Click += new System.EventHandler(this.btnThongTinTrungTam_Click);
             // 
+            // tsmi_DoanhThu
+            // 
+            this.tsmi_DoanhThu.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.tsmi_DoanhThu.Name = "tsmi_DoanhThu";
+            this.tsmi_DoanhThu.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.tsmi_DoanhThu.Size = new System.Drawing.Size(283, 38);
+            this.tsmi_DoanhThu.Text = "Quản lý doanh thu";
+            // 
             // btnGiangVienTitle
             // 
             this.btnGiangVienTitle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniAS_D_US_02,
-            this.toolStripMenuItem1,
             this.toolStripMenuItem5,
             this.toolStripMenuItem9});
             this.btnGiangVienTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -467,15 +473,6 @@
             this.mniAS_D_US_02.Size = new System.Drawing.Size(292, 38);
             this.mniAS_D_US_02.Text = "Xem các lớp dạy";
             this.mniAS_D_US_02.Click += new System.EventHandler(this.mniAS_D_US_02_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(292, 38);
-            this.toolStripMenuItem1.Text = "Đổi mật khẩu";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -623,14 +620,6 @@
             this.pnlWorkspace.Size = new System.Drawing.Size(1291, 798);
             this.pnlWorkspace.TabIndex = 11;
             // 
-            // tsmi_DoanhThu
-            // 
-            this.tsmi_DoanhThu.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.tsmi_DoanhThu.Name = "tsmi_DoanhThu";
-            this.tsmi_DoanhThu.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.tsmi_DoanhThu.Size = new System.Drawing.Size(283, 38);
-            this.tsmi_DoanhThu.Text = "Quản lý doanh thu";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -700,7 +689,6 @@
         private System.Windows.Forms.ToolStripMenuItem btnKetNoiCSDL;
         private System.Windows.Forms.ToolStripMenuItem btnThongTinTrungTam;
         private System.Windows.Forms.Panel pnlWorkspace;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;

@@ -169,6 +169,7 @@
             this.cboLopHoc.Name = "cboLopHoc";
             this.cboLopHoc.Size = new System.Drawing.Size(319, 24);
             this.cboLopHoc.TabIndex = 4;
+            this.cboLopHoc.SelectedIndexChanged += new System.EventHandler(this.cboLopHoc_SelectedIndexChanged);
             // 
             // cboMonHoc
             // 

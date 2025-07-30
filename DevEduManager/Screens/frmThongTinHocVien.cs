@@ -1,94 +1,75 @@
-﻿using System;
+﻿using BusinessLogic;
+using Enity.Models;
+using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Configuration;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DevEduManager.Screens
 {
     public partial class frmThongTinHocVien : Form
     {
+        private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Course/";
+        private string _studentId;
+        CallAPI callAPI = new CallAPI();
         private Panel _mainPanel;
+        List<StudentCourse> _studentCourses;
 
-        public frmThongTinHocVien(Panel mainPanel)
+        public frmThongTinHocVien(Panel mainPanel, string studentId, string studentName)
         {
             InitializeComponent();
             _mainPanel = mainPanel;
+            _studentId = studentId;
             Load += frmThongTinHocVien_Load;
-            //gridLopHoc.CellPainting += gridLopHoc_CellPainting;
+            lblMaHV.Text = studentId;
+            lblHoTen.Text = studentName;
         }
 
-        private void frmThongTinHocVien_Load(object sender, EventArgs e)
+        private async void frmThongTinHocVien_Load(object sender, EventArgs e)
         {
-            // Setup columns
-            //gridLopHoc.AutoGenerateColumns = false;
-            //gridLopHoc.ColumnCount = 2;
-            //gridLopHoc.Columns[0].Name = "ChuongTrinh";
-            //gridLopHoc.Columns[0].HeaderText = "Chương trình học";
-            //gridLopHoc.Columns[1].Name = "MonHoc";
-            //gridLopHoc.Columns[1].HeaderText = "Môn học";
+            string url = $"{_url}layKhoaHocTheoHocVien?studentID={_studentId}";
+            _studentCourses = await callAPI.GetAPI<StudentCourse>(url);
 
-            // Sample data
-            var data = new List<HocVienChuongTrinh>
+            if (_studentCourses is null || _studentCourses.Count == 0)
             {
-                new HocVienChuongTrinh { ChuongTrinh = "Tin học căn bản", MonHoc = "Word" },
-                new HocVienChuongTrinh { ChuongTrinh = "Tin học căn bản", MonHoc = "Excel" },
-                new HocVienChuongTrinh { ChuongTrinh = "Tin học căn bản", MonHoc = "PowerPoint" },
-                new HocVienChuongTrinh { ChuongTrinh = "Lập trình C#", MonHoc = "Cơ bản" },
-                new HocVienChuongTrinh { ChuongTrinh = "Lập trình C#", MonHoc = "Nâng cao" },
-            };
+                return;
+            }
 
-            // Add rows
-            //gridLopHoc.RowTemplate.Height = 40;
-            //foreach (var item in data)
-            //{
-            //    gridLopHoc.Rows.Add(item.ChuongTrinh, item.MonHoc);
-            //}
-            //gridLopHoc.EnableHeadersVisualStyles = false;
-            //gridLopHoc.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            //gridLopHoc.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            //gridLopHoc.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            var uniqueCourses = _studentCourses
+                .GroupBy(sc => new { sc.CourseID, sc.CourseName })
+                .Select(group => group.First())
+                .ToList();
 
-            //gridLopHoc.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            //gridLopHoc.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue;
-            //gridLopHoc.DefaultCellStyle.SelectionForeColor = Color.Black;
+            gridChuongTrinh.DataSource = uniqueCourses.Select(sc => new
+            {
+                sc.CourseID,
+                sc.CourseName
+            }).ToList();
 
-            //gridLopHoc.AllowUserToAddRows = false;
-            //gridLopHoc.AllowUserToResizeRows = false;
-            //gridLopHoc.RowHeadersVisible = false;
-            //gridLopHoc.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            if (uniqueCourses.Any())
+            {
+                // Tự động chọn chương trình đầu tiên
+                gridChuongTrinh.Rows[0].Selected = true;
+                string firstCourseID = uniqueCourses.First().CourseID;
+                LoadSubjectsForCourse(firstCourseID);
+            }
+            gridChuongTrinh.AllowUserToResizeRows = false;
+            gridMonHoc.AllowUserToResizeRows = false;
         }
 
-        private void gridLopHoc_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void LoadSubjectsForCourse(string courseID)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex != 0) return;
+            var subjectsForCourse = _studentCourses
+                .Where(sc => sc.CourseID == courseID)
+                .Select(sc => new
+                {
+                    sc.SubjectID,
+                    sc.SubjectName
+                })
+                .ToList();
 
-            e.Handled = true;
-            e.PaintBackground(e.CellBounds, true);
-
-            string currentValue = e.Value?.ToString();
-            //string previousValue = e.RowIndex > 0
-            //    ? gridLopHoc.Rows[e.RowIndex - 1].Cells[e.ColumnIndex].Value?.ToString()
-            //    : null;
-
-            //bool isSameAsAbove = currentValue == previousValue;
-
-            //if (!isSameAsAbove && !string.IsNullOrEmpty(currentValue))
-            //{
-            //    // Căn giữa dọc và trái đẹp hơn
-            //    using (SolidBrush brush = new SolidBrush(e.CellStyle.ForeColor))
-            //    {
-            //        var textSize = TextRenderer.MeasureText(currentValue, e.CellStyle.Font);
-            //        var location = new Point(e.CellBounds.X + 6, e.CellBounds.Y + (e.CellBounds.Height - textSize.Height) / 2);
-            //        e.Graphics.DrawString(currentValue, e.CellStyle.Font, brush, location);
-            //    }
-            //}
-
-            // Vẽ border để ngăn rõ ràng
-            //using (Pen gridLinePen = new Pen(gridLopHoc.GridColor))
-            //{
-            //    e.Graphics.DrawLine(gridLinePen, e.CellBounds.Left, e.CellBounds.Bottom - 1, e.CellBounds.Right, e.CellBounds.Bottom - 1);
-            //    e.Graphics.DrawLine(gridLinePen, e.CellBounds.Right - 1, e.CellBounds.Top, e.CellBounds.Right - 1, e.CellBounds.Bottom);
-            //}
+            gridMonHoc.DataSource = subjectsForCourse;
         }
 
         private void btnQuayLai_Click(object sender, EventArgs e)
@@ -104,10 +85,13 @@ namespace DevEduManager.Screens
             frm.Show();
         }
 
-        public class HocVienChuongTrinh
+        private void gridChuongTrinh_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            public string ChuongTrinh { get; set; }
-            public string MonHoc { get; set; }
+            if (e.RowIndex >= 0)
+            {
+                string selectedCourseID = gridChuongTrinh.Rows[e.RowIndex].Cells["clmCourseID"].Value.ToString();
+                LoadSubjectsForCourse(selectedCourseID);
+            }
         }
     }
 }

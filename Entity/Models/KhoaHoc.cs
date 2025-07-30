@@ -19,4 +19,13 @@ namespace Enity.Models
         public ICollection<LopHoc> LopHocs { get; set; }
     }
 
+    public class StudentCourse
+    {
+        public string CourseID { get; set; }
+        public string CourseName { get; set; }
+        public string SubjectID { get; set; }
+        public string SubjectName { get; set; }
+    }
+
+
 }

@@ -22,18 +22,18 @@
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.lblHoTen = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblMaHV = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanelGrids = new System.Windows.Forms.TableLayoutPanel();
             this.gridChuongTrinh = new System.Windows.Forms.DataGridView();
-            this.clmCourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridMonHoc = new System.Windows.Forms.DataGridView();
             this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblMaHV = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblHoTen = new System.Windows.Forms.Label();
+            this.clmCourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -86,6 +86,7 @@
             this.btnQuayLai.TabIndex = 1;
             this.btnQuayLai.Text = "Quay lại";
             this.btnQuayLai.UseVisualStyleBackColor = false;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // lblTitle
             // 
@@ -111,6 +112,42 @@
             this.panelContent.Padding = new System.Windows.Forms.Padding(10);
             this.panelContent.Size = new System.Drawing.Size(894, 94);
             this.panelContent.TabIndex = 1;
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Location = new System.Drawing.Point(426, 24);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(25, 16);
+            this.lblHoTen.TabIndex = 3;
+            this.lblHoTen.Text = "ten";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(306, 24);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 16);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tên học viên:";
+            // 
+            // lblMaHV
+            // 
+            this.lblMaHV.AutoSize = true;
+            this.lblMaHV.Location = new System.Drawing.Point(141, 24);
+            this.lblMaHV.Name = "lblMaHV";
+            this.lblMaHV.Size = new System.Drawing.Size(26, 16);
+            this.lblMaHV.TabIndex = 1;
+            this.lblMaHV.Text = "mã";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã học viên:";
             // 
             // tableLayoutPanelGrids
             // 
@@ -146,21 +183,7 @@
             this.gridChuongTrinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridChuongTrinh.Size = new System.Drawing.Size(431, 336);
             this.gridChuongTrinh.TabIndex = 0;
-            // 
-            // clmCourseID
-            // 
-            this.clmCourseID.HeaderText = "Mã khóa học";
-            this.clmCourseID.MinimumWidth = 6;
-            this.clmCourseID.Name = "clmCourseID";
-            this.clmCourseID.ReadOnly = true;
-            this.clmCourseID.Visible = false;
-            // 
-            // clmCourseName
-            // 
-            this.clmCourseName.HeaderText = "Tên khóa học";
-            this.clmCourseName.MinimumWidth = 6;
-            this.clmCourseName.Name = "clmCourseName";
-            this.clmCourseName.ReadOnly = true;
+            this.gridChuongTrinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridChuongTrinh_CellClick);
             // 
             // gridMonHoc
             // 
@@ -184,6 +207,7 @@
             // 
             // clmSubjectID
             // 
+            this.clmSubjectID.DataPropertyName = "SubjectID";
             this.clmSubjectID.HeaderText = "Mã môn học";
             this.clmSubjectID.MinimumWidth = 6;
             this.clmSubjectID.Name = "clmSubjectID";
@@ -192,10 +216,12 @@
             // 
             // clmSubjectName
             // 
+            this.clmSubjectName.DataPropertyName = "SubjectName";
             this.clmSubjectName.HeaderText = "Tên môn học";
             this.clmSubjectName.MinimumWidth = 6;
             this.clmSubjectName.Name = "clmSubjectName";
             this.clmSubjectName.ReadOnly = true;
+            this.clmSubjectName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // panelFooter
             // 
@@ -205,41 +231,23 @@
             this.panelFooter.Size = new System.Drawing.Size(894, 14);
             this.panelFooter.TabIndex = 3;
             // 
-            // label1
+            // clmCourseID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã học viên:";
+            this.clmCourseID.DataPropertyName = "CourseID";
+            this.clmCourseID.HeaderText = "Mã khóa học";
+            this.clmCourseID.MinimumWidth = 6;
+            this.clmCourseID.Name = "clmCourseID";
+            this.clmCourseID.ReadOnly = true;
+            this.clmCourseID.Visible = false;
             // 
-            // lblMaHV
+            // clmCourseName
             // 
-            this.lblMaHV.AutoSize = true;
-            this.lblMaHV.Location = new System.Drawing.Point(141, 24);
-            this.lblMaHV.Name = "lblMaHV";
-            this.lblMaHV.Size = new System.Drawing.Size(26, 16);
-            this.lblMaHV.TabIndex = 1;
-            this.lblMaHV.Text = "mã";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên học viên:";
-            // 
-            // lblHoTen
-            // 
-            this.lblHoTen.AutoSize = true;
-            this.lblHoTen.Location = new System.Drawing.Point(426, 24);
-            this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(25, 16);
-            this.lblHoTen.TabIndex = 3;
-            this.lblHoTen.Text = "ten";
+            this.clmCourseName.DataPropertyName = "CourseName";
+            this.clmCourseName.HeaderText = "Tên khóa học";
+            this.clmCourseName.MinimumWidth = 6;
+            this.clmCourseName.Name = "clmCourseName";
+            this.clmCourseName.ReadOnly = true;
+            this.clmCourseName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // frmThongTinHocVien
             // 
@@ -271,8 +279,6 @@
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGrids;
         private System.Windows.Forms.DataGridView gridChuongTrinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCourseID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCourseName;
         private System.Windows.Forms.DataGridView gridMonHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSubjectName;
@@ -281,5 +287,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblMaHV;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCourseID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCourseName;
     }
 }

@@ -170,7 +170,10 @@ namespace DevEduManager.Screens
         {
             if (e.RowIndex >= 0)
             {
-                var frm = new frmThongTinHocVien(_mainPanel)
+                string studentId = gridDSHV.Rows[e.RowIndex].Cells["clmMaHV"].Value.ToString();
+                string studentName = gridDSHV.Rows[e.RowIndex].Cells["clmTenHV"].Value.ToString();
+
+                var frm = new frmThongTinHocVien(_mainPanel, studentId, studentName)
                 {
                     Dock = DockStyle.Fill,
                     TopLevel = false

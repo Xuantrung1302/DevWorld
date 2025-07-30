@@ -40,8 +40,8 @@
             this.cboMonHoc = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.gridReportAttendance = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.gridReportAttendance = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -169,6 +169,7 @@
             this.cboLopHoc.Name = "cboLopHoc";
             this.cboLopHoc.Size = new System.Drawing.Size(319, 24);
             this.cboLopHoc.TabIndex = 4;
+            this.cboLopHoc.SelectedIndexChanged += new System.EventHandler(this.cboLopHoc_SelectedIndexChanged);
             // 
             // cboMonHoc
             // 
@@ -203,6 +204,15 @@
             this.label5.Size = new System.Drawing.Size(0, 20);
             this.label5.TabIndex = 7;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(63, 16);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Chú thích:";
+            // 
             // gridReportAttendance
             // 
             this.gridReportAttendance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -215,15 +225,6 @@
             this.gridReportAttendance.RowHeadersWidth = 51;
             this.gridReportAttendance.Size = new System.Drawing.Size(1430, 328);
             this.gridReportAttendance.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 77);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Chú thích:";
             // 
             // frmBaoCaoDiemDanhGiaoVien
             // 

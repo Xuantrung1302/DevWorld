@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DevEduManager.Screens
 {
-    public partial class frmTinNhan : Form
+    public partial class frmQuanLySoGioDayHoc : Form
     {
-        public frmTinNhan()
+        public frmQuanLySoGioDayHoc()
         {
             InitializeComponent();
         }

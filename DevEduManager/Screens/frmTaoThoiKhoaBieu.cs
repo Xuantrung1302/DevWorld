@@ -144,10 +144,13 @@ namespace DevEduManager.Screens
                     // Các dòng dữ liệu
                     foreach (var row in subjectGroup)
                     {
+                        // Chuyển đổi giá trị DayOfWeek thành tên thứ
+                        string dayOfWeekText = GetDayOfWeekText(row.Field<string>("DayOfWeek"));
+
                         int rowIndex = dtgvLich.Rows.Add(
                             row["ClassName"].ToString(),
                             $"{Convert.ToDateTime(row["StartTime"]).ToString("HH:mm")}-{Convert.ToDateTime(row["EndTime"]).ToString("HH:mm")}",
-                            row["DayOfWeek"].ToString(),
+                            dayOfWeekText, // Gán giá trị "Thứ" dựa trên số
                             Convert.ToDateTime(row["StartTime"]).ToString("dd/MM/yyyy"),
                             "P101", // Có thể thay bằng field nếu có
                             row["FullName"].ToString()
@@ -162,6 +165,22 @@ namespace DevEduManager.Screens
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi tải lịch học: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Phương thức chuyển đổi số ngày trong tuần thành tên thứ
+        private string GetDayOfWeekText(string dayOfWeekNumber)
+        {
+            switch (dayOfWeekNumber)
+            {
+                case "1": return "Chủ nhật";
+                case "2": return "Thứ 2";
+                case "3": return "Thứ 3";
+                case "4": return "Thứ 4";
+                case "5": return "Thứ 5";
+                case "6": return "Thứ 6";
+                case "7": return "Thứ 7";
+                default: return "Không xác định";
             }
         }
 

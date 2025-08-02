@@ -20,36 +20,36 @@ namespace DevEduManager.Modals
 
         string classID = null;
         string className = null;
-        string subjectID = null;
+        string courseID = null;
         bool isAddingTeacher = false;
 
-        public frmLopHocEdit(string classId, string className, string subjectId)
+        public frmLopHocEdit(string courseID)
         {
             InitializeComponent();
 
-            this.classID = classId;
-            this.className = className;
-            this.subjectID = subjectId;
+            //this.classID = classId;
+            //this.className = className;
+            this.courseID = courseID;
             //this.isAddingTeacher = isAddingTeacher;
 
-            if (!isAddingTeacher)
-            {
-                cboGV.Enabled = false;
-            }
+            //if (!isAddingTeacher)
+            //{
+            //    cboGV.Enabled = false;
+            //}
         }
 
         private void frmLopHocEdit_Load(object sender, EventArgs e)
         {
             try
             {
-                txtTenLH.Text = className;
+                //txtTenLH.Text = className;
                 LoadCaHoc();
                 LoadDaysOfWeek();
                 LoadPhongHoc();
 
                 if (isAddingTeacher)
                 {
-                    LoadListTeacher();
+                    //LoadListTeacher();
 
                     // Disable tất cả các control liên quan đến lớp học
                     txtTenLH.Enabled = false;
@@ -105,9 +105,9 @@ namespace DevEduManager.Modals
             {
                 string url = $"{_classUrl}layGiangVienChoLop?classID={classID}";
                 DataTable result = await callAPI.GetAPI(url);
-                cboGV.DataSource = result;
-                cboGV.DisplayMember = "FullName";
-                cboGV.ValueMember = "TeacherID";
+                //cboGV.DataSource = result;
+                //cboGV.DisplayMember = "FullName";
+                //cboGV.ValueMember = "TeacherID";
             }
             catch (Exception ex)
             {
@@ -188,7 +188,7 @@ namespace DevEduManager.Modals
                 LopHoc newClass = new LopHoc
                 {
                     ClassName = txtTenLH.Text.Trim(),
-                    SubjectID = subjectID,
+                    CourseID = courseID,
                     StartTime = startTime.ToString("yyyy-MM-dd HH:mm:ss"),
                     EndTime = endTime.ToString("yyyy-MM-dd HH:mm:ss"),
                     Room = roomName,
@@ -234,7 +234,7 @@ namespace DevEduManager.Modals
     public class LopHoc
     {
         public string ClassID { get; set; }
-        public string SubjectID { get; set; }
+        public string CourseID { get; set; }
         public string ClassName { get; set; }
         public string StartTime { get; set; }
         public string EndTime { get; set; }

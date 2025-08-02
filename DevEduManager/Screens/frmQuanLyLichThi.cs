@@ -153,10 +153,5 @@ namespace DevEduManager.Screens
             string subjectID = cboMH.SelectedValue?.ToString();
             await LoadExamScheduleAsync(courseID, subjectID);
         }
-        private void btnTK_Click(object sender, EventArgs e)
-        {
-            //frmTaoLichThi frm = new frmTaoLichThi();
-            //frm.ShowDialog();
-        }
     }
 }

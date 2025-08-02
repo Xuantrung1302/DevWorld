@@ -1,8 +1,10 @@
 ﻿using BusinessLogic;
 using DevEduManager.Modals;
+using DocumentFormat.OpenXml.VariantTypes;
 using System;
 using System.Configuration;
 using System.Data;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
@@ -158,6 +160,7 @@ namespace DevEduManager.Screens
                 DataTable dt = await callAPI.GetAPI(url);
 
                 gridListStudent.DataSource = dt;
+                lblTotalStudents.Text = $"Tổng cộng: {gridListStudent.Rows.Count}"+"học viên";
             }
             catch (Exception ex)
             {
@@ -186,7 +189,7 @@ namespace DevEduManager.Screens
 
         private async void btnDatLai_Click(object sender, EventArgs e)
         {
-            txtTenMon.Text = string.Empty;
+            //txtTenMon.Text = string.Empty;
 
             await LoadClassDataAsync(cboCT.SelectedValue?.ToString());
 
@@ -201,7 +204,43 @@ namespace DevEduManager.Screens
         private async void gridLop_SelectionChanged(object sender, EventArgs e)
         {
             await LoadStudentDataAsync();
+            UpdateAddTeacherButtonState(); // Cập nhật trạng thái nút khi chọn dòng mới
         }
+
+        private void UpdateAddTeacherButtonState()
+        {
+            // Mặc định disable nút và set màu xám
+            btnAddTeacher.Enabled = false;
+            btnAddTeacher.BackColor = Color.Gray;
+            btnAddTeacher.ForeColor = Color.White;
+
+            try
+            {
+                // Kiểm tra có dòng được chọn không
+                if (gridLop.SelectedRows.Count == 0)
+                    return;
+
+                // Lấy giá trị Status
+                var statusValue = gridLop.SelectedRows[0].Cells["Status"].Value;
+                if (statusValue == null)
+                    return;
+
+                if (int.TryParse(statusValue.ToString(), out int status) && status == 3)
+                {
+                    btnAddTeacher.Enabled = true;
+                    btnAddTeacher.BackColor = Color.LightCoral; // hoặc chọn màu bạn muốn
+                    btnAddTeacher.ForeColor = Color.White;
+                }
+            }
+            catch
+            {
+                btnAddTeacher.Enabled = false;
+                btnAddTeacher.BackColor = Color.Gray;
+                btnAddTeacher.ForeColor = Color.White;
+            }
+        }
+
+
 
         //private void ValidateSearch()
         //{
@@ -286,6 +325,21 @@ namespace DevEduManager.Screens
 
                 throw;
             }
+        }
+
+        private void btnAddClass_Click(object sender, EventArgs e)
+        {
+            string courseId = cboCT.SelectedValue?.ToString();
+            frmLopHocEdit frm = new frmLopHocEdit(courseId);
+            frm.ShowDialog();
+
+        }
+
+        private void gridLop_DoubleClick(object sender, EventArgs e)
+        {
+            string classId = gridLop.SelectedRows[0].Cells["ClassID"].Value?.ToString();
+            frmChiTietLopHoc frm = new frmChiTietLopHoc(classId);
+            frm.ShowDialog();
         }
     }
 }

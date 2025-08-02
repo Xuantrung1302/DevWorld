@@ -31,6 +31,17 @@ namespace DevEduManager.Modals
             txtCT.Text = _courseName;
             txtClass.Text = _className;
             LoadDataToGridView(classID);
+
+            // Ý 1: Không tự động chọn dòng nào trong DataGridView
+            gridListStudent.ClearSelection();
+            gridListStudent.CurrentCell = null;
+            foreach (DataGridViewRow row in gridListStudent.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    row.Cells["MultiSelect"].Value = false;
+                }
+            }
         }
 
         private async void LoadDataToGridView(string classID)
@@ -74,39 +85,38 @@ namespace DevEduManager.Modals
 
         private void ChkAll_CheckedChanged(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in gridListStudent.Rows)
+            // Ý 5: Logic mới - Chọn số lượng bằng lblAddStu từ trên xuống dưới
+            if (chkAll.Checked)
             {
-                if (!row.IsNewRow)
+                int remainingSeats = int.Parse(lblAddStu.Text);
+                int selectedCount = 0;
+
+                foreach (DataGridViewRow row in gridListStudent.Rows)
                 {
-                    row.Cells[0].Value = chkAll.Checked;
+                    if (!row.IsNewRow && selectedCount < remainingSeats)
+                    {
+                        row.Cells[0].Value = true;
+                        selectedCount++;
+                    }
+                    else
+                    {
+                        row.Cells[0].Value = false;
+                    }
+                }
+            }
+            else
+            {
+                // Bỏ chọn tất cả khi uncheck
+                foreach (DataGridViewRow row in gridListStudent.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        row.Cells[0].Value = false;
+                    }
                 }
             }
         }
-        private async void FrmThemHocVienVaoLop_Shown(object sender, EventArgs e)
-        {
-            try
-            {
-                string url = $"{_classUrl}laySoLuongHienTaiVaThieuCuaLop?classID={classID}";
-                DataTable result = await callAPI.GetAPI(url);
-                if (result != null && result.Rows.Count > 0)
-                {
-                    lblStuCur.Text = result.Rows[0]["CurrentCount"].ToString();
-                    lblAddStu.Text = result.Rows[0]["RemainingSeats"].ToString();
-                }
-                else
-                {
-                    lblStuCur.Text = "0";
-                    lblAddStu.Text = "0";
-                }
 
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
         private async void frmThemHocVienVaoLop_Shown(object sender, EventArgs e)
         {
             try
@@ -124,11 +134,13 @@ namespace DevEduManager.Modals
                     lblAddStu.Text = "0";
                 }
 
-
+                // Ý 2: Disable btnSave khi lblAddStu = 0
+                btnSave.Enabled = int.Parse(lblAddStu.Text) > 0;
+                if (!btnSave.Enabled)
+                    btnSave.BackColor = Color.Gray;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -138,6 +150,23 @@ namespace DevEduManager.Modals
             try
             {
                 DateTime now = DateTime.Now;
+                int remainingSeats = int.Parse(lblAddStu.Text);
+                int selectedCount = 0;
+
+                // Ý 4: Kiểm tra số lượng học sinh chọn có lớn hơn lblAddStu không
+                foreach (DataGridViewRow row in gridListStudent.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells[0].Value) == true)
+                    {
+                        selectedCount++;
+                    }
+                }
+
+                if (selectedCount > remainingSeats)
+                {
+                    MessageBox.Show("Số lượng học sinh chọn vượt quá số học sinh cần thêm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
                 foreach (DataGridViewRow row in gridListStudent.Rows)
                 {
@@ -182,7 +211,5 @@ namespace DevEduManager.Modals
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }

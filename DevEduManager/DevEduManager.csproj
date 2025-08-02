@@ -187,6 +187,12 @@
     <Compile Include="Modals\frmAddTeacher.Designer.cs">
       <DependentUpon>frmAddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modals\frmChiTietLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmChiTietLopHoc.Designer.cs">
+      <DependentUpon>frmChiTietLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modals\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,12 @@
     <Compile Include="Screens\frmCacLopDaHoc.Designer.cs">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmChat.Designer.cs">
+      <DependentUpon>frmChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmChuongTrinhHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -561,12 +573,6 @@
     <Compile Include="Screens\frmTiepNhanHocVien.Designer.cs">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\frmTinNhan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\frmTinNhan.Designer.cs">
-      <DependentUpon>frmTinNhan.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\frmTrangMoDau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -594,6 +600,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmAddTeacher.resx">
       <DependentUpon>frmAddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmChiTietLopHoc.resx">
+      <DependentUpon>frmChiTietLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
@@ -689,6 +698,9 @@
     <EmbeddedResource Include="Screens\frmCacLopDaHoc.resx">
       <DependentUpon>frmCacLopDaHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmChat.resx">
+      <DependentUpon>frmChat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmChuongTrinhHoc.resx">
       <DependentUpon>frmChuongTrinhHoc.cs</DependentUpon>
     </EmbeddedResource>
@@ -777,9 +789,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmTiepNhanHocVien.resx">
       <DependentUpon>frmTiepNhanHocVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\frmTinNhan.resx">
-      <DependentUpon>frmTinNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmTrangMoDau.resx">
       <DependentUpon>frmTrangMoDau.cs</DependentUpon>

@@ -33,11 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btnTK = new System.Windows.Forms.Button();
-            this.cboLH = new System.Windows.Forms.ComboBox();
-            this.cboMH = new System.Windows.Forms.ComboBox();
             this.dtgvLichThi = new System.Windows.Forms.DataGridView();
             this.ExamID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +47,8 @@
             this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnThemLich = new System.Windows.Forms.Button();
             this.txtTenMon = new System.Windows.Forms.TextBox();
+            this.cboMH = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvLichThi)).BeginInit();
@@ -73,14 +71,12 @@
             this.tableLayoutPanel1.Controls.Add(this.cboCT, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnTK, 7, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cboLH, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cboMH, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.dtgvLichThi, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnThemLich, 9, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtTenMon, 8, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cboMH, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 3, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -136,26 +132,6 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Chương trình học";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Location = new System.Drawing.Point(233, 50);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 16);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Lớp học";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Location = new System.Drawing.Point(443, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 16);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Môn học";
-            // 
             // btnTK
             // 
             this.btnTK.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -165,25 +141,6 @@
             this.btnTK.TabIndex = 16;
             this.btnTK.Text = "Tìm kiếm";
             this.btnTK.UseVisualStyleBackColor = true;
-            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
-            // 
-            // cboLH
-            // 
-            this.cboLH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboLH.FormattingEnabled = true;
-            this.cboLH.Location = new System.Drawing.Point(233, 69);
-            this.cboLH.Name = "cboLH";
-            this.cboLH.Size = new System.Drawing.Size(194, 24);
-            this.cboLH.TabIndex = 17;
-            // 
-            // cboMH
-            // 
-            this.cboMH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboMH.FormattingEnabled = true;
-            this.cboMH.Location = new System.Drawing.Point(443, 69);
-            this.cboMH.Name = "cboMH";
-            this.cboMH.Size = new System.Drawing.Size(194, 24);
-            this.cboMH.TabIndex = 18;
             // 
             // dtgvLichThi
             // 
@@ -302,6 +259,25 @@
             this.txtTenMon.Size = new System.Drawing.Size(355, 22);
             this.txtTenMon.TabIndex = 21;
             // 
+            // cboMH
+            // 
+            this.cboMH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboMH.FormattingEnabled = true;
+            this.cboMH.Location = new System.Drawing.Point(233, 69);
+            this.cboMH.Name = "cboMH";
+            this.cboMH.Size = new System.Drawing.Size(194, 24);
+            this.cboMH.TabIndex = 18;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label4.Location = new System.Drawing.Point(233, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 16);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Môn học";
+            // 
             // frmQuanLyLichThi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -328,10 +304,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnTK;
-        private System.Windows.Forms.ComboBox cboLH;
         private System.Windows.Forms.ComboBox cboMH;
         private System.Windows.Forms.DataGridView dtgvLichThi;
         private System.Windows.Forms.Button btnThemLich;

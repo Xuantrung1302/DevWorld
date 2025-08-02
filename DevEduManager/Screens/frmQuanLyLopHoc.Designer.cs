@@ -42,11 +42,9 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusText = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.lblTotalStudents = new System.Windows.Forms.Label();
-            this.txtTenMon = new System.Windows.Forms.TextBox();
-            this.lblClassName = new System.Windows.Forms.Label();
             this.cboCT = new System.Windows.Forms.ComboBox();
+            this.btnAddClass = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panelStudentList = new System.Windows.Forms.Panel();
             this.tableLayoutPanelStudents = new System.Windows.Forms.TableLayoutPanel();
             this.lblStudentListTitle = new System.Windows.Forms.Label();
@@ -59,7 +57,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnAddTeacher = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblTotalStudents = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelSearch.SuspendLayout();
@@ -130,13 +128,11 @@
             this.tableLayoutPanelSearch.ColumnCount = 2;
             this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanelSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSearch.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanelSearch.Controls.Add(this.gridLop, 0, 3);
             this.tableLayoutPanelSearch.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanelSearch.Controls.Add(this.btnSearch, 0, 2);
-            this.tableLayoutPanelSearch.Controls.Add(this.txtTenMon, 1, 1);
-            this.tableLayoutPanelSearch.Controls.Add(this.lblClassName, 0, 1);
             this.tableLayoutPanelSearch.Controls.Add(this.cboCT, 1, 0);
+            this.tableLayoutPanelSearch.Controls.Add(this.btnAddClass, 0, 1);
+            this.tableLayoutPanelSearch.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanelSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelSearch.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -185,6 +181,7 @@
             this.gridLop.Size = new System.Drawing.Size(388, 382);
             this.gridLop.TabIndex = 4;
             this.gridLop.SelectionChanged += new System.EventHandler(this.gridLop_SelectionChanged);
+            this.gridLop.DoubleClick += new System.EventHandler(this.gridLop_DoubleClick);
             // 
             // ClassID
             // 
@@ -236,55 +233,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Chương trình học:";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(3, 102);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(114, 46);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // lblTotalStudents
-            // 
-            this.lblTotalStudents.AutoSize = true;
-            this.lblTotalStudents.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblTotalStudents.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblTotalStudents.Location = new System.Drawing.Point(3, 2);
-            this.lblTotalStudents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.lblTotalStudents.Name = "lblTotalStudents";
-            this.lblTotalStudents.Size = new System.Drawing.Size(179, 23);
-            this.lblTotalStudents.TabIndex = 2;
-            this.lblTotalStudents.Text = "Tổng cộng: 0 học viên";
-            // 
-            // txtTenMon
-            // 
-            this.txtTenMon.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtTenMon.Location = new System.Drawing.Point(123, 55);
-            this.txtTenMon.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.txtTenMon.Name = "txtTenMon";
-            this.txtTenMon.Size = new System.Drawing.Size(268, 30);
-            this.txtTenMon.TabIndex = 1;
-            // 
-            // lblClassName
-            // 
-            this.lblClassName.AutoSize = true;
-            this.lblClassName.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblClassName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblClassName.Location = new System.Drawing.Point(3, 55);
-            this.lblClassName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.lblClassName.Name = "lblClassName";
-            this.lblClassName.Size = new System.Drawing.Size(69, 23);
-            this.lblClassName.TabIndex = 0;
-            this.lblClassName.Text = "Tên lớp:";
-            // 
             // cboCT
             // 
             this.cboCT.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -293,6 +241,36 @@
             this.cboCT.Name = "cboCT";
             this.cboCT.Size = new System.Drawing.Size(268, 24);
             this.cboCT.TabIndex = 4;
+            // 
+            // btnAddClass
+            // 
+            this.btnAddClass.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddClass.FlatAppearance.BorderSize = 0;
+            this.btnAddClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddClass.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnAddClass.ForeColor = System.Drawing.Color.White;
+            this.btnAddClass.Location = new System.Drawing.Point(3, 52);
+            this.btnAddClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddClass.Name = "btnAddClass";
+            this.btnAddClass.Size = new System.Drawing.Size(114, 46);
+            this.btnAddClass.TabIndex = 5;
+            this.btnAddClass.Text = "Thêm lớp học";
+            this.btnAddClass.UseVisualStyleBackColor = false;
+            this.btnAddClass.Click += new System.EventHandler(this.btnAddClass_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanelSearch.SetColumnSpan(this.label2, 2);
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(3, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(388, 18);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "🔸Chỉ có thể thêm giảng viên cho lớp học chưa có lịch";
             // 
             // panelStudentList
             // 
@@ -344,7 +322,6 @@
             this.gridListStudent.BackgroundColor = System.Drawing.Color.White;
             this.gridListStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridListStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.gridListStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridListStudent.ColumnHeadersHeight = 30;
             this.gridListStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentID,
@@ -465,21 +442,17 @@
             this.btnAddTeacher.UseVisualStyleBackColor = false;
             this.btnAddTeacher.Click += new System.EventHandler(this.btnAddTeacher_Click);
             // 
-            // button1
+            // lblTotalStudents
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(254, 102);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 46);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Thêm lớp học";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lblTotalStudents.AutoSize = true;
+            this.lblTotalStudents.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblTotalStudents.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblTotalStudents.Location = new System.Drawing.Point(3, 2);
+            this.lblTotalStudents.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lblTotalStudents.Name = "lblTotalStudents";
+            this.lblTotalStudents.Size = new System.Drawing.Size(179, 23);
+            this.lblTotalStudents.TabIndex = 2;
+            this.lblTotalStudents.Text = "Tổng cộng: 0 học viên";
             // 
             // frmQuanLyLopHoc
             // 
@@ -519,9 +492,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.Panel panelSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelSearch;
-        private System.Windows.Forms.Label lblClassName;
-        private System.Windows.Forms.TextBox txtTenMon;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView gridLop;
         private System.Windows.Forms.Panel panelStudentList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelStudents;
@@ -542,6 +512,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusText;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddClass;
+        private System.Windows.Forms.Label label2;
     }
 }

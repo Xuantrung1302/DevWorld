@@ -11,6 +11,7 @@ namespace DevEduManager.Screens
         private CallAPI callAPI = new CallAPI();
         private string _courseId;
         private string _classId;
+        private readonly string _classIDs = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
 
         public frmAddTeacher(string courseId, string classId, string programName, string className)
         {
@@ -26,7 +27,7 @@ namespace DevEduManager.Screens
         {
             try
             {
-                string url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/layGiangVienChoLop?courseId={_courseId}";
+                string url = $"{_classIDs}layGiangVienChoLop?ClassID={_classId}";
                 DataTable result = await callAPI.GetAPI(url);
                 gridTeachers.AutoGenerateColumns = false;
                 gridTeachers.DataSource = result;

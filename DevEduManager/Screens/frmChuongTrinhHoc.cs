@@ -238,8 +238,8 @@ namespace DevEduManager.Screens
                 string subjectId = gridMon.SelectedRows[0].Cells["SubjectID"].Value?.ToString();
 
                 // Truyền null classId và className => thêm lớp mới, không load giảng viên
-                frmLopHocEdit frm = new frmLopHocEdit(null, null, subjectId);
-                frm.ShowDialog();
+                //frmLopHocEdit frm = new frmLopHocEdit(null, null, subjectId);
+                //frm.ShowDialog();
 
                 LoadClasses(null);
 
@@ -260,8 +260,8 @@ namespace DevEduManager.Screens
                 string subjectId = gridMon.SelectedRows[0].Cells["SubjectID"].Value?.ToString();
 
                 // Thêm giảng viên => truyền đủ thông tin, enable combobox giảng viên, không cho chỉnh gì khác
-                frmLopHocEdit frm = new frmLopHocEdit(classId, className, subjectId);
-                frm.ShowDialog();
+                //frmLopHocEdit frm = new frmLopHocEdit(classId, className, subjectId);
+                //frm.ShowDialog();
             }
             catch (Exception ex)
             {

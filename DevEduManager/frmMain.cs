@@ -495,10 +495,10 @@ namespace DevEduManager
 
         private void pmniAS_D_VP_Click(object sender, EventArgs e)
         {
-            if (pnlWorkspace.Controls.Count == 0 || !(pnlWorkspace.Controls[0] is frmTinNhan))
+            if (pnlWorkspace.Controls.Count == 0 || !(pnlWorkspace.Controls[0] is frmChat))
             {
                 pnlWorkspace.Controls.Clear();
-                frmTinNhan frm = new frmTinNhan()
+                frmChat frm = new frmChat()
                 {
                     Dock = DockStyle.Fill,
                     TopLevel = false
@@ -769,6 +769,17 @@ namespace DevEduManager
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
+
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLySoGioDayHoc frm = new frmQuanLySoGioDayHoc()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
 
         }
 

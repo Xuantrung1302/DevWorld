@@ -3,6 +3,7 @@ using System.Data;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
+using Entity.Models;
 
 namespace DevEduManager.Modals
 {
@@ -242,11 +243,11 @@ namespace DevEduManager.Modals
                     ClassID = Guid.Parse(cboLH.SelectedValue.ToString()),
                     SubjectID = cboMH.SelectedValue.ToString(),
                     ExamName = txtKyThi.Text.Trim(),
-                    ExamType = "Cuối kỳ",
+                    ExamType = "Kết thúc môn",
                     ExamDateStart = examDateStart,
                     ExamDateEnd = examDateEnd,
                     Room = cboRoom.Text,
-                    CreatedBy = "NV00000001",
+                    CreatedBy = CurrentUser.UserId,
                     CreatedDate = DateTime.Now
                 };
 

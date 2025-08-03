@@ -33,18 +33,16 @@
             this.lblChatTitle = new System.Windows.Forms.Label();
             this.panelContactList = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cboAccountType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
-            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.panelChatArea = new System.Windows.Forms.Panel();
-            this.txtChatHistory = new System.Windows.Forms.TextBox();
             this.panelInputArea = new System.Windows.Forms.Panel();
-            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSend = new System.Windows.Forms.Button();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.flpChat = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelContactList.SuspendLayout();
@@ -52,13 +50,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.panelChatArea.SuspendLayout();
             this.panelInputArea.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 254F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 388F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panelHeader, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelContactList, 0, 1);
@@ -103,19 +102,16 @@
             this.panelContactList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContactList.Location = new System.Drawing.Point(3, 63);
             this.panelContactList.Name = "panelContactList";
-            this.panelContactList.Size = new System.Drawing.Size(248, 554);
+            this.panelContactList.Size = new System.Drawing.Size(382, 554);
             this.panelContactList.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.12903F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.87097F));
-            this.tableLayoutPanel2.Controls.Add(this.cboAccountType, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.24913F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.75087F));
             this.tableLayoutPanel2.Controls.Add(this.dtgvAccount, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnCreate, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -123,28 +119,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(248, 554);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(382, 554);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // cboAccountType
-            // 
-            this.cboAccountType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboAccountType.FormattingEnabled = true;
-            this.cboAccountType.Location = new System.Drawing.Point(104, 3);
-            this.cboAccountType.Name = "cboAccountType";
-            this.cboAccountType.Size = new System.Drawing.Size(141, 24);
-            this.cboAccountType.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 40);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Tài khoản:";
             // 
             // dtgvAccount
             // 
@@ -152,8 +128,8 @@
             this.dtgvAccount.BackgroundColor = System.Drawing.Color.White;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colID,
-            this.colHoTen});
+            this.ID,
+            this.FullName});
             this.tableLayoutPanel2.SetColumnSpan(this.dtgvAccount, 2);
             this.dtgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvAccount.Location = new System.Drawing.Point(3, 83);
@@ -161,97 +137,107 @@
             this.dtgvAccount.RowHeadersVisible = false;
             this.dtgvAccount.RowHeadersWidth = 51;
             this.dtgvAccount.RowTemplate.Height = 24;
-            this.dtgvAccount.Size = new System.Drawing.Size(242, 468);
+            this.dtgvAccount.Size = new System.Drawing.Size(376, 468);
             this.dtgvAccount.TabIndex = 3;
             // 
-            // colID
+            // ID
             // 
-            this.colID.HeaderText = "Mã";
-            this.colID.MinimumWidth = 50;
-            this.colID.Name = "colID";
-            this.colID.Width = 125;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "Mã";
+            this.ID.MinimumWidth = 50;
+            this.ID.Name = "ID";
+            this.ID.Width = 125;
             // 
-            // colHoTen
+            // FullName
             // 
-            this.colHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colHoTen.HeaderText = "Họ và tên";
-            this.colHoTen.MinimumWidth = 6;
-            this.colHoTen.Name = "colHoTen";
+            this.FullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Họ và tên";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
             // 
-            // button1
+            // btnCreate
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 34);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(104, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 22);
-            this.textBox1.TabIndex = 5;
+            this.btnCreate.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCreate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCreate.Location = new System.Drawing.Point(3, 43);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(193, 34);
+            this.btnCreate.TabIndex = 4;
+            this.btnCreate.Text = "Tạo cuộc trò chuyện";
+            this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // panelChatArea
             // 
             this.panelChatArea.BackColor = System.Drawing.Color.White;
-            this.panelChatArea.Controls.Add(this.txtChatHistory);
+            this.panelChatArea.Controls.Add(this.flpChat);
             this.panelChatArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChatArea.Location = new System.Drawing.Point(257, 63);
+            this.panelChatArea.Location = new System.Drawing.Point(391, 63);
             this.panelChatArea.Name = "panelChatArea";
-            this.panelChatArea.Size = new System.Drawing.Size(740, 554);
+            this.panelChatArea.Size = new System.Drawing.Size(606, 554);
             this.panelChatArea.TabIndex = 2;
-            // 
-            // txtChatHistory
-            // 
-            this.txtChatHistory.BackColor = System.Drawing.Color.White;
-            this.txtChatHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtChatHistory.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtChatHistory.Location = new System.Drawing.Point(0, 0);
-            this.txtChatHistory.Multiline = true;
-            this.txtChatHistory.Name = "txtChatHistory";
-            this.txtChatHistory.ReadOnly = true;
-            this.txtChatHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtChatHistory.Size = new System.Drawing.Size(740, 554);
-            this.txtChatHistory.TabIndex = 0;
             // 
             // panelInputArea
             // 
             this.panelInputArea.BackColor = System.Drawing.Color.White;
-            this.panelInputArea.Controls.Add(this.txtMessage);
-            this.panelInputArea.Controls.Add(this.btnSend);
+            this.panelInputArea.Controls.Add(this.tableLayoutPanel3);
             this.panelInputArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelInputArea.Location = new System.Drawing.Point(257, 623);
+            this.panelInputArea.Location = new System.Drawing.Point(391, 623);
             this.panelInputArea.Name = "panelInputArea";
-            this.panelInputArea.Size = new System.Drawing.Size(740, 74);
+            this.panelInputArea.Size = new System.Drawing.Size(606, 74);
             this.panelInputArea.TabIndex = 3;
             // 
-            // txtMessage
+            // tableLayoutPanel3
             // 
-            this.txtMessage.BackColor = System.Drawing.Color.White;
-            this.txtMessage.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtMessage.Location = new System.Drawing.Point(10, 10);
-            this.txtMessage.Multiline = true;
-            this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(550, 54);
-            this.txtMessage.TabIndex = 0;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
+            this.tableLayoutPanel3.Controls.Add(this.btnSend, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtMessage, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(606, 74);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // btnSend
             // 
             this.btnSend.BackColor = System.Drawing.Color.LightSalmon;
             this.btnSend.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnSend.ForeColor = System.Drawing.Color.White;
-            this.btnSend.Location = new System.Drawing.Point(570, 10);
+            this.btnSend.Location = new System.Drawing.Point(470, 3);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(160, 54);
+            this.btnSend.Size = new System.Drawing.Size(133, 48);
             this.btnSend.TabIndex = 1;
             this.btnSend.Text = "Gửi";
             this.btnSend.UseVisualStyleBackColor = false;
+            // 
+            // txtMessage
+            // 
+            this.txtMessage.BackColor = System.Drawing.Color.White;
+            this.txtMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMessage.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtMessage.Location = new System.Drawing.Point(3, 3);
+            this.txtMessage.Multiline = true;
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(461, 48);
+            this.txtMessage.TabIndex = 0;
+            // 
+            // flpChat
+            // 
+            this.flpChat.AutoScroll = true;
+            this.flpChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpChat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flpChat.Location = new System.Drawing.Point(0, 0);
+            this.flpChat.Name = "flpChat";
+            this.flpChat.Size = new System.Drawing.Size(606, 554);
+            this.flpChat.TabIndex = 0;
+            this.flpChat.WrapContents = false;
             // 
             // frmChat
             // 
@@ -263,17 +249,17 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmChat";
             this.Text = "frmChat";
+            this.Load += new System.EventHandler(this.frmChat_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelContactList.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.panelChatArea.ResumeLayout(false);
-            this.panelChatArea.PerformLayout();
             this.panelInputArea.ResumeLayout(false);
-            this.panelInputArea.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -285,17 +271,15 @@
         private System.Windows.Forms.Label lblChatTitle;
         private System.Windows.Forms.Panel panelContactList;
         private System.Windows.Forms.Panel panelChatArea;
-        private System.Windows.Forms.TextBox txtChatHistory;
         private System.Windows.Forms.Panel panelInputArea;
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ComboBox cboAccountType;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtgvAccount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHoTen;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.FlowLayoutPanel flpChat;
     }
 }

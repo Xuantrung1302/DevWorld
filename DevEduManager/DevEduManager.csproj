@@ -63,6 +63,9 @@
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.4.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.4.3\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -129,6 +132,7 @@
     <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -264,6 +268,12 @@
     </Compile>
     <Compile Include="Modals\frmQuyDinh.Designer.cs">
       <DependentUpon>frmQuyDinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\frmTaoChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modals\frmTaoChat.Designer.cs">
+      <DependentUpon>frmTaoChat.cs</DependentUpon>
     </Compile>
     <Compile Include="Modals\frmTaoKetQuaThi.cs">
       <SubType>Form</SubType>
@@ -513,6 +523,12 @@
     <Compile Include="Screens\frmQuanLyNhanVien.Designer.cs">
       <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmQuanLySoGioDayHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmQuanLySoGioDayHoc.Designer.cs">
+      <DependentUpon>frmQuanLySoGioDayHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmQuanLyTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -637,6 +653,9 @@
     <EmbeddedResource Include="Modals\frmQuyDinh.resx">
       <DependentUpon>frmQuyDinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modals\frmTaoChat.resx">
+      <DependentUpon>frmTaoChat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmTaoKetQuaThi.resx">
       <DependentUpon>frmTaoKetQuaThi.cs</DependentUpon>
     </EmbeddedResource>
@@ -759,6 +778,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmQuanLyNhanVien.resx">
       <DependentUpon>frmQuanLyNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmQuanLySoGioDayHoc.resx">
+      <DependentUpon>frmQuanLySoGioDayHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmQuanLyTaiKhoan.resx">
       <DependentUpon>frmQuanLyTaiKhoan.cs</DependentUpon>

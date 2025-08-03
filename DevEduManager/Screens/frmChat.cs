@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNet.SignalR.Client;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLogic;
 using Newtonsoft.Json;
+using DevEduManager.Modals;
+using Entity.Models;
 
 namespace DevEduManager.Screens
 {
@@ -15,78 +17,72 @@ namespace DevEduManager.Screens
         private readonly CallAPI callAPI = new CallAPI();
         private readonly string _userUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/User/";
         private readonly string _messageUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Message/";
-        private int currentUserId = 1; // Giả sử UserID của người đăng nhập (có thể lấy từ session)
-        private int selectedUserId = -1; // UserID của tài khoản được chọn
+        private readonly string _hubUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}signalr";
+        private IHubProxy chatHubProxy;
+
+
+        private string selectedUserId = null;
 
         public frmChat()
         {
             InitializeComponent();
             InitializeComponents();
-            LoadAccountTypes();
-            txtMessage.KeyDown += TxtMessage_KeyDown; // Thêm sự kiện Enter để gửi tin
+            txtMessage.KeyDown += TxtMessage_KeyDown;
+            ConnectToSignalR();
+        }
+
+        private async void ConnectToSignalR()
+        {
+            try
+            {
+                var connection = new HubConnection(_hubUrl);
+                chatHubProxy = connection.CreateHubProxy("ChatHub");
+
+                chatHubProxy.On<Message>("receiveMessage", (message) =>
+                {
+                    if (message.ReceiverID == CurrentUser.UserId &&
+                        (message.SenderID == selectedUserId || selectedUserId == null))
+                    {
+                        BeginInvoke(new Action(async () =>
+                        {
+                            string senderName = await GetUserNameAsync(message.SenderID);
+                            string time = message.SentDateTime?.ToString("HH:mm") ?? "";
+                            string messageText = $"{senderName} ({time}): {message.MessageContent}\r\n";
+                            Control bubble = CreateMessageBubble(senderName, message.MessageContent, time, message.SenderID == CurrentUser.UserId);
+                            flpChat.Controls.Add(bubble);
+                            flpChat.ScrollControlIntoView(bubble);
+
+                        }));
+                    }
+                });
+
+                await connection.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi kết nối SignalR: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void InitializeComponents()
         {
-            // Cấu hình DataGridView
             dtgvAccount.AllowUserToAddRows = false;
             dtgvAccount.RowHeadersVisible = false;
             dtgvAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtgvAccount.Columns.Add("UserID", "Mã");
-            dtgvAccount.Columns.Add("FullName", "Họ tên");
-            dtgvAccount.Columns.Add("Role", "Vai trò");
             dtgvAccount.CellClick += DtgvAccount_CellClick;
-
-            // Cấu hình TextBox chat history
-            txtChatHistory.ReadOnly = true;
-            txtChatHistory.ScrollBars = ScrollBars.Vertical;
         }
 
-        private async void LoadAccountTypes()
-        {
-            // Dữ liệu cố định cho cboAccountType (có thể thay bằng API nếu cần)
-            var accountTypes = new Dictionary<int, string>
-            {
-                { 1, "Nhân viên" },
-                { 2, "Giảng viên" },
-                { 3, "Học viên" }
-            };
-            cboAccountType.DataSource = new BindingSource(accountTypes, null);
-            cboAccountType.DisplayMember = "Value";
-            cboAccountType.ValueMember = "Key";
-            cboAccountType.SelectedIndex = 0;
-            await LoadAccountsAsync(cboAccountType.SelectedValue.ToString());
-            cboAccountType.SelectedIndexChanged += CboAccountType_SelectedIndexChanged;
-        }
-
-        private async void CboAccountType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboAccountType.SelectedValue != null)
-            {
-                await LoadAccountsAsync(cboAccountType.SelectedValue.ToString());
-            }
-        }
-
-        private async Task LoadAccountsAsync(string accountTypeId)
+        private async Task LoadAccountsAsync(string userId)
         {
             try
             {
-                string url = $"{_userUrl}GetUsersByRole?roleId={accountTypeId}";
+                string url = $"{_messageUrl}layDanhSachTaiKhoanDaNhanTin?CurrentUserID={userId}";
                 DataTable dt = await callAPI.GetAPI(url);
-                dtgvAccount.Rows.Clear();
 
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        if (Convert.ToInt32(row["UserID"]) != currentUserId) // Loại bỏ chính mình
-                        {
-                            int rowIndex = dtgvAccount.Rows.Add();
-                            dtgvAccount.Rows[rowIndex].Cells["UserID"].Value = row["UserID"];
-                            dtgvAccount.Rows[rowIndex].Cells["FullName"].Value = row["FullName"];
-                            dtgvAccount.Rows[rowIndex].Cells["Role"].Value = row["RoleName"];
-                        }
-                    }
+                    dtgvAccount.AutoGenerateColumns = false;
+                    dtgvAccount.DataSource = dt;
                 }
             }
             catch (Exception ex)
@@ -99,7 +95,7 @@ namespace DevEduManager.Screens
         {
             if (e.RowIndex >= 0)
             {
-                selectedUserId = Convert.ToInt32(dtgvAccount.Rows[e.RowIndex].Cells["UserID"].Value);
+                selectedUserId = dtgvAccount.Rows[e.RowIndex].Cells["ID"].Value.ToString();
                 await LoadChatHistoryAsync();
             }
         }
@@ -108,33 +104,32 @@ namespace DevEduManager.Screens
         {
             try
             {
-                if (selectedUserId == -1) return;
-
-                string url = $"{_messageUrl}GetMessages?senderId={currentUserId}&receiverId={selectedUserId}";
+                if (string.IsNullOrWhiteSpace(selectedUserId)) return;
+                string senderID = CurrentUser.UserId;
+                string receiverID = selectedUserId;
+                string url = $"{_messageUrl}GetMessages?SenderID={senderID}&ReceiverID={receiverID}";
                 DataTable dt = await callAPI.GetAPI(url);
 
-                txtChatHistory.Text = "";
+                flpChat.Controls.Clear();
+
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     foreach (DataRow row in dt.Rows)
                     {
                         string senderId = row["SenderID"].ToString();
-                        string senderName = await GetUserNameAsync(Convert.ToInt32(senderId));
+                        string senderName = await GetUserNameAsync(senderId);
+                        string message = row["MessageContent"].ToString();
                         string time = Convert.ToDateTime(row["SentDateTime"]).ToString("HH:mm");
-                        string messageText = $"{senderName} ({time}): {row["MessageContent"]}\r\n";
 
-                        txtChatHistory.AppendText(messageText);
+                        bool isCurrentUser = senderId == CurrentUser.UserId;
 
-                        // Định dạng tin nhắn của người gửi hiện tại (currentUser) là màu xanh
-                        if (senderId == currentUserId.ToString())
-                        {
-                            txtChatHistory.Select(txtChatHistory.TextLength - messageText.Length, messageText.Length);
-                            //txtChatHistory.SelectionColor = Color.SteelBlue;
-                        }
+                        Control bubble = CreateMessageBubble(senderName, message, time, isCurrentUser);
+                        flpChat.Controls.Add(bubble);
                     }
                 }
-                txtChatHistory.SelectionStart = txtChatHistory.TextLength;
-                txtChatHistory.ScrollToCaret();
+
+                flpChat.VerticalScroll.Value = flpChat.VerticalScroll.Maximum;
+                flpChat.ScrollControlIntoView(flpChat.Controls[flpChat.Controls.Count - 1]);
             }
             catch (Exception ex)
             {
@@ -142,7 +137,8 @@ namespace DevEduManager.Screens
             }
         }
 
-        private async Task<string> GetUserNameAsync(int userId)
+
+        private async Task<string> GetUserNameAsync(string userId)
         {
             try
             {
@@ -162,21 +158,21 @@ namespace DevEduManager.Screens
 
         private async void btnSend_Click(object sender, EventArgs e)
         {
-            if (selectedUserId == -1 || string.IsNullOrWhiteSpace(txtMessage.Text)) return;
+            if (string.IsNullOrWhiteSpace(selectedUserId) || string.IsNullOrWhiteSpace(txtMessage.Text)) return;
 
             try
             {
                 string messageContent = txtMessage.Text.Trim();
-                DateTime sentTime = DateTime.Now; // Lấy thời gian hiện tại (01:19 AM +07, 02/08/2025)
+                DateTime sentTime = DateTime.Now;
 
-                // Gửi tin nhắn qua API
                 var message = new
                 {
-                    SenderID = currentUserId,
+                    SenderID = CurrentUser.UserId,
                     ReceiverID = selectedUserId,
                     MessageContent = messageContent,
                     SentDateTime = sentTime
                 };
+
                 string json = JsonConvert.SerializeObject(message);
                 string url = $"{_messageUrl}SendMessage";
 
@@ -184,9 +180,8 @@ namespace DevEduManager.Screens
 
                 if (success)
                 {
-                    // Cập nhật lịch sử chat
                     await LoadChatHistoryAsync();
-                    txtMessage.Text = ""; // Xóa nội dung nhập
+                    txtMessage.Text = "";
                 }
                 else
                 {
@@ -203,9 +198,66 @@ namespace DevEduManager.Screens
         {
             if (e.KeyCode == Keys.Enter && !e.Shift)
             {
-                e.SuppressKeyPress = true; // Ngăn Enter tạo dòng mới
+                e.SuppressKeyPress = true;
                 btnSend_Click(null, null);
             }
         }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            frmTaoChat frm = new frmTaoChat();
+            frm.ShowDialog();
+        }
+
+        private async void frmChat_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                await LoadAccountsAsync(CurrentUser.UserId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+        private Control CreateMessageBubble(string senderName, string messageContent, string time, bool isCurrentUser)
+        {
+            Panel bubble = new Panel();
+            bubble.AutoSize = true;
+            bubble.MaximumSize = new Size(400, 0);
+            bubble.Padding = new Padding(8);
+            bubble.Margin = new Padding(5);
+            bubble.BackColor = isCurrentUser ? Color.LightGreen : Color.LightGray;
+
+            // Label nội dung
+            Label lblText = new Label();
+            lblText.AutoSize = true;
+            lblText.Text = $"{senderName} ({time}):\n{messageContent}";
+            lblText.Font = new Font("Segoe UI", 16F);
+            lblText.MaximumSize = new Size(400, 0);
+
+            bubble.Controls.Add(lblText);
+
+            // Căn phải nếu là người gửi
+            bubble.Anchor = AnchorStyles.Left;
+            if (isCurrentUser)
+            {
+                bubble.Dock = DockStyle.Right;
+                lblText.TextAlign = ContentAlignment.MiddleRight;
+            }
+
+            return bubble;
+        }
+    }
+
+    public class Message
+    {
+        public int MessageID { get; set; }
+        public string SenderID { get; set; }
+        public string ReceiverID { get; set; }
+        public string MessageContent { get; set; }
+        public DateTime? SentDateTime { get; set; }
     }
 }

@@ -90,6 +90,25 @@ namespace DevEduManager.Screens
                         CurrentUser.Role = row["Role"].ToString();
                         CurrentUser.Username = row["Username"].ToString();
                         CurrentUser.Password = row["Password"].ToString();
+
+                        if (row["EmployeeName"] != DBNull.Value && !string.IsNullOrEmpty(row["EmployeeName"].ToString()))
+                        {
+                            CurrentUser.FullName = row["EmployeeName"].ToString();
+                        }
+                        else if (row["StudentName"] != DBNull.Value && !string.IsNullOrEmpty(row["StudentName"].ToString()))
+                        {
+                            CurrentUser.FullName = row["StudentName"].ToString();
+                        }
+                        else if (row["TeacherName"] != DBNull.Value && !string.IsNullOrEmpty(row["TeacherName"].ToString()))
+                        {
+                            CurrentUser.FullName = row["TeacherName"].ToString();
+                        }
+                        else
+                        {
+                            CurrentUser.FullName = string.Empty; // Hoặc null
+                        }
+
+
                         if (row["EmployeeID"] != DBNull.Value && !string.IsNullOrEmpty(row["EmployeeID"].ToString()))
                         {
                             CurrentUser.UserId = row["EmployeeID"].ToString();

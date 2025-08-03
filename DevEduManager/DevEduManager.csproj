@@ -184,12 +184,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmQuanLySoGioDayHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuanLySoGioDayHoc.Designer.cs">
-      <DependentUpon>frmQuanLySoGioDayHoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="GlobalPages.cs" />
     <Compile Include="Modals\frmAddTeacher.cs">
       <SubType>Form</SubType>
@@ -619,9 +613,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLySoGioDayHoc.resx">
-      <DependentUpon>frmQuanLySoGioDayHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modals\frmAddTeacher.resx">
       <DependentUpon>frmAddTeacher.cs</DependentUpon>

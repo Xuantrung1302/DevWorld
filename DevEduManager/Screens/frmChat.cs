@@ -45,7 +45,7 @@ namespace DevEduManager.Screens
                     {
                         BeginInvoke(new Action(async () =>
                         {
-                            string senderName = await GetUserNameAsync(message.SenderID);
+                            string senderName = GetUserNameAsync(message.SenderID);
                             string time = message.SentDateTime?.ToString("HH:mm") ?? "";
                             string messageText = $"{senderName} ({time}): {message.MessageContent}\r\n";
                             Control bubble = CreateMessageBubble(senderName, message.MessageContent, time, message.SenderID == CurrentUser.UserId);
@@ -117,7 +117,7 @@ namespace DevEduManager.Screens
                     foreach (DataRow row in dt.Rows)
                     {
                         string senderId = row["SenderID"].ToString();
-                        string senderName = await GetUserNameAsync(senderId);
+                        string senderName =  GetUserNameAsync(senderId);
                         string message = row["MessageContent"].ToString();
                         string time = Convert.ToDateTime(row["SentDateTime"]).ToString("HH:mm");
 
@@ -138,15 +138,22 @@ namespace DevEduManager.Screens
         }
 
 
-        private async Task<string> GetUserNameAsync(string userId)
+        private string GetUserNameAsync(string userId)
         {
             try
             {
-                string url = $"{_userUrl}GetUserName?userId={userId}";
-                DataTable dt = await callAPI.GetAPI(url);
-                if (dt != null && dt.Rows.Count > 0)
+                if (userId == CurrentUser.UserId)
+                    return CurrentUser.FullName;
+                else
                 {
-                    return dt.Rows[0]["FullName"].ToString();
+                    foreach (DataGridViewRow row in dtgvAccount.Rows)
+                    {
+                        if (row.Cells["ID"].Value != null && row.Cells["ID"].Value.ToString() == userId)
+                        {
+                            string fullName = row.Cells["FullName"].Value?.ToString() ?? "Unknown";
+                            return fullName;
+                        }
+                    }
                 }
                 return "Unknown";
             }
@@ -155,6 +162,7 @@ namespace DevEduManager.Screens
                 return "Unknown";
             }
         }
+
 
         private async void btnSend_Click(object sender, EventArgs e)
         {
@@ -228,28 +236,33 @@ namespace DevEduManager.Screens
             bubble.AutoSize = true;
             bubble.MaximumSize = new Size(400, 0);
             bubble.Padding = new Padding(8);
-            bubble.Margin = new Padding(5);
             bubble.BackColor = isCurrentUser ? Color.LightGreen : Color.LightGray;
 
-            // Label nội dung
+            // Tạo label
             Label lblText = new Label();
             lblText.AutoSize = true;
             lblText.Text = $"{senderName} ({time}):\n{messageContent}";
             lblText.Font = new Font("Segoe UI", 16F);
             lblText.MaximumSize = new Size(400, 0);
+            lblText.TextAlign = isCurrentUser ? ContentAlignment.TopRight : ContentAlignment.TopLeft;
 
             bubble.Controls.Add(lblText);
 
-            // Căn phải nếu là người gửi
-            bubble.Anchor = AnchorStyles.Left;
+            // Căn lề để "đẩy" bubble về phải hoặc trái trong FlowLayoutPanel
             if (isCurrentUser)
             {
-                bubble.Dock = DockStyle.Right;
-                lblText.TextAlign = ContentAlignment.MiddleRight;
+                bubble.Anchor = AnchorStyles.Right;
+                bubble.Margin = new Padding(flpChat.Width - 420, 5, 5, 5); // Căn phải
+            }
+            else
+            {
+                bubble.Anchor = AnchorStyles.Left;
+                bubble.Margin = new Padding(5, 5, flpChat.Width - 420, 5); // Căn trái
             }
 
             return bubble;
         }
+
     }
 
     public class Message

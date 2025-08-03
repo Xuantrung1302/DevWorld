@@ -38,11 +38,11 @@
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCreate = new System.Windows.Forms.Button();
             this.panelChatArea = new System.Windows.Forms.Panel();
+            this.flpChat = new System.Windows.Forms.FlowLayoutPanel();
             this.panelInputArea = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSend = new System.Windows.Forms.Button();
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.flpChat = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelContactList.SuspendLayout();
@@ -178,6 +178,18 @@
             this.panelChatArea.Size = new System.Drawing.Size(606, 554);
             this.panelChatArea.TabIndex = 2;
             // 
+            // flpChat
+            // 
+            this.flpChat.AutoScroll = true;
+            this.flpChat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpChat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flpChat.Location = new System.Drawing.Point(0, 0);
+            this.flpChat.Name = "flpChat";
+            this.flpChat.Size = new System.Drawing.Size(606, 554);
+            this.flpChat.TabIndex = 0;
+            this.flpChat.WrapContents = false;
+            // 
             // panelInputArea
             // 
             this.panelInputArea.BackColor = System.Drawing.Color.White;
@@ -215,29 +227,19 @@
             this.btnSend.TabIndex = 1;
             this.btnSend.Text = "Gửi";
             this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // txtMessage
             // 
             this.txtMessage.BackColor = System.Drawing.Color.White;
             this.txtMessage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMessage.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtMessage.Location = new System.Drawing.Point(3, 3);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(461, 48);
             this.txtMessage.TabIndex = 0;
-            // 
-            // flpChat
-            // 
-            this.flpChat.AutoScroll = true;
-            this.flpChat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpChat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpChat.Location = new System.Drawing.Point(0, 0);
-            this.flpChat.Name = "flpChat";
-            this.flpChat.Size = new System.Drawing.Size(606, 554);
-            this.flpChat.TabIndex = 0;
-            this.flpChat.WrapContents = false;
             // 
             // frmChat
             // 

@@ -193,6 +193,7 @@
             this.btnTimKiem.TabIndex = 6;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label5
             // 
@@ -225,6 +226,7 @@
             this.gridReportAttendance.RowHeadersWidth = 51;
             this.gridReportAttendance.Size = new System.Drawing.Size(1430, 328);
             this.gridReportAttendance.TabIndex = 2;
+            this.gridReportAttendance.EnabledChanged += new System.EventHandler(this.cboMonHoc_EnabledChanged);
             // 
             // frmBaoCaoDiemDanhGiaoVien
             // 

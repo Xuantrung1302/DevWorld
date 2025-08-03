@@ -142,5 +142,23 @@ namespace DevEduManager.Screens
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private async void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (_pageIndex > 1)
+            {
+                _pageIndex--;
+                await LoadDataToGridView();
+            }
+        }
+
+        private async void btnNext_Click(object sender, EventArgs e)
+        {
+            if (_pageIndex < _totalPages)
+            {
+                _pageIndex++;
+                await LoadDataToGridView();
+            }
+        }
+
     }
 }

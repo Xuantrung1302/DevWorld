@@ -17,6 +17,7 @@ namespace DevEduManager.Modals
         {
             InitializeComponent();
             _gv = gv;
+            txtLuongCoBan.Leave += txtLuongCoBan_Leave;
         }
 
         private bool ValidateLuu()
@@ -51,6 +52,13 @@ namespace DevEduManager.Modals
                 txtMatKhau.Focus();
                 return false;
             }
+            else if (string.IsNullOrWhiteSpace(txtLuongCoBan.Text))
+            {
+                errorProvider1.SetError(txtLuongCoBan, "Bạn chưa nhập lương cơ bản");
+                txtLuongCoBan.Focus();
+                return false;
+            }
+
             return true;
         }
 
@@ -65,6 +73,7 @@ namespace DevEduManager.Modals
             txtTenDangNhap.Text = _gv.Username;
             txtMatKhau.Text = _gv.Password;
             txtBangCap.Text = _gv.Degree;
+            txtLuongCoBan.Text = _gv.Salary.ToString("N0");
         }
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
@@ -89,6 +98,9 @@ namespace DevEduManager.Modals
                     return;
                 }
 
+                decimal luongCoBan = 0;
+                decimal.TryParse(txtLuongCoBan.Text.Replace(",", ""), out luongCoBan);
+
                 var giangVien = new GiangVien()
                 {
                     TeacherID = txtMaGV.Text,
@@ -99,7 +111,8 @@ namespace DevEduManager.Modals
                     PhoneNumber = txtSDT.Text,
                     Email = txtEmail.Text,
                     Username = txtTenDangNhap.Text,
-                    Password = txtMatKhau.Text
+                    Password = txtMatKhau.Text,
+                    Salary = luongCoBan
                 };
 
                 string jsonData = JsonConvert.SerializeObject(giangVien);
@@ -169,6 +182,22 @@ namespace DevEduManager.Modals
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtLuongCoBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (decimal.TryParse(txtLuongCoBan.Text.Replace(",", ""), out decimal luong))
+            {
+                txtLuongCoBan.Text = string.Format("{0:N0}", luong);
+            }
+        }
+
+        private void txtLuongCoBan_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtLuongCoBan.Text.Replace(",", ""), out decimal luong))
+            {
+                txtLuongCoBan.Text = string.Format("{0:N0}", luong);
             }
         }
     }

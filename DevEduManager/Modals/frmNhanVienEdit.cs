@@ -2,14 +2,7 @@
 using Enity.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DevEduManager.Modals
@@ -20,11 +13,16 @@ namespace DevEduManager.Modals
         private string _url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Service/";
         private string _url2 = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Employee/";
         private NhanVien _nv;
+
         public frmNhanVienEdit(NhanVien nv)
         {
             InitializeComponent();
             _nv = nv;
+
+            // Gắn sự kiện
+            txtLuongCoBan.Leave += txtLuongCoBan_Leave;
         }
+
         private bool ValidateLuu()
         {
             if (txtTenNV.Text == "")
@@ -57,6 +55,13 @@ namespace DevEduManager.Modals
                 txtMatKhau.Focus();
                 return false;
             }
+            else if (string.IsNullOrWhiteSpace(txtLuongCoBan.Text))
+            {
+                errorProvider1.SetError(txtLuongCoBan, "Bạn chưa nhập lương cơ bản");
+                txtLuongCoBan.Focus();
+                return false;
+            }
+
             return true;
         }
 
@@ -66,7 +71,7 @@ namespace DevEduManager.Modals
             {
                 if (_nv is null)
                 {
-                    string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date.ToString("dd/MM/yyyy")}&prefix=NV";
+                    string url = $"{_url}taoIdTuDong?ngay={DateTime.Now.Date:dd/MM/yyyy}&prefix=NV";
                     string result = await callAPI.CallApiAsync(url);
 
                     txtMaNV.Text = result.Trim('"');
@@ -93,6 +98,7 @@ namespace DevEduManager.Modals
             txtDiaChi.Text = _nv.Address;
             txtTenDangNhap.Text = _nv.Username;
             txtMatKhau.Text = _nv.Password;
+            txtLuongCoBan.Text = _nv.Salary.ToString("N0");
         }
 
         private async void btnLuuThongTin_Click(object sender, EventArgs e)
@@ -104,6 +110,9 @@ namespace DevEduManager.Modals
                     return;
                 }
 
+                decimal luongCoBan = 0;
+                decimal.TryParse(txtLuongCoBan.Text.Replace(",", ""), out luongCoBan);
+
                 NhanVien nhanVien = new NhanVien()
                 {
                     EmployeeID = txtMaNV.Text,
@@ -113,7 +122,8 @@ namespace DevEduManager.Modals
                     Email = txtEmail.Text,
                     Gender = cboGioiTinh.SelectedItem.ToString(),
                     Username = txtTenDangNhap.Text,
-                    Password = txtMatKhau.Text
+                    Password = txtMatKhau.Text,
+                    Salary = luongCoBan
                 };
 
                 string jsonData = JsonConvert.SerializeObject(nhanVien);
@@ -137,7 +147,6 @@ namespace DevEduManager.Modals
                     return;
                 }
 
-                // Update teacher info
                 url = $"{_url2}suaThongTinNhanVien";
                 result = await callAPI.PostAPI(url, jsonData);
 
@@ -158,6 +167,22 @@ namespace DevEduManager.Modals
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtLuongCoBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtLuongCoBan_Leave(object sender, EventArgs e)
+        {
+            if (decimal.TryParse(txtLuongCoBan.Text.Replace(",", ""), out decimal luong))
+            {
+                txtLuongCoBan.Text = string.Format("{0:N0}", luong);
             }
         }
     }

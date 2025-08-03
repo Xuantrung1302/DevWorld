@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entity.Models
 {
@@ -27,5 +24,16 @@ namespace Entity.Models
         public string StudentName { get; set; }
         public bool Status { get; set; }
         public string Notes { get; set; }
+    }
+
+    public class BaoCaoDiemDanh
+    {
+        public Guid? AttendanceID { get; set; }
+        public string StudentID { get; set; }
+        public string StudentName { get; set; }
+        public bool Status { get; set; }
+        public Guid Class_ScheID { get; set; }
+        public string Notes { get; set; }
+        public bool IsLearned { get; set; }
     }
 }

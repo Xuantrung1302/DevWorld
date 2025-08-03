@@ -54,6 +54,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtLuongCoBan = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -67,7 +69,7 @@
             this.panel1.Controls.Add(this.btnHuyBo);
             this.panel1.Controls.Add(this.btnLuuThongTin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 575);
+            this.panel1.Location = new System.Drawing.Point(0, 650);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(627, 75);
@@ -111,6 +113,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.txtLuongCoBan);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtDiaChi);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.groupBox1);
@@ -131,7 +135,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(627, 575);
+            this.panel2.Size = new System.Drawing.Size(627, 650);
             this.panel2.TabIndex = 8;
             // 
             // txtDiaChi
@@ -163,7 +167,7 @@
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtTenDangNhap);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Location = new System.Drawing.Point(59, 418);
+            this.groupBox1.Location = new System.Drawing.Point(57, 474);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -365,6 +369,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(54, 428);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 16);
+            this.label5.TabIndex = 52;
+            this.label5.Text = "Lương cơ bản:";
+            // 
+            // txtLuongCoBan
+            // 
+            this.txtLuongCoBan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLuongCoBan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtLuongCoBan.Location = new System.Drawing.Point(183, 422);
+            this.txtLuongCoBan.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLuongCoBan.Name = "txtLuongCoBan";
+            this.txtLuongCoBan.Size = new System.Drawing.Size(380, 30);
+            this.txtLuongCoBan.TabIndex = 53;
+            this.txtLuongCoBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuongCoBan_KeyPress);
+            // 
             // frmNhanVienEdit
             // 
             this.AcceptButton = this.btnLuuThongTin;
@@ -372,7 +398,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnHuyBo;
-            this.ClientSize = new System.Drawing.Size(627, 650);
+            this.ClientSize = new System.Drawing.Size(627, 725);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -422,5 +448,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboGioiTinh;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtLuongCoBan;
+        private System.Windows.Forms.Label label5;
     }
 }

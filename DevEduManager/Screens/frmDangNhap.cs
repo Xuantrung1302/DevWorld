@@ -1,16 +1,13 @@
-﻿using DevEduManager.Properties;
+﻿using BusinessLogic;
+using DevEduManager.Properties;
+using Entity.Models;
+using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogic;
-using System.Configuration;
-using Entity.Models;
 
 namespace DevEduManager.Screens
 {
@@ -143,6 +140,16 @@ namespace DevEduManager.Screens
                             }
                         }
 
+                        if (CurrentUser.Role == "Employee")
+                        {
+                            var (lat, lon) = await GetCurrentLocation();
+                            if (IsWithinSchoolRadius(lat, lon))
+                            {
+                                string apiUrl = $"{_url}payroll/addWorkDay?employeeId={CurrentUser.UserId}";
+                                await callAPI.PostAPI(apiUrl, "");
+                            }
+                        }
+
                         // Lưu thông tin vào Settings (nếu muốn lưu đăng nhập)
                         Settings.Default.Login_UserName = txtTenDangNhap.Text;
                         Settings.Default.Login_Password = txtMatKhau.Text;
@@ -172,6 +179,51 @@ namespace DevEduManager.Screens
 
 
         #endregion
+        private async Task<(double Latitude, double Longitude)> GetCurrentLocation()
+        {
+            try
+            {
+                using (var httpClient = new HttpClient())
+                {
+                    var response = await httpClient.GetStringAsync("https://ipinfo.io/json");
+                    var json = JObject.Parse(response);
+                    string loc = (string)json["loc"]; // Ví dụ: "10.762622,106.660172"
+                    var parts = loc.Split(',');
+
+                    double lat = double.Parse(parts[0]);
+                    double lon = double.Parse(parts[1]);
+                    return (lat, lon);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Không thể lấy vị trí IP", ex);
+            }
+        }
+
+
+        private bool IsWithinSchoolRadius(double userLat, double userLon)
+        {
+            double schoolLat = double.Parse(ConfigurationManager.AppSettings["SchoolLatitude"]);
+            double schoolLon = double.Parse(ConfigurationManager.AppSettings["SchoolLongitude"]);
+            double radius = double.Parse(ConfigurationManager.AppSettings["SchoolRadius"]); // in meters
+
+            double distance = GetDistanceInMeters(schoolLat, schoolLon, userLat, userLon);
+            return distance <= radius;
+        }
+
+        // Kiem tra do sai lech ban kinh
+        private double GetDistanceInMeters(double lat1, double lon1, double lat2, double lon2)
+        {
+            var R = 6371000; // radius of Earth in meters
+            var dLat = (lat2 - lat1) * Math.PI / 180;
+            var dLon = (lon2 - lon1) * Math.PI / 180;
+            var a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+                    Math.Cos(lat1 * Math.PI / 180) * Math.Cos(lat2 * Math.PI / 180) *
+                    Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
+            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+            return R * c;
+        }
 
     }
 }

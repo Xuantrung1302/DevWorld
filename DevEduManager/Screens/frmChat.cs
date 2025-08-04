@@ -19,6 +19,7 @@ namespace DevEduManager.Screens
         private readonly string _messageUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Message/";
         private readonly string _hubUrl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}signalr";
         private IHubProxy chatHubProxy;
+        private HubConnection connection;
 
 
         private string selectedUserId = null;
@@ -35,7 +36,7 @@ namespace DevEduManager.Screens
         {
             try
             {
-                var connection = new HubConnection(_hubUrl);
+                connection = new HubConnection(_hubUrl, $"userId={CurrentUser.UserId}");
                 chatHubProxy = connection.CreateHubProxy("ChatHub");
 
                 chatHubProxy.On<Message>("receiveMessage", (message) =>

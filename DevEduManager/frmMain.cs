@@ -520,8 +520,8 @@ namespace DevEduManager
             //this.Close();
 
             // Hiển thị Dialog 
-            frmMessageDialog frmMess = new frmMessageDialog();
-            frmMess.Show();
+            frmMessageDialog frmMess = new frmMessageDialog(this);
+            frmMess.ShowDialog();
         }
 
         private void btnQuanLyDiem_Click(object sender, EventArgs e)
@@ -762,11 +762,6 @@ namespace DevEduManager
             frm.Show();
         }
 
-        private void mniAS_D_SM_15_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
 
@@ -783,9 +778,21 @@ namespace DevEduManager
 
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        public void DangXuat()
         {
-
+            this.Hide();
+            frmDangNhap dangNhap = new frmDangNhap();
+            if (dangNhap.ShowDialog() == DialogResult.OK)
+            {
+                receivedData = dangNhap.userData;
+                LoadGiaoDien(receivedData);
+                this.Show();
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
+
     }
 }

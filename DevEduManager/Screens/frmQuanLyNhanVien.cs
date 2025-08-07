@@ -116,32 +116,48 @@ namespace DevEduManager.Screens
                 if (gridNV.SelectedRows.Count > 0 && gridNV.CurrentRow != null)
                 {
                     var employeeId = gridNV.CurrentRow.Cells["clmMaNV"].Value?.ToString();
-                    var userName = _employees.FirstOrDefault(p => p.EmployeeID == employeeId).Username;
+                    var employee = _employees.FirstOrDefault(p => p.EmployeeID == employeeId);
 
-                    string url = $"{_url}xoaThongTinNhanVien?employeeID={employeeId}&username={userName}";
-                    var result = await callAPI.PostAPI(url);
-                    if (result)
+                    if (employee == null)
                     {
-                        MessageBox.Show("Xóa thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thông tin nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Không tìm thấy thông tin nhân viên.");
+                        return;
                     }
 
-                    await LoadDataToGridView();
+                    var confirmResult = MessageBox.Show(
+                        $"Bạn có chắc chắn muốn xóa nhân viên \"{employee.FullName}\" (ID: {employeeId}) không?",
+                        "Xác nhận xóa",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        string url = $"{_url}xoaThongTinNhanVien?employeeID={employeeId}&username={employee.Username}";
+                        var result = await callAPI.PostAPI(url);
+
+                        if (result)
+                        {
+                            MessageBox.Show("Xóa thông tin nhân viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thông tin nhân viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+                        await LoadDataToGridView();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn một nhân viên để sửa.");
+                    MessageBox.Show("Vui lòng chọn một nhân viên để xóa.");
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         private async void btnPrev_Click(object sender, EventArgs e)
         {
             if (_pageIndex > 1)

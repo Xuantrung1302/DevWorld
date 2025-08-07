@@ -134,32 +134,47 @@ namespace DevEduManager.Screens
                 if (gridDSHV.SelectedRows.Count > 0 && gridDSHV.CurrentRow != null)
                 {
                     var studentId = gridDSHV.CurrentRow.Cells["clmMaHV"].Value?.ToString();
-                    var userName = _students.FirstOrDefault(p => p.StudentID == studentId).Username;
+                    var user = _students.FirstOrDefault(p => p.StudentID == studentId);
 
-                    string url = $"{_url}xoaThongTinHocVien?studentID={studentId}&username={userName}";
-                    var result = await callAPI.PostAPI(url);
-                    if (result)
+                    if (user == null)
                     {
-                        MessageBox.Show("Xóa thông tin học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xóa thông tin học viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Không tìm thấy thông tin học viên.");
+                        return;
                     }
 
-                    await LoadDataToGridView();
+                    var confirmResult = MessageBox.Show(
+                        $"Bạn có chắc chắn muốn xóa học viên \"{user.FullName}\" (ID: {studentId}) không?",
+                        "Xác nhận xóa",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        string url = $"{_url}xoaThongTinHocVien?studentID={studentId}&username={user.Username}";
+                        var result = await callAPI.PostAPI(url);
+                        if (result)
+                        {
+                            MessageBox.Show("Xóa thông tin học viên thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa thông tin học viên không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+
+                        await LoadDataToGridView();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn một học viên để sửa.");
+                    MessageBox.Show("Vui lòng chọn một học viên để xóa.");
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private async void btnHienTatCa_Click(object sender, EventArgs e)
         {

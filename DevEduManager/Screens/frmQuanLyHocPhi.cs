@@ -50,7 +50,7 @@ namespace DevEduManager.Screens
         {
             try
             {
-                string url = $"{_studentUrl}thongTinHocVien";
+                string url = $"{_studentUrl}danhSachHocVienCoHocPhi";
                 if (!string.IsNullOrEmpty(studentId))
                 {
                     url += $"?studentID={studentId}";

@@ -1,7 +1,7 @@
 ﻿using BusinessLogic;
 using Enity.Models;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
+//using iTextSharp.text;
+//using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -140,22 +140,22 @@ namespace DevEduManager.Screens
 
             using (FileStream stream = new FileStream(saveFileDialog.FileName, FileMode.Create))
             {
-                Document pdfDoc = new Document(PageSize.A4);
-                PdfWriter.GetInstance(pdfDoc, stream);
-                pdfDoc.Open();
+                //Document pdfDoc = new Document(PageSize.A4);
+                //PdfWriter.GetInstance(pdfDoc, stream);
+                //pdfDoc.Open();
 
-                string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+                //string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
 
-                BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-                Font font = new Font(baseFont, 12);
+                //BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                //Font font = new Font(baseFont, 12);
 
-                pdfDoc.Add(new Paragraph("THÔNG TIN RESET MẬT KHẨU", font));
-                pdfDoc.Add(new Paragraph($"Username: {username}", font));
-                pdfDoc.Add(new Paragraph($"Role: {role}", font));
-                pdfDoc.Add(new Paragraph($"Mật khẩu mới: {newPassword}", font));
+                //pdfDoc.Add(new Paragraph("THÔNG TIN RESET MẬT KHẨU", font));
+                //pdfDoc.Add(new Paragraph($"Username: {username}", font));
+                //pdfDoc.Add(new Paragraph($"Role: {role}", font));
+                //pdfDoc.Add(new Paragraph($"Mật khẩu mới: {newPassword}", font));
 
-                pdfDoc.Close();
-                stream.Close();
+                //pdfDoc.Close();
+                //stream.Close();
             }
 
             MessageBox.Show("Xuất PDF thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

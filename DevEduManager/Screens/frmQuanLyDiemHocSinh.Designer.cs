@@ -26,14 +26,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cboLH = new System.Windows.Forms.ComboBox();
             this.dtgvDshv = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboMH = new System.Windows.Forms.ComboBox();
-            this.btnNhap = new System.Windows.Forms.Button();
-            this.btnXuat = new System.Windows.Forms.Button();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboMH = new System.Windows.Forms.ComboBox();
+            this.btnXuat = new System.Windows.Forms.Button();
+            this.btnNhap = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDshv)).BeginInit();
@@ -50,9 +50,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 281F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.cboCT, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
@@ -107,9 +107,9 @@
             this.label1.Location = new System.Drawing.Point(24, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 32);
+            this.label1.Size = new System.Drawing.Size(308, 32);
             this.label1.TabIndex = 1;
-            this.label1.Text = "QUẢN LÝ ĐIỂM HỌC SINH";
+            this.label1.Text = "QUẢN LÝ ĐIỂM HỌC VIÊN";
             // 
             // label2
             // 
@@ -174,55 +174,6 @@
             this.dtgvDshv.Size = new System.Drawing.Size(1136, 441);
             this.dtgvDshv.TabIndex = 19;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label4.Location = new System.Drawing.Point(443, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 23);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Môn học";
-            // 
-            // cboMH
-            // 
-            this.cboMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMH.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboMH.FormattingEnabled = true;
-            this.cboMH.Location = new System.Drawing.Point(443, 79);
-            this.cboMH.Name = "cboMH";
-            this.cboMH.Size = new System.Drawing.Size(194, 31);
-            this.cboMH.TabIndex = 20;
-            // 
-            // btnNhap
-            // 
-            this.btnNhap.BackColor = System.Drawing.Color.LightCoral;
-            this.btnNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNhap.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnNhap.ForeColor = System.Drawing.Color.White;
-            this.btnNhap.Location = new System.Drawing.Point(765, 79);
-            this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(113, 35);
-            this.btnNhap.TabIndex = 16;
-            this.btnNhap.Text = "Nhập điểm";
-            this.btnNhap.UseVisualStyleBackColor = false;
-            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
-            // 
-            // btnXuat
-            // 
-            this.btnXuat.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(653, 79);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(106, 35);
-            this.btnXuat.TabIndex = 21;
-            this.btnXuat.Text = "Xuất điểm";
-            this.btnXuat.UseVisualStyleBackColor = false;
-            // 
             // StudentID
             // 
             this.StudentID.DataPropertyName = "StudentID";
@@ -250,6 +201,55 @@
             this.Status.HeaderText = "Trạng thái";
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label4.Location = new System.Drawing.Point(443, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 23);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Môn học";
+            // 
+            // cboMH
+            // 
+            this.cboMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMH.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboMH.FormattingEnabled = true;
+            this.cboMH.Location = new System.Drawing.Point(443, 79);
+            this.cboMH.Name = "cboMH";
+            this.cboMH.Size = new System.Drawing.Size(194, 31);
+            this.cboMH.TabIndex = 20;
+            // 
+            // btnXuat
+            // 
+            this.btnXuat.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXuat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnXuat.ForeColor = System.Drawing.Color.White;
+            this.btnXuat.Location = new System.Drawing.Point(653, 79);
+            this.btnXuat.Name = "btnXuat";
+            this.btnXuat.Size = new System.Drawing.Size(106, 35);
+            this.btnXuat.TabIndex = 21;
+            this.btnXuat.Text = "Xuất điểm";
+            this.btnXuat.UseVisualStyleBackColor = false;
+            // 
+            // btnNhap
+            // 
+            this.btnNhap.BackColor = System.Drawing.Color.LightCoral;
+            this.btnNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNhap.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnNhap.ForeColor = System.Drawing.Color.White;
+            this.btnNhap.Location = new System.Drawing.Point(793, 79);
+            this.btnNhap.Name = "btnNhap";
+            this.btnNhap.Size = new System.Drawing.Size(113, 35);
+            this.btnNhap.TabIndex = 16;
+            this.btnNhap.Text = "Nhập điểm";
+            this.btnNhap.UseVisualStyleBackColor = false;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // frmQuanLyDiemHocSinh
             // 

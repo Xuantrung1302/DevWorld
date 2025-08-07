@@ -58,6 +58,8 @@
             this.btnKetNoiCSDL = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongTinTrungTam = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_DoanhThu = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýHọcViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýGiảngViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGiangVienTitle = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAS_D_US_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -303,6 +305,7 @@
             this.btnTiepNhanHocVien.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnTiepNhanHocVien.Size = new System.Drawing.Size(344, 38);
             this.btnTiepNhanHocVien.Text = "Quản lý học viên";
+            this.btnTiepNhanHocVien.Visible = false;
             this.btnTiepNhanHocVien.Click += new System.EventHandler(this.btnTiepNhanHocVien_Click);
             // 
             // btnLapPhieuGhiDanh
@@ -312,6 +315,7 @@
             this.btnLapPhieuGhiDanh.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnLapPhieuGhiDanh.Size = new System.Drawing.Size(344, 38);
             this.btnLapPhieuGhiDanh.Text = "Quản lý giảng viên";
+            this.btnLapPhieuGhiDanh.Visible = false;
             this.btnLapPhieuGhiDanh.Click += new System.EventHandler(this.btnQuanLyGiangVien_Click);
             // 
             // btnThongKeNoHocVien
@@ -390,6 +394,8 @@
             // 
             this.btnQuanTriTitle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnQuanLyNhanVien,
+            this.quảnLýHọcViênToolStripMenuItem,
+            this.quảnLýGiảngViênToolStripMenuItem,
             this.btnQuanLyTaiKhoan,
             this.btnKetNoiCSDL,
             this.btnThongTinTrungTam,
@@ -448,6 +454,24 @@
             this.tsmi_DoanhThu.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.tsmi_DoanhThu.Size = new System.Drawing.Size(283, 38);
             this.tsmi_DoanhThu.Text = "Quản lý doanh thu";
+            // 
+            // quảnLýHọcViênToolStripMenuItem
+            // 
+            this.quảnLýHọcViênToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.quảnLýHọcViênToolStripMenuItem.Name = "quảnLýHọcViênToolStripMenuItem";
+            this.quảnLýHọcViênToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.quảnLýHọcViênToolStripMenuItem.Size = new System.Drawing.Size(283, 38);
+            this.quảnLýHọcViênToolStripMenuItem.Text = "Quản lý học viên";
+            this.quảnLýHọcViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýHọcViênToolStripMenuItem_Click);
+            // 
+            // quảnLýGiảngViênToolStripMenuItem
+            // 
+            this.quảnLýGiảngViênToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.quảnLýGiảngViênToolStripMenuItem.Name = "quảnLýGiảngViênToolStripMenuItem";
+            this.quảnLýGiảngViênToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.quảnLýGiảngViênToolStripMenuItem.Size = new System.Drawing.Size(283, 38);
+            this.quảnLýGiảngViênToolStripMenuItem.Text = "Quản lý giảng viên";
+            this.quảnLýGiảngViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýGiảngViênToolStripMenuItem_Click);
             // 
             // btnGiangVienTitle
             // 
@@ -697,5 +721,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem tsmi_DoanhThu;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýHọcViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýGiảngViênToolStripMenuItem;
     }
 }

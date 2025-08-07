@@ -202,17 +202,18 @@
             this.btnCT.TabIndex = 10;
             this.btnCT.Text = "➕ Thêm CT";
             this.btnCT.UseVisualStyleBackColor = false;
+            this.btnCT.Click += new System.EventHandler(this.btnCT_Click);
             // 
             // cboCT
             // 
             this.cboCT.BackColor = System.Drawing.Color.White;
-            this.cboCT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cboCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboCT.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboCT.ForeColor = System.Drawing.Color.Black;
             this.cboCT.Location = new System.Drawing.Point(294, 47);
             this.cboCT.Name = "cboCT";
-            this.cboCT.Size = new System.Drawing.Size(279, 31);
+            this.cboCT.Size = new System.Drawing.Size(279, 27);
             this.cboCT.TabIndex = 9;
             // 
             // frmQuanLyKhoaHoc

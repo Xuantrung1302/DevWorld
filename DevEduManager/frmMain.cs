@@ -778,5 +778,32 @@ namespace DevEduManager
             }
         }
 
+        private void quảnLýHọcViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyHocVien frm = new frmQuanLyHocVien(pnlWorkspace)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void quảnLýGiảngViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pnlWorkspace.Controls.Clear();
+
+            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(pnlWorkspace)
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            pnlWorkspace.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

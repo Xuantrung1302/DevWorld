@@ -95,5 +95,10 @@ namespace DevEduManager.Screens
                 MessageBox.Show("Lỗi khi load dữ liệu chi tiết: " + ex.Message);
             }
         }
+
+        private void btnCT_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

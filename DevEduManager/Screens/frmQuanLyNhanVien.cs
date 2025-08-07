@@ -153,11 +153,11 @@ namespace DevEduManager.Screens
 
         private async void btnNext_Click(object sender, EventArgs e)
         {
-            if (_pageIndex < _totalPages)
-            {
-                _pageIndex++;
-                await LoadDataToGridView();
-            }
+                if (_pageIndex < _totalPages)
+                {
+                    _pageIndex++;
+                    await LoadDataToGridView();
+                }
         }
 
     }

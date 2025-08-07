@@ -131,23 +131,6 @@ namespace DevEduManager
             {
                 pnlWorkspace.Controls.Clear();
 
-                // Kiểm tra cột nào không null và lấy giá trị của cột đó
-                //string tenNguoiDung = string.Empty;
-
-                //if (receivedData.Rows[0]["TenNV"] != DBNull.Value)
-                //{
-                //    tenNguoiDung = receivedData.Rows[0]["TenNV"].ToString();
-                //}
-                //else if (receivedData.Rows[0]["TenHV"] != DBNull.Value)
-                //{
-                //    tenNguoiDung = receivedData.Rows[0]["TenHV"].ToString();
-                //}
-                //else if (receivedData.Rows[0]["TenGV"] != DBNull.Value)
-                //{
-                //    tenNguoiDung = receivedData.Rows[0]["TenGV"].ToString();
-                //}
-
-                // Truyền giá trị đã xác định sang form frmTrangMoDau
                 frmBangTin frm = new frmBangTin()
                 {
                     Dock = DockStyle.Fill,

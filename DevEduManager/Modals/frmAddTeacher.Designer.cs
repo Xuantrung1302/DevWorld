@@ -43,7 +43,7 @@
             this.lblTeacherList = new System.Windows.Forms.Label();
             this.gridTeachers = new System.Windows.Forms.DataGridView();
             this.TeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TeacherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelActions = new System.Windows.Forms.Panel();
             this.tableLayoutPanelActions = new System.Windows.Forms.TableLayoutPanel();
             this.btnSave = new System.Windows.Forms.Button();
@@ -235,7 +235,7 @@
             this.gridTeachers.ColumnHeadersHeight = 30;
             this.gridTeachers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TeacherID,
-            this.TeacherName});
+            this.FullName});
             this.gridTeachers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridTeachers.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridTeachers.Location = new System.Drawing.Point(3, 32);
@@ -258,13 +258,13 @@
             this.TeacherID.Name = "TeacherID";
             this.TeacherID.ReadOnly = true;
             // 
-            // TeacherName
+            // FullName
             // 
-            this.TeacherName.DataPropertyName = "TeacherName";
-            this.TeacherName.HeaderText = "Tên GV";
-            this.TeacherName.MinimumWidth = 200;
-            this.TeacherName.Name = "TeacherName";
-            this.TeacherName.ReadOnly = true;
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Tên GV";
+            this.FullName.MinimumWidth = 200;
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
             // 
             // panelActions
             // 
@@ -373,11 +373,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTeacher;
         private System.Windows.Forms.Label lblTeacherList;
         private System.Windows.Forms.DataGridView gridTeachers;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TeacherID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TeacherName;
         private System.Windows.Forms.Panel panelActions;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelActions;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TeacherID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
     }
 }

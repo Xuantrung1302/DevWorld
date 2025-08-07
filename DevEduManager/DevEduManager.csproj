@@ -854,6 +854,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EmailTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\additem_16x16.png" />
     <Content Include="Resources\add_16x16.png" />
     <Content Include="Resources\cancel_16x16.png" />

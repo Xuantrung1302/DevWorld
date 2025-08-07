@@ -172,14 +172,13 @@
             this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtTenDangNhap.Location = new System.Drawing.Point(147, 0);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(132, 32);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(132, 39);
             this.txtTenDangNhap.TabIndex = 5;
             // 
             // picLoginId
             // 
             this.picLoginId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.errorProvider1.SetIconAlignment(this.picLoginId, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-            //this.picLoginId.Image = global::DevEduManager.Properties.Resources.ID;
             this.picLoginId.Location = new System.Drawing.Point(4, 0);
             this.picLoginId.Margin = new System.Windows.Forms.Padding(0);
             this.picLoginId.Name = "picLoginId";
@@ -203,7 +202,7 @@
             this.lblNotification.ForeColor = System.Drawing.Color.Red;
             this.lblNotification.Location = new System.Drawing.Point(28, 223);
             this.lblNotification.Name = "lblNotification";
-            this.lblNotification.Size = new System.Drawing.Size(70, 13);
+            this.lblNotification.Size = new System.Drawing.Size(84, 16);
             this.lblNotification.TabIndex = 9;
             this.lblNotification.Text = "<notification>";
             // 
@@ -221,7 +220,6 @@
             // 
             this.picPwd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.errorProvider1.SetIconAlignment(this.picPwd, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-            //this.picPwd.Image = global::DevEduManager.Properties.Resources.password;
             this.picPwd.Location = new System.Drawing.Point(4, 0);
             this.picPwd.Margin = new System.Windows.Forms.Padding(0);
             this.picPwd.Name = "picPwd";
@@ -244,7 +242,7 @@
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.txtMatKhau.Location = new System.Drawing.Point(147, 2);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(132, 32);
+            this.txtMatKhau.Size = new System.Drawing.Size(132, 39);
             this.txtMatKhau.TabIndex = 7;
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
@@ -272,7 +270,7 @@
             this.checkBox1.Location = new System.Drawing.Point(40, 3);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(109, 24);
+            this.checkBox1.Size = new System.Drawing.Size(130, 24);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Hiển thị mật khẩu";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -284,7 +282,7 @@
             this.chkSave.Location = new System.Drawing.Point(40, 33);
             this.chkSave.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.chkSave.Name = "chkSave";
-            this.chkSave.Size = new System.Drawing.Size(167, 17);
+            this.chkSave.Size = new System.Drawing.Size(198, 20);
             this.chkSave.TabIndex = 8;
             this.chkSave.Text = "Lưu tên đăng nhập, mật khẩu";
             this.chkSave.UseVisualStyleBackColor = true;
@@ -293,7 +291,6 @@
             // pictureBox1
             // 
             this.pictureBox1.Enabled = false;
-            //this.pictureBox1.Image = global::DevEduManager.Properties.Resources.resize_image_1790867358fc3de3b52d708aeb010a20_67764076efad1;
             this.pictureBox1.Location = new System.Drawing.Point(371, 44);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(40, 3, 3, 3);
             this.pictureBox1.Name = "pictureBox1";
@@ -316,7 +313,6 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
-            this.MaximizeBox = false;
             this.Name = "frmDangNhap";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

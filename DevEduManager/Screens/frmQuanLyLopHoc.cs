@@ -307,6 +307,8 @@ namespace DevEduManager.Screens
 
                         frmAddTeacher addTeacherForm = new frmAddTeacher(courseId, classId, programName, className);
                         addTeacherForm.ShowDialog();
+
+                        LoadClassDataAsync(courseId);
                         // Reload dữ liệu sau khi thêm thành công (nếu cần)
                         //LoadDataToGridView().Wait();
                     }
@@ -327,11 +329,23 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void btnAddClass_Click(object sender, EventArgs e)
+        private async void btnAddClass_Click(object sender, EventArgs e)
         {
-            string courseId = cboCT.SelectedValue?.ToString();
-            frmLopHocEdit frm = new frmLopHocEdit(courseId);
-            frm.ShowDialog();
+            try
+            {
+                string courseId = cboCT.SelectedValue?.ToString();
+                frmLopHocEdit frm = new frmLopHocEdit(courseId);
+                frm.ShowDialog();
+
+                await LoadClassDataAsync(courseId);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
 
         }
 

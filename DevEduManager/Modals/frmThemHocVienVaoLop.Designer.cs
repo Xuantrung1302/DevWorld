@@ -171,6 +171,7 @@ namespace DevEduManager.Modals
             this.txtClass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtClass.Location = new System.Drawing.Point(405, 38);
             this.txtClass.Name = "txtClass";
+            this.txtClass.ReadOnly = true;
             this.txtClass.Size = new System.Drawing.Size(392, 22);
             this.txtClass.TabIndex = 5;
             // 

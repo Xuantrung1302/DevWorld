@@ -2,7 +2,13 @@
 using System;
 using System.Configuration;
 using System.Data;
+using System.Net.Mail;
+using System.Net;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.IO;
+using System.Collections.Generic;
+using DocumentFormat.OpenXml.VariantTypes;
 
 namespace DevEduManager.Screens
 {
@@ -12,6 +18,7 @@ namespace DevEduManager.Screens
         private string _courseId;
         private string _classId;
         private readonly string _classIDs = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Class/";
+        private MailService mailService;
 
         public frmAddTeacher(string courseId, string classId, string programName, string className)
         {
@@ -20,7 +27,10 @@ namespace DevEduManager.Screens
             _classId = classId;
             txtProgramName.Text = programName;
             txtClassName.Text = className;
-            
+            mailService = new MailService("ngxuantrung03@gmail.com", "cbvwqfctxhefrzim");
+            string email1 = "huymess0610@gmail.com";
+            string email2 = "devhuymess11@gmail.com";
+
         }
 
         private async void frmAddTeacher_Load(object sender, EventArgs e)
@@ -62,6 +72,28 @@ namespace DevEduManager.Screens
 
                     if (scheduleResult)
                     {
+                        // Gọi API để lấy danh sách học viên theo classID
+                        string url = $"{_classIDs}layThongTinHocVienChoEmail?classID={_classId}";
+
+                        // Gọi API và nhận kết quả về dạng DataTable
+                        DataTable dt = await callAPI.GetAPI(url);
+
+                        // Chuyển DataTable thành danh sách Student
+                        List<Student> students = new List<Student>();
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            students.Add(new Student
+                            {
+                                FullName = row["FullName"]?.ToString(),
+                                Email = row["Email"]?.ToString()
+                            });
+                        }
+
+                        // Gửi mail
+                        SendMail(students);
+
+
+
                         MessageBox.Show("Thêm giảng viên và tạo lịch thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
@@ -78,6 +110,66 @@ namespace DevEduManager.Screens
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi thêm giảng viên hoặc sinh lịch: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private async void SendMail(List<Student> students)
+        {
+
+            string className = txtClassName.Text;
+            string teacher = gridTeachers.SelectedRows[0].Cells["FullName"].Value?.ToString(); 
+
+            string subject = $"[Lịch học mới] Lớp {className}";
+            string template = File.ReadAllText("EmailTemplate.html");
+            string body = template
+                .Replace("{ClassName}", className)
+                .Replace("{Teacher}", teacher);
+
+
+            foreach (var student in students)
+            {
+                try
+                {
+                    await mailService.SendMailAsync(student.Email, subject, body);
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+        }
+
+
+    }
+
+    public class Student
+    {
+        public string FullName { get; set; }
+        public string Email { get; set; }
+    }
+
+    public class MailService
+    {
+        private readonly string _fromEmail;
+        private readonly string _password;
+
+        public MailService(string fromEmail, string password)
+        {
+            _fromEmail = fromEmail;
+            _password = password;
+        }
+
+        public async Task SendMailAsync(string toEmail, string subject, string body)
+        {
+            using (var smtp = new SmtpClient("smtp.gmail.com", 587))
+            {
+                smtp.EnableSsl = true;
+                smtp.Credentials = new NetworkCredential(_fromEmail, _password);
+
+                var message = new MailMessage(_fromEmail, toEmail, subject, body);
+                message.IsBodyHtml = true;
+
+                await smtp.SendMailAsync(message);
             }
         }
     }

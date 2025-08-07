@@ -117,34 +117,19 @@ namespace BusinessLogic
 
             return result;
         }
-        public async Task<int> PostIntAPI(string url, string json = null)
+        public async Task<T> PostApiObject<T>(string url, object data)
         {
-
-            int result = 0;
-            try
+            using (HttpClient client = new HttpClient())
             {
-                var content = json is null ? null : new StringContent(json, Encoding.UTF8, "application/json");
-
+                var json = JsonConvert.SerializeObject(data);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync(url, content);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    result = int.Parse(await response.Content.ReadAsStringAsync());
-                }
-                else
-                {
-                    // Xử lý khi phản hồi không thành công
-                    string errorMessage = $"Lỗi khi gọi API: {response.ReasonPhrase}";
-                    MessageBox.Show(errorMessage, "Thông báo");
-                }
+                if (!response.IsSuccessStatusCode) return default;
+                var responseString = await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<T>(responseString);
             }
-            catch
-            {
-                MessageBox.Show("Có lỗi post xảy ra");
-            }
-
-            return result;
         }
+
         public async Task<string> CallApiAsync(string apiUrl)
         {
             using (HttpClient client = new HttpClient())

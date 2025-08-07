@@ -15,4 +15,15 @@ namespace Enity.Models
         public ICollection<GiangVien> GiangViens { get; set; }
     }
 
+    public class ChiTietTaiKhoan
+    {
+        public string Username { get; set; }
+        public string Role { get; set; }
+    }
+
+    public class TaiKhoanResponse
+    {
+        public int TotalCount { get; set; }
+        public List<ChiTietTaiKhoan> Data { get; set; }
+    }
 }

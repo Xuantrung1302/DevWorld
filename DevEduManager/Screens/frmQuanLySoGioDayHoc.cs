@@ -82,29 +82,17 @@ namespace DevEduManager.Screens
         {
             try
             {
-                string url = $"{_teacherUrl}danhSachGVHours?year={year}&month={month}"; // Gọi API với tháng và năm
+                string url = $"{_teacherUrl}danhSachGVHours?year={year}&month={month}";
                 DataTable dt = await callAPI.GetAPI(url);
-                cboGV.DataSource = null; // Xóa dữ liệu cũ
+
+                cboGV.DataSource = null;
+                cboGV.DisplayMember = "FullName";
+                cboGV.ValueMember = "TeacherID";
+
                 if (dt != null && dt.Rows.Count > 0)
                 {
-                    var teachers = new List<Dictionary<string, object>>();
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        var teacher = new Dictionary<string, object>
-                        {
-                            { "Key", row["TeacherID"] }, // Sử dụng TeacherID từ Payroll
-                            { "Value", row["FullName"] }
-                        };
-                        teachers.Add(teacher);
-                    }
-                    cboGV.DataSource = new BindingSource(teachers, null);
-                    cboGV.DisplayMember = "Value";
-                    cboGV.ValueMember = "Key";
-                    if (cboGV.Items.Count > 0) cboGV.SelectedIndex = 0; // Chọn giảng viên đầu tiên
-                }
-                else
-                {
-                    cboGV.DataSource = null; // Xóa danh sách nếu không có dữ liệu
+                    cboGV.DataSource = dt;
+                    cboGV.SelectedIndex = 0;
                 }
             }
             catch (Exception ex)
@@ -113,22 +101,32 @@ namespace DevEduManager.Screens
             }
         }
 
+
         private async void BtnTimKiem_Click(object sender, EventArgs e)
         {
-            if (cboGV.SelectedValue == null || cboMonth.SelectedValue == null || cboYear.SelectedValue == null)
+            try
             {
-                MessageBox.Show("Vui lòng chọn giảng viên, tháng và năm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (cboGV.SelectedValue == null || cboMonth.SelectedValue == null || cboYear.SelectedValue == null)
+                {
+                    MessageBox.Show("Vui lòng chọn giảng viên, tháng và năm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string _selectedTeacherId = cboGV.SelectedValue.ToString();
+                int selectedMonth = Convert.ToInt32(cboMonth.SelectedValue);
+                int selectedYear = Convert.ToInt32(cboYear.SelectedValue);
+
+                await LoadTeachingHours(_selectedTeacherId, selectedMonth, selectedYear);
+
             }
+            catch (Exception)
+            {
 
-            selectedTeacherId = Convert.ToInt32(cboGV.SelectedValue);
-            int selectedMonth = Convert.ToInt32(cboMonth.SelectedValue);
-            int selectedYear = Convert.ToInt32(cboYear.SelectedValue);
-
-            await LoadTeachingHours(selectedTeacherId, selectedMonth, selectedYear);
+                throw;
+            }
         }
 
-        private async Task LoadTeachingHours(int teacherId, int month, int year)
+        private async Task LoadTeachingHours(string teacherId, int month, int year)
         {
             try
             {

@@ -63,7 +63,7 @@ namespace DevEduManager.Modals
             try
             {
                 // Gọi API lấy thông tin tài khoản hiện tại
-                string url = $"{_url}layThongTinTaiKhoan?username={CurrentUser.Username}";
+                string url = $"{_url}layMatKhauTaiKhoan?userName={CurrentUser.Username}";
                 DataTable dt = await callAPI.GetAPI(url); // Hàm này trả về DataTable
 
                 if (dt != null && dt.Rows.Count > 0)

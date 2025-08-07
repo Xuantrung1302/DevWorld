@@ -69,7 +69,7 @@
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Padding = new System.Windows.Forms.Padding(20, 15, 0, 0);
-            this.lblTitle.Size = new System.Drawing.Size(100, 64);
+            this.lblTitle.Size = new System.Drawing.Size(504, 64);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "QUẢN LÝ TÀI KHOẢN";
             // 

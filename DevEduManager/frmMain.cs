@@ -494,7 +494,8 @@ namespace DevEduManager
 
         private void pmniDW_DonTu_Click(object sender, EventArgs e)
         {
-
+            frmDoiMatKhau frm = new frmDoiMatKhau();
+            frm.ShowDialog();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)

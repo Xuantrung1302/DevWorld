@@ -577,6 +577,12 @@
     <Compile Include="Screens\frmThoiKhoaBieuAll.Designer.cs">
       <DependentUpon>frmThoiKhoaBieuAll.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmThongKe.Designer.cs">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmThongKeDiemTheoLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -814,6 +820,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmThoiKhoaBieuAll.resx">
       <DependentUpon>frmThoiKhoaBieuAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmThongKe.resx">
+      <DependentUpon>frmThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmThongKeDiemTheoLop.resx">
       <DependentUpon>frmThongKeDiemTheoLop.cs</DependentUpon>

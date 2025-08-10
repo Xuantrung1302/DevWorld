@@ -201,7 +201,7 @@ namespace DevEduManager.Screens
                                 score = rowScore["Score"].ToString();
                                 if (decimal.TryParse(score, out decimal s))
                                 {
-                                    status = s >= 40 ? "Đạt" : "Chưa đạt";
+                                    status = s >= 5 ? "Đạt" : "Chưa đạt";
                                 }
                                 else
                                 {

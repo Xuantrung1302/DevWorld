@@ -42,8 +42,6 @@
             this.mnuTopMain = new System.Windows.Forms.MenuStrip();
             this.pmniDW_Page_Begin = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNhanVienTitle = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnTiepNhanHocVien = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnLapPhieuGhiDanh = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongKeNoHocVien = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanLyDiem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLichAll = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,12 +52,10 @@
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanTriTitle = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnKetNoiCSDL = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnThongTinTrungTam = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmi_DoanhThu = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýHọcViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýGiảngViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnKetNoiCSDL = new System.Windows.Forms.ToolStripMenuItem();
             this.btnGiangVienTitle = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAS_D_US_02 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,11 +67,8 @@
             this.pmniAS_D_VP = new System.Windows.Forms.ToolStripMenuItem();
             this.pmniDW_DoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.pmniAS_D_Web_Support = new System.Windows.Forms.ToolStripMenuItem();
-            this.languaguesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.japanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DemoScreen = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlWorkspace = new System.Windows.Forms.Panel();
+            this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.InforToolMenu = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -253,13 +246,12 @@
             this.pmniAS_D_VP,
             this.pmniDW_DoiMatKhau,
             this.pmniAS_D_Web_Support,
-            this.languaguesToolStripMenuItem,
-            this.DemoScreen});
+            this.thôngTinCáNhânToolStripMenuItem});
             this.mnuTopMain.Location = new System.Drawing.Point(0, 69);
             this.mnuTopMain.Name = "mnuTopMain";
             this.mnuTopMain.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
             this.mnuTopMain.ShowItemToolTips = true;
-            this.mnuTopMain.Size = new System.Drawing.Size(189, 798);
+            this.mnuTopMain.Size = new System.Drawing.Size(210, 798);
             this.mnuTopMain.TabIndex = 8;
             this.mnuTopMain.Text = "menuStrip1";
             // 
@@ -270,15 +262,13 @@
             this.pmniDW_Page_Begin.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniDW_Page_Begin.Name = "pmniDW_Page_Begin";
             this.pmniDW_Page_Begin.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.pmniDW_Page_Begin.Size = new System.Drawing.Size(172, 44);
+            this.pmniDW_Page_Begin.Size = new System.Drawing.Size(193, 44);
             this.pmniDW_Page_Begin.Text = "Trang mở đầu";
             this.pmniDW_Page_Begin.Click += new System.EventHandler(this.btnTrangMoDau_Click);
             // 
             // btnNhanVienTitle
             // 
             this.btnNhanVienTitle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnTiepNhanHocVien,
-            this.btnLapPhieuGhiDanh,
             this.btnThongKeNoHocVien,
             this.btnQuanLyDiem,
             this.btnLichAll,
@@ -293,30 +283,10 @@
             this.btnNhanVienTitle.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnNhanVienTitle.ShortcutKeyDisplayString = "Alt+M";
             this.btnNhanVienTitle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
-            this.btnNhanVienTitle.Size = new System.Drawing.Size(172, 39);
+            this.btnNhanVienTitle.Size = new System.Drawing.Size(193, 39);
             this.btnNhanVienTitle.Text = "Nhân viên";
             this.btnNhanVienTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhanVienTitle.Click += new System.EventHandler(this.btnNhanVienTitle_Click_1);
-            // 
-            // btnTiepNhanHocVien
-            // 
-            this.btnTiepNhanHocVien.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnTiepNhanHocVien.Name = "btnTiepNhanHocVien";
-            this.btnTiepNhanHocVien.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnTiepNhanHocVien.Size = new System.Drawing.Size(344, 38);
-            this.btnTiepNhanHocVien.Text = "Quản lý học viên";
-            this.btnTiepNhanHocVien.Visible = false;
-            this.btnTiepNhanHocVien.Click += new System.EventHandler(this.btnTiepNhanHocVien_Click);
-            // 
-            // btnLapPhieuGhiDanh
-            // 
-            this.btnLapPhieuGhiDanh.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnLapPhieuGhiDanh.Name = "btnLapPhieuGhiDanh";
-            this.btnLapPhieuGhiDanh.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnLapPhieuGhiDanh.Size = new System.Drawing.Size(344, 38);
-            this.btnLapPhieuGhiDanh.Text = "Quản lý giảng viên";
-            this.btnLapPhieuGhiDanh.Visible = false;
-            this.btnLapPhieuGhiDanh.Click += new System.EventHandler(this.btnQuanLyGiangVien_Click);
             // 
             // btnThongKeNoHocVien
             // 
@@ -397,16 +367,14 @@
             this.quảnLýHọcViênToolStripMenuItem,
             this.quảnLýGiảngViênToolStripMenuItem,
             this.btnQuanLyTaiKhoan,
-            this.btnKetNoiCSDL,
-            this.btnThongTinTrungTam,
-            this.tsmi_DoanhThu});
+            this.btnKetNoiCSDL});
             this.btnQuanTriTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanTriTitle.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnQuanTriTitle.Name = "btnQuanTriTitle";
             this.btnQuanTriTitle.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnQuanTriTitle.ShortcutKeyDisplayString = "Alt+T";
             this.btnQuanTriTitle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.T)));
-            this.btnQuanTriTitle.Size = new System.Drawing.Size(172, 39);
+            this.btnQuanTriTitle.Size = new System.Drawing.Size(193, 39);
             this.btnQuanTriTitle.Text = "Quản trị viên";
             this.btnQuanTriTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanTriTitle.Click += new System.EventHandler(this.btnQuanTriTitle_Click);
@@ -419,41 +387,6 @@
             this.btnQuanLyNhanVien.Size = new System.Drawing.Size(283, 38);
             this.btnQuanLyNhanVien.Text = "Quản lý nhân viên";
             this.btnQuanLyNhanVien.Click += new System.EventHandler(this.btnQuanLyNhanVien_Click);
-            // 
-            // btnQuanLyTaiKhoan
-            // 
-            this.btnQuanLyTaiKhoan.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
-            this.btnQuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(283, 38);
-            this.btnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
-            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
-            // 
-            // btnKetNoiCSDL
-            // 
-            this.btnKetNoiCSDL.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnKetNoiCSDL.Name = "btnKetNoiCSDL";
-            this.btnKetNoiCSDL.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnKetNoiCSDL.Size = new System.Drawing.Size(283, 38);
-            this.btnKetNoiCSDL.Text = "Thống kê";
-            this.btnKetNoiCSDL.Click += new System.EventHandler(this.btnKetNoiCSDL_Click);
-            // 
-            // btnThongTinTrungTam
-            // 
-            this.btnThongTinTrungTam.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnThongTinTrungTam.Name = "btnThongTinTrungTam";
-            this.btnThongTinTrungTam.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnThongTinTrungTam.Size = new System.Drawing.Size(283, 38);
-            this.btnThongTinTrungTam.Text = "Quản lý trung tâm";
-            this.btnThongTinTrungTam.Click += new System.EventHandler(this.btnThongTinTrungTam_Click);
-            // 
-            // tsmi_DoanhThu
-            // 
-            this.tsmi_DoanhThu.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.tsmi_DoanhThu.Name = "tsmi_DoanhThu";
-            this.tsmi_DoanhThu.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.tsmi_DoanhThu.Size = new System.Drawing.Size(283, 38);
-            this.tsmi_DoanhThu.Text = "Quản lý doanh thu";
             // 
             // quảnLýHọcViênToolStripMenuItem
             // 
@@ -473,6 +406,24 @@
             this.quảnLýGiảngViênToolStripMenuItem.Text = "Quản lý giảng viên";
             this.quảnLýGiảngViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýGiảngViênToolStripMenuItem_Click);
             // 
+            // btnQuanLyTaiKhoan
+            // 
+            this.btnQuanLyTaiKhoan.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
+            this.btnQuanLyTaiKhoan.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(283, 38);
+            this.btnQuanLyTaiKhoan.Text = "Quản lý tài khoản";
+            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
+            // 
+            // btnKetNoiCSDL
+            // 
+            this.btnKetNoiCSDL.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnKetNoiCSDL.Name = "btnKetNoiCSDL";
+            this.btnKetNoiCSDL.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.btnKetNoiCSDL.Size = new System.Drawing.Size(283, 38);
+            this.btnKetNoiCSDL.Text = "Thống kê";
+            this.btnKetNoiCSDL.Click += new System.EventHandler(this.btnKetNoiCSDL_Click);
+            // 
             // btnGiangVienTitle
             // 
             this.btnGiangVienTitle.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -485,7 +436,7 @@
             this.btnGiangVienTitle.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnGiangVienTitle.ShortcutKeyDisplayString = "Alt+U";
             this.btnGiangVienTitle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.U)));
-            this.btnGiangVienTitle.Size = new System.Drawing.Size(172, 39);
+            this.btnGiangVienTitle.Size = new System.Drawing.Size(193, 39);
             this.btnGiangVienTitle.Text = "Giảng viên";
             this.btnGiangVienTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -528,7 +479,7 @@
             this.btnHocVienTitle.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnHocVienTitle.ShortcutKeyDisplayString = "Alt+O";
             this.btnHocVienTitle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
-            this.btnHocVienTitle.Size = new System.Drawing.Size(172, 39);
+            this.btnHocVienTitle.Size = new System.Drawing.Size(193, 39);
             this.btnHocVienTitle.Text = "Học viên";
             this.btnHocVienTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHocVienTitle.Click += new System.EventHandler(this.btnHocVienTitle_Click);
@@ -568,7 +519,7 @@
             this.pmniAS_D_VP.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniAS_D_VP.ShortcutKeyDisplayString = "Alt+V";
             this.pmniAS_D_VP.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.V)));
-            this.pmniAS_D_VP.Size = new System.Drawing.Size(172, 39);
+            this.pmniAS_D_VP.Size = new System.Drawing.Size(193, 39);
             this.pmniAS_D_VP.Text = "Tin nhắn";
             this.pmniAS_D_VP.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pmniAS_D_VP.Click += new System.EventHandler(this.pmniAS_D_VP_Click);
@@ -581,7 +532,7 @@
             this.pmniDW_DoiMatKhau.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniDW_DoiMatKhau.ShortcutKeyDisplayString = "Alt+R";
             this.pmniDW_DoiMatKhau.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
-            this.pmniDW_DoiMatKhau.Size = new System.Drawing.Size(172, 39);
+            this.pmniDW_DoiMatKhau.Size = new System.Drawing.Size(193, 39);
             this.pmniDW_DoiMatKhau.Text = "Đổi mật khẩu";
             this.pmniDW_DoiMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.pmniDW_DoiMatKhau.Click += new System.EventHandler(this.pmniDW_DonTu_Click);
@@ -595,54 +546,26 @@
             this.pmniAS_D_Web_Support.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.pmniAS_D_Web_Support.ShortcutKeyDisplayString = "&F1";
             this.pmniAS_D_Web_Support.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.pmniAS_D_Web_Support.Size = new System.Drawing.Size(172, 14);
+            this.pmniAS_D_Web_Support.Size = new System.Drawing.Size(193, 14);
             this.pmniAS_D_Web_Support.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // languaguesToolStripMenuItem
+            // thôngTinCáNhânToolStripMenuItem
             // 
-            this.languaguesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.englishToolStripMenuItem,
-            this.japanToolStripMenuItem});
-            this.languaguesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.languaguesToolStripMenuItem.Name = "languaguesToolStripMenuItem";
-            this.languaguesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.languaguesToolStripMenuItem.Size = new System.Drawing.Size(172, 39);
-            this.languaguesToolStripMenuItem.Text = "Languages";
-            this.languaguesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.languaguesToolStripMenuItem.Visible = false;
+            this.thôngTinCáNhânToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
+            this.thôngTinCáNhânToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(193, 39);
+            this.thôngTinCáNhânToolStripMenuItem.Text = "Thông tin cá nhân";
+            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
-            // englishToolStripMenuItem
+            // InforToolMenu
             // 
-            this.englishToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(172, 38);
-            this.englishToolStripMenuItem.Text = "English";
-            // 
-            // japanToolStripMenuItem
-            // 
-            this.japanToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.japanToolStripMenuItem.Name = "japanToolStripMenuItem";
-            this.japanToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.japanToolStripMenuItem.Size = new System.Drawing.Size(172, 38);
-            this.japanToolStripMenuItem.Text = "Japan";
-            // 
-            // DemoScreen
-            // 
-            this.DemoScreen.Name = "DemoScreen";
-            this.DemoScreen.Size = new System.Drawing.Size(178, 29);
-            this.DemoScreen.Text = "Demo screen";
-            this.DemoScreen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DemoScreen.Visible = false;
-            // 
-            // pnlWorkspace
-            // 
-            this.pnlWorkspace.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlWorkspace.Location = new System.Drawing.Point(189, 69);
-            this.pnlWorkspace.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlWorkspace.Name = "pnlWorkspace";
-            this.pnlWorkspace.Size = new System.Drawing.Size(1291, 798);
-            this.pnlWorkspace.TabIndex = 11;
+            this.InforToolMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.InforToolMenu.Location = new System.Drawing.Point(210, 69);
+            this.InforToolMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.InforToolMenu.Name = "InforToolMenu";
+            this.InforToolMenu.Size = new System.Drawing.Size(1270, 798);
+            this.InforToolMenu.TabIndex = 11;
             // 
             // frmMain
             // 
@@ -650,7 +573,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1480, 897);
-            this.Controls.Add(this.pnlWorkspace);
+            this.Controls.Add(this.InforToolMenu);
             this.Controls.Add(this.mnuTopMain);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
@@ -689,8 +612,6 @@
         private System.Windows.Forms.MenuStrip mnuTopMain;
         private System.Windows.Forms.ToolStripMenuItem pmniDW_Page_Begin;
         private System.Windows.Forms.ToolStripMenuItem btnNhanVienTitle;
-        private System.Windows.Forms.ToolStripMenuItem btnTiepNhanHocVien;
-        private System.Windows.Forms.ToolStripMenuItem btnLapPhieuGhiDanh;
         private System.Windows.Forms.ToolStripMenuItem btnThongKeNoHocVien;
         private System.Windows.Forms.ToolStripMenuItem btnQuanLyDiem;
         private System.Windows.Forms.ToolStripMenuItem btnLichAll;
@@ -705,14 +626,9 @@
         private System.Windows.Forms.ToolStripMenuItem pmniAS_D_VP;
         private System.Windows.Forms.ToolStripMenuItem pmniDW_DoiMatKhau;
         private System.Windows.Forms.ToolStripMenuItem pmniAS_D_Web_Support;
-        private System.Windows.Forms.ToolStripMenuItem languaguesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem japanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DemoScreen;
         private System.Windows.Forms.ToolStripMenuItem btnQuanLyTaiKhoan;
         private System.Windows.Forms.ToolStripMenuItem btnKetNoiCSDL;
-        private System.Windows.Forms.ToolStripMenuItem btnThongTinTrungTam;
-        private System.Windows.Forms.Panel pnlWorkspace;
+        private System.Windows.Forms.Panel InforToolMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
@@ -720,8 +636,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
-        private System.Windows.Forms.ToolStripMenuItem tsmi_DoanhThu;
         private System.Windows.Forms.ToolStripMenuItem quảnLýHọcViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýGiảngViênToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
     }
 }

@@ -74,7 +74,7 @@ namespace DevEduManager
 
         private void btnQuanLyLopHoc_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyLopHoc frm = new frmQuanLyLopHoc()
             {
@@ -82,12 +82,12 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
         private void btnQuanLyKyHoc_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyKyHoc frm = new frmQuanLyKyHoc()
             {
@@ -95,7 +95,7 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
@@ -127,9 +127,9 @@ namespace DevEduManager
         private void btnTrangMoDau_Click(object sender, EventArgs e)
         {
             // Kiểm tra nếu pnlWorkspace không có form hoặc form hiện tại không phải là frmTrangMoDau
-            if (pnlWorkspace.Controls.Count == 0 || !(pnlWorkspace.Controls[0] is frmTrangMoDau))
+            if (InforToolMenu.Controls.Count == 0 || !(InforToolMenu.Controls[0] is frmTrangMoDau))
             {
-                pnlWorkspace.Controls.Clear();
+                InforToolMenu.Controls.Clear();
 
                 frmBangTin frm = new frmBangTin()
                 {
@@ -137,7 +137,7 @@ namespace DevEduManager
                     TopLevel = false
                 };
 
-                pnlWorkspace.Controls.Add(frm);
+                InforToolMenu.Controls.Add(frm);
                 frm.Show();
             }
         }
@@ -162,33 +162,33 @@ namespace DevEduManager
         }
         private void btnTiepNhanHocVien_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
-            frmQuanLyHocVien frm = new frmQuanLyHocVien(pnlWorkspace)
+            frmQuanLyHocVien frm = new frmQuanLyHocVien(InforToolMenu)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
         private void btnQuanLyGiangVien_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
-            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(pnlWorkspace)
+            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(InforToolMenu)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
         private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             if (GlobalPages.QuanLyNhanVien == null)
             {
@@ -198,7 +198,7 @@ namespace DevEduManager
                     TopLevel = false
                 };
 
-                pnlWorkspace.Controls.Add(frm);
+                InforToolMenu.Controls.Add(frm);
                 frm.Show();
             }
         }
@@ -211,7 +211,7 @@ namespace DevEduManager
 
         private void btnKetNoiCSDL_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyDoanhThu frm = new frmQuanLyDoanhThu()
             {
@@ -219,7 +219,7 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
@@ -409,7 +409,7 @@ namespace DevEduManager
         /// </summary>
         public void LoadGiaoDien(DataTable userName)
         {
-            lblUserName.Text = CurrentUser.Username;
+            lblUserName.Text = CurrentUser.FullName;
             ResetRibbonControlStatus();
             string role = userName.Rows[0]["Role"].ToString();
 
@@ -438,7 +438,7 @@ namespace DevEduManager
 
         private void btnQuanLyHocPhi_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyHocPhi frm = new frmQuanLyHocPhi()
             {
@@ -446,13 +446,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnQuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyTaiKhoan frm = new frmQuanLyTaiKhoan()
             {
@@ -460,7 +460,7 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
@@ -478,16 +478,16 @@ namespace DevEduManager
 
         private void pmniAS_D_VP_Click(object sender, EventArgs e)
         {
-            if (pnlWorkspace.Controls.Count == 0 || !(pnlWorkspace.Controls[0] is frmChat))
+            if (InforToolMenu.Controls.Count == 0 || !(InforToolMenu.Controls[0] is frmChat))
             {
-                pnlWorkspace.Controls.Clear();
+                InforToolMenu.Controls.Clear();
                 frmChat frm = new frmChat()
                 {
                     Dock = DockStyle.Fill,
                     TopLevel = false
                 };
 
-                pnlWorkspace.Controls.Add(frm);
+                InforToolMenu.Controls.Add(frm);
                 frm.Show();
             }
         }
@@ -510,20 +510,20 @@ namespace DevEduManager
 
         private void btnQuanLyDiem_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
             frmQuanLyLopHoc frm = new frmQuanLyLopHoc()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnLichAll_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmTaoThoiKhoaBieu frm = new frmTaoThoiKhoaBieu()
             {
@@ -531,13 +531,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnXepLop_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyLichThi frm = new frmQuanLyLichThi()
             {
@@ -545,13 +545,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnSuaThongBao_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmBangTinEdit frm = new frmBangTinEdit()
             {
@@ -559,27 +559,27 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnLapPhieuGhiDanh_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
-            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(pnlWorkspace)
+            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(InforToolMenu)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void mniAS_D_US_02_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             var frm = new frmThongTinGiangVien(null, UserSession.UserId, null, false)
             {
@@ -587,13 +587,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmDiemDanhGiaoVien frm = new frmDiemDanhGiaoVien()
             {
@@ -601,13 +601,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void mniAS_D_OD_06_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmThoiKhoaBieu frm = new frmThoiKhoaBieu()
             {
@@ -615,13 +615,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnBaoCaoHocVienTheoThang_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyKyHoc frm = new frmQuanLyKyHoc()
             {
@@ -629,13 +629,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void btnThongKeNoHocVien_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyKhoaHoc frm = new frmQuanLyKhoaHoc()
             {
@@ -643,7 +643,7 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
@@ -664,7 +664,7 @@ namespace DevEduManager
 
         private void mniAS_D_SM_13_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyDiemHocSinh frm = new frmQuanLyDiemHocSinh()
             {
@@ -672,13 +672,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void toolStripMenuItem10_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyHocPhi frm = new frmQuanLyHocPhi()
             {
@@ -686,13 +686,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void toolStripMenuItem9_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmBaoCaoDiemDanhGiaoVien frm = new frmBaoCaoDiemDanhGiaoVien()
             {
@@ -700,13 +700,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmBangDiem frm = new frmBangDiem()
             {
@@ -714,13 +714,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLyThongBao frm = new frmQuanLyThongBao()
             {
@@ -728,13 +728,13 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmLichThiHocSinh frm = new frmLichThiHocSinh()
             {
@@ -742,14 +742,14 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
 
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
             frmQuanLySoGioDayHoc frm = new frmQuanLySoGioDayHoc()
             {
@@ -757,7 +757,7 @@ namespace DevEduManager
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
 
         }
@@ -780,30 +780,47 @@ namespace DevEduManager
 
         private void quảnLýHọcViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
-            frmQuanLyHocVien frm = new frmQuanLyHocVien(pnlWorkspace)
+            frmQuanLyHocVien frm = new frmQuanLyHocVien(InforToolMenu)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
         }
 
         private void quảnLýGiảngViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            pnlWorkspace.Controls.Clear();
+            InforToolMenu.Controls.Clear();
 
-            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(pnlWorkspace)
+            frmQuanLyGiangVien frm = new frmQuanLyGiangVien(InforToolMenu)
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
             };
 
-            pnlWorkspace.Controls.Add(frm);
+            InforToolMenu.Controls.Add(frm);
             frm.Show();
+        }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (InforToolMenu.Controls.Count == 0 || !(InforToolMenu.Controls[0] is frmThongTinCaNhan))
+            {
+                InforToolMenu.Controls.Clear();
+
+                frmThongTinCaNhan frm = new frmThongTinCaNhan()
+                {
+                    Dock = DockStyle.Fill,
+                    TopLevel = false
+                };
+
+                InforToolMenu.Controls.Add(frm);
+                frm.Show();
+            }
         }
     }
 }

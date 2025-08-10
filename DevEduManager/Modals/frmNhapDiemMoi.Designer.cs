@@ -21,25 +21,25 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblHeader = new System.Windows.Forms.Label();
             this.panelFilter = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cboMH = new System.Windows.Forms.ComboBox();
             this.cboCT = new System.Windows.Forms.ComboBox();
             this.cboLH = new System.Windows.Forms.ComboBox();
-            this.cboMH = new System.Windows.Forms.ComboBox();
-            this.dgvNhapDiem = new System.Windows.Forms.DataGridView();
-            this.panelFooter = new System.Windows.Forms.Panel();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.dgvNhapDiem = new System.Windows.Forms.DataGridView();
             this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelFooter = new System.Windows.Forms.Panel();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelFilter.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhapDiem)).BeginInit();
             this.panelFooter.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -92,6 +92,37 @@
             this.panelFilter.Size = new System.Drawing.Size(894, 64);
             this.panelFilter.TabIndex = 1;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.cboMH, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboCT, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboLH, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.5F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(894, 64);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // cboMH
+            // 
+            this.cboMH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMH.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboMH.Location = new System.Drawing.Point(599, 27);
+            this.cboMH.Name = "cboMH";
+            this.cboMH.Size = new System.Drawing.Size(292, 31);
+            this.cboMH.TabIndex = 2;
+            // 
             // cboCT
             // 
             this.cboCT.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -99,7 +130,7 @@
             this.cboCT.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cboCT.Location = new System.Drawing.Point(3, 27);
             this.cboCT.Name = "cboCT";
-            this.cboCT.Size = new System.Drawing.Size(291, 31);
+            this.cboCT.Size = new System.Drawing.Size(292, 31);
             this.cboCT.TabIndex = 0;
             // 
             // cboLH
@@ -107,20 +138,40 @@
             this.cboLH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboLH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLH.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboLH.Location = new System.Drawing.Point(300, 27);
+            this.cboLH.Location = new System.Drawing.Point(301, 27);
             this.cboLH.Name = "cboLH";
-            this.cboLH.Size = new System.Drawing.Size(291, 31);
+            this.cboLH.Size = new System.Drawing.Size(292, 31);
             this.cboLH.TabIndex = 1;
             // 
-            // cboMH
+            // label1
             // 
-            this.cboMH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMH.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboMH.Location = new System.Drawing.Point(597, 27);
-            this.cboMH.Name = "cboMH";
-            this.cboMH.Size = new System.Drawing.Size(294, 31);
-            this.cboMH.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Location = new System.Drawing.Point(3, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(292, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Chương trình học";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Location = new System.Drawing.Point(301, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(292, 16);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Lớp học";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label3.Location = new System.Drawing.Point(599, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(292, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Môn học";
             // 
             // dgvNhapDiem
             // 
@@ -140,6 +191,29 @@
             this.dgvNhapDiem.RowTemplate.Height = 28;
             this.dgvNhapDiem.Size = new System.Drawing.Size(894, 414);
             this.dgvNhapDiem.TabIndex = 2;
+            // 
+            // StudentID
+            // 
+            this.StudentID.DataPropertyName = "StudentID";
+            this.StudentID.HeaderText = "Mã học viên";
+            this.StudentID.MinimumWidth = 6;
+            this.StudentID.Name = "StudentID";
+            this.StudentID.ReadOnly = true;
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Họ và tên";
+            this.FullName.MinimumWidth = 6;
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            // 
+            // Score
+            // 
+            this.Score.DataPropertyName = "Score";
+            this.Score.HeaderText = "Điểm";
+            this.Score.MinimumWidth = 6;
+            this.Score.Name = "Score";
             // 
             // panelFooter
             // 
@@ -165,80 +239,6 @@
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.cboMH, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cboCT, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cboLH, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(894, 64);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Location = new System.Drawing.Point(3, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Chương trình học";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label2.Location = new System.Drawing.Point(300, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(291, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Lớp học";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label3.Location = new System.Drawing.Point(597, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(294, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Môn học";
-            // 
-            // StudentID
-            // 
-            this.StudentID.DataPropertyName = "StudentID";
-            this.StudentID.HeaderText = "Mã học viên";
-            this.StudentID.MinimumWidth = 6;
-            this.StudentID.Name = "StudentID";
-            this.StudentID.ReadOnly = true;
-            // 
-            // FullName
-            // 
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Họ và tên";
-            this.FullName.MinimumWidth = 6;
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            // 
-            // Score
-            // 
-            this.Score.DataPropertyName = "Score";
-            this.Score.HeaderText = "Điểm";
-            this.Score.MinimumWidth = 6;
-            this.Score.Name = "Score";
-            // 
             // frmNhapDiemMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,16 +246,17 @@
             this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.tableLayoutPanelMain);
             this.Name = "frmNhapDiemMoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập điểm học viên";
             this.Load += new System.EventHandler(this.frmNhapDiemMoi_Load);
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             this.panelFilter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNhapDiem)).EndInit();
-            this.panelFooter.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhapDiem)).EndInit();
+            this.panelFooter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

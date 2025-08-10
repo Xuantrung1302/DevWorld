@@ -17,7 +17,7 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cboCT = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -151,11 +151,11 @@
             this.dtgvDshv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDshv.BackgroundColor = System.Drawing.Color.White;
             this.dtgvDshv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.dtgvDshv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dtgvDshv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvDshv.ColumnHeadersHeight = 40;
             this.dtgvDshv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentID,
@@ -167,6 +167,7 @@
             this.dtgvDshv.EnableHeadersVisualStyles = false;
             this.dtgvDshv.Location = new System.Drawing.Point(23, 149);
             this.dtgvDshv.Name = "dtgvDshv";
+            this.dtgvDshv.ReadOnly = true;
             this.dtgvDshv.RowHeadersVisible = false;
             this.dtgvDshv.RowHeadersWidth = 51;
             this.dtgvDshv.RowTemplate.Height = 35;
@@ -180,6 +181,7 @@
             this.StudentID.HeaderText = "Mã học viên";
             this.StudentID.MinimumWidth = 6;
             this.StudentID.Name = "StudentID";
+            this.StudentID.ReadOnly = true;
             // 
             // FullName
             // 
@@ -187,6 +189,7 @@
             this.FullName.HeaderText = "Họ và tên";
             this.FullName.MinimumWidth = 6;
             this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
             // 
             // Score
             // 
@@ -194,6 +197,7 @@
             this.Score.HeaderText = "Điểm";
             this.Score.MinimumWidth = 6;
             this.Score.Name = "Score";
+            this.Score.ReadOnly = true;
             // 
             // Status
             // 
@@ -201,6 +205,7 @@
             this.Status.HeaderText = "Trạng thái";
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
             // 
             // label4
             // 

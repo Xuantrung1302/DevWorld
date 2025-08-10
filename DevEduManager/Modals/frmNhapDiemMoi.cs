@@ -2,6 +2,7 @@
 using Entity.Models;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -26,7 +27,17 @@ namespace DevEduManager.Modals
 
         private async void frmNhapDiemMoi_Load(object sender, EventArgs e)
         {
-            await LoadComboBoxCourseAsync();
+            try
+            {
+
+                await LoadComboBoxCourseAsync();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private async Task LoadComboBoxCourseAsync()
@@ -117,10 +128,19 @@ namespace DevEduManager.Modals
 
         private async void cboMH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboMH.SelectedValue == null) return;
-            string classID = cboLH.SelectedValue?.ToString();
-            string subjectID = cboMH.SelectedValue?.ToString();
-            await LoadStudentAndScoreAsync(classID, subjectID);
+            try
+            {
+                if (cboMH.SelectedValue == null) return;
+                string classID = cboLH.SelectedValue?.ToString();
+                string subjectID = cboMH.SelectedValue?.ToString();
+                await LoadStudentAndScoreAsync(classID, subjectID);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         /// <summary>
@@ -191,6 +211,8 @@ namespace DevEduManager.Modals
                     return;
                 }
 
+                var danhSachKetQua = new List<object>();
+
                 foreach (DataGridViewRow row in dgvNhapDiem.Rows)
                 {
                     if (row.IsNewRow) continue;
@@ -201,45 +223,55 @@ namespace DevEduManager.Modals
                     if (string.IsNullOrEmpty(studentID)) continue;
 
                     decimal score = 0;
-                    if (!string.IsNullOrEmpty(scoreText))
+                    if (!string.IsNullOrWhiteSpace(scoreText))
                     {
                         if (!decimal.TryParse(scoreText, out score))
                         {
                             MessageBox.Show($"Điểm nhập cho học viên {studentID} không hợp lệ!");
                             return;
                         }
+
+                        // Kiểm tra khoảng 1 - 10
+                        if (score < 0 || score > 10)
+                        {
+                            MessageBox.Show($"Điểm của học viên {studentID} phải từ 1 đến 10!");
+                            return;
+                        }
                     }
 
-                    // Tạo object KetQua
-                    var ketQua = new
+                    danhSachKetQua.Add(new
                     {
                         StudentID = studentID,
                         ClassID = classID,
                         SubjectID = subjectID,
-                        Score = score
-                    };
-
-                    // Chuyển sang JSON
-                    string jsonData = JsonConvert.SerializeObject(ketQua);
-
-                    // Gọi API Post
-                    string url = $"{_examUrl}themKetQua";
-                    bool result = await callAPI.PostAPI(url, jsonData);
-
-                    if (!result)
-                    {
-                        MessageBox.Show($"Lưu điểm thất bại cho học viên {studentID}");
-                        return;
-                    }
+                        Score = score,
+                        EnteredBy = CurrentUser.UserId
+                    });
                 }
 
-                MessageBox.Show("Lưu điểm thành công!");
+                if (danhSachKetQua.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu để lưu!");
+                    return;
+                }
+
+                // Chuyển sang JSON (mảng object)
+                string jsonData = JsonConvert.SerializeObject(danhSachKetQua);
+
+                // Gửi 1 lần
+                bool result = await callAPI.PostAPI($"{_examUrl}themKetQua", jsonData);
+
+                if (result)
+                    MessageBox.Show("Lưu điểm thành công!");
+                else
+                    MessageBox.Show("Lưu điểm thất bại!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi lưu điểm: {ex.Message}");
             }
         }
+
 
 
     }

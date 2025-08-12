@@ -208,6 +208,26 @@ namespace DevEduManager.Modals
 
             try
             {
+
+                // Lấy ngày kết thúc môn học từ lblTB (nếu có)
+                if (!string.IsNullOrWhiteSpace(lblTB.Text))
+                {
+                    // lblTB.Text dạng: "*Ngày kết thúc môn học: dd/MM/yyyy"
+                    string dateText = lblTB.Text.Replace("*Ngày kết thúc môn học:", "").Trim();
+                    if (DateTime.TryParseExact(dateText, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime endDate))
+                    {
+                        if (dtpkNgayThi.Value.Date <= endDate.Date)
+                        {
+                            MessageBox.Show(
+                                $"Ngày thi phải sau ngày kết thúc môn học ({endDate:dd/MM/yyyy})!",
+                                "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning
+                            );
+                            return; // Dừng lưu
+                        }
+                    }
+                }
                 int selectedIndex = cboTime.SelectedIndex;
                 if (selectedIndex < 0)
                 {

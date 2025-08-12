@@ -84,7 +84,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.863198F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.1368F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -125,12 +125,13 @@
             this.dtgvCT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvCT.EnableHeadersVisualStyles = false;
             this.dtgvCT.GridColor = System.Drawing.Color.LightSteelBlue;
-            this.dtgvCT.Location = new System.Drawing.Point(3, 126);
+            this.dtgvCT.Location = new System.Drawing.Point(3, 137);
             this.dtgvCT.Name = "dtgvCT";
+            this.dtgvCT.ReadOnly = true;
             this.dtgvCT.RowHeadersVisible = false;
             this.dtgvCT.RowHeadersWidth = 51;
             this.dtgvCT.RowTemplate.Height = 28;
-            this.dtgvCT.Size = new System.Drawing.Size(1421, 467);
+            this.dtgvCT.Size = new System.Drawing.Size(1421, 456);
             this.dtgvCT.TabIndex = 7;
             // 
             // courseid
@@ -139,6 +140,7 @@
             this.courseid.HeaderText = "ID chương trình";
             this.courseid.MinimumWidth = 6;
             this.courseid.Name = "courseid";
+            this.courseid.ReadOnly = true;
             this.courseid.Visible = false;
             // 
             // coursename
@@ -147,6 +149,7 @@
             this.coursename.HeaderText = "Tên chương trình";
             this.coursename.MinimumWidth = 6;
             this.coursename.Name = "coursename";
+            this.coursename.ReadOnly = true;
             this.coursename.Visible = false;
             // 
             // coursecode
@@ -155,6 +158,7 @@
             this.coursecode.HeaderText = "Mã chương trình";
             this.coursecode.MinimumWidth = 6;
             this.coursecode.Name = "coursecode";
+            this.coursecode.ReadOnly = true;
             this.coursecode.Visible = false;
             // 
             // SubjectName
@@ -163,6 +167,7 @@
             this.SubjectName.HeaderText = "Tên môn học";
             this.SubjectName.MinimumWidth = 6;
             this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
             // 
             // SemesterName
             // 
@@ -170,6 +175,7 @@
             this.SemesterName.HeaderText = "Tên học kỳ";
             this.SemesterName.MinimumWidth = 6;
             this.SemesterName.Name = "SemesterName";
+            this.SemesterName.ReadOnly = true;
             // 
             // Fee
             // 
@@ -177,6 +183,7 @@
             this.Fee.HeaderText = "Học phí";
             this.Fee.MinimumWidth = 6;
             this.Fee.Name = "Fee";
+            this.Fee.ReadOnly = true;
             // 
             // label2
             // 
@@ -196,9 +203,9 @@
             this.btnCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnCT.ForeColor = System.Drawing.Color.White;
-            this.btnCT.Location = new System.Drawing.Point(1289, 80);
+            this.btnCT.Location = new System.Drawing.Point(1289, 92);
             this.btnCT.Name = "btnCT";
-            this.btnCT.Size = new System.Drawing.Size(135, 40);
+            this.btnCT.Size = new System.Drawing.Size(135, 39);
             this.btnCT.TabIndex = 10;
             this.btnCT.Text = "➕ Thêm CT";
             this.btnCT.UseVisualStyleBackColor = false;
@@ -206,15 +213,11 @@
             // 
             // cboCT
             // 
-            this.cboCT.BackColor = System.Drawing.Color.White;
-            this.cboCT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cboCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cboCT.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboCT.ForeColor = System.Drawing.Color.Black;
+            this.cboCT.FormattingEnabled = true;
             this.cboCT.Location = new System.Drawing.Point(294, 47);
             this.cboCT.Name = "cboCT";
-            this.cboCT.Size = new System.Drawing.Size(279, 27);
-            this.cboCT.TabIndex = 9;
+            this.cboCT.Size = new System.Drawing.Size(316, 24);
+            this.cboCT.TabIndex = 11;
             // 
             // frmQuanLyKhoaHoc
             // 
@@ -244,7 +247,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dtgvCT;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cboCT;
         private System.Windows.Forms.Button btnCT;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseid;
         private System.Windows.Forms.DataGridViewTextBoxColumn coursename;
@@ -252,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn SemesterName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fee;
+        private System.Windows.Forms.ComboBox cboCT;
     }
 }

@@ -212,10 +212,12 @@ namespace DevEduManager.Screens
             }
         }
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private async void btnCreate_Click(object sender, EventArgs e)
         {
             frmTaoChat frm = new frmTaoChat();
             frm.ShowDialog();
+
+            await LoadAccountsAsync(CurrentUser.UserId);
         }
 
         private async void frmChat_Load(object sender, EventArgs e)

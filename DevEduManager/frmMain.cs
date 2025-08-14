@@ -440,7 +440,7 @@ namespace DevEduManager
         {
             InforToolMenu.Controls.Clear();
 
-            frmQuanLyHocPhi frm = new frmQuanLyHocPhi()
+            frmHocPhi frm = new frmHocPhi()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false
@@ -680,7 +680,7 @@ namespace DevEduManager
         {
             InforToolMenu.Controls.Clear();
 
-            frmQuanLyHocPhi frm = new frmQuanLyHocPhi()
+            frmHocPhi frm = new frmHocPhi()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false

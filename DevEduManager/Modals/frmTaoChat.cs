@@ -1,5 +1,7 @@
 ﻿using BusinessLogic;
 using DevEduManager.Screens;
+using DocumentFormat.OpenXml.VariantTypes;
+using Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,7 +68,7 @@ namespace DevEduManager.Modals
         }
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
@@ -77,27 +79,59 @@ namespace DevEduManager.Modals
                     return;
                 }
 
-
-                // Lấy hàng được chọn
-                //DataGridViewRow selectedRow = dtgvAccount.SelectedRows[0];
-
-                // Tạo bản sao (clone) của hàng
-                DataGridViewRow clonedRow = (DataGridViewRow)selectedRow.Clone();
-                for (int i = 0; i < selectedRow.Cells.Count; i++)
+                // Lấy ID người được chọn (giả sử cột "ID" kiểu string hoặc int, chuyển sang string)
+                string receiverId = selectedRow.Cells["ID"].Value?.ToString();
+                if (string.IsNullOrEmpty(receiverId))
                 {
-                    clonedRow.Cells[i].Value = selectedRow.Cells[i].Value;
+                    MessageBox.Show("ID tài khoản không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
+                // Lấy ID người đăng nhập
+                string senderId = CurrentUser.UserId; // Bạn thay đổi theo cách lấy ID người dùng đăng nhập của bạn
 
-                this.Close();
+                if (receiverId == senderId)
+                {
+                    MessageBox.Show("Không thể tạo cuộc trò chuyện với chính bạn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // Tạo object Message với MessageContent null
+                var message = new Message
+                {
+                    SenderID = senderId,
+                    ReceiverID = receiverId,
+                    MessageContent = null,
+                    SentDateTime = null
+                };
+
+                // Chuyển object thành JSON (dùng Newtonsoft.Json hoặc System.Text.Json)
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(message);
+
+                // Gửi POST API
+                string url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Message/taoCuocTroChuyen";
+                bool result = await callAPI.PostAPI(url, json);
+
+                if (result)
+                {
+                    MessageBox.Show("Tạo cuộc trò chuyện thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Bạn có thể gọi hàm reload lại danh sách cuộc trò chuyện nếu có
+                    // LoadConversationList(); // Ví dụ hàm reload
+
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Tạo cuộc trò chuyện thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show($"Lỗi khi tạo cuộc trò chuyện: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private async void LoadAccountTypes()
@@ -127,8 +161,8 @@ namespace DevEduManager.Modals
         {
             try
             {
-
-                string url = $"{_messageUrl}GetAccountsByRole?roleId={accountTypeId}"; // Khớp với route API
+                string _id = CurrentUser.UserId;
+                string url = $"{_messageUrl}GetAccountsByRole?roleId={accountTypeId}&CurrentUserID={_id}"; // Khớp với route API
                 DataTable dt = await callAPI.GetAPI(url);
                 //dtgvAccount.Rows.Clear();
 
@@ -156,5 +190,13 @@ namespace DevEduManager.Modals
                 throw;
             }
         }
+    }
+    public class Message
+    {
+        public string MessageID { get; set; }
+        public string SenderID { get; set; }
+        public string ReceiverID { get; set; }
+        public string MessageContent { get; set; }
+        public DateTime? SentDateTime { get; set; }
     }
 }

@@ -22,25 +22,25 @@
             this.panelHeader = new System.Windows.Forms.Panel();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.gridLop = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Study = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaysOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblMaGV = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gridLop = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaysOfWeek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Study = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Room = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -98,6 +98,67 @@
             this.lblTitle.Text = "THÔNG TIN GIẢNG VIÊN";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 63);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.lblMaGV);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            this.splitContainer1.Panel1.Controls.Add(this.lblHoTen);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.gridLop);
+            this.splitContainer1.Size = new System.Drawing.Size(1108, 553);
+            this.splitContainer1.SplitterDistance = 72;
+            this.splitContainer1.TabIndex = 6;
+            // 
+            // lblMaGV
+            // 
+            this.lblMaGV.AutoSize = true;
+            this.lblMaGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaGV.Location = new System.Drawing.Point(216, 26);
+            this.lblMaGV.Name = "lblMaGV";
+            this.lblMaGV.Size = new System.Drawing.Size(41, 25);
+            this.lblMaGV.TabIndex = 1;
+            this.lblMaGV.Text = "ma";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(409, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 25);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tên giáo viên:";
+            // 
+            // lblHoTen
+            // 
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoTen.Location = new System.Drawing.Point(565, 26);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(42, 25);
+            this.lblHoTen.TabIndex = 3;
+            this.lblHoTen.Text = "ten";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(68, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã giáo viên:";
+            // 
             // gridLop
             // 
             this.gridLop.AllowUserToAddRows = false;
@@ -127,57 +188,6 @@
             this.gridLop.Size = new System.Drawing.Size(1108, 477);
             this.gridLop.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "StudentCount";
-            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sĩ số";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dataGridViewTextBoxColumn5.Width = 41;
-            // 
-            // Room
-            // 
-            this.Room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Room.DataPropertyName = "Room";
-            this.Room.HeaderText = "Phòng";
-            this.Room.MinimumWidth = 10;
-            this.Room.Name = "Room";
-            this.Room.ReadOnly = true;
-            this.Room.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Room.Width = 52;
-            // 
-            // Study
-            // 
-            this.Study.DataPropertyName = "StudyTime";
-            this.Study.HeaderText = "Ca học";
-            this.Study.MinimumWidth = 200;
-            this.Study.Name = "Study";
-            this.Study.ReadOnly = true;
-            this.Study.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // DaysOfWeek
-            // 
-            this.DaysOfWeek.DataPropertyName = "DaysOfWeek";
-            this.DaysOfWeek.HeaderText = "Thứ";
-            this.DaysOfWeek.MinimumWidth = 50;
-            this.DaysOfWeek.Name = "DaysOfWeek";
-            this.DaysOfWeek.ReadOnly = true;
-            this.DaysOfWeek.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // CourseName
-            // 
-            this.CourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CourseName.DataPropertyName = "course_name";
-            this.CourseName.HeaderText = "Môn học";
-            this.CourseName.MinimumWidth = 250;
-            this.CourseName.Name = "CourseName";
-            this.CourseName.ReadOnly = true;
-            this.CourseName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "ClassName";
@@ -190,62 +200,56 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label1
+            // CourseName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã giáo viên:";
+            this.CourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CourseName.DataPropertyName = "course_name";
+            this.CourseName.HeaderText = "Môn học";
+            this.CourseName.MinimumWidth = 250;
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
+            this.CourseName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // lblMaGV
+            // DaysOfWeek
             // 
-            this.lblMaGV.AutoSize = true;
-            this.lblMaGV.Location = new System.Drawing.Point(172, 26);
-            this.lblMaGV.Name = "lblMaGV";
-            this.lblMaGV.Size = new System.Drawing.Size(26, 16);
-            this.lblMaGV.TabIndex = 1;
-            this.lblMaGV.Text = "ma";
+            this.DaysOfWeek.DataPropertyName = "DaysOfWeek";
+            this.DaysOfWeek.HeaderText = "Thứ";
+            this.DaysOfWeek.MinimumWidth = 50;
+            this.DaysOfWeek.Name = "DaysOfWeek";
+            this.DaysOfWeek.ReadOnly = true;
+            this.DaysOfWeek.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // label3
+            // Study
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(340, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên giáo viên:";
+            this.Study.DataPropertyName = "StudyTime";
+            this.Study.HeaderText = "Ca học";
+            this.Study.MinimumWidth = 200;
+            this.Study.Name = "Study";
+            this.Study.ReadOnly = true;
+            this.Study.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // lblHoTen
+            // Room
             // 
-            this.lblHoTen.AutoSize = true;
-            this.lblHoTen.Location = new System.Drawing.Point(460, 26);
-            this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(25, 16);
-            this.lblHoTen.TabIndex = 3;
-            this.lblHoTen.Text = "ten";
+            this.Room.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Room.DataPropertyName = "Room";
+            this.Room.HeaderText = "Phòng";
+            this.Room.MinimumWidth = 10;
+            this.Room.Name = "Room";
+            this.Room.ReadOnly = true;
+            this.Room.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Room.Width = 52;
             // 
-            // splitContainer1
+            // dataGridViewTextBoxColumn5
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 63);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.lblMaGV);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.lblHoTen);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.gridLop);
-            this.splitContainer1.Size = new System.Drawing.Size(1108, 553);
-            this.splitContainer1.SplitterDistance = 72;
-            this.splitContainer1.TabIndex = 6;
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "StudentCount";
+            this.dataGridViewTextBoxColumn5.FillWeight = 93.27411F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Sĩ số";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 10;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn5.Width = 41;
             // 
             // frmThongTinGiangVien
             // 
@@ -257,12 +261,12 @@
             this.Text = "Thông tin học viên";
             this.tableLayoutPanelMain.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridLop)).EndInit();
             this.ResumeLayout(false);
 
         }

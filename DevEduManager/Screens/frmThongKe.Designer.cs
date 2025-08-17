@@ -12,8 +12,7 @@ namespace DevEduManager.Screens
 
         private TableLayoutPanel tableLayoutPanelMain;
         private Label lblTitle;
-        private ComboBox cboNam;
-        private FlowLayoutPanel flowPanelThongKe;
+        private ComboBox cboYear;
 
         private Panel panelHocSinh;
         private Panel panelGiaoVien;
@@ -50,15 +49,15 @@ namespace DevEduManager.Screens
         {
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.cboNam = new System.Windows.Forms.ComboBox();
-            this.flowPanelThongKe = new System.Windows.Forms.FlowLayoutPanel();
+            this.cboYear = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanelCharts = new System.Windows.Forms.TableLayoutPanel();
             this.panelHocSinh = new System.Windows.Forms.Panel();
+            this.panelChuongTrinh = new System.Windows.Forms.Panel();
             this.panelGiaoVien = new System.Windows.Forms.Panel();
             this.panelNhanVien = new System.Windows.Forms.Panel();
-            this.panelChuongTrinh = new System.Windows.Forms.Panel();
-            this.tableLayoutPanelCharts = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelMain.SuspendLayout();
-            this.flowPanelThongKe.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanelMain
@@ -67,9 +66,9 @@ namespace DevEduManager.Screens
             this.tableLayoutPanelMain.ColumnCount = 1;
             this.tableLayoutPanelMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelMain.Controls.Add(this.lblTitle, 0, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.cboNam, 0, 1);
-            this.tableLayoutPanelMain.Controls.Add(this.flowPanelThongKe, 0, 2);
+            this.tableLayoutPanelMain.Controls.Add(this.cboYear, 0, 1);
             this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanelCharts, 0, 3);
+            this.tableLayoutPanelMain.Controls.Add(this.tableLayoutPanel1, 0, 2);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
@@ -94,74 +93,16 @@ namespace DevEduManager.Screens
             this.lblTitle.Text = "THỐNG KÊ";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cboNam
+            // cboYear
             // 
-            this.cboNam.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cboNam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNam.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboNam.Location = new System.Drawing.Point(20, 55);
-            this.cboNam.Margin = new System.Windows.Forms.Padding(20, 5, 0, 5);
-            this.cboNam.Name = "cboNam";
-            this.cboNam.Size = new System.Drawing.Size(150, 31);
-            this.cboNam.TabIndex = 1;
-            // 
-            // flowPanelThongKe
-            // 
-            this.flowPanelThongKe.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.flowPanelThongKe.Controls.Add(this.panelHocSinh);
-            this.flowPanelThongKe.Controls.Add(this.panelGiaoVien);
-            this.flowPanelThongKe.Controls.Add(this.panelNhanVien);
-            this.flowPanelThongKe.Controls.Add(this.panelChuongTrinh);
-            this.flowPanelThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowPanelThongKe.Location = new System.Drawing.Point(3, 93);
-            this.flowPanelThongKe.Name = "flowPanelThongKe";
-            this.flowPanelThongKe.Padding = new System.Windows.Forms.Padding(20, 10, 20, 10);
-            this.flowPanelThongKe.Size = new System.Drawing.Size(1085, 94);
-            this.flowPanelThongKe.TabIndex = 2;
-            // 
-            // panelHocSinh
-            // 
-            this.panelHocSinh.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panelHocSinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHocSinh.Location = new System.Drawing.Point(30, 20);
-            this.panelHocSinh.Margin = new System.Windows.Forms.Padding(10);
-            this.panelHocSinh.Name = "panelHocSinh";
-            this.panelHocSinh.Padding = new System.Windows.Forms.Padding(10);
-            this.panelHocSinh.Size = new System.Drawing.Size(200, 80);
-            this.panelHocSinh.TabIndex = 0;
-            // 
-            // panelGiaoVien
-            // 
-            this.panelGiaoVien.BackColor = System.Drawing.Color.LightSalmon;
-            this.panelGiaoVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelGiaoVien.Location = new System.Drawing.Point(250, 20);
-            this.panelGiaoVien.Margin = new System.Windows.Forms.Padding(10);
-            this.panelGiaoVien.Name = "panelGiaoVien";
-            this.panelGiaoVien.Padding = new System.Windows.Forms.Padding(10);
-            this.panelGiaoVien.Size = new System.Drawing.Size(200, 80);
-            this.panelGiaoVien.TabIndex = 1;
-            // 
-            // panelNhanVien
-            // 
-            this.panelNhanVien.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panelNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelNhanVien.Location = new System.Drawing.Point(470, 20);
-            this.panelNhanVien.Margin = new System.Windows.Forms.Padding(10);
-            this.panelNhanVien.Name = "panelNhanVien";
-            this.panelNhanVien.Padding = new System.Windows.Forms.Padding(10);
-            this.panelNhanVien.Size = new System.Drawing.Size(200, 80);
-            this.panelNhanVien.TabIndex = 2;
-            // 
-            // panelChuongTrinh
-            // 
-            this.panelChuongTrinh.BackColor = System.Drawing.Color.LightCoral;
-            this.panelChuongTrinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelChuongTrinh.Location = new System.Drawing.Point(690, 20);
-            this.panelChuongTrinh.Margin = new System.Windows.Forms.Padding(10);
-            this.panelChuongTrinh.Name = "panelChuongTrinh";
-            this.panelChuongTrinh.Padding = new System.Windows.Forms.Padding(10);
-            this.panelChuongTrinh.Size = new System.Drawing.Size(200, 80);
-            this.panelChuongTrinh.TabIndex = 3;
+            this.cboYear.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboYear.Location = new System.Drawing.Point(20, 55);
+            this.cboYear.Margin = new System.Windows.Forms.Padding(20, 5, 0, 5);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(150, 31);
+            this.cboYear.TabIndex = 1;
             // 
             // tableLayoutPanelCharts
             // 
@@ -178,6 +119,74 @@ namespace DevEduManager.Screens
             this.tableLayoutPanelCharts.Size = new System.Drawing.Size(1085, 439);
             this.tableLayoutPanelCharts.TabIndex = 3;
             // 
+            // panelHocSinh
+            // 
+            this.panelHocSinh.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panelHocSinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelHocSinh.Location = new System.Drawing.Point(10, 10);
+            this.panelHocSinh.Margin = new System.Windows.Forms.Padding(10);
+            this.panelHocSinh.Name = "panelHocSinh";
+            this.panelHocSinh.Padding = new System.Windows.Forms.Padding(10);
+            this.panelHocSinh.Size = new System.Drawing.Size(251, 74);
+            this.panelHocSinh.TabIndex = 0;
+            // 
+            // panelChuongTrinh
+            // 
+            this.panelChuongTrinh.BackColor = System.Drawing.Color.LightCoral;
+            this.panelChuongTrinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelChuongTrinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChuongTrinh.Location = new System.Drawing.Point(823, 10);
+            this.panelChuongTrinh.Margin = new System.Windows.Forms.Padding(10);
+            this.panelChuongTrinh.Name = "panelChuongTrinh";
+            this.panelChuongTrinh.Padding = new System.Windows.Forms.Padding(10);
+            this.panelChuongTrinh.Size = new System.Drawing.Size(252, 74);
+            this.panelChuongTrinh.TabIndex = 3;
+            // 
+            // panelGiaoVien
+            // 
+            this.panelGiaoVien.BackColor = System.Drawing.Color.LightSalmon;
+            this.panelGiaoVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGiaoVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGiaoVien.Location = new System.Drawing.Point(552, 10);
+            this.panelGiaoVien.Margin = new System.Windows.Forms.Padding(10);
+            this.panelGiaoVien.Name = "panelGiaoVien";
+            this.panelGiaoVien.Padding = new System.Windows.Forms.Padding(10);
+            this.panelGiaoVien.Size = new System.Drawing.Size(251, 74);
+            this.panelGiaoVien.TabIndex = 1;
+            // 
+            // panelNhanVien
+            // 
+            this.panelNhanVien.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelNhanVien.Location = new System.Drawing.Point(281, 10);
+            this.panelNhanVien.Margin = new System.Windows.Forms.Padding(10);
+            this.panelNhanVien.Name = "panelNhanVien";
+            this.panelNhanVien.Padding = new System.Windows.Forms.Padding(10);
+            this.panelNhanVien.Size = new System.Drawing.Size(251, 74);
+            this.panelNhanVien.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.panelChuongTrinh, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelHocSinh, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelGiaoVien, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelNhanVien, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 93);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1085, 94);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
             // frmThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -188,11 +197,13 @@ namespace DevEduManager.Screens
             this.Name = "frmThongKe";
             this.Text = "frmThongKe";
             this.tableLayoutPanelMain.ResumeLayout(false);
-            this.flowPanelThongKe.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

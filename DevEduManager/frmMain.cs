@@ -213,7 +213,7 @@ namespace DevEduManager
         {
             InforToolMenu.Controls.Clear();
 
-            frmQuanLyDoanhThu frm = new frmQuanLyDoanhThu()
+            frmThongKe frm = new frmThongKe()
             {
                 Dock = DockStyle.Fill,
                 TopLevel = false

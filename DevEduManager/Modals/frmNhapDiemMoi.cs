@@ -97,10 +97,20 @@ namespace DevEduManager.Modals
 
         private async void cboLH_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboLH.SelectedValue == null) return;
-            string classID = cboLH.SelectedValue.ToString();
-            await LoadComboBoxMonHocAsync(classID);
-            dgvNhapDiem.Rows.Clear();
+            try
+            {
+                if (cboLH.SelectedValue == null) return;
+                string classID = cboLH.SelectedValue.ToString();
+                await LoadComboBoxMonHocAsync(classID);
+                dgvNhapDiem.DataSource = null;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private async Task LoadComboBoxMonHocAsync(string classID)

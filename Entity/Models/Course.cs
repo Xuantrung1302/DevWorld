@@ -12,8 +12,9 @@ namespace Entity.Models
         public DateTime created_at { get; set; }
         public DateTime updated_at { get; set; }
         public bool delete_flg { get; set; }
-        public Semester Semester1 { get; set; }
-        public Semester Semester2 { get; set; }
+
+        // ✅ Thay vì chỉ có Semester1, Semester2
+        public List<Semester> Semesters { get; set; }
     }
 
     public class Semester

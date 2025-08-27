@@ -136,81 +136,44 @@ namespace DevEduManager.Screens
 
         private List<Course> ReadExcelFile(string filePath)
         {
-            List<Course> courses = new List<Course>();
+            var courses = new List<Course>();
+
             using (var workbook = new XLWorkbook(filePath))
             {
                 var worksheet = workbook.Worksheet(1);
-                var rows = worksheet.RowsUsed().Skip(1);
+                var rows = worksheet.RowsUsed().Skip(1); // bỏ dòng tiêu đề
 
-                foreach (var row in rows)
+                // Gom nhóm theo CourseCode
+                var grouped = rows.GroupBy(r => new {
+                    CourseCode = r.Cell(2).GetString().Trim(),
+                    CourseName = r.Cell(1).GetString().Trim()
+                });
+
+                foreach (var g in grouped)
                 {
-                    try
+                    var course = new Course
                     {
-                        Course course = new Course
-                        {
-                            CourseCode = row.Cell(1).GetString()?.Trim(),
-                            CourseName = row.Cell(2).GetString()?.Trim(),
-                            IsActive = row.Cell(3).IsEmpty() ? true : row.Cell(3).GetBoolean(),
-                            Semester1 = new Semester
-                            {
-                                SemesterID = row.Cell(4).GetString()?.Trim(),
-                                SemesterName = row.Cell(5).GetString()?.Trim(),
-                                StartDate = row.Cell(6).GetValue<DateTime>(),
-                                EndDate = row.Cell(7).GetValue<DateTime>(),
-                                Subjects = new List<Subject>
-                                {
-                                    new Subject
-                                    {
-                                        SubjectID = row.Cell(8).GetString()?.Trim(),
-                                        SubjectName = row.Cell(9).GetString()?.Trim(),
-                                        TuitionFee = row.Cell(10).IsEmpty() ? 0 : row.Cell(10).GetValue<decimal>()
-                                    },
-                                    new Subject
-                                    {
-                                        SubjectID = row.Cell(11).GetString()?.Trim(),
-                                        SubjectName = row.Cell(12).GetString()?.Trim(),
-                                        TuitionFee = row.Cell(13).IsEmpty() ? 0 : row.Cell(13).GetValue<decimal>()
-                                    }
-                                }
-                            },
-                            Semester2 = new Semester
-                            {
-                                SemesterID = row.Cell(14).GetString()?.Trim(),
-                                SemesterName = row.Cell(15).GetString()?.Trim(),
-                                StartDate = row.Cell(16).GetValue<DateTime>(),
-                                EndDate = row.Cell(17).GetValue<DateTime>(),
-                                Subjects = new List<Subject>
-                                {
-                                    new Subject
-                                    {
-                                        SubjectID = row.Cell(18).GetString()?.Trim(),
-                                        SubjectName = row.Cell(19).GetString()?.Trim(),
-                                        TuitionFee = row.Cell(20).IsEmpty() ? 0 : row.Cell(20).GetValue<decimal>()
-                                    },
-                                    new Subject
-                                    {
-                                        SubjectID = row.Cell(21).GetString()?.Trim(),
-                                        SubjectName = row.Cell(22).GetString()?.Trim(),
-                                        TuitionFee = row.Cell(23).IsEmpty() ? 0 : row.Cell(23).GetValue<decimal>()
-                                    }
-                                }
-                            }
-                        };
+                        CourseCode = g.Key.CourseCode,
+                        CourseName = g.Key.CourseName,
+                        Semesters = g.GroupBy(r => r.Cell(5).GetString().Trim())
+                                     .Select(s => new Semester
+                                     {
+                                         SemesterName = s.Key,
+                                         Subjects = s.Select(r => new Subject
+                                         {
+                                             SubjectName = r.Cell(3).GetString().Trim(),
+                                             TuitionFee = r.Cell(4).GetValue<decimal>()
+                                         }).ToList()
+                                     }).ToList()
+                    };
 
-                        if (!string.IsNullOrEmpty(course.CourseCode) && !string.IsNullOrEmpty(course.CourseName) &&
-                            !string.IsNullOrEmpty(course.Semester1.SemesterID) && !string.IsNullOrEmpty(course.Semester2.SemesterID))
-                        {
-                            courses.Add(course);
-                        }
-                    }
-                    catch
-                    {
-                        continue;
-                    }
+                    courses.Add(course);
                 }
             }
+
             return courses;
         }
+
 
         private async Task<bool> AddCoursesToDatabase(List<Course> courses)
         {
@@ -226,5 +189,6 @@ namespace DevEduManager.Screens
                 return false;
             }
         }
+
     }
 }

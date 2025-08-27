@@ -50,9 +50,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 223F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 151F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.cboCT, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
@@ -237,7 +237,7 @@
             this.btnXuat.ForeColor = System.Drawing.Color.White;
             this.btnXuat.Location = new System.Drawing.Point(653, 79);
             this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(106, 35);
+            this.btnXuat.Size = new System.Drawing.Size(148, 35);
             this.btnXuat.TabIndex = 21;
             this.btnXuat.Text = "Xuất điểm";
             this.btnXuat.UseVisualStyleBackColor = false;
@@ -248,9 +248,9 @@
             this.btnNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNhap.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnNhap.ForeColor = System.Drawing.Color.White;
-            this.btnNhap.Location = new System.Drawing.Point(793, 79);
+            this.btnNhap.Location = new System.Drawing.Point(843, 79);
             this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(113, 35);
+            this.btnNhap.Size = new System.Drawing.Size(147, 35);
             this.btnNhap.TabIndex = 16;
             this.btnNhap.Text = "Nhập điểm";
             this.btnNhap.UseVisualStyleBackColor = false;

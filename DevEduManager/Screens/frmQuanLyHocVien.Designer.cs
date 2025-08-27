@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.gridDSHV = new System.Windows.Forms.DataGridView();
             this.clmMaHV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +73,7 @@
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 4;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(1477, 639);
@@ -99,7 +99,7 @@
             this.clmEmail});
             this.gridDSHV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridDSHV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridDSHV.Location = new System.Drawing.Point(4, 124);
+            this.gridDSHV.Location = new System.Drawing.Point(4, 150);
             this.gridDSHV.Margin = new System.Windows.Forms.Padding(4);
             this.gridDSHV.MultiSelect = false;
             this.gridDSHV.Name = "gridDSHV";
@@ -107,15 +107,15 @@
             this.gridDSHV.RowHeadersVisible = false;
             this.gridDSHV.RowHeadersWidth = 51;
             this.gridDSHV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSHV.Size = new System.Drawing.Size(1469, 461);
+            this.gridDSHV.Size = new System.Drawing.Size(1469, 435);
             this.gridDSHV.TabIndex = 4;
             this.gridDSHV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridDSHV_DoubleClick);
             // 
             // clmMaHV
             // 
             this.clmMaHV.DataPropertyName = "StudentID";
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaHV.DefaultCellStyle = dataGridViewCellStyle3;
             this.clmMaHV.FillWeight = 75F;
             this.clmMaHV.HeaderText = "Mã học viên";
             this.clmMaHV.MinimumWidth = 6;
@@ -125,8 +125,8 @@
             // clmTenHV
             // 
             this.clmTenHV.DataPropertyName = "FullName";
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Green;
-            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Green;
+            this.clmTenHV.DefaultCellStyle = dataGridViewCellStyle4;
             this.clmTenHV.FillWeight = 110F;
             this.clmTenHV.HeaderText = "Họ và tên";
             this.clmTenHV.MinimumWidth = 6;
@@ -218,7 +218,7 @@
             this.panelActions.Location = new System.Drawing.Point(0, 60);
             this.panelActions.Margin = new System.Windows.Forms.Padding(0);
             this.panelActions.Name = "panelActions";
-            this.panelActions.Size = new System.Drawing.Size(1477, 60);
+            this.panelActions.Size = new System.Drawing.Size(1477, 86);
             this.panelActions.TabIndex = 1;
             // 
             // btnHienTatCa
@@ -243,7 +243,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Location = new System.Drawing.Point(500, 13);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(100, 36);
+            this.btnThem.Size = new System.Drawing.Size(100, 43);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -257,7 +257,7 @@
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Location = new System.Drawing.Point(610, 13);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 36);
+            this.btnSua.Size = new System.Drawing.Size(100, 43);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -271,7 +271,7 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Location = new System.Drawing.Point(720, 13);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 36);
+            this.btnXoa.Size = new System.Drawing.Size(100, 43);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -293,7 +293,7 @@
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Location = new System.Drawing.Point(280, 13);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(142, 36);
+            this.btnTimKiem.Size = new System.Drawing.Size(142, 43);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;

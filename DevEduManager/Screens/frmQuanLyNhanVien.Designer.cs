@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.gridNV = new System.Windows.Forms.DataGridView();
             this.clmMaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +71,7 @@
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 4;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(1472, 618);
@@ -94,22 +94,22 @@
             this.clmEmailNV});
             this.gridNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridNV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridNV.Location = new System.Drawing.Point(4, 124);
+            this.gridNV.Location = new System.Drawing.Point(4, 147);
             this.gridNV.Margin = new System.Windows.Forms.Padding(4);
             this.gridNV.MultiSelect = false;
             this.gridNV.Name = "gridNV";
             this.gridNV.RowHeadersVisible = false;
             this.gridNV.RowHeadersWidth = 51;
             this.gridNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridNV.Size = new System.Drawing.Size(1464, 440);
+            this.gridNV.Size = new System.Drawing.Size(1464, 417);
             this.gridNV.TabIndex = 4;
             // 
             // clmMaNV
             // 
             this.clmMaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.clmMaNV.DataPropertyName = "EmployeeID";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
-            this.clmMaNV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Blue;
+            this.clmMaNV.DefaultCellStyle = dataGridViewCellStyle1;
             this.clmMaNV.FillWeight = 5.028477F;
             this.clmMaNV.HeaderText = "Mã nhân viên";
             this.clmMaNV.MinimumWidth = 50;
@@ -120,8 +120,8 @@
             // 
             this.clmTenNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmTenNV.DataPropertyName = "FullName";
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.clmTenNV.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.clmTenNV.DefaultCellStyle = dataGridViewCellStyle2;
             this.clmTenNV.FillWeight = 85.37589F;
             this.clmTenNV.HeaderText = "Họ và tên";
             this.clmTenNV.MinimumWidth = 300;
@@ -196,7 +196,7 @@
             this.panelActions.Location = new System.Drawing.Point(0, 60);
             this.panelActions.Margin = new System.Windows.Forms.Padding(0);
             this.panelActions.Name = "panelActions";
-            this.panelActions.Size = new System.Drawing.Size(1472, 60);
+            this.panelActions.Size = new System.Drawing.Size(1472, 83);
             this.panelActions.TabIndex = 1;
             // 
             // btnHienTatCa
@@ -220,7 +220,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Location = new System.Drawing.Point(500, 13);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(100, 36);
+            this.btnThem.Size = new System.Drawing.Size(100, 45);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -234,7 +234,7 @@
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Location = new System.Drawing.Point(610, 13);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 36);
+            this.btnSua.Size = new System.Drawing.Size(100, 45);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -248,7 +248,7 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Location = new System.Drawing.Point(720, 13);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 36);
+            this.btnXoa.Size = new System.Drawing.Size(100, 45);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -270,7 +270,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(280, 13);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(150, 36);
+            this.btnSearch.Size = new System.Drawing.Size(150, 45);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;

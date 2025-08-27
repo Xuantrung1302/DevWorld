@@ -72,7 +72,7 @@
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 4;
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanelMain.Size = new System.Drawing.Size(1421, 613);
@@ -96,7 +96,7 @@
             this.clmEmailGV});
             this.gridGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridGV.Location = new System.Drawing.Point(4, 124);
+            this.gridGV.Location = new System.Drawing.Point(4, 149);
             this.gridGV.Margin = new System.Windows.Forms.Padding(4);
             this.gridGV.MultiSelect = false;
             this.gridGV.Name = "gridGV";
@@ -104,7 +104,7 @@
             this.gridGV.RowHeadersVisible = false;
             this.gridGV.RowHeadersWidth = 51;
             this.gridGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridGV.Size = new System.Drawing.Size(1413, 435);
+            this.gridGV.Size = new System.Drawing.Size(1413, 410);
             this.gridGV.TabIndex = 4;
             this.gridGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridGV_CellDoubleClick);
             // 
@@ -214,7 +214,7 @@
             this.panelActions.Location = new System.Drawing.Point(0, 60);
             this.panelActions.Margin = new System.Windows.Forms.Padding(0);
             this.panelActions.Name = "panelActions";
-            this.panelActions.Size = new System.Drawing.Size(1421, 60);
+            this.panelActions.Size = new System.Drawing.Size(1421, 85);
             this.panelActions.TabIndex = 1;
             // 
             // btnHienTatCa
@@ -239,7 +239,7 @@
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.Location = new System.Drawing.Point(500, 13);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(100, 36);
+            this.btnThem.Size = new System.Drawing.Size(100, 50);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -253,7 +253,7 @@
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Location = new System.Drawing.Point(610, 13);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(100, 36);
+            this.btnSua.Size = new System.Drawing.Size(100, 50);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -267,7 +267,7 @@
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.Location = new System.Drawing.Point(720, 13);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(100, 36);
+            this.btnXoa.Size = new System.Drawing.Size(100, 50);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -289,7 +289,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(280, 13);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(154, 36);
+            this.btnSearch.Size = new System.Drawing.Size(154, 50);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = false;

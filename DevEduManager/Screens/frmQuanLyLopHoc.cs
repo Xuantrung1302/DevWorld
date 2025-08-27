@@ -110,6 +110,14 @@ namespace DevEduManager.Screens
                 }
 
                 gridLop.ClearSelection();
+                if (gridListStudent.Rows.Count > 0)
+                {
+                    lblTotalStudents.Text = $"Tổng cộng: {gridListStudent.Rows.Count} học viên";
+                }
+                else
+                {
+                    lblTotalStudents.Text = "Không có học viên";
+                }
             }
             catch (Exception ex)
             {
@@ -160,7 +168,14 @@ namespace DevEduManager.Screens
                 DataTable dt = await callAPI.GetAPI(url);
 
                 gridListStudent.DataSource = dt;
-                lblTotalStudents.Text = $"Tổng cộng: {gridListStudent.Rows.Count}"+"học viên";
+                if (gridListStudent.Rows.Count > 0)
+                {
+                    lblTotalStudents.Text = $"Tổng cộng: {gridListStudent.Rows.Count} học viên";
+                }
+                else
+                {
+                    lblTotalStudents.Text = "Không có học viên";
+                }
             }
             catch (Exception ex)
             {

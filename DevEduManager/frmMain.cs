@@ -822,5 +822,33 @@ namespace DevEduManager
                 frm.Show();
             }
         }
+
+        private void quảnLýSốGiờDạyHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InforToolMenu.Controls.Clear();
+
+            frmQuanLySoGioDayHoc frm = new frmQuanLySoGioDayHoc()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            InforToolMenu.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void quảnLýBảngCôngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InforToolMenu.Controls.Clear();
+
+            frmQuanLyBangCong frm = new frmQuanLyBangCong()
+            {
+                Dock = DockStyle.Fill,
+                TopLevel = false
+            };
+
+            InforToolMenu.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

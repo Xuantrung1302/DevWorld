@@ -476,6 +476,12 @@
     <Compile Include="Screens\frmLichThiHocSinh.Designer.cs">
       <DependentUpon>frmLichThiHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmQuanLyBangCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmQuanLyBangCong.Designer.cs">
+      <DependentUpon>frmQuanLyBangCong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\frmQuanLyDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -781,6 +787,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmLichThiHocSinh.resx">
       <DependentUpon>frmLichThiHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmQuanLyBangCong.resx">
+      <DependentUpon>frmQuanLyBangCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmQuanLyDiem.resx">
       <DependentUpon>frmQuanLyDiem.cs</DependentUpon>

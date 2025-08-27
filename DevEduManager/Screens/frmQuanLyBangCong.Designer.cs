@@ -1,6 +1,6 @@
 ﻿namespace DevEduManager.Screens
 {
-    partial class frmQuanLySoGioDayHoc
+    partial class frmQuanLyBangCong
     {
         /// <summary>
         /// Required designer variable.
@@ -37,14 +37,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cboYear = new System.Windows.Forms.ComboBox();
             this.cboMonth = new System.Windows.Forms.ComboBox();
-            this.cboGV = new System.Windows.Forms.ComboBox();
+            this.cboNV = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtgvHourTeach = new System.Windows.Forms.DataGridView();
+            this.dtgvSoCong = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvHourTeach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSoCong)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,8 +54,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1436, 40);
-            this.panel1.TabIndex = 7;
+            this.panel1.Size = new System.Drawing.Size(1418, 40);
+            this.panel1.TabIndex = 8;
             // 
             // label1
             // 
@@ -64,24 +64,24 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(20, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(267, 28);
+            this.label1.Size = new System.Drawing.Size(224, 28);
             this.label1.TabIndex = 1;
-            this.label1.Text = "QUẢN LÝ SỐ GIỜ DẠY HỌC";
+            this.label1.Text = "QUẢN LÝ BẢNG CÔNG";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dtgvHourTeach, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtgvSoCong, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 40);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1436, 484);
-            this.tableLayoutPanel1.TabIndex = 8;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1418, 437);
+            this.tableLayoutPanel1.TabIndex = 9;
             // 
             // tableLayoutPanel2
             // 
@@ -99,7 +99,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label4, 4, 1);
             this.tableLayoutPanel2.Controls.Add(this.cboYear, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.cboMonth, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.cboGV, 4, 2);
+            this.tableLayoutPanel2.Controls.Add(this.cboNV, 4, 2);
             this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 5, 2);
             this.tableLayoutPanel2.Controls.Add(this.label5, 2, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,7 +110,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1430, 144);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1412, 144);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // label2
@@ -148,7 +148,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(378, 20);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Giảng viên";
+            this.label4.Text = "Nhân viên";
             // 
             // cboYear
             // 
@@ -168,14 +168,14 @@
             this.cboMonth.Size = new System.Drawing.Size(319, 24);
             this.cboMonth.TabIndex = 4;
             // 
-            // cboGV
+            // cboNV
             // 
-            this.cboGV.BackColor = System.Drawing.Color.White;
-            this.cboGV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboGV.Location = new System.Drawing.Point(634, 43);
-            this.cboGV.Name = "cboGV";
-            this.cboGV.Size = new System.Drawing.Size(378, 24);
-            this.cboGV.TabIndex = 5;
+            this.cboNV.BackColor = System.Drawing.Color.White;
+            this.cboNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboNV.Location = new System.Drawing.Point(634, 43);
+            this.cboNV.Name = "cboNV";
+            this.cboNV.Size = new System.Drawing.Size(378, 24);
+            this.cboNV.TabIndex = 5;
             // 
             // btnTimKiem
             // 
@@ -201,35 +201,35 @@
             this.label5.Size = new System.Drawing.Size(0, 20);
             this.label5.TabIndex = 7;
             // 
-            // dtgvHourTeach
+            // dtgvSoCong
             // 
-            this.dtgvHourTeach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvHourTeach.BackgroundColor = System.Drawing.Color.White;
-            this.dtgvHourTeach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvHourTeach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvHourTeach.GridColor = System.Drawing.Color.LightGray;
-            this.dtgvHourTeach.Location = new System.Drawing.Point(3, 153);
-            this.dtgvHourTeach.Name = "dtgvHourTeach";
-            this.dtgvHourTeach.RowHeadersWidth = 51;
-            this.dtgvHourTeach.Size = new System.Drawing.Size(1430, 328);
-            this.dtgvHourTeach.TabIndex = 2;
+            this.dtgvSoCong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvSoCong.BackgroundColor = System.Drawing.Color.White;
+            this.dtgvSoCong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvSoCong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvSoCong.GridColor = System.Drawing.Color.LightGray;
+            this.dtgvSoCong.Location = new System.Drawing.Point(3, 153);
+            this.dtgvSoCong.Name = "dtgvSoCong";
+            this.dtgvSoCong.RowHeadersWidth = 51;
+            this.dtgvSoCong.Size = new System.Drawing.Size(1412, 281);
+            this.dtgvSoCong.TabIndex = 2;
             // 
-            // frmQuanLySoGioDayHoc
+            // frmQuanLyBangCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1436, 524);
+            this.ClientSize = new System.Drawing.Size(1418, 477);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmQuanLySoGioDayHoc";
-            this.Text = "frmQuanLySoGioDayHoc";
+            this.Name = "frmQuanLyBangCong";
+            this.Text = "frmQuanLyBangCong";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvHourTeach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvSoCong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,9 +245,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboYear;
         private System.Windows.Forms.ComboBox cboMonth;
-        private System.Windows.Forms.ComboBox cboGV;
+        private System.Windows.Forms.ComboBox cboNV;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dtgvHourTeach;
+        private System.Windows.Forms.DataGridView dtgvSoCong;
     }
 }

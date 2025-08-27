@@ -20,7 +20,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.btnQuayLai = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblMaGV = new System.Windows.Forms.Label();
@@ -62,7 +61,6 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.SteelBlue;
-            this.panelHeader.Controls.Add(this.btnQuayLai);
             this.panelHeader.Controls.Add(this.lblTitle);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -70,21 +68,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1114, 60);
             this.panelHeader.TabIndex = 0;
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnQuayLai.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnQuayLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnQuayLai.ForeColor = System.Drawing.Color.White;
-            this.btnQuayLai.Location = new System.Drawing.Point(953, 0);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(161, 60);
-            this.btnQuayLai.TabIndex = 5;
-            this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = false;
-            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // lblTitle
             // 
@@ -276,7 +259,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label lblMaGV;
         private System.Windows.Forms.Label label3;

@@ -19,7 +19,6 @@
         {
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.btnQuayLai = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelContent = new System.Windows.Forms.Panel();
             this.lblHoTen = new System.Windows.Forms.Label();
@@ -28,12 +27,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanelGrids = new System.Windows.Forms.TableLayoutPanel();
             this.gridChuongTrinh = new System.Windows.Forms.DataGridView();
+            this.clmCourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gridMonHoc = new System.Windows.Forms.DataGridView();
             this.clmSubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmSubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.clmCourseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmCourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanelMain.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.panelContent.SuspendLayout();
@@ -64,7 +63,6 @@
             // panelHeader
             // 
             this.panelHeader.BackColor = System.Drawing.Color.SteelBlue;
-            this.panelHeader.Controls.Add(this.btnQuayLai);
             this.panelHeader.Controls.Add(this.lblTitle);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -72,21 +70,6 @@
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(900, 48);
             this.panelHeader.TabIndex = 0;
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnQuayLai.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnQuayLai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnQuayLai.ForeColor = System.Drawing.Color.White;
-            this.btnQuayLai.Location = new System.Drawing.Point(780, 0);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(120, 48);
-            this.btnQuayLai.TabIndex = 1;
-            this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = false;
-            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
             // 
             // lblTitle
             // 
@@ -116,36 +99,40 @@
             // lblHoTen
             // 
             this.lblHoTen.AutoSize = true;
-            this.lblHoTen.Location = new System.Drawing.Point(426, 24);
+            this.lblHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoTen.Location = new System.Drawing.Point(541, 24);
             this.lblHoTen.Name = "lblHoTen";
-            this.lblHoTen.Size = new System.Drawing.Size(25, 16);
+            this.lblHoTen.Size = new System.Drawing.Size(42, 25);
             this.lblHoTen.TabIndex = 3;
             this.lblHoTen.Text = "ten";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 24);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(377, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 16);
+            this.label3.Size = new System.Drawing.Size(144, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên học viên:";
             // 
             // lblMaHV
             // 
             this.lblMaHV.AutoSize = true;
-            this.lblMaHV.Location = new System.Drawing.Point(141, 24);
+            this.lblMaHV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaHV.Location = new System.Drawing.Point(189, 24);
             this.lblMaHV.Name = "lblMaHV";
-            this.lblMaHV.Size = new System.Drawing.Size(26, 16);
+            this.lblMaHV.Size = new System.Drawing.Size(41, 25);
             this.lblMaHV.TabIndex = 1;
             this.lblMaHV.Text = "mã";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(31, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 16);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã học viên:";
             // 
@@ -184,6 +171,24 @@
             this.gridChuongTrinh.Size = new System.Drawing.Size(431, 336);
             this.gridChuongTrinh.TabIndex = 0;
             this.gridChuongTrinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridChuongTrinh_CellClick);
+            // 
+            // clmCourseID
+            // 
+            this.clmCourseID.DataPropertyName = "CourseID";
+            this.clmCourseID.HeaderText = "Mã khóa học";
+            this.clmCourseID.MinimumWidth = 6;
+            this.clmCourseID.Name = "clmCourseID";
+            this.clmCourseID.ReadOnly = true;
+            this.clmCourseID.Visible = false;
+            // 
+            // clmCourseName
+            // 
+            this.clmCourseName.DataPropertyName = "CourseName";
+            this.clmCourseName.HeaderText = "Tên khóa học";
+            this.clmCourseName.MinimumWidth = 6;
+            this.clmCourseName.Name = "clmCourseName";
+            this.clmCourseName.ReadOnly = true;
+            this.clmCourseName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // gridMonHoc
             // 
@@ -231,24 +236,6 @@
             this.panelFooter.Size = new System.Drawing.Size(894, 14);
             this.panelFooter.TabIndex = 3;
             // 
-            // clmCourseID
-            // 
-            this.clmCourseID.DataPropertyName = "CourseID";
-            this.clmCourseID.HeaderText = "Mã khóa học";
-            this.clmCourseID.MinimumWidth = 6;
-            this.clmCourseID.Name = "clmCourseID";
-            this.clmCourseID.ReadOnly = true;
-            this.clmCourseID.Visible = false;
-            // 
-            // clmCourseName
-            // 
-            this.clmCourseName.DataPropertyName = "CourseName";
-            this.clmCourseName.HeaderText = "Tên khóa học";
-            this.clmCourseName.MinimumWidth = 6;
-            this.clmCourseName.Name = "clmCourseName";
-            this.clmCourseName.ReadOnly = true;
-            this.clmCourseName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // frmThongTinHocVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -275,7 +262,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGrids;
         private System.Windows.Forms.DataGridView gridChuongTrinh;

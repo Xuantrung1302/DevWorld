@@ -203,11 +203,11 @@
             this.btnCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCT.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnCT.ForeColor = System.Drawing.Color.White;
-            this.btnCT.Location = new System.Drawing.Point(1289, 92);
+            this.btnCT.Location = new System.Drawing.Point(1133, 92);
             this.btnCT.Name = "btnCT";
-            this.btnCT.Size = new System.Drawing.Size(135, 39);
+            this.btnCT.Size = new System.Drawing.Size(291, 39);
             this.btnCT.TabIndex = 10;
-            this.btnCT.Text = "➕ Thêm CT";
+            this.btnCT.Text = "➕ Thêm chương trình";
             this.btnCT.UseVisualStyleBackColor = false;
             this.btnCT.Click += new System.EventHandler(this.btnCT_Click);
             // 

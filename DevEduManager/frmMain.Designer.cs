@@ -47,7 +47,6 @@
             this.btnLichAll = new System.Windows.Forms.ToolStripMenuItem();
             this.btnXepLop = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAS_D_SM_13 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem10 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuanTriTitle = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +68,8 @@
             this.pmniAS_D_Web_Support = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InforToolMenu = new System.Windows.Forms.Panel();
+            this.quảnLýBảngCôngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýSốGiờDạyHọcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -274,7 +275,6 @@
             this.btnLichAll,
             this.btnXepLop,
             this.mniAS_D_SM_13,
-            this.toolStripMenuItem7,
             this.toolStripMenuItem8,
             this.toolStripMenuItem10});
             this.btnNhanVienTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -293,7 +293,7 @@
             this.btnThongKeNoHocVien.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnThongKeNoHocVien.Name = "btnThongKeNoHocVien";
             this.btnThongKeNoHocVien.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnThongKeNoHocVien.Size = new System.Drawing.Size(344, 38);
+            this.btnThongKeNoHocVien.Size = new System.Drawing.Size(390, 38);
             this.btnThongKeNoHocVien.Text = "Quản lý chương trình học";
             this.btnThongKeNoHocVien.Click += new System.EventHandler(this.btnThongKeNoHocVien_Click);
             // 
@@ -302,7 +302,7 @@
             this.btnQuanLyDiem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnQuanLyDiem.Name = "btnQuanLyDiem";
             this.btnQuanLyDiem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnQuanLyDiem.Size = new System.Drawing.Size(344, 38);
+            this.btnQuanLyDiem.Size = new System.Drawing.Size(390, 38);
             this.btnQuanLyDiem.Text = "Quản lý lớp học";
             this.btnQuanLyDiem.Click += new System.EventHandler(this.btnQuanLyDiem_Click);
             // 
@@ -311,7 +311,7 @@
             this.btnLichAll.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnLichAll.Name = "btnLichAll";
             this.btnLichAll.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnLichAll.Size = new System.Drawing.Size(344, 38);
+            this.btnLichAll.Size = new System.Drawing.Size(390, 38);
             this.btnLichAll.Text = "Lịch";
             this.btnLichAll.Click += new System.EventHandler(this.btnLichAll_Click);
             // 
@@ -320,7 +320,7 @@
             this.btnXepLop.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.btnXepLop.Name = "btnXepLop";
             this.btnXepLop.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.btnXepLop.Size = new System.Drawing.Size(344, 38);
+            this.btnXepLop.Size = new System.Drawing.Size(390, 38);
             this.btnXepLop.Text = "Quản lý lịch thi";
             this.btnXepLop.Click += new System.EventHandler(this.btnXepLop_Click);
             // 
@@ -329,25 +329,16 @@
             this.mniAS_D_SM_13.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.mniAS_D_SM_13.Name = "mniAS_D_SM_13";
             this.mniAS_D_SM_13.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.mniAS_D_SM_13.Size = new System.Drawing.Size(344, 38);
+            this.mniAS_D_SM_13.Size = new System.Drawing.Size(390, 38);
             this.mniAS_D_SM_13.Text = "Quản lý điểm học viên";
             this.mniAS_D_SM_13.Click += new System.EventHandler(this.mniAS_D_SM_13_Click);
-            // 
-            // toolStripMenuItem7
-            // 
-            this.toolStripMenuItem7.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(344, 38);
-            this.toolStripMenuItem7.Text = "Quản lý việc giảng dạy";
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // toolStripMenuItem8
             // 
             this.toolStripMenuItem8.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem8.Size = new System.Drawing.Size(344, 38);
+            this.toolStripMenuItem8.Size = new System.Drawing.Size(390, 38);
             this.toolStripMenuItem8.Text = "Quản lý thông báo";
             this.toolStripMenuItem8.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
@@ -356,7 +347,7 @@
             this.toolStripMenuItem10.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
-            this.toolStripMenuItem10.Size = new System.Drawing.Size(344, 38);
+            this.toolStripMenuItem10.Size = new System.Drawing.Size(390, 38);
             this.toolStripMenuItem10.Text = "Quản lý học phí";
             this.toolStripMenuItem10.Click += new System.EventHandler(this.toolStripMenuItem10_Click);
             // 
@@ -366,6 +357,8 @@
             this.btnQuanLyNhanVien,
             this.quảnLýHọcViênToolStripMenuItem,
             this.quảnLýGiảngViênToolStripMenuItem,
+            this.quảnLýSốGiờDạyHọcToolStripMenuItem,
+            this.quảnLýBảngCôngToolStripMenuItem,
             this.btnQuanLyTaiKhoan,
             this.btnKetNoiCSDL});
             this.btnQuanTriTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -567,6 +560,24 @@
             this.InforToolMenu.Size = new System.Drawing.Size(1270, 798);
             this.InforToolMenu.TabIndex = 11;
             // 
+            // quảnLýBảngCôngToolStripMenuItem
+            // 
+            this.quảnLýBảngCôngToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.quảnLýBảngCôngToolStripMenuItem.Name = "quảnLýBảngCôngToolStripMenuItem";
+            this.quảnLýBảngCôngToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.quảnLýBảngCôngToolStripMenuItem.Size = new System.Drawing.Size(321, 38);
+            this.quảnLýBảngCôngToolStripMenuItem.Text = "Quản lý bảng công";
+            this.quảnLýBảngCôngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýBảngCôngToolStripMenuItem_Click);
+            // 
+            // quảnLýSốGiờDạyHọcToolStripMenuItem
+            // 
+            this.quảnLýSốGiờDạyHọcToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.quảnLýSốGiờDạyHọcToolStripMenuItem.Name = "quảnLýSốGiờDạyHọcToolStripMenuItem";
+            this.quảnLýSốGiờDạyHọcToolStripMenuItem.Padding = new System.Windows.Forms.Padding(5, 5, 1, 5);
+            this.quảnLýSốGiờDạyHọcToolStripMenuItem.Size = new System.Drawing.Size(321, 38);
+            this.quảnLýSốGiờDạyHọcToolStripMenuItem.Text = "Quản lý số giờ dạy học";
+            this.quảnLýSốGiờDạyHọcToolStripMenuItem.Click += new System.EventHandler(this.quảnLýSốGiờDạyHọcToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -632,12 +643,13 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem8;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem quảnLýHọcViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quảnLýGiảngViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýBảngCôngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýSốGiờDạyHọcToolStripMenuItem;
     }
 }

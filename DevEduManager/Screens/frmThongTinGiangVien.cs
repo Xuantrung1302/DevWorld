@@ -25,7 +25,6 @@ namespace DevEduManager.Screens
             if (!showTeacherInfo)
             {
                 splitContainer1.Panel1Collapsed = true;
-                btnQuayLai.Visible = false;
                 return;
             }
 

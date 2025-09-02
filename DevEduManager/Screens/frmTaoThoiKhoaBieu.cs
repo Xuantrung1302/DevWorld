@@ -152,7 +152,7 @@ namespace DevEduManager.Screens
                             $"{Convert.ToDateTime(row["StartTime"]).ToString("HH:mm")}-{Convert.ToDateTime(row["EndTime"]).ToString("HH:mm")}",
                             dayOfWeekText, // Gán giá trị "Thứ" dựa trên số
                             Convert.ToDateTime(row["StartTime"]).ToString("dd/MM/yyyy"),
-                            "P101", // Có thể thay bằng field nếu có
+                            row["Room"].ToString(), // Có thể thay bằng field nếu có
                             row["FullName"].ToString()
                         );
 

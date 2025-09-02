@@ -30,8 +30,8 @@ namespace DevEduManager.Modals
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -136,8 +136,8 @@ namespace DevEduManager.Modals
             // StudentID
             // 
             this.StudentID.DataPropertyName = "StudentID";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.StudentID.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            this.StudentID.DefaultCellStyle = dataGridViewCellStyle9;
             this.StudentID.HeaderText = "Mã học viên";
             this.StudentID.MinimumWidth = 250;
             this.StudentID.Name = "StudentID";
@@ -147,8 +147,8 @@ namespace DevEduManager.Modals
             // 
             this.Fullname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Fullname.DataPropertyName = "Fullname";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            this.Fullname.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.Fullname.DefaultCellStyle = dataGridViewCellStyle10;
             this.Fullname.HeaderText = "Họ và tên";
             this.Fullname.MinimumWidth = 500;
             this.Fullname.Name = "Fullname";

@@ -1,180 +1,384 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using Newtonsoft.Json;
 
 namespace DevEduManager.Screens
 {
     public partial class frmThongKe : Form
     {
-        private Chart chartThuChi1, chartHocVienThang, chartTopKhoaHoc, chartTiLeTotNghiep1;
+        // base url tới API Statistical controller (ví dụ: https://localhost:44394/api/Statistical/)
+        private readonly string _thongkeurl = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Statistical/";
 
         public frmThongKe()
         {
             InitializeComponent();
 
-            // Tạo comboBox năm
-            cboYear.Items.AddRange(new object[] { "2022", "2023", "2024" });
-            cboYear.SelectedIndex = 0; // chọn mặc định
-            cboYear.SelectedIndexChanged += cboYear_SelectedIndexChanged;
+            // Load danh sách năm vào combo (2020 -> currentYear + 1)
+            LoadYears();
 
-            // Khởi tạo Chart
-            chartThuChi1 = new Chart();
-            chartHocVienThang = new Chart();
-            chartTopKhoaHoc = new Chart();
-            chartTiLeTotNghiep1 = new Chart();
-
-            InitializeCharts();
-
-            // Load dữ liệu ban đầu
-            LoadDataForYear(2024);
-        }
-
-        private void InitializeCharts()
-        {
-            chartThuChi1.Dock = DockStyle.Fill;
-            chartHocVienThang.Dock = DockStyle.Fill;
-            chartTopKhoaHoc.Dock = DockStyle.Fill;
-            chartTiLeTotNghiep1.Dock = DockStyle.Fill;
-
-            tableLayoutPanelCharts.Controls.Add(chartThuChi1, 0, 0);
-            tableLayoutPanelCharts.Controls.Add(chartHocVienThang, 1, 0);
-            tableLayoutPanelCharts.Controls.Add(chartTopKhoaHoc, 0, 1);
-            tableLayoutPanelCharts.Controls.Add(chartTiLeTotNghiep1, 1, 1);
-        }
-
-        private void cboYear_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int year = int.Parse(cboYear.SelectedItem.ToString());
-            LoadDataForYear(year);
-        }
-
-        private void LoadDataForYear(int year)
-        {
-            // ================= Panel Numbers =================
-            int soHocVien = 1200 + (year % 10) * 10;
-            int soGiaoVien = 80 + (year % 5);
-            int soNhanVien = 50 + (year % 3);
-            int soChuongTrinh = 15 + (year % 2);
-
-            panelHocSinh.Controls.Clear();
-            panelGiaoVien.Controls.Clear();
-            panelNhanVien.Controls.Clear();
-            panelChuongTrinh.Controls.Clear();
-
-            panelHocSinh.Controls.Add(new Label() { Text = $"Học viên: {soHocVien}", AutoSize = true, Font = new Font("Segoe UI", 12, FontStyle.Bold) });
-            panelGiaoVien.Controls.Add(new Label() { Text = $"Giảng viên: {soGiaoVien}", AutoSize = true, Font = new Font("Segoe UI", 12, FontStyle.Bold) });
-            panelNhanVien.Controls.Add(new Label() { Text = $"Nhân viên: {soNhanVien}", AutoSize = true, Font = new Font("Segoe UI", 12, FontStyle.Bold) });
-            panelChuongTrinh.Controls.Add(new Label() { Text = $"Chương trình: {soChuongTrinh}", AutoSize = true, Font = new Font("Segoe UI", 12, FontStyle.Bold) });
-
-            Random rnd = new Random();
-
-            // ================= Chart 1: Thu chi theo tháng =================
-            chartThuChi1.Series.Clear();
-            chartThuChi1.ChartAreas.Clear();
-            chartThuChi1.Titles.Clear();
-            chartThuChi1.Legends.Clear();
-
-            var ca1 = new ChartArea();
-            chartThuChi1.ChartAreas.Add(ca1);
-
-            var legend1 = new Legend();
-            chartThuChi1.Legends.Add(legend1);
-
-            var seriesThu = new Series("Thu")
+            // Khi form vừa khởi tạo, tải dashboard theo năm mặc định (năm được set trong LoadYears)
+            if (cboYear.SelectedItem != null)
             {
-                ChartType = SeriesChartType.Column,
-                ToolTip = "Tháng #VALX: #VAL"
-            };
-            var seriesChi = new Series("Chi")
-            {
-                ChartType = SeriesChartType.Column,
-                ToolTip = "Tháng #VALX: #VAL"
-            };
-
-            for (int m = 1; m <= 12; m++)
-            {
-                seriesThu.Points.AddXY($"T{m}", rnd.Next(50, 200));
-                seriesChi.Points.AddXY($"T{m}", rnd.Next(20, 150));
+                // Không chặn luồng UI — chạy bất đồng bộ
+                _ = LoadDashboardAsync((int)cboYear.SelectedItem);
             }
-
-            chartThuChi1.Series.Add(seriesThu);
-            chartThuChi1.Series.Add(seriesChi);
-            chartThuChi1.Titles.Add("Thu chi theo tháng");
-
-            // ================= Chart 2: Học viên theo tháng =================
-            chartHocVienThang.Series.Clear();
-            chartHocVienThang.ChartAreas.Clear();
-            chartHocVienThang.Titles.Clear();
-
-            var ca2 = new ChartArea();
-            chartHocVienThang.ChartAreas.Add(ca2);
-            var seriesHocVien = new Series("Học viên")
-            {
-                ChartType = SeriesChartType.Line,
-                MarkerStyle = MarkerStyle.Circle,
-                BorderWidth = 2,
-                ToolTip = "Tháng #VALX: #VAL"
-            };
-
-            for (int m = 1; m <= 12; m++)
-            {
-                seriesHocVien.Points.AddXY($"T{m}", rnd.Next(20, 100));
-            }
-
-            chartHocVienThang.Series.Add(seriesHocVien);
-            chartHocVienThang.Titles.Add("Số học viên theo tháng");
-
-            // ================= Chart 3: Top 5 khóa học =================
-            chartTopKhoaHoc.Series.Clear();
-            chartTopKhoaHoc.ChartAreas.Clear();
-            chartTopKhoaHoc.Titles.Clear();
-
-            var ca3 = new ChartArea();
-            chartTopKhoaHoc.ChartAreas.Add(ca3);
-
-            var seriesKhoaHoc = new Series("Doanh thu")
-            {
-                ChartType = SeriesChartType.Bar,
-                ToolTip = "#VALX: #VAL"
-            };
-
-            string[] khoaHoc = { "C#", "Java", "Python", "JS", "SQL" };
-            foreach (var kh in khoaHoc)
-            {
-                seriesKhoaHoc.Points.AddXY(kh, rnd.Next(100, 500));
-            }
-
-            chartTopKhoaHoc.Series.Add(seriesKhoaHoc);
-            chartTopKhoaHoc.Titles.Add("Top 5 khóa học");
-
-            // ================= Chart 4: Tỉ lệ tốt nghiệp =================
-            chartTiLeTotNghiep1.Series.Clear();
-            chartTiLeTotNghiep1.ChartAreas.Clear();
-            chartTiLeTotNghiep1.Titles.Clear();
-            chartTiLeTotNghiep1.Legends.Clear();
-
-            var ca4 = new ChartArea();
-            chartTiLeTotNghiep1.ChartAreas.Add(ca4);
-
-            var legend4 = new Legend();
-            chartTiLeTotNghiep1.Legends.Add(legend4);
-
-            var seriesTiLe = new Series("Tỉ lệ")
-            {
-                ChartType = SeriesChartType.Pie,
-                Label = "#PERCENT{P0}",   // hiển thị % trên chart
-                ToolTip = "#VALX: #VAL (#PERCENT{P0})"
-            };
-
-            seriesTiLe.Points.AddXY("Tốt nghiệp", rnd.Next(70, 90));
-            seriesTiLe.Points.AddXY("Chưa tốt nghiệp", rnd.Next(10, 30));
-
-            chartTiLeTotNghiep1.Series.Add(seriesTiLe);
-            chartTiLeTotNghiep1.Titles.Add("Tỉ lệ tốt nghiệp");
         }
 
+        private void LoadYears()
+        {
+            cboYear.Items.Clear();
+            int currentYear = DateTime.Now.Year;
+            for (int y = 2024; y <= currentYear; y++)
+            {
+                cboYear.Items.Add(y);
+            }
+            cboYear.SelectedItem = currentYear;
+        }
+
+        /// <summary>
+        /// Tải toàn bộ thông tin dashboard cho một năm
+        /// </summary>
+        private async Task LoadDashboardAsync(int year)
+        {
+            try
+            {
+                await LoadPanelsAsync();
+                await LoadChartDoanhThuChiAsync(year);
+                await LoadChartHocVienThangAsync(year);
+                await LoadChartTopKhoaHocAsync(year);
+                await LoadChartTiLeTotNghiepAsync(year);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi load dashboard: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #region Panels
+        private async Task LoadPanelsAsync()
+        {
+            try
+            {
+                var dt = await GetDataTableFromApi("tongQuatVeTacNhan");
+                if (dt == null) dt = new DataTable();
+
+                // Clear cacs panel trước khi add label mới
+                panelHocSinh.Controls.Clear();
+                panelGiaoVien.Controls.Clear();
+                panelNhanVien.Controls.Clear();
+                panelChuongTrinh.Controls.Clear();
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    string loai = row["LoaiDoiTuong"].ToString();
+                    string soLuong = row["SoLuong"].ToString();
+
+                    var lbl = new Label()
+                    {
+                        Text = $"{loai}: {soLuong}",
+                        AutoSize = true,
+                        Font = new Font("Segoe UI", 12, FontStyle.Bold)
+                    };
+
+                    switch (loai)
+                    {
+                        case "Học viên":
+                            panelHocSinh.Controls.Add(lbl);
+                            break;
+                        case "Giảng viên":
+                            panelGiaoVien.Controls.Add(lbl);
+                            break;
+                        case "Nhân viên":
+                            panelNhanVien.Controls.Add(lbl);
+                            break;
+                        case "Khóa học":
+                            panelChuongTrinh.Controls.Add(lbl);
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load panels: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Chart DoanhThu/Chi (Pie)
+        private async Task LoadChartDoanhThuChiAsync(int year)
+        {
+            try
+            {
+                var dt = await GetDataTableFromApi($"thongKeTyLeDoanhThu?year={year}") ?? new DataTable();
+
+                // Sử dụng chart từ Designer: chartThuChi
+                var chart = chartThuChi;
+
+                chart.Series.Clear();
+                chart.ChartAreas.Clear();
+                chart.Titles.Clear();
+                chart.Legends.Clear();
+
+                var ca = new ChartArea();
+                chart.ChartAreas.Add(ca);
+                chart.Legends.Add(new Legend());
+
+                var series = new Series("Tỉ lệ Doanh thu/Chi")
+                {
+                    ChartType = SeriesChartType.Pie,
+                    Label = "#PERCENT{P0}",
+                    ToolTip = "#VALX: #VAL"
+                };
+
+                decimal chi = 0, doanhThu = 0;
+                if (dt.Rows.Count > 0)
+                {
+                    decimal.TryParse(dt.Rows[0]["TongChi"]?.ToString() ?? "0", out chi);
+                    decimal.TryParse(dt.Rows[0]["TongDoanhThu"]?.ToString() ?? "0", out doanhThu);
+                }
+
+                // Nếu cả doanhthu và chi đều 0 thì thêm 1 slice "Không có dữ liệu"
+                if (chi == 0 && doanhThu == 0)
+                {
+                    series.Points.AddXY("Không có dữ liệu", 1);
+                }
+                else
+                {
+                    series.Points.AddXY("Chi phí", (double)chi);
+                    series.Points.AddXY("Doanh thu", (double)doanhThu);
+                }
+
+                chart.Series.Add(series);
+                chart.Titles.Add($"Tỉ lệ Doanh thu - Chi phí ({year})");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load chart doanh thu/chi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Chart Học viên theo tháng (Line)
+        private async Task LoadChartHocVienThangAsync(int year)
+        {
+            try
+            {
+                var dt = await GetDataTableFromApi($"thongKeSoHocSinhDangKyHocTheoThangTrongNam?year={year}") ?? new DataTable();
+
+                var chart = chartChart3; // dùng chartChart3 cho biểu đồ học viên theo tháng
+
+                chart.Series.Clear();
+                chart.ChartAreas.Clear();
+                chart.Titles.Clear();
+                chart.Legends.Clear();
+
+                var ca = new ChartArea();
+                chart.ChartAreas.Add(ca);
+
+                var series = new Series("Học viên")
+                {
+                    ChartType = SeriesChartType.Line,
+                    MarkerStyle = MarkerStyle.Circle,
+                    BorderWidth = 2,
+                    ToolTip = "Tháng #VALX: #VAL"
+                };
+
+                // Chuẩn hoá dữ liệu: đảm bảo có điểm cho T1..T12
+                int[] monthCounts = new int[13]; // chỉ dùng index 1..12
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (int.TryParse(row["Month"]?.ToString(), out int month) &&
+                        int.TryParse(row["TotalEnrollments"]?.ToString(), out int total) &&
+                        month >= 1 && month <= 12)
+                    {
+                        monthCounts[month] = total;
+                    }
+                }
+
+                for (int m = 1; m <= 12; m++)
+                {
+                    series.Points.AddXY($"T{m}", monthCounts[m]);
+                }
+
+                chart.Series.Add(series);
+                chart.Titles.Add($"Số học viên đăng ký theo tháng ({year})");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load chart học viên theo tháng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Chart Top 5 khóa học (Bar)
+        private async Task LoadChartTopKhoaHocAsync(int year)
+        {
+            try
+            {
+                var dt = await GetDataTableFromApi($"thongKeTopNamKhoaHoc?year={year}") ?? new DataTable();
+
+                var chart = chartChart4; // dùng chartChart4 cho top khoá học
+
+                chart.Series.Clear();
+                chart.ChartAreas.Clear();
+                chart.Titles.Clear();
+                chart.Legends.Clear();
+
+                var ca = new ChartArea();
+                chart.ChartAreas.Add(ca);
+
+                var series = new Series("Số học viên")
+                {
+                    ChartType = SeriesChartType.Bar,
+                    ToolTip = "#VALX: #VAL"
+                };
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    string courseName = row.Table.Columns.Contains("course_name") ? row["course_name"].ToString() :
+                                        row.Table.Columns.Contains("CourseName") ? row["CourseName"].ToString() : "Khóa học";
+                    int total = 0;
+                    int.TryParse(row["TotalStudents"]?.ToString() ?? "0", out total);
+
+                    series.Points.AddXY(courseName, total);
+                }
+
+                chart.Series.Add(series);
+                chart.Titles.Add($"Top 5 khóa học ({year})");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load chart Top khóa học: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Chart Tỉ lệ tốt nghiệp (Pie)
+        private async Task LoadChartTiLeTotNghiepAsync(int year)
+        {
+            try
+            {
+                var dt = await GetDataTableFromApi($"thongKeTyLeTotNghiep?year={year}") ?? new DataTable();
+
+                var chart = chartTiLeTotNghiep;
+
+                chart.Series.Clear();
+                chart.ChartAreas.Clear();
+                chart.Titles.Clear();
+                chart.Legends.Clear();
+
+                var ca = new ChartArea();
+                chart.ChartAreas.Add(ca);
+                chart.Legends.Add(new Legend());
+
+                var series = new Series("Tỉ lệ")
+                {
+                    ChartType = SeriesChartType.Pie,
+                    Label = "#PERCENT{P0}",
+                    ToolTip = "#VALX: #VAL (#PERCENT{P0})"
+                };
+
+                // mỗi course -> thêm 2 slice (tốt nghiệp và chưa)
+                if (dt.Rows.Count == 0)
+                {
+                    series.Points.AddXY("Không có dữ liệu", 1);
+                }
+                else
+                {
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string courseName = row["CourseName"]?.ToString() ?? "Khóa học";
+                        int graduated = 0, total = 0;
+                        int.TryParse(row["GraduatedCount"]?.ToString() ?? "0", out graduated);
+                        int.TryParse(row["TotalStudents"]?.ToString() ?? "0", out total);
+
+                        // nếu total == 0 thì bỏ qua hoặc hiển thị 0
+                        if (total <= 0)
+                        {
+                            series.Points.AddXY(courseName + " (Không có HV)", 1);
+                        }
+                        else
+                        {
+                            // Thêm hai slice cho pie
+                            if (graduated > 0)
+                                series.Points.AddXY(courseName + " (Tốt nghiệp)", graduated);
+                            int notGraduated = total - graduated;
+                            if (notGraduated > 0)
+                                series.Points.AddXY(courseName + " (Chưa TN)", notGraduated);
+                        }
+                    }
+                }
+
+                chart.Series.Add(series);
+                chart.Titles.Add($"Tỉ lệ tốt nghiệp theo khóa học ({year})");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load chart tỉ lệ tốt nghiệp: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region Helper - gọi API và trả về DataTable
+        private async Task<DataTable> GetDataTableFromApi(string url)
+        {
+            try
+            {
+                using (var client = new HttpClient())
+                {
+                    var fullUrl = _thongkeurl + url;
+                    var response = await client.GetStringAsync(fullUrl);
+
+                    if (string.IsNullOrWhiteSpace(response))
+                        return new DataTable();
+
+                    // Deserialize JSON -> DataTable
+                    var dt = JsonConvert.DeserializeObject<DataTable>(response);
+                    return dt ?? new DataTable();
+                }
+            }
+            catch (HttpRequestException httpEx)
+            {
+                MessageBox.Show("Lỗi kết nối tới API: " + httpEx.Message, "Lỗi API", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new DataTable();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xử lý dữ liệu từ API: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return new DataTable();
+            }
+        }
+        #endregion
+
+        // Event handler do bạn đã binding sẵn trong Designer:
+        private async void cboYear_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboYear.SelectedItem == null) return;
+
+            if (!int.TryParse(cboYear.SelectedItem.ToString(), out int selectedYear)) return;
+
+            await LoadDashboardAsync(selectedYear);
+        }
+
+        // Nếu bạn vẫn muốn action khi form Load (Designer đã bind frmThongKe_Load), có thể để trống hoặc gọi LoadDashboard ở đây.
+        private void frmThongKe_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            // không cần làm gì ở đây vì constructor đã gọi LoadDashboard cho năm mặc định
+        }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
@@ -154,13 +154,13 @@
             this.gridLop.BackgroundColor = System.Drawing.Color.White;
             this.gridLop.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridLop.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.gridLop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(130)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.gridLop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridLop.ColumnHeadersHeight = 30;
             this.gridLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClassID,
@@ -195,8 +195,8 @@
             // ClassName
             // 
             this.ClassName.DataPropertyName = "ClassName";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.ClassName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue;
+            this.ClassName.DefaultCellStyle = dataGridViewCellStyle5;
             this.ClassName.FillWeight = 66.31017F;
             this.ClassName.HeaderText = "Tên lớp";
             this.ClassName.MinimumWidth = 250;
@@ -353,8 +353,8 @@
             // FullName
             // 
             this.FullName.DataPropertyName = "FullName";
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.FullName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.FullName.DefaultCellStyle = dataGridViewCellStyle6;
             this.FullName.HeaderText = "Tên học viên";
             this.FullName.MinimumWidth = 300;
             this.FullName.Name = "FullName";
@@ -453,6 +453,7 @@
             this.lblTotalStudents.Size = new System.Drawing.Size(179, 23);
             this.lblTotalStudents.TabIndex = 2;
             this.lblTotalStudents.Text = "Tổng cộng: 0 học viên";
+            this.lblTotalStudents.Visible = false;
             // 
             // frmQuanLyLopHoc
             // 

@@ -79,7 +79,7 @@ namespace DevEduManager.Screens
                 string url = $"{_examUrl}layDanhSachLichThi?courseID={courseID}";
                 DataTable result = await callAPI.GetAPI(url);
 
-                dtgvLichThi.Rows.Clear();
+                dtgvLichThi.DataSource = null;
 
                 if (result != null && result.Rows.Count > 0)
                 {

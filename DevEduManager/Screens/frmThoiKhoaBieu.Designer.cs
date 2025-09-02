@@ -6,8 +6,6 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelMain;
-        private System.Windows.Forms.Label lblChonLop;
-        private System.Windows.Forms.ComboBox cboLop;
         private System.Windows.Forms.Button btnPrevWeek;
         private System.Windows.Forms.Button btnNextWeek;
         private System.Windows.Forms.DateTimePicker dtpWeek;
@@ -23,8 +21,8 @@
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
@@ -40,8 +38,6 @@
             this.colCN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXuatExcel = new System.Windows.Forms.Button();
             this.btnNextWeek = new System.Windows.Forms.Button();
-            this.cboLop = new System.Windows.Forms.ComboBox();
-            this.lblChonLop = new System.Windows.Forms.Label();
             this.dtpWeek = new System.Windows.Forms.DateTimePicker();
             this.panelHeader.SuspendLayout();
             this.tableLayoutPanelMain.SuspendLayout();
@@ -83,8 +79,6 @@
             this.tableLayoutPanelMain.Controls.Add(this.dtgvTKB, 0, 1);
             this.tableLayoutPanelMain.Controls.Add(this.btnXuatExcel, 5, 2);
             this.tableLayoutPanelMain.Controls.Add(this.btnNextWeek, 4, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.cboLop, 1, 0);
-            this.tableLayoutPanelMain.Controls.Add(this.lblChonLop, 0, 0);
             this.tableLayoutPanelMain.Controls.Add(this.dtpWeek, 3, 0);
             this.tableLayoutPanelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelMain.Location = new System.Drawing.Point(0, 60);
@@ -113,14 +107,14 @@
             this.dtgvTKB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvTKB.BackgroundColor = System.Drawing.Color.White;
             this.dtgvTKB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTKB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTKB.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvTKB.ColumnHeadersHeight = 45;
             this.dtgvTKB.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colGio,
@@ -138,9 +132,9 @@
             this.dtgvTKB.ReadOnly = true;
             this.dtgvTKB.RowHeadersVisible = false;
             this.dtgvTKB.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.dtgvTKB.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dtgvTKB.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgvTKB.RowTemplate.Height = 60;
             this.dtgvTKB.Size = new System.Drawing.Size(994, 419);
             this.dtgvTKB.TabIndex = 5;
@@ -224,25 +218,6 @@
             this.btnNextWeek.Size = new System.Drawing.Size(54, 49);
             this.btnNextWeek.TabIndex = 3;
             this.btnNextWeek.Text = ">";
-            // 
-            // cboLop
-            // 
-            this.cboLop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboLop.Location = new System.Drawing.Point(123, 3);
-            this.cboLop.Name = "cboLop";
-            this.cboLop.Size = new System.Drawing.Size(214, 31);
-            this.cboLop.TabIndex = 1;
-            // 
-            // lblChonLop
-            // 
-            this.lblChonLop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblChonLop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblChonLop.Location = new System.Drawing.Point(3, 0);
-            this.lblChonLop.Name = "lblChonLop";
-            this.lblChonLop.Size = new System.Drawing.Size(114, 55);
-            this.lblChonLop.TabIndex = 0;
-            this.lblChonLop.Text = "Chọn lớp:";
-            this.lblChonLop.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dtpWeek
             // 

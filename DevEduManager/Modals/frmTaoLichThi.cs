@@ -24,9 +24,9 @@ namespace DevEduManager.Modals
 
         private async void frmTaoLichThi_Load(object sender, EventArgs e)
         {
-            txtKyThi.Text = ""; // Cho người dùng nhập
+            txtKyThi.Text = "Thi kết thúc môn"; // Cho người dùng nhập
             LoadCaThi();
-            await LoadPhongThiAsync();
+
             await LoadChuongTrinhHocAsync();
         }
 
@@ -156,24 +156,69 @@ namespace DevEduManager.Modals
             cboTime.Items.Clear();
             cboTime.Items.AddRange(new string[]
             {
-                "08:00 - 09:30",
-                "09:30 - 11:00",
-                "13:00 - 14:30",
-                "14:30 - 16:00",
-                "16:00 - 17:30"
+                "08:00 - 10:00",
+                "10:00 - 12:00",
+                "13:00 - 15:00",
+                "15:00 - 17:00",
+                "17:00 - 19:00"
             });
         }
 
         private async Task LoadPhongThiAsync()
         {
-            var dt = await callAPI.GetAPI($"{_roomUrl}layLop");
-            if (dt != null && dt.Rows.Count > 0)
+            try
             {
-                cboRoom.DataSource = dt;
-                cboRoom.DisplayMember = "Room";
-                cboRoom.ValueMember = "RoomID";
+                // Chỉ load phòng khi đã chọn ca thi
+                if (cboTime.SelectedIndex < 0)
+                {
+                    cboRoom.DataSource = null;
+                    return;
+                }
+
+                int selectedIndex = cboTime.SelectedIndex;
+                string[] currentRange = cboTime.Items[selectedIndex].ToString().Split('-');
+                if (currentRange.Length != 2)
+                    return;
+
+                TimeSpan startTime = TimeSpan.Parse(currentRange[0].Trim());
+                TimeSpan endTime = TimeSpan.Parse(currentRange[1].Trim());
+
+                // Lấy ngày từ DateTimePicker
+                DateTime examDate = dtpkNgayThi.Value.Date;
+                DateTime examDateStart = examDate.Add(startTime);
+                DateTime examDateEnd = examDate.Add(endTime);
+
+                string examDateStartFormatted = examDateStart.ToString("yyyy-MM-ddTHH:mm:ss");
+                string examDateEndFormatted = examDateEnd.ToString("yyyy-MM-ddTHH:mm:ss");
+
+                string apiUrl = _roomUrl
+                              + "layPhongChoKyThi"
+                              + "?examDateStart=" + examDateStartFormatted
+                              + "&examDateEnd=" + examDateEndFormatted;
+
+
+                var dt = await callAPI.GetAPI(apiUrl);
+
+
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    cboRoom.DataSource = dt;
+                    cboRoom.DisplayMember = "Room";
+                    //cboRoom.ValueMember = "RoomID";
+                }
+                else
+                {
+                    cboRoom.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi load phòng: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
@@ -291,6 +336,14 @@ namespace DevEduManager.Modals
             }
         }
 
+        private async void dtpkNgayThi_ValueChanged(object sender, EventArgs e)
+        {
+            //await LoadPhongThiAsync();
+        }
 
+        private async void cboTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            await LoadPhongThiAsync();
+        }
     }
 }

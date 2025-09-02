@@ -47,40 +47,85 @@ namespace DevEduManager.Screens
 
         private void BtnPrevWeek_Click(object sender, EventArgs e)
         {
-            currentMonday = currentMonday.AddDays(-7);
-            dtpWeek.Value = currentMonday;
-            LoadHeaders();
-            _ = LoadScheduleFromAPI();
+            try
+            {
+                currentMonday = currentMonday.AddDays(-7);
+                dtpWeek.Value = currentMonday;
+                LoadHeaders();
+                _ = LoadScheduleFromAPI();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void BtnNextWeek_Click(object sender, EventArgs e)
         {
-            currentMonday = currentMonday.AddDays(7);
-            dtpWeek.Value = currentMonday;
-            LoadHeaders();
-            _ = LoadScheduleFromAPI();
+            try
+            {
+                currentMonday = currentMonday.AddDays(7);
+                dtpWeek.Value = currentMonday;
+                LoadHeaders();
+                _ = LoadScheduleFromAPI();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void DtpWeek_ValueChanged(object sender, EventArgs e)
         {
-            currentMonday = GetMonday(dtpWeek.Value);
-            LoadHeaders();
-            _ = LoadScheduleFromAPI();
+            try
+            {
+                currentMonday = GetMonday(dtpWeek.Value);
+                LoadHeaders();
+                _ = LoadScheduleFromAPI();  
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private DateTime GetMonday(DateTime date)
         {
-            int diff = (7 + (date.DayOfWeek - DayOfWeek.Monday)) % 7;
-            return date.AddDays(-1 * diff).Date;
+            try
+            {
+                int diff = (7 + (date.DayOfWeek - DayOfWeek.Monday)) % 7;
+                return date.AddDays(-1 * diff).Date;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void LoadHeaders()
         {
-            string[] thu = { "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy", "Chủ nhật" };
-            for (int i = 0; i < 7; i++)
+            try
             {
-                DateTime day = currentMonday.AddDays(i);
-                dtgvTKB.Columns[i + 1].HeaderText = $"{thu[i]}\n({day:dd/MM})";
+                string[] thu = { "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy", "Chủ nhật" };
+                for (int i = 0; i < 7; i++)
+                {
+                    DateTime day = currentMonday.AddDays(i);
+                    dtgvTKB.Columns[i + 1].HeaderText = $"{thu[i]}\n({day:dd/MM})";
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -91,13 +136,13 @@ namespace DevEduManager.Screens
                 dtgvTKB.Rows.Clear();
 
                 string[] caHoc = {
-            "08:00-10:00",
-            "10:00-12:00",
-            "13:00-15:00",
-            "15:00-17:00",
-            "17:00-19:00",
-            "19:00-21:00"
-        };
+                    "08:00-10:00",
+                    "10:00-12:00",
+                    "13:00-15:00",
+                    "15:00-17:00",
+                    "17:00-19:00",
+                    "19:00-21:00"
+                };
 
                 foreach (var ca in caHoc)
                 {
@@ -206,20 +251,38 @@ namespace DevEduManager.Screens
 
         private async Task<string> GetAPI(string url)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                var response = await client.GetAsync(url);
-                response.EnsureSuccessStatusCode();
-                return await response.Content.ReadAsStringAsync();
+                using (HttpClient client = new HttpClient())
+                {
+                    var response = await client.GetAsync(url);
+                    response.EnsureSuccessStatusCode();
+                    return await response.Content.ReadAsStringAsync();
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
         // Giảm giật khi redraw DataGridView
         private void EnableDoubleBuffering(DataGridView dgv)
         {
-            typeof(DataGridView).InvokeMember("DoubleBuffered",
-                System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.SetProperty,
-                null, dgv, new object[] { true });
+            try
+            {
+                typeof(DataGridView).InvokeMember("DoubleBuffered",
+                    System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.SetProperty,
+                    null, dgv, new object[] { true });
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // Model mapping dữ liệu trả về từ API
@@ -255,37 +318,55 @@ namespace DevEduManager.Screens
 
         private void ToolTipDefault_Draw(object sender, DrawToolTipEventArgs e)
         {
-            e.Graphics.FillRectangle(Brushes.White, e.Bounds);
-            e.Graphics.DrawRectangle(Pens.Gray, e.Bounds);
-            using (Font font = new Font("Segoe UI", 11, FontStyle.Regular)) // Tăng font chữ
+            try
             {
-                e.Graphics.DrawString(e.ToolTipText, font, Brushes.Black, e.Bounds);
+                e.Graphics.FillRectangle(Brushes.White, e.Bounds);
+                e.Graphics.DrawRectangle(Pens.Gray, e.Bounds);
+                using (Font font = new Font("Segoe UI", 11, FontStyle.Regular)) // Tăng font chữ
+                {
+                    e.Graphics.DrawString(e.ToolTipText, font, Brushes.Black, e.Bounds);
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
 
         private void CustomToolTip_Draw(object sender, DrawToolTipEventArgs e)
         {
-            // Vẽ nền
-            using (SolidBrush backgroundBrush = new SolidBrush(Color.FromArgb(40, 40, 60)))
+            try
             {
-                e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+                // Vẽ nền
+                using (SolidBrush backgroundBrush = new SolidBrush(Color.FromArgb(40, 40, 60)))
+                {
+                    e.Graphics.FillRectangle(backgroundBrush, e.Bounds);
+                }
+
+                // Vẽ viền
+                using (Pen borderPen = new Pen(Color.LightBlue, 1))
+                {
+                    e.Graphics.DrawRectangle(borderPen, e.Bounds);
+                }
+
+                // Vẽ icon
+                var icon = SystemIcons.Information.ToBitmap();
+                e.Graphics.DrawImage(icon, e.Bounds.Left + 5, e.Bounds.Top + 5, 16, 16);
+
+                // Vẽ text
+                using (Font font = new Font("Segoe UI", 10, FontStyle.Bold))
+                {
+                    e.Graphics.DrawString(e.ToolTipText, font, Brushes.White, e.Bounds.Left + 26, e.Bounds.Top + 5);
+                }
+
             }
-
-            // Vẽ viền
-            using (Pen borderPen = new Pen(Color.LightBlue, 1))
+            catch (Exception)
             {
-                e.Graphics.DrawRectangle(borderPen, e.Bounds);
-            }
 
-            // Vẽ icon
-            var icon = SystemIcons.Information.ToBitmap();
-            e.Graphics.DrawImage(icon, e.Bounds.Left + 5, e.Bounds.Top + 5, 16, 16);
-
-            // Vẽ text
-            using (Font font = new Font("Segoe UI", 10, FontStyle.Bold))
-            {
-                e.Graphics.DrawString(e.ToolTipText, font, Brushes.White, e.Bounds.Left + 26, e.Bounds.Top + 5);
+                throw;
             }
         }
 

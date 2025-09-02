@@ -140,7 +140,7 @@ namespace DevEduManager.Screens
                             }
                         }
 
-                        if (CurrentUser.Role == "Employee")
+                        if (CurrentUser.Role == "Employee" || CurrentUser.Role == "Admin")
                         {
                             var (lat, lon) = await GetCurrentLocation();
                             if (IsWithinSchoolRadius(lat, lon))

@@ -131,6 +131,7 @@
             this.cboTime.Name = "cboTime";
             this.cboTime.Size = new System.Drawing.Size(250, 24);
             this.cboTime.TabIndex = 10;
+            this.cboTime.SelectedIndexChanged += new System.EventHandler(this.cboTime_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -156,6 +157,7 @@
             this.dtpkNgayThi.Name = "dtpkNgayThi";
             this.dtpkNgayThi.Size = new System.Drawing.Size(250, 22);
             this.dtpkNgayThi.TabIndex = 12;
+            this.dtpkNgayThi.ValueChanged += new System.EventHandler(this.dtpkNgayThi_ValueChanged);
             // 
             // cboRoom
             // 

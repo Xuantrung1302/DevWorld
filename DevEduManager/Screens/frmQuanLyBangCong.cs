@@ -52,7 +52,7 @@ namespace DevEduManager.Screens
         {
             var years = new Dictionary<int, string>
             {
-                { 2023, "2023" }, { 2024, "2024" }, { 2025, "2025" }, { 2026, "2026" }
+                { 2024, "2024" }, { 2025, "2025" }
             };
             cboYear.DataSource = new BindingSource(years, null);
             cboYear.DisplayMember = "Value";

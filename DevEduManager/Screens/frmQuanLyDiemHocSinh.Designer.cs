@@ -32,7 +32,6 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.cboMH = new System.Windows.Forms.ComboBox();
-            this.btnXuat = new System.Windows.Forms.Button();
             this.btnNhap = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -62,7 +61,6 @@
             this.tableLayoutPanel1.Controls.Add(this.dtgvDshv, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label4, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.cboMH, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnXuat, 7, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnNhap, 8, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -229,19 +227,6 @@
             this.cboMH.Size = new System.Drawing.Size(194, 31);
             this.cboMH.TabIndex = 20;
             // 
-            // btnXuat
-            // 
-            this.btnXuat.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXuat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnXuat.ForeColor = System.Drawing.Color.White;
-            this.btnXuat.Location = new System.Drawing.Point(653, 79);
-            this.btnXuat.Name = "btnXuat";
-            this.btnXuat.Size = new System.Drawing.Size(148, 35);
-            this.btnXuat.TabIndex = 21;
-            this.btnXuat.Text = "Xuất điểm";
-            this.btnXuat.UseVisualStyleBackColor = false;
-            // 
             // btnNhap
             // 
             this.btnNhap.BackColor = System.Drawing.Color.LightCoral;
@@ -288,7 +273,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboMH;
         private System.Windows.Forms.Button btnNhap;
-        private System.Windows.Forms.Button btnXuat;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Score;

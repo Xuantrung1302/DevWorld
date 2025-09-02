@@ -76,14 +76,50 @@ namespace DevEduManager.Modals
 
         private async void LoadPhongHoc()
         {
-            string url = $"{_roomUrl}layLop";
-            DataTable result = await callAPI.GetAPI(url);
+            try
+            {
+                if (cboCaHoc.SelectedItem == null || clbDaysOfWeek.CheckedItems.Count == 0) return;
 
-            cboPhong.DataSource = result;
-            cboPhong.DisplayMember = "Room";
-            cboPhong.ValueMember = "RoomID";
-            cboPhong.Tag = result;
+                // Parse thời gian học
+                string selectedCa = cboCaHoc.SelectedItem.ToString(); // "08:00-10:00"
+                string[] timeParts = selectedCa.Split('-');
+                string startTimeStr = timeParts[0];
+                string endTimeStr = timeParts[1];
+
+                // Parse ngày học
+                List<string> selectedDays = new List<string>();
+                foreach (var item in clbDaysOfWeek.CheckedItems)
+                {
+                    switch (item.ToString())
+                    {
+                        case "Thứ 2": selectedDays.Add("2"); break;
+                        case "Thứ 3": selectedDays.Add("3"); break;
+                        case "Thứ 4": selectedDays.Add("4"); break;
+                        case "Thứ 5": selectedDays.Add("5"); break;
+                        case "Thứ 6": selectedDays.Add("6"); break;
+                        case "Thứ 7": selectedDays.Add("7"); break;
+                        case "Chủ nhật": selectedDays.Add("1"); break;
+                    }
+                }
+                string daysOfWeekStr = string.Join(",", selectedDays);
+
+                // Gọi API
+                string url = $"{_roomUrl}layPhongKhiTaoLop?courseID={courseID}&startTime={startTimeStr}&endTime={endTimeStr}&daysOfWeek={daysOfWeekStr}";
+                DataTable result = await callAPI.GetAPI(url);
+
+                cboPhong.DataSource = result;
+                cboPhong.DisplayMember = "Room";
+                cboPhong.ValueMember = "RoomID";
+                cboPhong.Tag = result;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
+
 
         private void LoadDaysOfWeek()
         {
@@ -150,7 +186,7 @@ namespace DevEduManager.Modals
                         case "Thứ 5": selectedDays.Add("5"); break;
                         case "Thứ 6": selectedDays.Add("6"); break;
                         case "Thứ 7": selectedDays.Add("7"); break;
-                        case "Chủ nhật": selectedDays.Add("CN"); break;
+                        case "Chủ nhật": selectedDays.Add("1"); break;
                     }
                 }
 
@@ -171,18 +207,6 @@ namespace DevEduManager.Modals
                     }
                 }
 
-                //// Lấy teacherID nếu đang ở chế độ thêm giảng viên
-                //string teacherID = null;
-                //if (isAddingTeacher)
-                //{
-                //    if (cboGV.SelectedItem == null)
-                //    {
-                //        MessageBox.Show("Vui lòng chọn giảng viên để thêm vào lớp.");
-                //        return;
-                //    }
-
-                //    teacherID = cboGV.SelectedValue.ToString();
-                //}
 
                 // Tạo đối tượng LopHoc
                 LopHoc newClass = new LopHoc
@@ -223,11 +247,35 @@ namespace DevEduManager.Modals
             }
         }
 
+        private void cboCaHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadPhongHoc();
+        }
+
+        private void clbDaysOfWeek_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // Đợi check xong mới reload
+            this.BeginInvoke((MethodInvoker)delegate {
+                LoadPhongHoc();
+            });
+        }
 
 
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cboCaHoc_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            LoadPhongHoc();
+        }
+
+        private void clbDaysOfWeek_ItemCheck_1(object sender, ItemCheckEventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate {
+                LoadPhongHoc();
+            });
         }
     }
 

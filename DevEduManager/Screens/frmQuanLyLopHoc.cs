@@ -220,6 +220,7 @@ namespace DevEduManager.Screens
         {
             await LoadStudentDataAsync();
             UpdateAddTeacherButtonState(); // Cập nhật trạng thái nút khi chọn dòng mới
+            UpdateAddStudentButtonState();
         }
 
         private void UpdateAddTeacherButtonState()
@@ -370,5 +371,40 @@ namespace DevEduManager.Screens
             frmChiTietLopHoc frm = new frmChiTietLopHoc(classId);
             frm.ShowDialog();
         }
+
+        private void UpdateAddStudentButtonState()
+        {
+            // Mặc định disable
+            btnAddStudent.Enabled = false;
+            btnAddStudent.BackColor = Color.Gray;
+            btnAddStudent.ForeColor = Color.White;
+
+            try
+            {
+                if (gridLop.SelectedRows.Count == 0)
+                    return;
+
+                var statusValue = gridLop.SelectedRows[0].Cells["Status"].Value;
+                if (statusValue == null)
+                    return;
+
+                if (int.TryParse(statusValue.ToString(), out int status))
+                {
+                    if (status == 1 || status == 3) // Đang học hoặc Chưa có lịch
+                    {
+                        btnAddStudent.Enabled = true;
+                        btnAddStudent.BackColor = Color.SteelBlue;
+                        btnAddStudent.ForeColor = Color.Black;
+                    }
+                }
+            }
+            catch
+            {
+                btnAddStudent.Enabled = false;
+                btnAddStudent.BackColor = Color.Gray;
+                btnAddStudent.ForeColor = Color.White;
+            }
+        }
+
     }
 }

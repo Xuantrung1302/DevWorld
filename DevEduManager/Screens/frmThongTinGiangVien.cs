@@ -35,49 +35,64 @@ namespace DevEduManager.Screens
 
         private async void frmThongTinHocVien_Load(object sender, EventArgs e)
         {
-            // Setup columns
-            gridLop.AutoGenerateColumns = false;
-            string url = $"{_url}thongTinLopDay?teacherID={_teacherId}";
-            DataTable result = await callAPI.GetAPI(url);
+            try
+            {
+                // Setup columns
+                gridLop.AutoGenerateColumns = false;
+                string url = $"{_url}thongTinLopDay?teacherID={_teacherId}";
+                DataTable result = await callAPI.GetAPI(url);
 
-            gridLop.AutoGenerateColumns = false;
-            gridLop.Dock = DockStyle.Fill;
-            gridLop.DataSource = result.Rows.Count > 0 ? result : null;
-            //gridLop.ColumnCount = 2;
-            //gridLop.Columns[0].Name = "ChuongTrinh";
-            //gridLop.Columns[0].HeaderText = "Chương trình học";
-            //gridLop.Columns[1].Name = "MonHoc";
-            //gridLop.Columns[1].HeaderText = "Môn học";
+                gridLop.AutoGenerateColumns = false;
+                gridLop.Dock = DockStyle.Fill;
+                gridLop.DataSource = result.Rows.Count > 0 ? result : null;
 
-            //// Sample data
-            //var data = new List<HocVienChuongTrinh>
-            //{
-            //    new HocVienChuongTrinh { ChuongTrinh = "Tin học căn bản", MonHoc = "Word" },
-            //    new HocVienChuongTrinh { ChuongTrinh = "Tin học căn bản", MonHoc = "Excel" },
-            //    new HocVienChuongTrinh { ChuongTrinh = "Tin học căn bản", MonHoc = "PowerPoint" },
-            //    new HocVienChuongTrinh { ChuongTrinh = "Lập trình C#", MonHoc = "Cơ bản" },
-            //    new HocVienChuongTrinh { ChuongTrinh = "Lập trình C#", MonHoc = "Nâng cao" },
-            //};
+                if (result.Rows.Count > 0)
+                {
+                    // Nếu chưa có cột StudyTime thì thêm vào
+                    if (!result.Columns.Contains("StudyTime"))
+                    {
+                        result.Columns.Add("StudyTime", typeof(string));
+                    }
 
-            // Add rows
-            gridLop.RowTemplate.Height = 40;
-            //foreach (var item in data)
-            //{
-            //    gridLop.Rows.Add(item.ChuongTrinh, item.MonHoc);
-            //}
-            gridLop.EnableHeadersVisualStyles = false;
-            gridLop.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            gridLop.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            gridLop.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                    foreach (DataRow row in result.Rows)
+                    {
+                        if (DateTime.TryParse(row["StartTime"]?.ToString(), out DateTime start) &&
+                            DateTime.TryParse(row["EndTime"]?.ToString(), out DateTime end))
+                        {
+                            row["StudyTime"] = $"{start:HH:mm}-{end:HH:mm}";
+                        }
+                        else
+                        {
+                            row["StudyTime"] = "";
+                        }
+                    }
+                }
 
-            gridLop.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            gridLop.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue;
-            gridLop.DefaultCellStyle.SelectionForeColor = Color.Black;
 
-            gridLop.AllowUserToAddRows = false;
-            gridLop.AllowUserToResizeRows = false;
-            gridLop.RowHeadersVisible = false;
-            gridLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                // Add rows
+                gridLop.RowTemplate.Height = 40;
+
+                gridLop.EnableHeadersVisualStyles = false;
+                gridLop.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+                gridLop.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                gridLop.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+                gridLop.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+                gridLop.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue;
+                gridLop.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+                gridLop.AllowUserToAddRows = false;
+                gridLop.AllowUserToResizeRows = false;
+                gridLop.RowHeadersVisible = false;
+                gridLop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void gridLop_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

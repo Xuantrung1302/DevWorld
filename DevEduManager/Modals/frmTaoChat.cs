@@ -79,7 +79,6 @@ namespace DevEduManager.Modals
                     return;
                 }
 
-                // Lấy ID người được chọn (giả sử cột "ID" kiểu string hoặc int, chuyển sang string)
                 string receiverId = selectedRow.Cells["ID"].Value?.ToString();
                 if (string.IsNullOrEmpty(receiverId))
                 {
@@ -87,8 +86,7 @@ namespace DevEduManager.Modals
                     return;
                 }
 
-                // Lấy ID người đăng nhập
-                string senderId = CurrentUser.UserId; // Bạn thay đổi theo cách lấy ID người dùng đăng nhập của bạn
+                string senderId = CurrentUser.UserId;
 
                 if (receiverId == senderId)
                 {
@@ -96,29 +94,21 @@ namespace DevEduManager.Modals
                     return;
                 }
 
-                // Tạo object Message với MessageContent null
-                var message = new Message
+                // JSON chỉ gồm SenderID và ReceiverID
+                var data = new
                 {
                     SenderID = senderId,
-                    ReceiverID = receiverId,
-                    MessageContent = null,
-                    SentDateTime = null
+                    ReceiverID = receiverId
                 };
 
-                // Chuyển object thành JSON (dùng Newtonsoft.Json hoặc System.Text.Json)
-                string json = Newtonsoft.Json.JsonConvert.SerializeObject(message);
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
 
-                // Gửi POST API
                 string url = $"{ConfigurationManager.AppSettings["HOST_API_URL"]}api/Message/taoCuocTroChuyen";
                 bool result = await callAPI.PostAPI(url, json);
 
                 if (result)
                 {
                     MessageBox.Show("Tạo cuộc trò chuyện thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Bạn có thể gọi hàm reload lại danh sách cuộc trò chuyện nếu có
-                    // LoadConversationList(); // Ví dụ hàm reload
-
                     this.Close();
                 }
                 else
@@ -131,6 +121,8 @@ namespace DevEduManager.Modals
                 MessageBox.Show($"Lỗi khi tạo cuộc trò chuyện: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
 
 

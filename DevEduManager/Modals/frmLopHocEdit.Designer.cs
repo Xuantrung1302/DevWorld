@@ -118,6 +118,7 @@
             this.clbDaysOfWeek.Name = "clbDaysOfWeek";
             this.clbDaysOfWeek.Size = new System.Drawing.Size(349, 140);
             this.clbDaysOfWeek.TabIndex = 61;
+            this.clbDaysOfWeek.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.clbDaysOfWeek_ItemCheck_1);
             // 
             // cboPhong
             // 
@@ -138,6 +139,7 @@
             this.cboCaHoc.Name = "cboCaHoc";
             this.cboCaHoc.Size = new System.Drawing.Size(349, 31);
             this.cboCaHoc.TabIndex = 56;
+            this.cboCaHoc.SelectedIndexChanged += new System.EventHandler(this.cboCaHoc_SelectedIndexChanged_1);
             // 
             // label5
             // 
